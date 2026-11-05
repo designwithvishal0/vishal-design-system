@@ -57,6 +57,8 @@ Use the role tokens, never the named ones, so the product can change its accent 
 
 Orange's exact text is 2.8 to 1 on the light page: display size only.
 
+Teal's text is a blue (`#006A80` light, `#5CC8F0` dark), close to sky. Both are the site's own values for its teal project, not a copy of sky's row (`#1B5E9E` and `#8CC0F2`). Never use teal and sky on the same screen; one accent per screen already rules it out.
+
 ### Adding a brand accent
 
 A new product may show in its own brand colour (handoff 9.3: each product shows in its own colours). Add it as a new accent pair, built exactly like the five. It is never a second accent on a screen: the brand colour replaces the palette choice for that product.

@@ -117,6 +117,8 @@ export const accents = {
     textAa: ['#9C5600', '#F2B640'],
   },
   teal: {
+    // Checked 6 Nov 2026: the dark text #5CC8F0 is the site's own --t-twelve dark value (handoff), a blue that
+    // reads close to sky. It was not copied from sky, whose dark text is #8CC0F2. Kept, because the handoff wins.
     from: ':root --w-twelve, --m-twelve, --h-twelve, --t-twelve',
     wash: ['#BDEBDF', '#062E28'], muted: ['#40474A', '#A5CFC5'], ink: ['#0E6B5C', '#7FE0CB'], text: ['#006A80', '#5CC8F0'],
     textAa: ['#006A80', '#5CC8F0'],
