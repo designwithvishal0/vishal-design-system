@@ -4,7 +4,9 @@
 .ts-head h1 { margin: 0; }
 .ts-lead { margin: 0; max-inline-size: var(--measure-max); font-size: var(--type-lead-size); font-weight: var(--type-lead-weight); line-height: var(--type-lead-lh); color: var(--color-muted); }
 .ts-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
-.ts-compare { margin: 0; min-block-size: var(--type-small-lh); font-size: var(--type-small-size); font-weight: var(--weight-ui); }
+.ts-compare { display: flex; flex-direction: column; gap: var(--space-2); }
+.ts-compare p { margin: 0; }
+.ts-compare__line { max-inline-size: var(--measure-max); font-size: var(--type-lead-size); font-weight: var(--type-lead-weight); line-height: var(--type-lead-lh); }
 #ts-fav { margin: 0; }
 
 /* Favourites: large covers in a row, stars under each. Compare adds "You gave it 4" under the stars. */
@@ -14,9 +16,10 @@
 .ts-shelf { display: flex; flex-direction: column; gap: var(--space-3); align-items: flex-start; }
 .ts-books { align-self: stretch; max-inline-size: calc(var(--measure-max) + var(--space-9)); }
 .ts-trail { display: inline-flex; align-items: center; gap: var(--space-3); }
-.ts-yours { color: var(--accent-text-aa); font-size: var(--type-label-size); font-weight: var(--weight-ui); }
 
 @media (max-width: 759px) {
   .ts-head { flex-direction: column; gap: var(--space-4); }
-  .ts-favs { grid-template-columns: repeat(2, max-content); }
+  /* Three across on phones, never two with half the screen empty. */
+  .ts-favs { grid-template-columns: repeat(3, 1fr); gap: var(--space-5) var(--space-3); }
+  .ts-favs .vd-cover { --w: 100%; }
 }

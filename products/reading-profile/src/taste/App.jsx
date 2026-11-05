@@ -11,12 +11,22 @@ import './taste.css';
 
 const shared = readThisYear.filter((b) => visitorRatings[b.title]);
 const agree = shared.filter((b) => Math.abs(visitorRatings[b.title] - b.rating) <= 1).length;
+const agrees = (b) => Math.abs(visitorRatings[b.title] - b.rating) <= 1;
+
+// Agreeing within a star gets the accent tag; disagreeing gets a neutral tag with both ratings.
+function Match({ book, first }) {
+  const yours = visitorRatings[book.title];
+  return agrees(book)
+    ? <Tag variant="accent">You gave it {yours}</Tag>
+    : <Tag variant="outline">You {yours}, {first} {book.rating}</Tag>;
+}
+
 const onShelf = (id) => (id === 'read' ? [...readThisYear].reverse() : readThisYear.filter((b) => b.tags.includes(id)));
 
 export function App() {
   const [comparing, setComparing] = useState(false);
   const [following, setFollowing] = useState(false);
-  const [shelf, setShelf] = useState('favourites');
+  const [shelf, setShelf] = useState('read');
   const picked = shelves.find((s) => s.id === shelf);
   const books = shelf === 'currently-reading' ? currentlyReading.map((b) => ({ ...b, rating: 0 })) : onShelf(shelf);
 
@@ -29,15 +39,19 @@ export function App() {
         <section className="page__section ts-head" aria-labelledby="ts-name">
           <Avatar name={reader.name} size="xl" />
           <div className="ts-head__text">
-            <h1 className="vd-type-display" id="ts-name">{reader.name}</h1>
+            <h1 className="vd-type-heading-lg" id="ts-name">{reader.name}</h1>
             <p className="ts-lead">Reads mostly Indian fiction and anything in translation. {reader.totalRead} books, {stats.average} average rating, {reader.followers} followers.</p>
             <div className="ts-actions">
               <Button variant={following ? 'outline' : 'primary'} onClick={() => setFollowing((f) => !f)} aria-pressed={following}>{following ? 'Following' : 'Follow'}</Button>
               <Button onClick={() => setComparing((c) => !c)} aria-pressed={comparing}>{comparing ? 'Stop comparing' : 'Compare books'}</Button>
             </div>
-            <p className="ts-compare" aria-live="polite">
-              {comparing && <>You have both read {shared.length} of her books. You agree on {agree} of them, within a star.</>}
-            </p>
+            {/* The signature moment: Compare books answers the visitor's question in one number. */}
+            <div className="ts-compare" aria-live="polite">
+              {comparing && <>
+                <p className="vd-type-stat">{agree} of {shared.length}</p>
+                <p className="ts-compare__line">You agree with {reader.first} on {agree} of the {shared.length} books you have both read, within a star.</p>
+              </>}
+            </div>
           </div>
         </section>
 
@@ -48,7 +62,7 @@ export function App() {
               <li key={b.title} className={yours(b.title) ? 'is-shared' : undefined}>
                 <Cover size="lg" src={coverOf(b.title)} title={b.title} author={b.author} />
                 <Stars value={b.rating} label={`${reader.first} rated it ${b.rating} out of 5`} />
-                {yours(b.title) && <Tag variant="accent">You gave it {visitorRatings[b.title]}</Tag>}
+                {yours(b.title) && <Match book={b} first={reader.first} />}
               </li>
             ))}
           </ul>
@@ -66,7 +80,7 @@ export function App() {
               {books.slice(0, 10).map((b) => (
                 <List.Item key={b.title} as="a" href="#book" leading={<Cover size="sm" src={coverOf(b.title)} />} title={b.title} meta={b.author}
                   trailing={<span className="ts-trail">
-                    {yours(b.title) && <span className="ts-yours">You {visitorRatings[b.title]}</span>}
+                    {yours(b.title) && <Match book={b} first={reader.first} />}
                     {b.rating ? <Stars value={b.rating} /> : <span className="rp-meta">Reading now</span>}
                   </span>} />
               ))}
