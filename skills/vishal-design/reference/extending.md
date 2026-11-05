@@ -313,6 +313,8 @@ Rules: a native `<input type="checkbox">` inside its `<label>`, so the whole lab
 
 Relative: the site's Dark mode and Reduce motion switches: 62 by 34, a 26px knob, 260ms.
 
+A switch is labelled with the setting it controls ("Dark mode"), and its position shows on or off. A button that toggles instead names the action it takes, from the live state: on a dark page the theme button reads "Switch to light", never "Switch to dark".
+
 ```css
 /* EXTENSION: switch (values from the site) */
 .switch { appearance: none; position: relative; flex: none; inline-size: var(--switch-w); block-size: var(--switch-h); margin: 0; border-radius: var(--radius-pill); background: var(--color-surface-2); box-shadow: inset 0 0 0 var(--border-w) var(--color-edge); cursor: pointer; transition: background-color var(--dur-switch) var(--ease-out); }

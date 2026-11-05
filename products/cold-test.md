@@ -104,7 +104,7 @@ Vishal spotted one more: the empty claim form showed "₹0" in display type, whi
 | 1 | " " showed as visible text on every screen ("15 min", and a phone number full of them). Its own checklist marked this a pass, because it checked the code, not the screen. | Skill: never write a character escape as text. In JSX, use the real character or `{" "}` inside braces. New checklist line: "Look at the rendered screen, not just the code. Any visible \u, &nbsp; or broken character fails the check." The checklist now says every line is judged on the rendered screen. |
 | 2 | It removed the hyphen from the booking reference "PZ-4829". | Skill: the hyphen rule covers prose only. Booking references, IDs, phone numbers, file names, dates in data and code keep their real characters, hyphens included. |
 | 3 | It looked inside `products/cold-test` although the prompt said not to. | Nothing in the skill. A test setup issue: a cold test should run on a copy without `products/`. |
-| 4 | The theme button said "Switch to dark" while the page was already dark. | Recorded only; no rule added yet. |
+| 4 | The theme button said "Switch to dark" while the page was already dark. | Fixed in the skill: a toggle's label names the action it takes, not the state it's in, so on a dark page it reads "Switch to light". There is a checklist line for it. |
 | 5 | Figma Make's preview stayed on the old site until it was restarted. | Nothing in the skill: this is a tool issue. |
 
 Like the first test, the misses were details the skill had not spelled out, not wrong rules. Both skill misses, 1 and 2, came from the skill being read too literally, and both are now written down plainly.

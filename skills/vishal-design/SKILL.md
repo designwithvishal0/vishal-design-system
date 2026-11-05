@@ -111,6 +111,7 @@ These make a screen look like Vishal's. Following them gives a clean screen. Sec
 | Opening something clears its unread count at once: the badge, the bold and the list tag drop the moment it is opened, not when the person leaves. A "New" line may stay inside it so they can still find where the unread part began. | People open things to read them; a count that stays after opening says the product did not notice. | Never. |
 | Counts agree across the whole screen: a headline, a sidebar badge and a list tag that count the same thing show the same number, and all of them drop the moment it is read. Work every count out from the data, never type one. | A count that disagrees with another tells people the screen cannot be trusted. | Never. |
 | Both themes are designed, not inverted, and pass every rule. | Vishal's site runs in both, and a colour that passes in light can fail in dark. | Never. |
+| A toggle's label names the action it takes, not the state it's in: on a dark page the theme button reads "Switch to light". Read the label from the live state every time it changes, never from a default. A Switch is different: its label is the setting ("Dark mode") and its position shows the state. | A label that names the current state reads as an instruction to do what is already done. | Never. |
 
 ## 4. Visual finesse
 
@@ -305,6 +306,7 @@ Run it in this order on every finished screen and mark each line pass or fail. J
 
 **8. Everywhere**
 - [ ] Light and dark both pass, with no dark on dark.
+- [ ] Every toggle button names the action it will take in the state the screen is in now: on a dark page, "Switch to light".
 - [ ] The full scroll works on a 390px phone with no sideways scroll.
 - [ ] Reduce motion on: nothing breaks, the meaning stays.
 
