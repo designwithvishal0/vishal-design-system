@@ -33,3 +33,9 @@
   .st-count .rp-bar { flex-basis: 100%; }
   .st-months { padding-inline-start: var(--space-4); }
 }
+
+/* Now: the timeline arrives here, and the year's total is the one display moment on the page. */
+.st-now { gap: var(--space-4); }
+.st-now > p { margin: 0; }
+.st-now__line { font-size: var(--type-lead-size); font-weight: var(--type-lead-weight); line-height: var(--type-lead-lh); color: var(--color-muted); }
+.st-now .rp-now { margin-top: var(--space-4); }
