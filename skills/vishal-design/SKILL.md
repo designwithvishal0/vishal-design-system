@@ -54,6 +54,11 @@ import './app.css'; // your own styles last
 // So every screen can be checked in both themes from a link: ?theme=light or ?theme=dark
 const theme = new URLSearchParams(location.search).get('theme');
 if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+
+// So every screen can be seen in each of the five accents: ?accent=violet, or orange, amber, teal, sky.
+// Put the result on the product's root in place of a fixed value: <main data-accent={accent}>
+const asked = new URLSearchParams(location.search).get('accent');
+const accent = ['orange', 'violet', 'amber', 'teal', 'sky'].includes(asked) ? asked : 'violet'; // your chosen accent
 ```
 
 Load the system’s styles first and your app’s styles after them, in your entry file: `base.css`, then the component imports, then your own CSS. Never override a component’s colours or variants to win the cascade. If a component looks wrong, fix the import order, not the component.
@@ -111,6 +116,7 @@ These make a screen look like Vishal's. Following them gives a clean screen. Sec
 | --- | --- | --- |
 | A few big words carry the screen: heavy and narrow Bricolage, set tight, usually the user's own question. Everything read line by line stays light. | It is the first thing that makes a screen his, and it puts the answer where the eye lands. | Never on body text. A dense screen gets the small version once (section 4). |
 | The page is neutral: `--color-bg` warm off white, `--color-ink` near black. Colour comes only from the product, through its one `data-accent`, never from Vishal. Pick one of the five accents, or add the product's own brand colour as a new accent pair (section 6). | A neutral page lets every product look like itself, in its own colours (handoff 9.3). Colour everywhere stops meaning anything. | A launch can use one full colour field, if text on it passes contrast and it is the one colour moment. |
+| Choosing the accent. If the brief or the user names a colour or a brand, use it, adding it as a brand accent if it is not one of the five. If not, pick one and give the reason in one line in your directions, so it can be changed before you build. Choose by what the product should feel like, never by category habit: ‘amber, because a reading profile should feel warm and personal’, never ‘teal, because it is health’. Every build reads `?accent=` the same way it reads `?theme=`, so any screen can be seen in all five. | A colour picked by habit makes every product in a category look the same, and a stated reason lets someone change it before the build. | Never. |
 | Space shows what belongs together. If a screen feels congested, add space; never shrink things to fit. | Even spacing and clear groups let people understand a screen before reading it. | A dense tool tightens rows, never the gaps between groups (section 7). |
 | Edges are 1px lines. A shadow means one thing: this floats. | Lines work in both themes. Shadows break in dark mode and lose meaning if cards have them. | Never on cards, rows, panels or buttons. |
 | Tokens only. The same component does the same job everywhere, with the same radius, icon and words. The same action sits in the same place. | Consistency is what makes a product feel trustworthy. | Never. Change a component everywhere, never on one screen. |
@@ -296,6 +302,7 @@ Run it in this order on every finished screen and mark each line pass or fail. J
 **5. Colour and depth**
 - [ ] Count the accent washes on each rendered screen. One group carries the wash; everything else is neutral.
 - [ ] One product colour at most, set with `data-accent`.
+- [ ] The accent has a stated reason, and ?accent= switches it.
 - [ ] The live dot appears only where something is available right now, never as decoration on a label.
 - [ ] Small accent text uses `text-aa`.
 - [ ] Shadows only on things that float; no hover lift.
