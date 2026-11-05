@@ -20,6 +20,7 @@ Work in this order, and do not skip ahead:
 3. **Clean**: build with the rules every screen gets (sections 3 and 4).
 4. **Wow**: choose one signature moment, or decide on none (section 5).
 5. **Check**: run the hygiene checklist in order (section 9).
+6. **Hand back**: the directions, the pick, the trade offs and every extension (section 12).
 
 Reference files:
 
@@ -335,3 +336,15 @@ Honest limits, so a new product knows where to be careful. Every token that is n
 6. **Dark washes** sit only 1.24 to 1.41 to 1 from the page and lean on `line-strong` edges to stay separate.
 7. **The exact orange** (`#F07322`) is 2.8 to 1 on the light page: display size only.
 8. **The site's motion** (GSAP scroll scrub, the "unsure." jitter) is not part of the components; only timing tokens are.
+
+## 12. What to hand back
+
+When the work is done, hand back these five things with the screens, in this order:
+
+1. **The three directions**, each with its one line idea, written as in section 2: viewer, question, organised by, best for, gives up, signature moment.
+2. **The pick and its reason**: which direction best answers the main question for the main viewer, and what the other two do better.
+3. **The trade offs made**: every place two rules fought, which one won (section 7) and why, in one line each.
+4. **Every extension added**: each new token, accent pair, recipe use or component built for this product, with one line on why it was needed. Include anything that could not be built without breaking a fixed rule, as a place where the system breaks.
+5. **The checklist result**: section 9, with every line marked pass, or fail with what is left to fix.
+
+Why: the reasons behind a design are what make it defendable, and a list of extensions shows where the system grew. A screen without them is a guess. Break: never. A hand back without these five is not finished.
