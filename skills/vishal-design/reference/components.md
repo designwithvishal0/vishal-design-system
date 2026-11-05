@@ -83,7 +83,7 @@ Titles truncate to one line and meta to two by default. In a dense row title and
 
 ## Modal and Sheet
 
-Built on the native `<dialog>`, so focus stays inside and Escape closes it. Clicking the scrim closes it. `placement`: `center` (modal), `bottom` (sheet), `right` (side sheet). `Sheet` is a bottom sheet. Give every modal a `title` and, when it asks for a decision, a `footer` with the actions: secondary first, primary last.
+Built on the native `<dialog>`, so focus stays inside and Escape closes it. Clicking the scrim closes it. `placement`: `center` (modal), `bottom` (sheet), `right` (side sheet), `top` (a command bar). The dialog focuses its first button on open, which is the close button: pass `initialFocus` with an element's id to start somewhere else. Leave out `title` for a bare panel, and give it a `label`. `Sheet` is a bottom sheet. Give every modal a `title` and, when it asks for a decision, a `footer` with the actions: secondary first, primary last.
 
 ## Avatar
 
