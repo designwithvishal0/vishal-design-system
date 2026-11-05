@@ -25,7 +25,7 @@
 - A claim page with a four step status timeline.
 - An inline request from the insurer for a missing document.
 
-It built in teal. The app builds, and the tokens check passes. It checked the screens in light, in dark and at 375px wide with no sideways scroll. The build stayed in `scratch/` and is not part of the hand in.
+It built in teal. The app builds, and the tokens check passes. It checked the screens in light, in dark and at 375px wide with no sideways scroll. It now lives in `products/cold-test/claim-flow` and is live on the site, kept apart from the six.
 
 **What worked:**
 - The directions template forced real structural differences between the three.
