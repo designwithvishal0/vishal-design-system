@@ -1,0 +1,47 @@
+.vd-field { display: flex; flex-direction: column; gap: var(--space-2); }
+
+.vd-field__label { font-size: var(--type-label-size); font-weight: var(--type-label-weight); line-height: var(--type-label-lh); }
+
+.vd-input {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--control-h);
+  padding: 0 var(--space-4);
+  border: var(--border-w) solid var(--color-edge);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-ink);
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+.vd-input--multiline { align-items: flex-start; padding-block: var(--space-3); border-radius: var(--radius-md); }
+.vd-input__leading { display: inline-flex; color: var(--color-muted); }
+
+.vd-input__control {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: var(--type-small-size);
+  line-height: var(--type-body-lh);
+}
+.vd-input__control::placeholder { color: var(--color-muted); opacity: 1; }
+.vd-input__control:focus { outline: none; }
+textarea.vd-input__control { resize: none; min-height: 2lh; field-sizing: content; }
+
+@media (hover: hover) and (pointer: fine) {
+  .vd-input:hover { border-color: var(--color-muted); }
+}
+
+/* Focus shows the site's focus ring around the whole field, and the border goes to full ink. */
+.vd-input:focus-within { border-color: var(--color-ink); outline: var(--focus-width) solid var(--color-ink); outline-offset: var(--focus-offset); }
+
+.vd-input--error, .vd-input--error:hover { border-color: var(--color-error); }
+
+.vd-input:has(:disabled) { opacity: var(--state-disabled-opacity); cursor: not-allowed; }
+
+.vd-field__note { margin: 0; color: var(--color-muted); font-size: var(--type-label-size); line-height: var(--type-label-lh); }
+.vd-field__note--error { color: var(--color-error); }

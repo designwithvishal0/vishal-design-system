@@ -1,0 +1,41 @@
+.vd-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--control-h);
+  padding: 0 var(--control-pad-x);
+  border: var(--border-w) solid var(--color-edge);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--type-small-size);
+  font-weight: var(--weight-ui);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--dur-press) var(--ease-out), background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.vd-btn--sm { min-height: var(--control-h-sm); padding: 0 var(--space-4); font-size: var(--type-meta-size); }
+
+.vd-btn--primary { background: var(--color-btn); color: var(--color-on-btn); border-color: var(--color-btn); }
+.vd-btn--ghost { border-color: transparent; }
+
+/* Round icon button. */
+.vd-btn--icon { width: var(--control-h); padding: 0; border-radius: var(--radius-round); font-size: var(--type-body-size); }
+.vd-btn--icon.vd-btn--sm { width: var(--control-h-sm); }
+
+/* Hover is colour only, and only where a real pointer exists. */
+@media (hover: hover) and (pointer: fine) {
+  .vd-btn:hover { background: var(--state-hover-ghost); }
+  .vd-btn--primary:hover { background: var(--state-hover-primary); border-color: var(--state-hover-primary); }
+}
+
+/* Press is the only movement. */
+.vd-btn:active { transform: scale(var(--state-press-scale)); }
+
+.vd-btn:disabled, .vd-btn[aria-disabled='true'] { opacity: var(--state-disabled-opacity); cursor: not-allowed; pointer-events: none; }
