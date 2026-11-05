@@ -128,10 +128,10 @@ export const channelMessages = {
   random: [],
 };
 
-// What needs a reply or a decision from you, oldest first. Used by the Needs you layout.
+// What needs a reply or a decision from you. dueBy is a 24 hour time used to sort by deadline.
 export const needsYou = [
   { id: 'n-kabir', kind: 'Asked you', channel: 'support', thread: 't-refunds', from: 'kabir', time: '9:31', text: 'What should the message to these customers say? They are asking if they lost money.' },
-  { id: 'n-asha', kind: 'Asked you', channel: 'launch', thread: 't-goals', from: 'asha', time: '10:02', text: 'Can you share the new frame here when it is in? Ira is waiting on it.', due: 'Needed by 3:00' },
+  { id: 'n-asha', kind: 'Asked you', channel: 'launch', thread: 't-goals', from: 'asha', time: '10:02', text: 'Can you share the new frame here when it is in? Ira is waiting on it.', due: 'Needed by 3:00', dueBy: '15:00' },
   { id: 'n-maya', kind: 'Direct message', dm: 'dm-maya', from: 'maya', time: '10:11', text: 'Free for 10 minutes before lunch? I want your eyes on the goals chart.' },
 ];
 

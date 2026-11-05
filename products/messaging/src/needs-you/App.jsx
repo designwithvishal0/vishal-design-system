@@ -12,6 +12,9 @@ import './needs-you.css';
 
 const dmMessages = { 'dm-maya': [{ id: 'dm1', author: 'maya', time: '10:11', text: 'Free for 10 minutes before lunch? I want your eyes on the goals chart.' }] };
 const now = () => new Date().toTimeString().slice(0, 5).replace(/^0/, '');
+// Deadlines first, soonest first; then everything else oldest first.
+const mins = (t) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+const byUrgency = (a, b) => (a.dueBy ? mins(a.dueBy) : Infinity) - (b.dueBy ? mins(b.dueBy) : Infinity) || mins(a.time) - mins(b.time);
 const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // What the right pane shows for an item: its thread, a DM, or a channel.
@@ -23,8 +26,9 @@ function conversationFor(open) {
 }
 
 export function App() {
-  const [needs, setNeeds] = useState(seedNeeds);
-  const [openId, setOpenId] = useState(seedNeeds[0].id);
+  const [unsorted, setNeeds] = useState(seedNeeds);
+  const needs = [...unsorted].sort(byUrgency);
+  const [openId, setOpenId] = useState([...seedNeeds].sort(byUrgency)[0].id);
   const [sent, setSent] = useState({});
   const [toast, setToast] = useState(null);
   const [phoneView, setPhoneView] = useState('inbox');
@@ -80,7 +84,7 @@ export function App() {
             {needs.length ? (
               <>
                 <p className="vd-type-stat-sm">{needs.length} {needs.length === 1 ? 'needs' : 'need'} you</p>
-                <p className="ny-muted">Oldest first. Reply, or mark it done, and it leaves this list.</p>
+                <p className="ny-muted">Deadlines first, then oldest first. Reply, or mark it done, and it leaves this list.</p>
               </>
             ) : (
               <p className="ny-muted">Nothing needs your reply right now.</p>
@@ -94,7 +98,7 @@ export function App() {
                   leading={<Avatar name={people[n.from].name} size="sm" />}
                   title={`${firstName(n.from)} · ${n.kind}${n.channel ? ` in #${n.channel}` : ''}`}
                   meta={n.text}
-                  trailing={n.due ? <Tag variant="accent">{n.due}</Tag> : <time className="ny-time">{n.time}</time>}
+                  trailing={<span className="ny-when"><time className="ny-time">{n.time}</time>{n.due && <Tag variant="accent">{n.due}</Tag>}</span>}
                 />
               ))}
             </List>
