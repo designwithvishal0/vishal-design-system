@@ -235,6 +235,8 @@
   --layout-gutter: 32px; /* site: --gut */
   --layout-bar: 56px; /* site: --bar */
   --layout-inset: 16px; /* site: --inset */
+  --measure-max: 760px; /* site: case study text column 760px (handoff 2.6) */
+  --measure-min: 46ch; /* site: How I work text column, 46ch (handoff 2.6) */
   --control-h: 44px; /* site: .pill-btn min-height */
   --control-h-sm: 36px; /* site: .bar-book height */
   --control-pad-x: 22px; /* site: .pill-btn padding: 0 22px */
@@ -268,6 +270,8 @@
   --dur-base: 0.3s; /* site: small changes 300ms */
   --dur-slow: 0.52s; /* site: word rise 520ms */
   --dur-reveal: 0.6s; /* site: reveal 600ms, 20px rise, handoff 2.10 */
+  --dur-stagger: 0.045s; /* site: word rise, 45ms stagger per word (handoff 2.10) */
+  --reveal-distance: 20px; /* site: reveal, 20px rise (handoff 2.10) */
   --dur-ping: 2.4s; /* site: live dot ping 2.4s loop */
   --dur-spring: 0.7s; /* site: transition .7s var(--spring) */
   --dur-colour: 0.9s; /* site: color .9s var(--ease) */
