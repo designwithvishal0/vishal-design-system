@@ -9,6 +9,9 @@
   border-bottom: var(--border-w) solid transparent;
   transition: border-color var(--dur-fast) var(--ease-out);
 }
+.vd-nav { --nav-gutter: var(--layout-gutter); }
+/* Inside a panel that already has its own padding, the bar drops its gutter so edges still line up. */
+.vd-nav--flush { --nav-gutter: 0%; }
 .vd-nav--sticky { position: sticky; top: 0; z-index: var(--z-bar); }
 .vd-nav--bordered { border-bottom-color: var(--color-line); }
 
@@ -17,7 +20,8 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: var(--space-4);
-  width: min(var(--layout-max), 100% - var(--layout-gutter) * 2);
+  /* Same frame as .vd-container, so the name lines up with the left edge of the sections below. */
+  width: min(var(--layout-max), 100% - var(--nav-gutter) * 2);
   height: 100%;
   margin-inline: auto;
 }
@@ -41,7 +45,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    padding: var(--space-2) var(--layout-gutter) var(--space-5);
+    padding: var(--space-2) var(--nav-gutter) var(--space-5);
     background: var(--color-bg);
     border-bottom: var(--border-w) solid var(--color-line);
     z-index: var(--z-popover);

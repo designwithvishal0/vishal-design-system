@@ -100,6 +100,7 @@ export function Gallery({ theme, accent }) {
         <Nav
           brand="Vishal Yadav"
           sticky={false}
+          flush
           bordered
           actions={<><Button variant="primary" size="sm">Book a call</Button><Button size="sm">Resume</Button></>}
         >

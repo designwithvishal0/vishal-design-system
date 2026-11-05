@@ -58,7 +58,7 @@ Counts over 99 show as "99+".
 
 ## Nav and NavList
 
-`Nav` is the site's top bar: name left, links centre, actions right, frosted and sticky. On phones the bar holds only the name and a Menu button; links and actions move into the open menu. `tone="light"` forces the light colours in either theme.
+`Nav` is the site's top bar: name left, links centre, actions right, frosted and sticky. On phones the bar holds only the name and a Menu button; links and actions move into the open menu. `tone="light"` forces the light colours in either theme. Put the page's sections in `.vd-container` so the name lines up with their left edge; inside a panel that has its own padding, use `flush`.
 
 ```jsx
 <Nav brand="Northwind" actions={<Button variant="primary" size="sm">New message</Button>}>

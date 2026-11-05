@@ -29,6 +29,9 @@ a { color: inherit; }
   outline-offset: var(--focus-offset);
 }
 
+/* The page frame: content capped at 1376px with the side gutter. The Nav uses the same frame. */
+.vd-container { width: min(var(--layout-max), 100% - var(--layout-gutter) * 2); margin-inline: auto; }
+
 /* Inverse surface. Everything inside swaps to the panel colours by itself, like the site's closing panel. */
 .vd-inverse {
   --color-bg: var(--color-panel-bg);

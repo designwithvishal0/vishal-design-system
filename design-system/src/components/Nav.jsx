@@ -11,13 +11,15 @@ import { IconMenu, IconClose } from './icons.jsx';
  *   tone="light"  forces the light colour set in either theme. The handoff says the header is always
  *                 light, the live home page follows the theme, so both are supported.
  *   bordered      the hairline under the bar, which the site shows once the page has scrolled
+ *   flush         drop the side gutter when the bar sits inside a panel that has its own padding
+ * Put the page's sections in .vd-container so they share the bar's frame and the name lines up.
  */
-export function Nav({ brand, brandHref = '#', children, actions, tone, bordered = false, sticky = true, label = 'Sections', className }) {
+export function Nav({ brand, brandHref = '#', children, actions, tone, bordered = false, sticky = true, flush = false, label = 'Sections', className }) {
   const [open, setOpen] = useState(false);
   const menuId = useId();
   const close = (e) => { if (e.target.closest('a')) setOpen(false); };
   return (
-    <header className={cx('vd-nav', sticky && 'vd-nav--sticky', bordered && 'vd-nav--bordered', open && 'vd-nav--open', className)} data-theme={tone === 'light' ? 'light' : undefined}>
+    <header className={cx('vd-nav', sticky && 'vd-nav--sticky', bordered && 'vd-nav--bordered', flush && 'vd-nav--flush', open && 'vd-nav--open', className)} data-theme={tone === 'light' ? 'light' : undefined}>
       <div className="vd-nav__in">
         <a className="vd-nav__brand" href={brandHref}>{brand}</a>
         <nav className="vd-nav__links" aria-label={label} onClick={close}>{children}</nav>
