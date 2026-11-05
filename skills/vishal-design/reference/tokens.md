@@ -113,8 +113,10 @@ Paragraph width: `--measure-min` 46ch to `--measure-max` 760px.
 | `--space-9` | 96 | Large sections |
 | `--space-10` | 120 | Largest blocks |
 | `--space-11` | 160 | Between page sections |
-| `--section-gap` | 160 (phone 96) | Between sections |
-| `--section-inner` | 72 (phone 48) | Inside a section |
+| `--section-gap` | 160 (phone 96) | Between sections of a scrolling page |
+| `--section-inner` | 72 (phone 48) | Inside a section of a scrolling page |
+
+App layouts that fill the screen, like messaging, do not use section gaps. Their panels and groups use 24 to 48 (`--space-5` to `--space-7`).
 
 Layout: `--layout-max` 1376px, `--layout-gutter` 32 (phone 16), `--layout-inset` 16 (phone 8), `--layout-bar` 56 (phone 52). Breakpoints: phone at 759px and below, tablet at 1023px and below.
 

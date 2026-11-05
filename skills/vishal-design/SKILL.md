@@ -126,7 +126,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | Rule | Why | Break only when |
 | --- | --- | --- |
 | Every gap comes from the scale: 4, 6, 8, 12, 16, 24, 32, 48, 72, 96, 120, 160 (`--space-1` to `--space-11`). | No random values: rhythm is what makes a screen look intentional. | Never. |
-| The gap grows with the level: inside a component, then between components, then between sections. Sections: `--section-gap` 160 between, `--section-inner` 72 inside; 96 and 48 on phones. | The size of a gap tells people what belongs together. | The signature moment may get extra space to land. Never less than the scale. |
+| The gap grows with the level: inside a component, then between components, then between sections. Scrolling pages, like a reading profile: `--section-gap` 160 between sections, `--section-inner` 72 inside; 96 and 48 on phones. App layouts that fill the screen, like messaging, have no sections: their panels and groups use component gaps of 24 to 48 (`--space-5` to `--space-7`). | The size of a gap tells people what belongs together. | The signature moment may get extra space to land. Never less than the scale. |
 | Group with space first, a wash second, a 1px hairline third. Never a box around everything; cards are for things you pick up as a whole. | Each step is louder than the last; use the quietest one that works. | Never. |
 | A label and its input are 8px apart; two fields are 24px apart. | One decision is one group. | Never. |
 | Rows repeat: 48px comfortable (`--row-h`), 32px dense (`--row-h-dense`). | Dense screens keep rhythm through repetition. | Two line rows grow to their content. |
