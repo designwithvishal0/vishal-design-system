@@ -143,3 +143,37 @@ Like the first test, the misses were details the skill had not spelled out, not 
 | f | It could not see the preview, but marked the checklist Pass from a source audit. | Skill: if you cannot see the rendered screen, mark every line that depends on it Not checked, never Pass, and say why. |
 
 With only the skill file, the thinking held and the visual details drifted. The fix is telling an agent where the system lives.
+
+## Fourth test: Figma Make, skill file only, after the fixes
+
+**When:** 6 November 2026.
+
+**Setup:** Figma Make, with only `SKILL.md` installed, after the fixes from the third test.
+
+**Brief:** the same doctor video consultation brief.
+
+### What it got right
+
+1. **It found the real system.** It saw `design-system/` was missing, cloned the repo, then built with the real tokens and components: Bricolage display type, Avatar initials, Tags, the ink pill button, the underlined current tab, and a concept label.
+2. **The date was right:** “Tomorrow, Saturday 7 November” on 6 November.
+3. **No stock photos.** Every doctor was an Avatar with initials.
+4. **It checked its own screens.** It rendered light, dark and 390px, and fixed two problems it saw itself.
+5. **The token check ran and passed.**
+6. **The rules from the last two tests held:**
+   - it kept the hyphen in the booking reference “NC-48127”;
+   - the theme toggle read “Switch to light” on a dark page.
+7. **One display moment on the confirmation screen:** “You’re booked.”, over a calm ticket.
+
+### What went wrong, and what changed
+
+| # | What happened | What changed |
+| --- | --- | --- |
+| a | It cloned into a folder named `design-system`, so the system sat at `design-system/design-system` and it lost steps finding it. | Skill: the exact clone command into `vishal-design-system`, the import paths to match, and never clone into a folder named `design-system`. |
+| b | The system’s button styles loaded after its own, so it patched over them. In dark, the primary button lost its fill or turned into a teal wash with teal text. | Skill: the system’s styles load first and your own after; never override a component to win the cascade. New checklist line: primary buttons are the ink pill in both themes, checked on the rendered screen. |
+| c | Four accent washes on the first screen: a tag, the active step, the selected row and the appointment card. | Checklist: count the accent washes on each rendered screen. One group carries the wash. |
+| d | Two display moments on the first screen: a generic headline and the appointment time. | Checklist: count the display moments on each rendered screen. One. |
+| e | The microphone and camera toggles named their state (“Microphone on”, “Camera on”). | Checklist: read every toggle button aloud. Its label names what happens on click. |
+| f | The live green dot sat on a “Video consultation” label. | Checklist: the live dot appears only where something is available right now. |
+| g | Its checklist marked all of c to f as Pass. The rules already existed; the lines were vague enough to pass by eye. | The checklist lines for c to f now count or read aloud instead of judging. |
+
+The clone fix worked: with only the skill file, it found the real system and looked like it. What slipped were rules it already had, so the checklist now counts instead of judging.
