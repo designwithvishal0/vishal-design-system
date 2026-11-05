@@ -10,6 +10,11 @@
 
 const site = (from) => ({ from });
 const ext = (why) => ({ ext: why });
+// The spacing scale is one extension, listed once. `from` records which site value each step comes from.
+const spacing = (from) => ({
+  ext: 'Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats.',
+  from,
+});
 
 // ---------------------------------------------------------------------------
 // Colour. Each token has a light and a dark value.
@@ -67,31 +72,53 @@ export const themed = {
 // ---------------------------------------------------------------------------
 // Accents. Five named pairs. One accent per screen or product, never mixed.
 // Set an accent on any element with data-accent="violet" (and so on).
-// Each accent has a soft wash, deeper heading ink, muted body ink, and an accent text colour.
+// Orange is the default when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026).
+//
+// Each accent has four colours, each as [light, dark]:
+//   wash   soft fill behind a panel
+//   muted  body text on the wash
+//   ink    heading colour on the wash
+//   text   the site's exact accent colour. For headings and large text only.
+// and a fifth, added by this system:
+//   textAa darker accent text that passes 4.5 to 1 on the wash, on the page and on surface-1.
+//          Use it for any small text. Light is an extension. Dark equals `text`, which already passes.
 // ---------------------------------------------------------------------------
 export const accents = {
+  orange: {
+    from: '.kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo)',
+    wash: ['#FFE2CC', '#1B1E2C'], muted: ['#4F4640', '#B8BCCB'], ink: ['#A34400', '#FF9A57'], text: ['#F07322', '#FF8A3D'],
+    textAa: ['#A34E17', '#FF8A3D'],
+  },
   violet: {
-    from: ':root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo',
+    from: ':root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page)',
     wash: ['#DCD3FF', '#241852'], muted: ['#4A4A55', '#BDB6DF'], ink: ['#4B32C9', '#BBAAFF'], text: ['#4A2FD0', '#B4A6FF'],
+    textAa: ['#4A2FD0', '#B4A6FF'],
   },
   amber: {
     from: ':root --w-split, --m-split, --h-split, --t-split',
     wash: ['#FFE7A8', '#3B2A02'], muted: ['#45454A', '#D6C7A0'], ink: ['#8A6400', '#FFD466'], text: ['#A35A00', '#F2B640'],
+    textAa: ['#9C5600', '#F2B640'],
   },
   teal: {
     from: ':root --w-twelve, --m-twelve, --h-twelve, --t-twelve',
     wash: ['#BDEBDF', '#062E28'], muted: ['#40474A', '#A5CFC5'], ink: ['#0E6B5C', '#7FE0CB'], text: ['#006A80', '#5CC8F0'],
-  },
-  coral: {
-    from: ':root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis',
-    wash: ['#FFCDB8', '#43160B'], muted: ['#4D4441', '#E0B7A9'], ink: ['#B53A16', '#FF9C78'], text: ['#C03A0A', '#FF8A4C'],
+    textAa: ['#006A80', '#5CC8F0'],
   },
   sky: {
     from: ':root --w-sky, --m-sky (wash and muted only)',
     ext: 'The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash.',
     wash: ['#CFE6FF', '#0C2C4D'], muted: ['#3F4A57', '#AFC8E2'], ink: ['#174F8A', '#A8D2FB'], text: ['#1B5E9E', '#8CC0F2'],
+    textAa: ['#1B5E9E', '#8CC0F2'],
   },
 };
+export const defaultAccent = 'orange';
+
+// Why textAa exists. The site's exact accent text colours do not all pass for small text.
+// On the wash: orange 2.4 to 1, amber 4.3 to 1. Orange is 2.8 to 1 on the page, below even the 3 to 1
+// large text needs, so the exact orange is for display size headline accents only.
+// textAa light values pass 4.6 to 1 or better on all three surfaces.
+export const textAaNote =
+  'Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes.';
 
 // Elevation. Themed because shadows disappear on near black. Dark leans on surface steps and borders.
 Object.assign(themed, {
@@ -106,10 +133,10 @@ Object.assign(themed, {
     ...site('inset 0 0 0 1px color-mix(ink var(--ring))'), use: 'Ink ring, for media and tiles',
   },
   'elev-3': {
-    light: '0 0 0 1px var(--color-line), 0 12px 32px #00000024',
-    dark: '0 0 0 1px var(--color-line-strong), 0 12px 32px #00000066',
-    ...ext('Light value is on the site (0 0 0 1px line, 0 12px 32px). Dark value is proposed: a stronger border and a deeper shadow, since a soft shadow cannot show on near black.'),
-    use: 'Menus, popovers, toasts',
+    light: '0 0 0 1px var(--color-line), 0 16px 40px #00000024',
+    dark: '0 0 0 1px var(--color-line-strong), 0 16px 40px #00000066',
+    ...ext('Dark value only. Light is on the site: the Accessibility menu shadow (0 16px 40px) with the hairline ring from the dock. The dark value is proposed: a stronger border and a deeper shadow, since a soft shadow cannot show on near black.'),
+    use: 'Menus and popovers. A shadow means one thing: this floats above the page',
   },
   'elev-4': {
     light: '0 0 0 1px var(--color-line), 0 24px 60px #0000002e',
@@ -143,18 +170,20 @@ export const fixed = {
   'stretch-heading': { value: '85%', ...site('font-stretch on headings'), use: 'Headings and titles' },
   'stretch-normal': { value: '100%', ...site('body'), use: 'Body text' },
 
-  // Spacing. A scale in px, drawn from the gaps and paddings the site repeats.
-  'space-1': { value: '4px', ...site('gap: 4px'), use: 'Tightest' },
-  'space-snug': { value: '6px', ...site('gap: 6px, used on .card'), use: 'Dense lists, tight stacks' },
-  'space-2': { value: '8px', ...site('gap: 8px'), use: 'Small gap' },
-  'space-3': { value: '12px', ...site('gap: 12px'), use: 'Between related items' },
-  'space-4': { value: '16px', ...site('gap: 16px'), use: 'Default gap' },
-  'space-5': { value: '24px', ...site('gap: 24px'), use: 'Between groups' },
-  'space-6': { value: '32px', ...site('gap: 32px, --gut'), use: 'Between sections of a layout' },
-  'space-7': { value: '48px', ...site('padding: 44 to 56px'), use: 'Large block spacing' },
-  'space-8': { value: '72px', ...site('padding: 72px 0'), use: 'Section spacing' },
-  'space-9': { value: '96px', ...site('padding: 72px 0 96px'), use: 'Large section spacing' },
-  'space-10': { value: '120px', ...site('padding: 120px 0'), use: 'Largest section spacing' },
+  // Spacing. The live site has no spacing tokens (handoff 2.6), so this whole scale is an extension.
+  // Every step is a gap or padding the site repeats, put on a named step.
+  'space-1': { value: '4px', ...spacing('gap: 4px'), use: 'Tightest' },
+  'space-snug': { value: '6px', ...spacing('gap: 6px, used on .card'), use: 'Dense lists, tight stacks' },
+  'space-2': { value: '8px', ...spacing('gap: 8px'), use: 'Small gap' },
+  'space-3': { value: '12px', ...spacing('gap: 12px'), use: 'Between related items' },
+  'space-4': { value: '16px', ...spacing('gap: 16px, --inset'), use: 'Default gap' },
+  'space-5': { value: '24px', ...spacing('gap: 24px'), use: 'Between groups' },
+  'space-6': { value: '32px', ...spacing('gap: 32px, --gut'), use: 'Between parts of a layout' },
+  'space-7': { value: '48px', ...spacing('padding: 44 to 56px'), use: 'Large block spacing' },
+  'space-8': { value: '72px', ...spacing('72px inside a section, handoff 2.6'), use: 'Spacing inside a section' },
+  'space-9': { value: '96px', ...spacing('padding: 72px 0 96px'), use: 'Large section spacing' },
+  'space-10': { value: '120px', ...spacing('padding: 120px 0, case study sections'), use: 'Largest block spacing' },
+  'space-11': { value: '160px', ...spacing('160px between sections on the home page, handoff 2.6'), use: 'Between sections of a page' },
 
   // Layout
   'layout-max': { value: '1376px', ...site('--max'), use: 'Maximum content width' },
@@ -163,6 +192,10 @@ export const fixed = {
   'layout-inset': { value: '16px', mobile: '8px', ...site('--inset'), use: 'Inset inside the gutter' },
   'control-h': { value: '44px', ...site('.pill-btn min-height'), use: 'Default control height and touch target' },
   'control-h-sm': { value: '36px', ...site('.bar-book height'), use: 'Compact controls, nav buttons' },
+  'control-pad-x': { value: '22px', ...site('.pill-btn padding: 0 22px'), use: 'Side padding of the default button' },
+  'tag-pad-x': { value: '10px', ...site('.pill padding: 2px 10px'), use: 'Side padding of a tag' },
+  'tag-pad-y': { value: '2px', ...site('.pill padding: 2px 10px'), use: 'Top and bottom padding of a tag' },
+  'glass-filter': { value: 'blur(18px) saturate(1.8)', ...site('.bar backdrop-filter'), use: 'Frosted top bar' },
   'row-h-dense': {
     value: '32px',
     ...ext('Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between.'),
@@ -172,17 +205,21 @@ export const fixed = {
   // Radius
   'radius-xs': { value: '4px', ...site('border-radius: 4px, focus outline'), use: 'Focus outline corners' },
   'radius-sm': { value: '12px', ...site('border-radius: 12px'), use: 'Thumbnails, small cards' },
-  'radius-md': { value: '16px', ...site('border-radius: 16px'), use: 'Cards, media' },
-  'radius-lg': { value: '24px', ...site('border-radius: 24px'), use: 'Large cards and panels' },
-  'radius-xl': { value: '32px', ...site('border-radius: 32px'), use: 'The closing panel' },
+  'radius-md': { value: '16px', ...site('border-radius: 16px'), use: 'Thumbnails, video boxes, menus' },
+  'radius-media': { value: '20px', ...site('hero media slot, handoff 2.7'), use: 'Large media slots' },
+  'radius-lg': { value: '24px', ...site('border-radius: 24px'), use: 'Cards' },
+  'radius-row': { value: '28px', ...site('work rows and How I work hover wash, handoff 2.7'), use: 'Wash panels and rows' },
+  'radius-xl': { value: '32px', ...site('border-radius: 32px'), use: 'The closing panel and merged work panel' },
   'radius-pill': { value: '999px', ...site('border-radius: 999px'), use: 'Buttons and tags' },
   'radius-round': { value: '50%', ...site('border-radius: 50%'), use: 'Avatars and dots' },
 
   // Motion
   'dur-press': { value: '0.12s', ...site('transition: transform .12s'), use: 'Press feedback' },
-  'dur-fast': { value: '0.2s', ...site('transition .2s'), use: 'Hover colour, small reveals' },
-  'dur-base': { value: '0.3s', ...site('transition .3s'), use: 'Default' },
-  'dur-slow': { value: '0.52s', ...site('rise .52s'), use: 'Scroll reveals' },
+  'dur-fast': { value: '0.2s', ...site('hover 200ms var(--out), handoff 2.10'), use: 'Hover. Pair with ease-out' },
+  'dur-base': { value: '0.3s', ...site('small changes 300ms'), use: 'Default' },
+  'dur-slow': { value: '0.52s', ...site('word rise 520ms'), use: 'Word rise' },
+  'dur-reveal': { value: '0.6s', ...site('reveal 600ms, 20px rise, handoff 2.10'), use: 'Scroll reveals' },
+  'dur-ping': { value: '2.4s', ...site('live dot ping 2.4s loop'), use: 'The live dot pulse' },
   'dur-spring': { value: '0.7s', ...site('transition .7s var(--spring)'), use: 'Expressive moments only' },
   'dur-colour': { value: '0.9s', ...site('color .9s var(--ease)'), use: 'Slow colour change, theme change' },
   'ease': { value: 'cubic-bezier(0.2, 0.8, 0.2, 1)', ...site('--ease'), use: 'Colour and background changes' },
@@ -215,6 +252,7 @@ export const roles = {
   'lead': { size: '18px', mobile: '18px', weight: 500, stretch: '100%', lh: 1.5, tracking: 'normal', ...site('.phead p, .pb'), use: 'Lead paragraph' },
   'body': { size: '18px', mobile: '16px', weight: 400, stretch: '100%', lh: 1.5, tracking: 'normal', ...site('body'), use: 'Body text' },
   'small': { size: '15px', mobile: '15px', weight: 500, stretch: '100%', lh: 1.45, tracking: 'normal', ...site('.nav, --kfs-small'), use: 'Nav, secondary text' },
+  'meta': { size: '14px', mobile: '14px', weight: 600, stretch: '100%', lh: 1.4, tracking: 'normal', ...site('meta lines, handoff 2.5'), use: 'Card meta line: Product · Type · Concept or Shipped · Year' },
   'label': { size: '13px', mobile: '13px', weight: 600, stretch: '100%', lh: 1.4, tracking: 'normal', ...site('.pill, --kfs-label'), use: 'Tags and labels' },
 };
 

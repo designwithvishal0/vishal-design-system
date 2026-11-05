@@ -6,7 +6,7 @@
  *
  * Themes: light is the default. Dark follows the system, and data-theme="light" or
  * data-theme="dark" on any element forces a theme for everything inside it.
- * Accent: put data-accent="violet" (amber, teal, coral, sky) on an element. One per screen.
+ * Accent: put data-accent="orange" (violet, amber, teal, sky) on an element. One per screen. Orange is the default.
  */
 
 :root,
@@ -35,33 +35,39 @@
   --elev-0: none; /* site: box-shadow: none */
   --elev-1: 0 0 0 1px var(--color-line); /* site: box-shadow: 0 0 0 1px var(--line) */
   --elev-2: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) var(--ring-strength), transparent); /* site: inset 0 0 0 1px color-mix(ink var(--ring)) */
-  --elev-3: 0 0 0 1px var(--color-line), 0 12px 32px #00000024; /* EXTENSION: Light value is on the site (0 0 0 1px line, 0 12px 32px). Dark value is proposed: a stronger border and a deeper shadow, since a soft shadow cannot show on near black. */
+  --elev-3: 0 0 0 1px var(--color-line), 0 16px 40px #00000024; /* EXTENSION: Dark value only. Light is on the site: the Accessibility menu shadow (0 16px 40px) with the hairline ring from the dock. The dark value is proposed: a stronger border and a deeper shadow, since a soft shadow cannot show on near black. */
   --elev-4: 0 0 0 1px var(--color-line), 0 24px 60px #0000002e; /* EXTENSION: Light shadow is on the site (0 24px 60px). The ring and the whole dark value are proposed. */
   --elev-panel: none; /* EXTENSION: The site closing panel has only a faint ring (#26262b) in dark. Vishal rule: no dark on dark, so the panel gets the strong border. */
-  --accent-violet-wash: #DCD3FF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
-  --accent-violet-muted: #4A4A55; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
-  --accent-violet-ink: #4B32C9; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
-  --accent-violet-text: #4A2FD0; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
+  --accent-orange-wash: #FFE2CC; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+  --accent-orange-muted: #4F4640; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+  --accent-orange-ink: #A34400; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+  --accent-orange-text: #F07322; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+  --accent-orange-text-aa: #A34E17; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
+  --accent-violet-wash: #DCD3FF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+  --accent-violet-muted: #4A4A55; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+  --accent-violet-ink: #4B32C9; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+  --accent-violet-text: #4A2FD0; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+  --accent-violet-text-aa: #4A2FD0; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
   --accent-amber-wash: #FFE7A8; /* site: :root --w-split, --m-split, --h-split, --t-split */
   --accent-amber-muted: #45454A; /* site: :root --w-split, --m-split, --h-split, --t-split */
   --accent-amber-ink: #8A6400; /* site: :root --w-split, --m-split, --h-split, --t-split */
   --accent-amber-text: #A35A00; /* site: :root --w-split, --m-split, --h-split, --t-split */
+  --accent-amber-text-aa: #9C5600; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
   --accent-teal-wash: #BDEBDF; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
   --accent-teal-muted: #40474A; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
   --accent-teal-ink: #0E6B5C; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
   --accent-teal-text: #006A80; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
-  --accent-coral-wash: #FFCDB8; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
-  --accent-coral-muted: #4D4441; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
-  --accent-coral-ink: #B53A16; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
-  --accent-coral-text: #C03A0A; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
+  --accent-teal-text-aa: #006A80; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
   --accent-sky-wash: #CFE6FF; /* site: :root --w-sky, --m-sky (wash and muted only) */
   --accent-sky-muted: #3F4A57; /* site: :root --w-sky, --m-sky (wash and muted only) */
   --accent-sky-ink: #174F8A; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
   --accent-sky-text: #1B5E9E; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
-  --accent-wash: var(--color-surface-2); /* EXTENSION: Neutral default so a screen with no accent still has valid values. */
-  --accent-muted: var(--color-muted); /* EXTENSION: Neutral default. */
-  --accent-ink: var(--color-ink); /* EXTENSION: Neutral default. */
-  --accent-text: var(--color-ink); /* EXTENSION: Neutral default. */
+  --accent-sky-text-aa: #1B5E9E; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
+  --accent-wash: var(--accent-orange-wash); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+  --accent-muted: var(--accent-orange-muted); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+  --accent-ink: var(--accent-orange-ink); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+  --accent-text: var(--accent-orange-text); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+  --accent-text-aa: var(--accent-orange-text-aa); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
   --state-hover-ghost: color-mix(in oklab, var(--color-ink) 7%, transparent); /* site: .pill-btn:hover */
   --state-hover-primary: color-mix(in oklab, var(--color-btn) 84%, var(--color-bg)); /* site: .pill-btn.primary:hover */
 }
@@ -92,33 +98,39 @@
     --elev-0: none; /* site: box-shadow: none */
     --elev-1: 0 0 0 1px var(--color-line); /* site: box-shadow: 0 0 0 1px var(--line) */
     --elev-2: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) var(--ring-strength), transparent); /* site: inset 0 0 0 1px color-mix(ink var(--ring)) */
-    --elev-3: 0 0 0 1px var(--color-line-strong), 0 12px 32px #00000066; /* EXTENSION: Light value is on the site (0 0 0 1px line, 0 12px 32px). Dark value is proposed: a stronger border and a deeper shadow, since a soft shadow cannot show on near black. */
+    --elev-3: 0 0 0 1px var(--color-line-strong), 0 16px 40px #00000066; /* EXTENSION: Dark value only. Light is on the site: the Accessibility menu shadow (0 16px 40px) with the hairline ring from the dock. The dark value is proposed: a stronger border and a deeper shadow, since a soft shadow cannot show on near black. */
     --elev-4: 0 0 0 1px var(--color-line-strong), 0 24px 60px #00000080; /* EXTENSION: Light shadow is on the site (0 24px 60px). The ring and the whole dark value are proposed. */
     --elev-panel: inset 0 0 0 1px var(--color-line-strong); /* EXTENSION: The site closing panel has only a faint ring (#26262b) in dark. Vishal rule: no dark on dark, so the panel gets the strong border. */
-    --accent-violet-wash: #241852; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
-    --accent-violet-muted: #BDB6DF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
-    --accent-violet-ink: #BBAAFF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
-    --accent-violet-text: #B4A6FF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
+    --accent-orange-wash: #1B1E2C; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+    --accent-orange-muted: #B8BCCB; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+    --accent-orange-ink: #FF9A57; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+    --accent-orange-text: #FF8A3D; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+    --accent-orange-text-aa: #FF8A3D; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
+    --accent-violet-wash: #241852; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+    --accent-violet-muted: #BDB6DF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+    --accent-violet-ink: #BBAAFF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+    --accent-violet-text: #B4A6FF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+    --accent-violet-text-aa: #B4A6FF; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
     --accent-amber-wash: #3B2A02; /* site: :root --w-split, --m-split, --h-split, --t-split */
     --accent-amber-muted: #D6C7A0; /* site: :root --w-split, --m-split, --h-split, --t-split */
     --accent-amber-ink: #FFD466; /* site: :root --w-split, --m-split, --h-split, --t-split */
     --accent-amber-text: #F2B640; /* site: :root --w-split, --m-split, --h-split, --t-split */
+    --accent-amber-text-aa: #F2B640; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
     --accent-teal-wash: #062E28; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
     --accent-teal-muted: #A5CFC5; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
     --accent-teal-ink: #7FE0CB; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
     --accent-teal-text: #5CC8F0; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
-    --accent-coral-wash: #43160B; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
-    --accent-coral-muted: #E0B7A9; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
-    --accent-coral-ink: #FF9C78; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
-    --accent-coral-text: #FF8A4C; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
+    --accent-teal-text-aa: #5CC8F0; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
     --accent-sky-wash: #0C2C4D; /* site: :root --w-sky, --m-sky (wash and muted only) */
     --accent-sky-muted: #AFC8E2; /* site: :root --w-sky, --m-sky (wash and muted only) */
     --accent-sky-ink: #A8D2FB; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
     --accent-sky-text: #8CC0F2; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
-    --accent-wash: var(--color-surface-2); /* EXTENSION: Neutral default so a screen with no accent still has valid values. */
-    --accent-muted: var(--color-muted); /* EXTENSION: Neutral default. */
-    --accent-ink: var(--color-ink); /* EXTENSION: Neutral default. */
-    --accent-text: var(--color-ink); /* EXTENSION: Neutral default. */
+    --accent-sky-text-aa: #8CC0F2; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
+    --accent-wash: var(--accent-orange-wash); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+    --accent-muted: var(--accent-orange-muted); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+    --accent-ink: var(--accent-orange-ink); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+    --accent-text: var(--accent-orange-text); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+    --accent-text-aa: var(--accent-orange-text-aa); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
     --state-hover-ghost: color-mix(in oklab, var(--color-ink) 7%, transparent); /* site: .pill-btn:hover */
     --state-hover-primary: color-mix(in oklab, var(--color-btn) 84%, var(--color-bg)); /* site: .pill-btn.primary:hover */
   }
@@ -149,33 +161,39 @@
   --elev-0: none; /* site: box-shadow: none */
   --elev-1: 0 0 0 1px var(--color-line); /* site: box-shadow: 0 0 0 1px var(--line) */
   --elev-2: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) var(--ring-strength), transparent); /* site: inset 0 0 0 1px color-mix(ink var(--ring)) */
-  --elev-3: 0 0 0 1px var(--color-line-strong), 0 12px 32px #00000066; /* EXTENSION: Light value is on the site (0 0 0 1px line, 0 12px 32px). Dark value is proposed: a stronger border and a deeper shadow, since a soft shadow cannot show on near black. */
+  --elev-3: 0 0 0 1px var(--color-line-strong), 0 16px 40px #00000066; /* EXTENSION: Dark value only. Light is on the site: the Accessibility menu shadow (0 16px 40px) with the hairline ring from the dock. The dark value is proposed: a stronger border and a deeper shadow, since a soft shadow cannot show on near black. */
   --elev-4: 0 0 0 1px var(--color-line-strong), 0 24px 60px #00000080; /* EXTENSION: Light shadow is on the site (0 24px 60px). The ring and the whole dark value are proposed. */
   --elev-panel: inset 0 0 0 1px var(--color-line-strong); /* EXTENSION: The site closing panel has only a faint ring (#26262b) in dark. Vishal rule: no dark on dark, so the panel gets the strong border. */
-  --accent-violet-wash: #241852; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
-  --accent-violet-muted: #BDB6DF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
-  --accent-violet-ink: #BBAAFF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
-  --accent-violet-text: #B4A6FF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo */
+  --accent-orange-wash: #1B1E2C; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+  --accent-orange-muted: #B8BCCB; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+  --accent-orange-ink: #FF9A57; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+  --accent-orange-text: #FF8A3D; /* site: .kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo) */
+  --accent-orange-text-aa: #FF8A3D; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
+  --accent-violet-wash: #241852; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+  --accent-violet-muted: #BDB6DF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+  --accent-violet-ink: #BBAAFF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+  --accent-violet-text: #B4A6FF; /* site: :root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page) */
+  --accent-violet-text-aa: #B4A6FF; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
   --accent-amber-wash: #3B2A02; /* site: :root --w-split, --m-split, --h-split, --t-split */
   --accent-amber-muted: #D6C7A0; /* site: :root --w-split, --m-split, --h-split, --t-split */
   --accent-amber-ink: #FFD466; /* site: :root --w-split, --m-split, --h-split, --t-split */
   --accent-amber-text: #F2B640; /* site: :root --w-split, --m-split, --h-split, --t-split */
+  --accent-amber-text-aa: #F2B640; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
   --accent-teal-wash: #062E28; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
   --accent-teal-muted: #A5CFC5; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
   --accent-teal-ink: #7FE0CB; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
   --accent-teal-text: #5CC8F0; /* site: :root --w-twelve, --m-twelve, --h-twelve, --t-twelve */
-  --accent-coral-wash: #43160B; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
-  --accent-coral-muted: #E0B7A9; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
-  --accent-coral-ink: #FF9C78; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
-  --accent-coral-text: #FF8A4C; /* site: :root --w-jarvis, --m-jarvis, --h-jarvis, --t-jarvis */
+  --accent-teal-text-aa: #5CC8F0; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
   --accent-sky-wash: #0C2C4D; /* site: :root --w-sky, --m-sky (wash and muted only) */
   --accent-sky-muted: #AFC8E2; /* site: :root --w-sky, --m-sky (wash and muted only) */
   --accent-sky-ink: #A8D2FB; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
   --accent-sky-text: #8CC0F2; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
-  --accent-wash: var(--color-surface-2); /* EXTENSION: Neutral default so a screen with no accent still has valid values. */
-  --accent-muted: var(--color-muted); /* EXTENSION: Neutral default. */
-  --accent-ink: var(--color-ink); /* EXTENSION: Neutral default. */
-  --accent-text: var(--color-ink); /* EXTENSION: Neutral default. */
+  --accent-sky-text-aa: #8CC0F2; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
+  --accent-wash: var(--accent-orange-wash); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+  --accent-muted: var(--accent-orange-muted); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+  --accent-ink: var(--accent-orange-ink); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+  --accent-text: var(--accent-orange-text); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+  --accent-text-aa: var(--accent-orange-text-aa); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
   --state-hover-ghost: color-mix(in oklab, var(--color-ink) 7%, transparent); /* site: .pill-btn:hover */
   --state-hover-primary: color-mix(in oklab, var(--color-btn) 84%, var(--color-bg)); /* site: .pill-btn.primary:hover */
 }
@@ -193,35 +211,44 @@
   --stretch-display: 82%; /* site: font-stretch on .sh */
   --stretch-heading: 85%; /* site: font-stretch on headings */
   --stretch-normal: 100%; /* site: body */
-  --space-1: 4px; /* site: gap: 4px */
-  --space-snug: 6px; /* site: gap: 6px, used on .card */
-  --space-2: 8px; /* site: gap: 8px */
-  --space-3: 12px; /* site: gap: 12px */
-  --space-4: 16px; /* site: gap: 16px */
-  --space-5: 24px; /* site: gap: 24px */
-  --space-6: 32px; /* site: gap: 32px, --gut */
-  --space-7: 48px; /* site: padding: 44 to 56px */
-  --space-8: 72px; /* site: padding: 72px 0 */
-  --space-9: 96px; /* site: padding: 72px 0 96px */
-  --space-10: 120px; /* site: padding: 120px 0 */
+  --space-1: 4px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --space-snug: 6px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --space-2: 8px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --space-3: 12px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --space-4: 16px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --space-5: 24px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --space-6: 32px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --space-7: 48px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --space-8: 72px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --space-9: 96px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --space-10: 120px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --space-11: 160px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
   --layout-max: 1376px; /* site: --max */
   --layout-gutter: 32px; /* site: --gut */
   --layout-bar: 56px; /* site: --bar */
   --layout-inset: 16px; /* site: --inset */
   --control-h: 44px; /* site: .pill-btn min-height */
   --control-h-sm: 36px; /* site: .bar-book height */
+  --control-pad-x: 22px; /* site: .pill-btn padding: 0 22px */
+  --tag-pad-x: 10px; /* site: .pill padding: 2px 10px */
+  --tag-pad-y: 2px; /* site: .pill padding: 2px 10px */
+  --glass-filter: blur(18px) saturate(1.8); /* site: .bar backdrop-filter */
   --row-h-dense: 32px; /* EXTENSION: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between. */
   --radius-xs: 4px; /* site: border-radius: 4px, focus outline */
   --radius-sm: 12px; /* site: border-radius: 12px */
   --radius-md: 16px; /* site: border-radius: 16px */
+  --radius-media: 20px; /* site: hero media slot, handoff 2.7 */
   --radius-lg: 24px; /* site: border-radius: 24px */
+  --radius-row: 28px; /* site: work rows and How I work hover wash, handoff 2.7 */
   --radius-xl: 32px; /* site: border-radius: 32px */
   --radius-pill: 999px; /* site: border-radius: 999px */
   --radius-round: 50%; /* site: border-radius: 50% */
   --dur-press: 0.12s; /* site: transition: transform .12s */
-  --dur-fast: 0.2s; /* site: transition .2s */
-  --dur-base: 0.3s; /* site: transition .3s */
-  --dur-slow: 0.52s; /* site: rise .52s */
+  --dur-fast: 0.2s; /* site: hover 200ms var(--out), handoff 2.10 */
+  --dur-base: 0.3s; /* site: small changes 300ms */
+  --dur-slow: 0.52s; /* site: word rise 520ms */
+  --dur-reveal: 0.6s; /* site: reveal 600ms, 20px rise, handoff 2.10 */
+  --dur-ping: 2.4s; /* site: live dot ping 2.4s loop */
   --dur-spring: 0.7s; /* site: transition .7s var(--spring) */
   --dur-colour: 0.9s; /* site: color .9s var(--ease) */
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1); /* site: --ease */
@@ -292,6 +319,11 @@
   --type-small-stretch: 100%;
   --type-small-lh: 1.45;
   --type-small-tracking: normal;
+  --type-meta-size: 14px; /* site: meta lines, handoff 2.5 */
+  --type-meta-weight: 600;
+  --type-meta-stretch: 100%;
+  --type-meta-lh: 1.4;
+  --type-meta-tracking: normal;
   --type-label-size: 13px; /* site: .pill, --kfs-label */
   --type-label-weight: 600;
   --type-label-stretch: 100%;
@@ -323,33 +355,38 @@
   }
 }
 
+[data-accent="orange"] {
+  --accent-wash: var(--accent-orange-wash);
+  --accent-muted: var(--accent-orange-muted);
+  --accent-ink: var(--accent-orange-ink);
+  --accent-text: var(--accent-orange-text);
+  --accent-text-aa: var(--accent-orange-text-aa);
+}
 [data-accent="violet"] {
   --accent-wash: var(--accent-violet-wash);
   --accent-muted: var(--accent-violet-muted);
   --accent-ink: var(--accent-violet-ink);
   --accent-text: var(--accent-violet-text);
+  --accent-text-aa: var(--accent-violet-text-aa);
 }
 [data-accent="amber"] {
   --accent-wash: var(--accent-amber-wash);
   --accent-muted: var(--accent-amber-muted);
   --accent-ink: var(--accent-amber-ink);
   --accent-text: var(--accent-amber-text);
+  --accent-text-aa: var(--accent-amber-text-aa);
 }
 [data-accent="teal"] {
   --accent-wash: var(--accent-teal-wash);
   --accent-muted: var(--accent-teal-muted);
   --accent-ink: var(--accent-teal-ink);
   --accent-text: var(--accent-teal-text);
-}
-[data-accent="coral"] {
-  --accent-wash: var(--accent-coral-wash);
-  --accent-muted: var(--accent-coral-muted);
-  --accent-ink: var(--accent-coral-ink);
-  --accent-text: var(--accent-coral-text);
+  --accent-text-aa: var(--accent-teal-text-aa);
 }
 [data-accent="sky"] {
   --accent-wash: var(--accent-sky-wash);
   --accent-muted: var(--accent-sky-muted);
   --accent-ink: var(--accent-sky-ink);
   --accent-text: var(--accent-sky-text);
+  --accent-text-aa: var(--accent-sky-text-aa);
 }
