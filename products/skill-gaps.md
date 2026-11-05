@@ -13,3 +13,8 @@ A running list kept while building the six layouts with SKILL.md as written, the
 7. **Mentions.** Nothing says how a mention of the reader looks. Built as weight 650 plus `--accent-text-aa`, so it never relies on colour alone.
 8. **Unread divider.** The recipe covers day dividers but not the "New" line above the first unread message.
 9. **Straight quotes in content.** The punctuation rule is clear, but easy to miss in sample data. The checklist could name "curly quotes in content" next to "no lorem ipsum".
+10. **Nav slots on phones.** Everything in `Nav` (links and actions) moves into the phone menu. A command trigger or search that must stay visible has nowhere to go, so Keyboard first adds a second trigger inside the page on phones.
+11. **Focus in a command bar.** The native dialog focuses its first button, the close button. A command bar needs focus in its field. The recipe in `extending.md` should say so, or `Modal` should take an initial focus.
+12. **Keyboard shortcut labels.** Nothing defines how a key looks. Built as `kbd`: the system mono at `label` size, a `line-strong` edge and `radius-code`.
+13. **One primary button per view.** Easy to break in a pane that already has a primary Send button. Threads first first shipped its Jump button as a second primary; it is now an outline button. The checklist could name it.
+14. **Group headings inside a panel.** Needs you groups its list under "Waiting on others" and "Everything else". The skill does not say whether the `eyebrow` role may serve as a group heading inside a panel; it was used that way.
