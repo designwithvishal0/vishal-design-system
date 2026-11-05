@@ -260,7 +260,7 @@ Why: people trust a screen that knows what matters. Break only for a pure refere
 
 ## 9. Hygiene checklist
 
-Run it in this order on every finished screen and mark each line pass or fail. Judge the rendered screen in a browser, not the code: a line passes only when it holds on screen. Biggest problems first: fixing details on a screen with the wrong idea is wasted work. Never skip a step; on a small screen some take seconds. A screen with any fail is not done.
+Run it in this order on every finished screen and mark each line pass or fail. Judge the rendered screen in a browser, not the code: a line passes only when it holds on screen. If you cannot see the rendered screen, mark every line that depends on it Not checked, never Pass, and say why. Biggest problems first: fixing details on a screen with the wrong idea is wasted work. Never skip a step; on a small screen some take seconds. A screen with any fail is not done.
 
 **1. The question**
 - [ ] Squinting, the first thing seen is the answer to the main viewer's question.
