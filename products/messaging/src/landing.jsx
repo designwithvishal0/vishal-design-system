@@ -1,6 +1,6 @@
 import './shared/boot.js';
 import { createRoot } from 'react-dom/client';
-import { Card, Button } from './shared/ds.js';
+import { Card, Button, Tag } from './shared/ds.js';
 import './landing.css';
 
 // The three directions, each with its one line idea, and links in both themes.
@@ -20,6 +20,7 @@ function Landing() {
           <li key={d.href}>
             <Card variant="surface">
               <Card.Meta>{`Direction ${i + 1}`}</Card.Meta>
+              {d.href === './needs-you/' && <Tag variant="accent">Vishal’s pick</Tag>}
               <Card.Title as="h2">{d.name}</Card.Title>
               <Card.Body>{d.idea}</Card.Body>
               <div className="landing__links">
