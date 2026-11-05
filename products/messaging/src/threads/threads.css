@@ -23,13 +23,13 @@
 .tf-tab[aria-selected='true'] { color: var(--color-ink); background-size: 100% var(--border-w), 100% var(--border-w); }
 
 .tf-open { display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; }
-.tf-open__head { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5) var(--space-6) var(--space-4); border-bottom: var(--border-w) solid var(--color-line); }
+.tf-open__head { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5) var(--space-6) var(--space-4) calc(var(--space-5) + var(--thread-text-edge)); border-bottom: var(--border-w) solid var(--color-line); }
 .tf-open__head h1, .tf-open__head p { margin: 0; }
 .tf-open__head .vd-type-title { text-wrap: balance; max-inline-size: var(--measure-max); }
 .tf-open__actions { display: flex; align-items: center; gap: var(--space-2); }
 .tf-back { display: none; align-self: flex-start; margin-inline-start: calc(var(--space-3) * -1); }
 .tf-open__scroll { min-height: 0; overflow: auto; padding: var(--space-4) var(--space-5); }
-.tf-open__composer { padding: var(--space-4) var(--space-5) var(--space-5); border-top: var(--border-w) solid var(--color-line); }
+.tf-open__composer { padding: var(--space-4) var(--space-5) var(--space-5) calc(var(--space-5) + var(--thread-text-edge)); border-top: var(--border-w) solid var(--color-line); }
 
 /* Tablet: the filter panel folds into the tabs. */
 @media (max-width: 1023px) {

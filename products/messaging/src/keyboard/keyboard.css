@@ -16,6 +16,7 @@ kbd { display: inline-flex; align-items: center; padding: 0 var(--space-snug); b
 .kb-rail { padding: var(--space-5) var(--space-3); }
 .kb-main { display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; }
 .kb-head { display: flex; flex-direction: column; gap: var(--space-2); padding-block: var(--space-6) var(--space-4); }
+.kb-head, .kb-composer .kb-measure { padding-inline-start: var(--thread-text-edge); }
 .kb-head p, .kb-head h1 { margin: 0; }
 .kb-scroll { min-height: 0; overflow: auto; padding-block: var(--space-2) var(--space-5); }
 .kb-measure { max-inline-size: calc(var(--measure-max) + var(--space-9)); }

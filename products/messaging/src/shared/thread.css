@@ -1,4 +1,7 @@
 /* EXTENSION: chat thread (skill: extending.md, example 1). Dense List rows, no bubbles. */
+/* Where the message text starts inside the thread: row padding, then the avatar, then the gap.
+   Pane headers and composers line up with this edge, not the avatars' (skill: align to the text). */
+:root { --thread-text-edge: calc(var(--space-3) + var(--space-6) + var(--space-2)); }
 .thread { display: flex; flex-direction: column; gap: var(--space-2); }
 .thread .vd-list__row { align-items: flex-start; padding-block: var(--space-1); }
 .thread .vd-list__main { display: grid; grid-template-columns: auto 1fr; align-items: baseline; column-gap: var(--space-2); }
