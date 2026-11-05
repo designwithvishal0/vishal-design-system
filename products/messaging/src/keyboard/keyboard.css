@@ -8,8 +8,6 @@
 @media (hover: hover) and (pointer: fine) { .kb-trigger:hover { background: var(--state-hover-ghost); } }
 .kb-trigger--phone { display: none; }
 
-/* Keys are shown, never assumed: a small outlined label in the system mono, the one font exception. */
-kbd { display: inline-flex; align-items: center; padding: 0 var(--space-snug); border: var(--border-w) solid var(--color-line-strong); border-radius: var(--radius-code); color: var(--color-muted); font-family: var(--font-mono); font-size: var(--type-label-size); line-height: var(--type-label-lh); white-space: nowrap; }
 .kb-keys { display: inline-flex; align-items: center; gap: var(--space-2); }
 .kb-keys b { color: var(--color-ink); font-size: var(--type-label-size); font-weight: var(--weight-ui); font-variant-numeric: tabular-nums; }
 

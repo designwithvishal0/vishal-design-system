@@ -81,6 +81,9 @@ a { color: inherit; }
 @media (hover: hover) and (pointer: fine) { .vd-ul-tab:hover { background-size: 100% var(--border-w); } }
 .vd-ul-tab:focus-visible, .vd-ul-tab[aria-current='page'], .vd-ul-tab[aria-selected='true'] { background-size: 100% var(--border-w); }
 
+/* A key, as shown beside a command: the system mono (the code exception), outlined, never assumed. */
+kbd { display: inline-flex; align-items: center; padding: 0 var(--space-snug); border: var(--border-w) solid var(--color-line-strong); border-radius: var(--radius-code); color: var(--color-muted); font-family: var(--font-mono); font-size: var(--type-label-size); line-height: var(--type-label-lh); white-space: nowrap; }
+
 /* Visually hidden, still read by screen readers. */
 .vd-sr { position: absolute; width: var(--border-w); height: var(--border-w); margin: calc(var(--border-w) * -1); overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
