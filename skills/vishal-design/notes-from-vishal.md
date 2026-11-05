@@ -458,6 +458,7 @@ Timing, from my tokens:
 
 Reduce motion: movement becomes a quick fade or an instant change, but the meaning stays. A sent message still shows sent.
 
-For messaging: switching channels swaps the thread quickly while the sidebar stays still, and a new message arrives from the bottom. For a reading profile: the challenge number
+For messaging: switching channels swaps the thread quickly while the sidebar stays still, and a new message arrives from the bottom. For a reading profile: the challenge number counts up to 34 of 50 once, and a rating fills when you tap it.
 
-*(This answer arrived cut off. Waiting for Vishal to finish it.)*
+Why: motion is how a screen explains change. Used with a job, it makes a product feel clear and alive. Used without one, it feels cheap and slows people down.
+When it may bend: a launch or hero moment can take longer and be more expressive, as long as it never blocks the user and passes the signature moment's remove test.
