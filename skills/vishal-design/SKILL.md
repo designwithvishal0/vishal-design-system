@@ -281,7 +281,7 @@ Run it in this order on every finished screen and mark each line pass or fail. J
 - [ ] With another product's logo swapped in, the screen no longer works.
 
 **3. Hierarchy**
-- [ ] One display moment at most; on a dense screen, one `stat-sm` at most.
+- [ ] Count the display moments on each rendered screen. One.
 - [ ] At most four text sizes in total below the display moment, headings included (count the sizes the components bring: [components.md](reference/components.md#text-sizes-each-component-brings)), and at most three weights below the display moment (400, 500 to 650, 700); nothing under 13px except avatar initials (10px at least, weight 600).
 - [ ] Weight 800 only at 56px and up; no interface text above 650.
 - [ ] No display number shows a meaningless zero; before there is a value, a quiet line says what will appear.
@@ -294,7 +294,9 @@ Run it in this order on every finished screen and mark each line pass or fail. J
 - [ ] Edges line up; icons and text are optically centred.
 
 **5. Colour and depth**
-- [ ] The page is neutral; one product colour at most, set with `data-accent`.
+- [ ] Count the accent washes on each rendered screen. One group carries the wash; everything else is neutral.
+- [ ] One product colour at most, set with `data-accent`.
+- [ ] The live dot appears only where something is available right now, never as decoration on a label.
 - [ ] Small accent text uses `text-aa`.
 - [ ] Shadows only on things that float; no hover lift.
 - [ ] One primary button per view. A composer's Send counts.
@@ -322,7 +324,7 @@ Run it in this order on every finished screen and mark each line pass or fail. J
 
 **8. Everywhere**
 - [ ] Light and dark both pass, with no dark on dark.
-- [ ] Every toggle button names the action it will take in the state the screen is in now: on a dark page, "Switch to light".
+- [ ] Read every toggle button aloud. Its label names what happens on click (Mute, Turn camera off), never the current state (Microphone on).
 - [ ] The full scroll works on a 390px phone with no sideways scroll.
 - [ ] Reduce motion on: nothing breaks, the meaning stays.
 
