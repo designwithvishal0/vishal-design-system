@@ -116,7 +116,7 @@ export function App() {
                     leading={<Avatar name={people[t.root.author].name} size="sm" />}
                     title={t.root.text}
                     meta={`#${t.channel} · ${who(t)}`}
-                    trailing={n ? <Tag variant="accent">{n} new</Tag> : <time className="tf-time">{t.replies.at(-1).day ?? t.replies.at(-1).time}</time>}
+                    trailing={n ? <Tag variant="solid">{n} new</Tag> : <time className="tf-time">{t.replies.at(-1).day ?? t.replies.at(-1).time}</time>}
                   />
                 );
               })}

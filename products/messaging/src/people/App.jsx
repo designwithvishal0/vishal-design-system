@@ -83,7 +83,7 @@ export function App() {
   const row = (p) => (
     <NavList.Item key={p.id} as="button" current={p.id === openId} unread={p.unread > 0 && !seen[p.id]} onClick={() => openPerson(p.id)}
       leading={<Avatar name={people[p.id].name} size="xs" status={people[p.id].live ? 'live' : undefined} />}
-      trailing={p.unread > 0 && !seen[p.id] ? <Tag variant="accent">{p.unread}</Tag> : <time className="pf-time">{p.last?.day ?? p.last?.time}</time>}>
+      trailing={p.unread > 0 && !seen[p.id] ? <Tag variant="solid">{p.unread}</Tag> : <time className="pf-time">{p.last?.day ?? p.last?.time}</time>}>
       <span className="pf-who">
         <span>{people[p.id].name}</span>
         {p.last && <span className="pf-last">{p.last.where === DM ? '' : `${p.last.where} · `}{p.last.text}</span>}
