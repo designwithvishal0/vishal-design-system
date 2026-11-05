@@ -67,3 +67,7 @@ It built in teal. The app builds, and the tokens check passes. It checked the sc
 - Offline.
 
 Upload now has a recipe; the empty and offline states were already in the checklist and it skipped them. Most of its guesses were missing recipes or missing tokens. Two were rules that disagreed with each other (6 and 14), and those are now settled in the rules themselves.
+
+## After review
+
+Vishal spotted one more: the empty claim form showed "₹0" in display type, which looks broken. The claim flow now shows a quiet line in its place until an amount is typed, and the skill has a new rule: a display number never shows a meaningless zero.

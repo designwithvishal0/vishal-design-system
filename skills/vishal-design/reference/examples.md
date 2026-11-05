@@ -146,6 +146,7 @@ One example per rule from a product that is neither a chat app nor a reading pro
 | 4. One display moment per screen | An onboarding screen's question in `display`; nothing else that size. |
 | 4. Four text sizes at most | A settings page: `label` for eyebrows, `small` for explanations, `body` for labels, `title` for the page. |
 | 4. Three weights at most; buttons and labels never above 650 | A form's field labels at 600, its inputs at 400, its heading at 700. |
+| 4. A display number never shows a meaningless zero | An empty claim form says "Your estimate appears here once you add the amount you paid" where "₹47,340" will go, never "₹0". |
 | 4. Display style only at 40px and up | A dashboard card title at 22px is full width 700, not narrow 760. |
 | 4. Code only in monospace | An API key on a developer settings page is in `--font-mono` on `surface-2`. |
 | 4. Eyebrow heads a group, never a name | "Billing" as an eyebrow over the billing rows; a company name "Acme Labs" is never uppercased. |
