@@ -20,7 +20,7 @@ Never invent a colour for decoration, a new font, a new shadow style or a radius
 
 1. Try an existing component.
 2. Combine existing components.
-3. If something new is needed, find its closest relative in the system and follow that relative's logic. A chat message follows the List row, not a speech bubble from another app.
+3. If something new is needed, find its closest relative in the system and follow that relative's logic. For example, a chat message follows the List row, not a speech bubble from another app, and a form step follows the Input and the eyebrow.
 4. Build it only from tokens. If a value is missing, take the nearest step of the scale.
 5. Mark it as an extension in a comment, with one line on why it was needed.
 6. Check it in both themes, in its states, and next to the existing components. If it looks foreign, it is not done.
@@ -29,7 +29,7 @@ If something cannot be built without breaking a rule that holds, do not quietly 
 
 ## App shells: screens that fill the window
 
-Messaging, inboxes and tools fill the window instead of scrolling as a page. Build every one the same way.
+Chat apps, inboxes, dashboards and admin tools fill the window instead of scrolling as a page. Build every one the same way.
 
 | Rule | Why | Break only when |
 | --- | --- | --- |
@@ -49,9 +49,9 @@ Messaging, inboxes and tools fill the window instead of scrolling as a page. Bui
 
 ## Worked examples
 
-These apply Vishal's rules to things the portfolio never had. Where an example sets a detail his answers do not cover, like grouping messages sent within five minutes, it follows the convention people already know, because conventions win over his look (trade off 4).
+These apply Vishal's rules to things the portfolio never had. Each names the product it comes from: the product is the example, and the rules carry over to any list, feed, form or flow. Where an example sets a detail his answers do not cover, like grouping messages sent within five minutes, it follows the convention people already know, because conventions win over his look (trade off 4).
 
-### 1. A dense chat thread
+### 1. A dense chat thread (example: messaging)
 
 Relative: the dense List row and Avatar. No bubbles.
 
@@ -82,7 +82,7 @@ Code anywhere, in a message, a settings page or a receipt, uses the system monos
 
 Rules: a mention of the reader is weight 650 in `--accent-text-aa`, so it never relies on colour alone. Consecutive messages from one person within five minutes drop the avatar and name and keep the 32px rhythm. A day divider ("Yesterday", "Today") in `label` text on a hairline appears where the day changes, so no message repeats its day. Above the first unread message, a "New" divider in `eyebrow` text and `--accent-text-aa` on a `line-strong` hairline. Long messages wrap; names truncate to one line. A message sending shows "Sending" in muted text; failed shows "Not sent. Retry" in `--color-error` with a Button `ghost` `sm`.
 
-### 2. A long list of books
+### 2. A long list (example: books)
 
 Relative: the dense List with Cover.
 
@@ -92,9 +92,9 @@ Relative: the dense List with Cover.
 </List>
 ```
 
-Rules: 32px rows, the author truncates before the title, ratings are tabular and right aligned. Above about 200 books, show the count and a filter (`Input` with `IconSearch`, `hideLabel`) at the top; the list itself never changes design with length. Sort labels are words people use: "Recently read", "Highest rated".
+Rules: 32px rows, the author truncates before the title, ratings are tabular and right aligned. Above about 200 items, show the count and a filter (`Input` with `IconSearch`, `hideLabel`) at the top; the list itself never changes design with length. Sort labels are words people use: "Recently read", "Highest rated".
 
-### 3. A yearly reading challenge
+### 3. Progress towards a goal (example: a yearly reading challenge)
 
 Relative: the `stat` and `stat-sm` roles, and the wash.
 
@@ -115,7 +115,7 @@ Relative: the `stat` and `stat-sm` roles, and the wash.
 
 Rules: the number is the one heavy moment on the screen. Use `stat-sm` on a dense screen, `stat` when the challenge leads the page. It may count up once with `--dur-reveal`; under Reduce motion it shows the final number. A progress fill uses `--accent-ink` because a bar is a meaningful graphic and needs 3 to 1 against its track. A chart follows the chart recipe below. One big number per screen.
 
-### 4. A star rating
+### 4. A star rating (example: book reviews)
 
 Relative: the icons and Tag.
 
@@ -225,16 +225,16 @@ Rules: onboarding is rare and sets the tone, so it may be big: one question or o
 
 ## Fixed recipes for missing components
 
-The system ships eight components. These eight more are not components yet, so every product builds them from one fixed recipe, the same way each time. Mark each as an extension in the hand back.
+The system ships eight components. These nine more are not components yet, so every product builds them from one fixed recipe, the same way each time. Mark each as an extension in the hand back.
 
 ### Tabs
 
 Relative: Nav links and the `.vd-ul-tab` underline. Only the selected tab is underlined; the others show no line until hovered. Never pills filled with the accent.
 
 ```jsx
-<div role="tablist" aria-label="Shelves" className="tabs">
-  <button role="tab" aria-selected="true" className="tab vd-ul-tab">Read <span className="count">34</span></button>
-  <button role="tab" aria-selected="false" className="tab vd-ul-tab">Want to read <span className="count">12</span></button>
+<div role="tablist" aria-label="Orders" className="tabs">
+  <button role="tab" aria-selected="true" className="tab vd-ul-tab">Open <span className="count">12</span></button>
+  <button role="tab" aria-selected="false" className="tab vd-ul-tab">Shipped <span className="count">34</span></button>
 </div>
 ```
 
@@ -329,7 +329,7 @@ Relative: the progress bar and the accent roles. Up to three series, from steps 
 
 | Series | Fill or line | Use |
 | --- | --- | --- |
-| One series | `--accent-wash` with a `line-strong` edge (Vishal's answer 5) | A single measure, like books per month |
+| One series | `--accent-wash` with a `line-strong` edge (Vishal's answer 5) | A single measure, like books per month or orders per day |
 | First of two or three | `--accent-ink` | The series that answers the main question |
 | Second | Bars: `--accent-wash` with a `line-strong` edge. Lines: a 1px solid `--color-ink` line | The comparison |
 | Third | `--color-muted`, dashed for lines | Context, like last year |

@@ -52,7 +52,7 @@ Build the layout around the moment that matters most and the question the user h
 | 1. Name whose screen it is and who else looks at it. Pick the main viewer from what the product is trying to achieve; serve the other one second. | Most screens are seen by more than one kind of person, like the owner of a profile and its visitors, or the employee filing a claim and the HR admin checking it, and they want different things. One layout cannot lead with both. | Never. A second viewer is served, never ignored. |
 | 2. Decide how often it is used and how much is at stake. Rare and high stakes gets one clear answer, big and first. Used fifty times a day gets speed: things stay in place, it is dense, the frequent action is always in reach. | The same screen design fails at the wrong frequency: a hero slows a tool, and a dense tool hides a rare answer. | Never. |
 | 3. Write the main question in the user's own words, then put its answer in the most prominent place. Prominence can come from position, weight or contrast, not only size. | The answer is what people came for. If they must hunt, the screen has failed before any detail matters. | A pure reference screen, like settings, can stay even (section 8). |
-| 4. List the jobs people repeat here, like writing a message, and keep them within reach. | Repeated jobs are not the main question but are done most often. | Never. |
+| 4. List the jobs people repeat here, like writing a message, adding an expense or approving a request, and keep them within reach. | Repeated jobs are not the main question but are done most often. | Never. |
 | 5. Order everything else by what people need next, not by what the product wants to show. Later things move lower. Nothing the brief requires is removed: the question decides order and weight, never whether it is there. | People read top to bottom. Dropping a required part breaks the brief. | Never. |
 | 6. Check the main question in its states: nothing new, a little, a lot. | A layout that only works with three items is not a layout. | Never. |
 
@@ -81,7 +81,7 @@ Write the three like this before any code:
    Viewer: ... Question: "..." Organised by: ... Best for: ... Gives up: ... Signature moment: ...
 ```
 
-Vishal's own examples. Messaging: **Threads first** (conversations are the unit, channels sit behind them), **Needs you** (one inbox of only what needs a reply or a decision, everything else waits), **Keyboard first** (a command bar drives everything, for people who live in it all day). Reading profile: **My year** (the challenge and progress lead, for the owner), **My taste** (shelves, ratings and reviews lead, for a visitor deciding whether to follow), **My reading story** (the year as a timeline of what was read and when). A sales dashboard, for contrast: **Exceptions first** (only what went wrong today), **The week as a story** (a timeline of the week's orders), **One number per team** (each team's one figure, for a founder at a glance).
+Vishal's own examples, from the two products the system was tested on. Messaging: **Threads first** (conversations are the unit, channels sit behind them), **Needs you** (one inbox of only what needs a reply or a decision, everything else waits), **Keyboard first** (a command bar drives everything, for people who live in it all day). Reading profile: **My year** (the challenge and progress lead, for the owner), **My taste** (shelves, ratings and reviews lead, for a visitor deciding whether to follow), **My reading story** (the year as a timeline of what was read and when). A sales dashboard, for contrast: **Exceptions first** (only what went wrong today), **The week as a story** (a timeline of the week's orders), **One number per team** (each team's one figure, for a founder at a glance).
 
 ## 3. Clean: what every screen gets
 
@@ -123,7 +123,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | Headings never leave one word alone on the last line: use `text-wrap: balance`. | A lone word makes a heading look unfinished. | Never. |
 | Real punctuation: curly quotes, a real ellipsis, a non breaking space between a number and its unit, ranges written with "to". | These are the details that read as finished. | Never. |
 | Text aligns left. Centre only very short lines. | Ragged centred paragraphs are hard to read. | Never for paragraphs. |
-| Names and titles in lists truncate to one line with an ellipsis; message previews to two lines. The answer to the main question never truncates. | Truncation keeps rows even; the answer must always be whole. | Never on the main answer. |
+| Names and titles in lists truncate to one line with an ellipsis; previews, like a message, an email or a description, to two lines. The answer to the main question never truncates. | Truncation keeps rows even; the answer must always be whole. | Never on the main answer. |
 
 ### Space and alignment
 
@@ -174,7 +174,7 @@ A signature moment is where the screen's main idea stops being read and starts b
 
 **The remove test**: remove it. If the screen loses meaning, it was a signature moment. If it only loses decoration, it was not.
 
-Messaging: the last thing needing you is cleared and the screen settles into "You're all caught up." Reading profile: "34 of 50" counts up once to where you are. Checkout: "Paid" with the order number, at the end of the flow. Onboarding: the user's own first week, built from their answers. A settings page or an error: none.
+Examples. Messaging: the last thing needing you is cleared and the screen settles into "You're all caught up." Reading profile: "34 of 50" counts up once to where you are. Checkout: "Paid" with the order number, at the end of the flow. Onboarding: the user's own first week, built from their answers. A settings page or an error: none.
 
 ### Motion with meaning
 
@@ -281,7 +281,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 - [ ] Errors say what happened and what to do, sit next to what failed, keep what was typed, offer a retry.
 - [ ] Partial failure shows what worked and marks only what failed.
 - [ ] Zero, one, a few, a hundred and ten thousand items all hold; plurals read right ("1 item"); big numbers shorten ("1.2k", "99+").
-- [ ] Long names truncate, long messages wrap, nothing breaks the layout.
+- [ ] Long names truncate, long text wraps, nothing breaks the layout.
 - [ ] Offline shows the last saved content with its time ("Updated 9:41"); sent items show sending, sent or failed.
 - [ ] Every action confirms quietly; disabled things say why.
 - [ ] Every count agrees with every other count of the same thing, before and after reading.
