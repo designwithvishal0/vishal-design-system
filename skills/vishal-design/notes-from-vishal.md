@@ -128,3 +128,39 @@ Reading profile
 1. My year: the reading challenge and progress lead, for the owner.
 2. My taste: shelves, ratings and reviews lead, for a visitor deciding whether to follow.
 3. My reading story: the year told as a timeline of what was read and when.
+
+**5. When something does not exist in your system yet, what do you hold on to and what are you willing to bend?**
+
+When something does not exist yet, I keep the parts that make it look like mine fixed, and let the structure bend around them.
+
+What I hold on to, always:
+1. One family, Bricolage. Heavy and narrow only at 40px and above, light for anything people read line by line.
+2. A neutral page where colour comes only from the product, one product colour per screen.
+3. Edges from hairlines. A shadow only means something floats.
+4. Radius from the set, pills at full round, and no hover lift.
+5. Tokens only, the same motion timing and easing, contrast that passes, and both themes.
+6. The standard at the top of the skill.
+
+What I am willing to bend:
+1. Density: row height, gaps inside a component, how much fits on one screen.
+2. Layout: columns, panels, what sits where.
+3. How components combine into something new.
+4. Sizes, as long as they come from the scale.
+5. The size of the one heavy moment on a dense screen.
+
+How I build something new, in order:
+1. Try an existing component first.
+2. If that does not work, combine existing components.
+3. If something new is needed, find its closest relative in the system and follow that relative's logic. A chat message follows the List row, not a speech bubble from another app.
+4. Build it only from tokens. If a value is missing, take it from the existing scale, never pick a random one.
+5. Mark it as an extension, with one line on why it was needed.
+6. Check it in both themes, in its states, and next to the existing components. If it stands out as foreign, it is not done.
+
+What I never invent: a new colour, a new font, a new shadow style, or a radius outside the set.
+
+If something truly cannot be built without breaking one of the things I hold on to, do not quietly break it. Write it down as a place where the system breaks. That is honest, and it tells me where the system needs to grow next.
+
+Examples:
+1. A dense chat thread: built from the dense List and Avatar, separated by space and hairlines, timestamps in tabular numbers, 32px rows. No bubbles.
+2. A reading stats chart: bars filled with the product's accent wash, labels in muted text, one big number using the stat style, used once on the screen.
+3. A star rating: drawn as filled icons in the product colour, sized from the type scale, passing contrast.
