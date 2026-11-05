@@ -17,6 +17,8 @@
 .pf-open { display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; }
 .pf-open__head { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-6) var(--space-6) 0 calc(var(--space-5) + var(--thread-text-edge)); border-bottom: var(--border-w) solid var(--color-line); }
 .pf-open__head h1, .pf-open__head p { margin: 0; }
+/* Without filter tabs, the count line keeps its own space above the divider. */
+.pf-open__head:not(:has(.pf-tabs)) { padding-bottom: var(--space-4); }
 .pf-role { color: var(--color-muted); font-size: var(--type-meta-size); font-weight: var(--type-meta-weight); }
 .pf-back { display: none; align-self: flex-start; margin-inline-start: calc(var(--space-3) * -1); }
 .pf-tabs { display: flex; gap: var(--space-5); margin-top: var(--space-2); overflow-x: auto; }
