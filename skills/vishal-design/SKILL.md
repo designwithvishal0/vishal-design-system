@@ -266,6 +266,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 
 **6. Content**
 - [ ] Real names, times and titles; no lorem ipsum; no invented numbers.
+- [ ] Curly quotes and apostrophes everywhere, sample data included.
 - [ ] No hyphens or em dashes in prose; sentence case; the same words for the same thing.
 
 **7. States**
