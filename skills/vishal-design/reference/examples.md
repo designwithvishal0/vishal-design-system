@@ -114,6 +114,14 @@ Why: settings are scanned, not read; they are the one screen that may stay even 
 
 Why: onboarding sets the tone; asking for what you will not use spends trust before the product has earned any.
 
+## 14. Real images only of real things
+
+| Bad | Good |
+| --- | --- |
+| A doctor booking screen gives each invented doctor a smiling stock photo, so the sample looks like real people who do not exist. | Each invented doctor gets an Avatar with initials, “AR” for Dr Asha Rao. The clinic’s real logo and a book’s own cover stay real images, because they are real things. |
+
+Why: a stock face on an invented person is a small lie, and people notice it. Initials say “sample” honestly and still tell people apart.
+
 ## Every rule, outside messaging and reading
 
 One example per rule from a product that is neither a chat app nor a reading profile. Section numbers are SKILL.md's.
