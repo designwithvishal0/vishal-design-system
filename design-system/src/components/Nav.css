@@ -12,6 +12,10 @@
 .vd-nav { --nav-gutter: var(--layout-gutter); }
 /* Inside a panel that already has its own padding, the bar drops its gutter so edges still line up. */
 .vd-nav--flush { --nav-gutter: 0%; }
+/* App shells whose panels span the window: no cap, and the panels' own 24px padding as the gutter,
+   so the name lines up with the first panel's text edge at every width. */
+.vd-nav--wide { --nav-gutter: var(--space-5); }
+.vd-nav--wide .vd-nav__in { width: calc(100% - var(--nav-gutter) * 2); }
 .vd-nav--sticky { position: sticky; top: 0; z-index: var(--z-bar); }
 .vd-nav--bordered { border-bottom-color: var(--color-line); }
 

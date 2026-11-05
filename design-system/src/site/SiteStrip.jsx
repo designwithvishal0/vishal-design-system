@@ -22,8 +22,10 @@ export function SiteStrip({ name, theme: forced, variant }) {
   const href = theme === 'light' || theme === 'dark' ? `/?theme=${theme}` : '/';
   return (
     <nav className={variant ? `site-strip site-strip--${variant}` : 'site-strip'} data-theme={forced} aria-label="Hand in">
-      <a className="site-strip__back" href={href}><IconBack /> All layouts</a>
-      <span className="site-strip__name">{name}</span>
+      <div className="site-strip__in">
+        <a className="site-strip__back" href={href}><IconBack /> All layouts</a>
+        <span className="site-strip__name">{name}</span>
+      </div>
     </nav>
   );
 }

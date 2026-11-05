@@ -12,16 +12,18 @@ import { IconMenu, IconClose } from './icons.jsx';
  *                 light, the live home page follows the theme, so both are supported.
  *   bordered      the hairline under the bar, which the site shows once the page has scrolled
  *   flush         drop the side gutter when the bar sits inside a panel that has its own padding
+ *   wide          full width, for app shells whose panels span the window: no 1376px cap, and a 24px
+ *                 gutter so the name lines up with the panels' text edge (their --space-5 padding)
  *   persistent    something that stays in the bar on phones too, like a search button or the avatar.
  *                 Everything in actions moves into the phone menu.
  * Put the page's sections in .vd-container so they share the bar's frame and the name lines up.
  */
-export function Nav({ brand, brandHref = '#', children, actions, persistent, tone, bordered = false, sticky = true, flush = false, label = 'Sections', className }) {
+export function Nav({ brand, brandHref = '#', children, actions, persistent, tone, bordered = false, sticky = true, flush = false, wide = false, label = 'Sections', className }) {
   const [open, setOpen] = useState(false);
   const menuId = useId();
   const close = (e) => { if (e.target.closest('a')) setOpen(false); };
   return (
-    <header className={cx('vd-nav', sticky && 'vd-nav--sticky', bordered && 'vd-nav--bordered', flush && 'vd-nav--flush', open && 'vd-nav--open', className)} data-theme={tone === 'light' ? 'light' : undefined}>
+    <header className={cx('vd-nav', sticky && 'vd-nav--sticky', bordered && 'vd-nav--bordered', flush && 'vd-nav--flush', wide && 'vd-nav--wide', open && 'vd-nav--open', className)} data-theme={tone === 'light' ? 'light' : undefined}>
       <div className="vd-nav__in">
         <a className="vd-nav__brand" href={brandHref}>{brand}</a>
         <nav className="vd-nav__links" aria-label={label} onClick={close}>{children}</nav>

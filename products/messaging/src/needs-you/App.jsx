@@ -66,7 +66,7 @@ export function App() {
 
   return (
     <div className="app" data-accent={accentOr('teal')}>
-      <Nav brand="Kite" sticky={false} bordered label="Views"
+      <Nav brand="Kite" sticky={false} wide bordered label="Views"
         actions={<>
           <Input label="Search Kite" hideLabel placeholder="Search" leading={<IconSearch />} className="ny-search" />
           <Avatar name={people[me].name} size="sm" status="live" />

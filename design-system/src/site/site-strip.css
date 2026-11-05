@@ -1,10 +1,16 @@
 /* Site chrome, not the product: the page background, a hairline under it, label type, no accent and no shadow.
    --site-strip is its height, so app shells that fill the screen can use the height left below it. */
 :root { --site-strip: calc(var(--control-h-sm) + var(--border-w)); }
-.site-strip { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); block-size: var(--site-strip); padding-inline: var(--layout-gutter); background: var(--color-bg); border-bottom: var(--border-w) solid var(--color-line); color: var(--color-ink); font-size: var(--type-label-size); font-weight: var(--type-label-weight); line-height: var(--type-label-lh); }
+.site-strip { block-size: var(--site-strip); background: var(--color-bg); border-bottom: var(--border-w) solid var(--color-line); color: var(--color-ink); font-size: var(--type-label-size); font-weight: var(--type-label-weight); line-height: var(--type-label-lh); }
 .site-strip__back { display: inline-flex; align-items: center; gap: var(--space-2); min-block-size: var(--control-h-sm); color: inherit; text-decoration: none; }
 .site-strip__back .vd-icon { inline-size: var(--icon-sm); block-size: var(--icon-sm); }
 @media (hover: hover) and (pointer: fine) { .site-strip__back:hover { text-decoration: underline; text-underline-offset: var(--focus-offset); } }
 .site-strip__name { overflow: hidden; color: var(--color-muted); text-overflow: ellipsis; white-space: nowrap; }
-/* The components page's toolbar keeps 32px at every width, so its strip does too. */
-.site-strip--toolbar { padding-inline: var(--space-6); }
+
+/* The same frame as the page's Nav at every width: the same cap, centring and gutter as .vd-nav__in,
+   so the arrow lines up with the brand and the name with the nav's right edge. */
+.site-strip__in { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); width: min(var(--layout-max), 100% - var(--layout-gutter) * 2); height: 100%; margin-inline: auto; }
+/* App shells use the wide Nav: full width with the panels' 24px gutter, so the strip does too. */
+body:has(.vd-nav--wide) .site-strip__in { width: calc(100% - var(--space-5) * 2); }
+/* The components page's toolbar is full width with 32px at every width, so its strip is too. */
+.site-strip--toolbar .site-strip__in { width: calc(100% - var(--space-6) * 2); }

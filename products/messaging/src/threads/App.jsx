@@ -63,7 +63,7 @@ export function App() {
     <div className="app" data-accent={accentOr('teal')}>
       <Nav
         brand="Kite"
-        sticky={false}
+        sticky={false} wide
         bordered
         label="Views"
         actions={<>

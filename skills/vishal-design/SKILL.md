@@ -166,7 +166,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | Rows repeat: 48px comfortable (`--row-h`), 32px dense (`--row-h-dense`). | Dense screens keep rhythm through repetition. | Two line rows grow to their content. |
 | Content is capped at 1376px with a 32px gutter (16px on phones); panels sit 16px in from the screen edge (8px on phones). | The site's frame, and lines stay readable on wide screens. | Never. |
 | Optical over measured: icons centre on their text, not their box; arrows and play triangles shift slightly toward their point; round things get a little more size than square ones; text inside a pill is nudged a pixel if descenders make it look low. | What looks right beats what measures right. | Never. |
-| Everything aligns to the text's left edge, not the icon's. Touch targets are 44px with at least 8px between them. | Lines of text are what the eye follows; taps must never hit the wrong thing. | Never. |
+| Everything aligns to the text's left edge, not the icon's. Touch targets are 44px with at least 8px between them. The Nav's brand lines up with the content below it: in a scrolling page, the capped `.vd-container`; in an app shell whose panels span the window, the `wide` Nav at the panels' text edge. Measure alignment at 1440px and at 1920px. A capped container lines up by accident at one width only. | Lines of text are what the eye follows; taps must never hit the wrong thing. | Never. |
 
 ### Colour and depth
 
