@@ -140,6 +140,7 @@ One example per rule from a product that is neither a chat app nor a reading pro
 | 3. A command bar is a field | An admin console's Cmd K opens with the cursor in the field and no close button. |
 | 3. Real content only | A dashboard sample shows "Asha's Kitchen, Pune, ₹1,240", never "Customer 1, $0.00". |
 | 3. Short, concrete copy | A payment button says "Pay ₹1,840", never "Proceed to payment". |
+| 3. No hyphens in prose, real characters in codes | A booking confirmation reads "Your consultation is booked" with no dashes in the sentence, and the reference stays "DR-20931-K" exactly as the system issued it. |
 | 3. Counts agree | An inbox badge, a tab count and a "4 unpaid invoices" heading all say 4, and all drop when one is paid. |
 | 3. Opening clears its count | Opening a notification marks it read and the bell's badge drops at once. |
 | 3. Both themes designed | A trading chart's grid lines use `--color-line` in both themes, never a fixed grey. |

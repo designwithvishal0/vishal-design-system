@@ -107,7 +107,7 @@ These make a screen look like Vishal's. Following them gives a clean screen. Sec
 | Navigation marks only the active item: the current Nav link or tab is underlined, the others show no line until hovered. | A line under every tab marks nothing. | Never. |
 | A command bar is a field near the top of the screen with results below: no heading, no close button, focus in the field, Escape closes it. | It exists for speed; a dialog's chrome slows it and moves focus to the close button. | Never. |
 | Real content only: real names, times like "9:41" and "Mon", real titles, prices and places. No lorem ipsum, no invented numbers or results. | Fake content hides layout problems and breaks trust. | A new product with no data yet: write sample records that could be real (real hospitals, plausible amounts), work every total out from them, never type a result, and label the screen once, quietly, as a concept with sample data. |
-| Copy is short and concrete. No hyphens or em dashes in prose, no filler words, sentence case, "Send" is always "Send". | Vishal's voice is plain and specific. | Never. |
+| Copy is short and concrete. No hyphens or em dashes in prose, no filler words, sentence case, "Send" is always "Send". The hyphen rule covers prose only, the sentences people read. Codes and data keep their real characters, hyphens included: booking references ("KT-48213"), IDs, phone numbers ("+91 80-4567-8900"), file names ("discharge-summary.pdf"), dates in data ("2026-11-06") and code. | Vishal's voice is plain and specific. A code with its hyphen removed is a different code, and people copy it, read it out or match it against a receipt. | Never in prose. Never in codes and data either: they always keep their characters. |
 | Opening something clears its unread count at once: the badge, the bold and the list tag drop the moment it is opened, not when the person leaves. A "New" line may stay inside it so they can still find where the unread part began. | People open things to read them; a count that stays after opening says the product did not notice. | Never. |
 | Counts agree across the whole screen: a headline, a sidebar badge and a list tag that count the same thing show the same number, and all of them drop the moment it is read. Work every count out from the data, never type one. | A count that disagrees with another tells people the screen cannot be trusted. | Never. |
 | Both themes are designed, not inverted, and pass every rule. | Vishal's site runs in both, and a colour that passes in light can fail in dark. | Never. |
@@ -289,7 +289,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 - [ ] Real names, times and titles; no lorem ipsum; no invented numbers.
 - [ ] Real images wherever a source exists; a placeholder only where an image failed to load.
 - [ ] Curly quotes and apostrophes everywhere, sample data included.
-- [ ] No hyphens or em dashes in prose; sentence case; the same words for the same thing.
+- [ ] No hyphens or em dashes in prose; codes, IDs, phone numbers, file names, dates in data and code keep their real characters, hyphens included; sentence case; the same words for the same thing.
 
 **7. States**
 - [ ] Empty: first use, no results and all cleared are each designed with one next step.
