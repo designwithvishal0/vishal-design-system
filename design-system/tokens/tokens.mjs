@@ -186,7 +186,7 @@ Object.assign(themed, {
 export const fixed = {
   // Type families and weights
   'font-sans': { value: '"Bricolage Grotesque Variable", system-ui, sans-serif', ...site('--sans'), use: 'The only family, except code' },
-  'font-mono': { value: 'ui-monospace, "SF Mono", Menlo, Consolas, monospace', ...ext('Code only. A functional exception: code in a messaging app needs monospace, and conventions win (Vishal, 5 Nov 2026). The system font, so nothing new is loaded.'), use: 'Code in messages and docs, nothing else' },
+  'font-mono': { value: 'ui-monospace, "SF Mono", Menlo, Consolas, monospace', ...ext('Code only, in any product. A functional exception: people expect code in monospace, and conventions win (Vishal, 5 Nov 2026). The system font, so nothing new is loaded.'), use: 'Code in messages and docs, nothing else' },
   'weight-regular': { value: 400, ...site('body'), use: 'Body text' },
   'weight-medium': { value: 500, ...site('--kfw-medium'), use: 'Nav, lead text' },
   'weight-semi': { value: 600, ...site('--kfw-semi'), use: 'Tags' },
@@ -254,7 +254,7 @@ export const fixed = {
   'icon-lg': { value: '24px', ...ext('Largest icon snap size (Vishal, 5 Nov 2026).'), use: 'Icon next to headings' },
   'row-h-dense': {
     value: '32px',
-    ...ext('Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between.'),
+    ...ext('Long lists of any kind, like messages, transactions or books, need a row tighter than the 44px control. 32px with space-snug between.'),
     use: 'Dense list rows',
   },
 

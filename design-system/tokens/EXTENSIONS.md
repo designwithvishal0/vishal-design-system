@@ -11,7 +11,7 @@ Every token that is not read from the live portfolio. Each one fills a gap the p
 - `elev-3`: Dark value only. Light is on the site: the Accessibility menu shadow (0 16px 40px) with the hairline ring from the dock. The dark value is proposed: a stronger border and a deeper shadow, since a soft shadow cannot show on near black.
 - `elev-4`: Light shadow is on the site (0 24px 60px). The ring and the whole dark value are proposed.
 - `elev-panel`: The site closing panel has only a faint ring (#26262b) in dark. Vishal rule: no dark on dark, so the panel gets the strong border.
-- `font-mono`: Code only. A functional exception: code in a messaging app needs monospace, and conventions win (Vishal, 5 Nov 2026). The system font, so nothing new is loaded.
+- `font-mono`: Code only, in any product. A functional exception: people expect code in monospace, and conventions win (Vishal, 5 Nov 2026). The system font, so nothing new is loaded.
 - `space-1, space-snug, space-2, space-3, space-4, space-5, space-6, space-7, space-8, space-9, space-10, space-11`: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats.
 - `z-popover`: The site has one popover and no scale. Menus and popovers sit above the bar.
 - `z-overlay`: Modals and sheets sit above everything.
@@ -23,7 +23,7 @@ Every token that is not read from the live portfolio. Each one fills a gap the p
 - `icon-md`: Icon snap size for body text (Vishal, 5 Nov 2026).
 - `icon-stroke`: Icon line width at every size. Outline icons with rounded ends, to match the soft shapes of Bricolage (Vishal, 5 Nov 2026).
 - `icon-lg`: Largest icon snap size (Vishal, 5 Nov 2026).
-- `row-h-dense`: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between.
+- `row-h-dense`: Long lists of any kind, like messages, transactions or books, need a row tighter than the 44px control. 32px with space-snug between.
 - `avatar-initials-min`: Smallest size for avatar initials. Initials are a mark, not reading text, so they may go below the 13px floor, never below 10px (Vishal, 5 Nov 2026).
 - `cover-sm`: Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 16 by 24, which keeps dense rows at 32px (Vishal, 5 Nov 2026).
 - `radius-cover`: Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026).

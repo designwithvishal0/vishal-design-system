@@ -207,7 +207,7 @@
 
 :root {
   --font-sans: "Bricolage Grotesque Variable", system-ui, sans-serif; /* site: --sans */
-  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace; /* EXTENSION: Code only. A functional exception: code in a messaging app needs monospace, and conventions win (Vishal, 5 Nov 2026). The system font, so nothing new is loaded. */
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace; /* EXTENSION: Code only, in any product. A functional exception: people expect code in monospace, and conventions win (Vishal, 5 Nov 2026). The system font, so nothing new is loaded. */
   --weight-regular: 400; /* site: body */
   --weight-medium: 500; /* site: --kfw-medium */
   --weight-semi: 600; /* site: --kfw-semi */
@@ -262,7 +262,7 @@
   --icon-md: 20px; /* EXTENSION: Icon snap size for body text (Vishal, 5 Nov 2026). */
   --icon-stroke: 1.5px; /* EXTENSION: Icon line width at every size. Outline icons with rounded ends, to match the soft shapes of Bricolage (Vishal, 5 Nov 2026). */
   --icon-lg: 24px; /* EXTENSION: Largest icon snap size (Vishal, 5 Nov 2026). */
-  --row-h-dense: 32px; /* EXTENSION: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between. */
+  --row-h-dense: 32px; /* EXTENSION: Long lists of any kind, like messages, transactions or books, need a row tighter than the 44px control. 32px with space-snug between. */
   --avatar-initials-min: 10px; /* EXTENSION: Smallest size for avatar initials. Initials are a mark, not reading text, so they may go below the 13px floor, never below 10px (Vishal, 5 Nov 2026). */
   --cover-sm: 16px; /* EXTENSION: Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 16 by 24, which keeps dense rows at 32px (Vishal, 5 Nov 2026). */
   --radius-xs: 4px; /* site: border-radius: 4px, focus outline */
