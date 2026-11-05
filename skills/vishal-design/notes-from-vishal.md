@@ -337,3 +337,29 @@ When it may bend: none. Every state is designed, even when it is simple.
 a. "Medium covers stay plain, no initials. Initials mean a person in my system, because avatars use them. In lists the title already sits next to the cover. Only large covers show the title."
 b. "Large cover at 96 by 144 is approved."
 c. "Dense rows stay 32px. Make the small cover 16 by 24, still 2 by 3."
+
+**11. Consistency and accessibility: what rules do you never break?**
+
+These rules never break.
+
+Consistency:
+1. Tokens only. No value is typed by hand.
+2. The same component does the same job everywhere, with the same radius, the same icon and the same words. "Send" is always "Send".
+3. The same action sits in the same place on every screen.
+
+Accessibility:
+1. Text passes 4.5 to 1. Large text, icons and input borders pass 3 to 1.
+2. Colour never carries meaning alone.
+3. Everything works with a keyboard, in a logical order. Focus is always visible: a 2px ring with a 3px offset.
+4. Dialogs and sheets keep focus inside, close on Escape, and return focus to what opened them.
+5. Touch targets are at least 44px, with at least 8px between them.
+6. Hover effects only on devices with a mouse, so touch never gets stuck in a hover state.
+7. Inputs have visible labels. A placeholder is never the label.
+8. Icon only buttons and images have text for screen readers.
+9. Headings follow a real order, so the page makes sense when read aloud.
+10. Text can grow to 200% and the layout still holds. Zoom is never blocked.
+11. Reduce motion is respected everywhere, and nothing flashes more than three times a second.
+12. Both themes pass every rule above.
+
+Why: consistency is what makes a product feel trustworthy, and accessibility means the product works for everyone, not most people.
+When it may bend: never.
