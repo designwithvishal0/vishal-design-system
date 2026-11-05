@@ -40,3 +40,6 @@
 .vd-list--dense .vd-list__title { font-size: var(--type-small-size); font-weight: var(--weight-ui); }
 .vd-list--dense .vd-list__meta { font-size: var(--type-label-size); }
 .vd-list--dense.vd-list--divided > .vd-list__li { border-bottom: 0; }
+
+/* On a selected row the cover would vanish into the same wash, so it takes the page colour instead and stays a solid rectangle. */
+.vd-list__row.is-selected .vd-cover { background: var(--color-bg); }

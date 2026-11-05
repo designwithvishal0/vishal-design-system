@@ -216,6 +216,12 @@ export const fixed = {
     use: 'Dense list rows',
   },
 
+  'cover-sm': {
+    value: '20px',
+    ...ext('Width of the small book cover used in dense lists. The height follows the 5 to 7 cover ratio, so 20 by 28.'),
+    use: 'Small book cover width',
+  },
+
   // Radius
   'radius-xs': { value: '4px', ...site('border-radius: 4px, focus outline'), use: 'Focus outline corners' },
   'radius-sm': { value: '12px', ...site('border-radius: 12px'), use: 'Thumbnails, small cards' },

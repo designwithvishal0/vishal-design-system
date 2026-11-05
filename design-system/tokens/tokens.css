@@ -242,6 +242,7 @@
   --glass-filter: blur(18px) saturate(1.8); /* site: .bar backdrop-filter */
   --glass-mix: 96%; /* site: .bar background: color-mix(bg 96%, transparent) */
   --row-h-dense: 32px; /* EXTENSION: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between. */
+  --cover-sm: 20px; /* EXTENSION: Width of the small book cover used in dense lists. The height follows the 5 to 7 cover ratio, so 20 by 28. */
   --radius-xs: 4px; /* site: border-radius: 4px, focus outline */
   --radius-sm: 12px; /* site: border-radius: 12px */
   --radius-md: 16px; /* site: border-radius: 16px */

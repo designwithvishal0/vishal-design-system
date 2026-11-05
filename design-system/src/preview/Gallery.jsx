@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Input, Card, Tag, Nav, NavList, List, Modal, Sheet, Avatar, IconSearch, IconSend, IconClose, IconHash, IconBook, IconPlus } from '../index.js';
+import { Button, Input, Card, Tag, Nav, NavList, List, Modal, Sheet, Avatar, Cover, IconSearch, IconSend, IconClose, IconHash, IconPlus } from '../index.js';
 
 const PALETTE = ['orange', 'violet', 'amber', 'teal', 'sky'];
 
@@ -135,10 +135,10 @@ export function Gallery({ theme, accent }) {
           <div className="pv-stack">
             <p className="pv-cap">Dense. EXTENSION, for chat and long lists</p>
             <List density="dense">
-              <List.Item leading={<IconBook />} title="The Remains of the Day" meta="Kazuo Ishiguro" trailing="4.5" />
-              <List.Item selected leading={<IconBook />} title="Stoner" meta="John Williams" trailing="5" />
-              <List.Item as="button" leading={<IconBook />} title="Pachinko" meta="Min Jin Lee" trailing="4" />
-              <List.Item as="button" leading={<IconBook />} title="Piranesi" meta="Susanna Clarke" trailing="4.5" />
+              <List.Item leading={<Cover />} title="The Remains of the Day" meta="Kazuo Ishiguro" trailing="4.5" />
+              <List.Item selected leading={<Cover />} title="Stoner" meta="John Williams" trailing="5" />
+              <List.Item as="button" leading={<Cover />} title="Pachinko" meta="Min Jin Lee" trailing="4" />
+              <List.Item as="button" leading={<Cover />} title="Piranesi" meta="Susanna Clarke" trailing="4.5" />
             </List>
           </div>
         </div>
