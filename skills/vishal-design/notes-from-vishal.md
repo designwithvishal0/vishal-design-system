@@ -13,3 +13,11 @@ He confirmed the written description of his visual language is right, and answer
 3. Two added rules.
    1. Buttons never lift or move on hover. Feedback is colour and press only.
    2. In dark mode, no dark on dark. Cards and panels must stay clearly separated from the background.
+
+## Stage 2: tokens (decided 5 November 2026)
+
+1. Accents. Use five: orange (the signature accent, from the home hero, wash `#FFE2CC`, text `#F07322` in light and `#FF8A3D` in dark), violet, amber, teal and sky from the base set. Drop coral, it is too close to orange and has the weakest contrast. Drop the home page blue, lime and light blue. Orange is the default accent when a screen needs one and none is chosen.
+
+2. Contrast. Do not rely on components remembering to use the muted accent colour. For every accent in light theme there is a darker accent text shade that passes 4.5 to 1 on its wash and on the page background, marked as an extension. The site's exact accent colours are for headings and large text only. Rule for the skill: any small text in an accent uses `accent-text-aa`, never `accent-text`.
+
+3. The handoff file wins. Where the tokens and `PORTFOLIO_HANDOFF.md` differ, the handoff is right. The changes made are listed in `design-system/tokens/SOURCES.md`.
