@@ -13,6 +13,7 @@ Every token that is not read from the live portfolio. Each one fills a gap the p
 - `space-1, space-snug, space-2, space-3, space-4, space-5, space-6, space-7, space-8, space-9, space-10, space-11`: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats.
 - `z-popover`: The site has one popover and no scale. Menus and popovers sit above the bar.
 - `z-overlay`: Modals and sheets sit above everything.
+- `check-size`: Checkbox box. The site has no checkbox. Same as the icon size beside body text.
 - `row-h`: Comfortable single line list row. Taller than the 44px button so a row never reads as a button. Two line rows size to their content (Vishal, 5 Nov 2026).
 - `icon-sm`: Icons scale with their text but snap to 16, 20 or 24px so their lines stay crisp (Vishal, 5 Nov 2026). 16px sits with small text.
 - `icon-md`: Icon snap size for body text (Vishal, 5 Nov 2026).
@@ -22,6 +23,7 @@ Every token that is not read from the live portfolio. Each one fills a gap the p
 - `cover-sm`: Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 16 by 24, which keeps dense rows at 32px (Vishal, 5 Nov 2026).
 - `radius-cover`: Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026).
 - `radius-cover-lg`: Corner of the medium and large book covers (Vishal, 5 Nov 2026).
+- `radius-check`: Corner of a checkbox. The 4px step from the set, as its own token so it never borrows the focus ring radius.
 - `radius-list-row`: Hover and selected background of a list row. Its own token, separate from the 28px used for the big portfolio rows (Vishal, 5 Nov 2026).
 - `state-disabled-opacity`: The site has no disabled state.
 - `accent-sky-ink, accent-sky-text`: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash.

@@ -27,7 +27,7 @@ Reference files:
 | --- | --- |
 | [reference/tokens.md](reference/tokens.md) | Every token with its value and use, and how to set the theme and accent |
 | [reference/components.md](reference/components.md) | The components, their props and when to use each |
-| [reference/extending.md](reference/extending.md) | How to build what does not exist yet, with eight worked examples |
+| [reference/extending.md](reference/extending.md) | How to build what does not exist yet: seven worked examples, and one fixed recipe each for tabs, menu, toast, tooltip, table, checkbox, switch and select |
 | [reference/examples.md](reference/examples.md) | Good and bad versions of eight rules, in messaging and a reading profile |
 | [`notes-from-vishal.md`](notes-from-vishal.md) | His answers, word for word. Read it when a rule here feels unclear |
 
@@ -189,7 +189,7 @@ A product's own brand colour is allowed. Add it as a new accent pair built exact
 
 Why: the parts that hold are what make it his; everything else is a means to serve the product. Break only by writing it down: if something truly cannot be built without breaking a fixed part, record it as a place where the system breaks.
 
-Worked examples, from a chat thread with no bubbles to a reading challenge and empty states: [reference/extending.md](reference/extending.md).
+Worked examples, from a chat thread with no bubbles to a reading challenge and empty states, plus one fixed recipe each for tabs, menu, toast, tooltip, table, checkbox, switch and select, so every product builds them the same way: [reference/extending.md](reference/extending.md).
 
 ## 7. Trade offs
 
@@ -333,5 +333,4 @@ Honest limits, so a new product knows where to be careful. Every token that is n
 5. **The spacing scale, surfaces, inputs, modals, dense lists, covers, avatars in groups, the sidebar list and every state** are extensions: the portfolio never needed them. They follow its logic but were not tested by Vishal over time.
 6. **Dark washes** sit only 1.24 to 1.41 to 1 from the page and lean on `line-strong` edges to stay separate.
 7. **The exact orange** (`#F07322`) is 2.8 to 1 on the light page: display size only.
-8. **Missing components**: tabs, menus, toasts, tooltips, tables, checkboxes, switches and selects are built by extension each time ([reference/extending.md](reference/extending.md)), so two products may solve them differently.
-9. **The site's motion** (GSAP scroll scrub, the "unsure." jitter) is not part of the components; only timing tokens are.
+8. **The site's motion** (GSAP scroll scrub, the "unsure." jitter) is not part of the components; only timing tokens are.

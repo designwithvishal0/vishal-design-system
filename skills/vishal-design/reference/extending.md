@@ -134,8 +134,115 @@ Relative: Modal, Input and the dense List.
 
 Rules: opens with Cmd K or Ctrl K into a `Modal` `center` with an `Input` (`IconSearch`, label "Jump to or do anything") and a dense `List` of results. Arrow keys move the selected row (the accent wash), Enter runs it, Escape closes it. Every result shows its shortcut in `label` text on the right. The bar is a convenience: everything it does is also reachable by mouse.
 
-### 8. Tabs for shelves
+## Fixed recipes for missing components
 
-Relative: Nav links and the `.vd-ul` underline.
+The system ships eight components. These eight more are not components yet, so every product builds them from one fixed recipe, the same way each time. Mark each as an extension in the hand back.
 
-Rules: tabs are Nav style links in `small` weight 500, the current one with the full underline and `aria-selected`. Counts sit beside the label in muted tabular numerals: "Read 34". Never pill tabs filled with the accent.
+### Tabs
+
+Relative: Nav links and the `.vd-ul` underline. Underlined links, never pills filled with the accent.
+
+```jsx
+<div role="tablist" aria-label="Shelves" className="tabs">
+  <button role="tab" aria-selected="true" className="tab vd-ul">Read <span className="count">34</span></button>
+  <button role="tab" aria-selected="false" className="tab vd-ul">Want to read <span className="count">12</span></button>
+</div>
+```
+
+```css
+/* EXTENSION: tabs */
+.tabs { display: flex; gap: var(--space-6); border-bottom: var(--border-w) solid var(--color-line); }
+.tab { padding: var(--space-3) 0; border: 0; background: none; color: var(--color-muted); font: inherit; font-size: var(--type-small-size); font-weight: var(--type-small-weight); cursor: pointer; }
+.tab[aria-selected='true'] { color: var(--color-ink); background-size: 100% var(--border-w), 100% var(--border-w); }
+.count { color: var(--color-muted); font-variant-numeric: tabular-nums; }
+```
+
+Rules: arrow keys move between tabs, Tab moves into the panel. Labels are nouns people use. On phones the row scrolls sideways inside itself, never the page.
+
+### Menu
+
+Relative: the site's Accessibility menu: 280px wide, radius 16, shadow `0 16px 40px`. Opened by a Button.
+
+```css
+/* EXTENSION: menu (values from the site's Accessibility menu) */
+.menu { position: absolute; z-index: var(--z-popover); inline-size: var(--menu-w); margin-top: var(--space-2); padding: var(--space-2); border-radius: var(--radius-md); background: var(--color-surface-2); box-shadow: var(--elev-3); }
+.menu [role='menuitem'] { /* use NavList.Item styling: 36px rows, radius-list-row, hover ghost */ }
+```
+
+Rules: the trigger has `aria-haspopup="menu"` and `aria-expanded`. Opens on click, closes on Escape, on a choice and on a click outside, and returns focus to the trigger. Arrow keys move between items. Items are `NavList.Item` rows with `as="button"` and `role="menuitem"`. A destructive item comes last, in `--color-error`, with a hairline above it. It floats, so it is one of the few things with a shadow.
+
+### Toast
+
+Relative: the site's "Copied" confirmation.
+
+```css
+/* EXTENSION: toast */
+.toast { position: fixed; inset-inline: 0; inset-block-end: var(--space-5); z-index: var(--z-popover); inline-size: fit-content; max-inline-size: calc(100% - var(--layout-gutter) * 2); margin-inline: auto; display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4); border-radius: var(--radius-pill); background: var(--color-surface-2); box-shadow: var(--elev-3); font-size: var(--type-small-size); }
+```
+
+Rules: one line confirming what happened, past tense: "Message deleted". At most one action, a ghost `sm` Button: "Undo". Stays `--dur-toast` (5s), longer if hovered or focused. `role="status"` with `aria-live="polite"`. One toast at a time. Never for an error the user must fix: that sits next to what failed.
+
+### Tooltip
+
+Relative: the solid Tag.
+
+```css
+/* EXTENSION: tooltip */
+.tooltip { position: absolute; z-index: var(--z-popover); padding: var(--tag-pad-y) var(--tag-pad-x); border-radius: var(--radius-pill); background: var(--color-ink); color: var(--color-bg); font-size: var(--type-label-size); font-weight: var(--type-label-weight); white-space: nowrap; pointer-events: none; }
+```
+
+Rules: only for icon only buttons and truncated text, and only a short name ("Search"), never information people need. Appears after `--dur-slow` on hover, at once on keyboard focus, hides on Escape. Linked with `aria-describedby`. No tooltips on touch: the icon button's `aria-label` does the job.
+
+### Table
+
+Relative: the comfortable and dense List.
+
+```css
+/* EXTENSION: table */
+.table { inline-size: 100%; border-collapse: collapse; font-size: var(--type-small-size); }
+.table th { padding: var(--space-2) var(--space-3); color: var(--color-muted); font-size: var(--type-label-size); font-weight: var(--type-label-weight); text-align: left; border-bottom: var(--border-w) solid var(--color-line-strong); }
+.table td { block-size: var(--row-h); padding: 0 var(--space-3); border-bottom: var(--border-w) solid var(--color-line); }
+.table .num { text-align: right; font-variant-numeric: tabular-nums; }
+```
+
+Rules: hairlines between rows only, no vertical lines, no zebra stripes. Text left, numbers right in tabular numerals. Dense tables use `--row-h-dense`. A table wider than the screen scrolls sideways inside its own container. On phones, a table of records becomes a List with one row per record.
+
+### Checkbox
+
+Relative: the Input's border and the primary Button's fill.
+
+```css
+/* EXTENSION: checkbox */
+.check { appearance: none; inline-size: var(--check-size); block-size: var(--check-size); margin: 0; border: var(--border-w) solid var(--color-edge); border-radius: var(--radius-check); background: transparent; display: inline-grid; place-content: center; cursor: pointer; transition: background-color var(--dur-fast) var(--ease-out); }
+.check:checked { background: var(--color-btn); border-color: var(--color-btn); }
+.check:checked::after { content: ''; inline-size: 40%; block-size: 70%; border: solid var(--color-on-btn); border-width: 0 calc(var(--border-w) * 2) calc(var(--border-w) * 2) 0; rotate: 45deg; translate: 0 -12%; }
+```
+
+Rules: a native `<input type="checkbox">` inside its `<label>`, so the whole label is the 44px touch target. Label in `small`, 8px from the box. Checked is ink, never the accent. A group of checkboxes sits 12px apart with a `label` heading.
+
+### Switch
+
+Relative: the site's Dark mode and Reduce motion switches: 62 by 34, a 26px knob, 260ms.
+
+```css
+/* EXTENSION: switch (values from the site) */
+.switch { appearance: none; position: relative; flex: none; inline-size: var(--switch-w); block-size: var(--switch-h); margin: 0; border-radius: var(--radius-pill); background: var(--color-surface-2); box-shadow: inset 0 0 0 var(--border-w) var(--color-edge); cursor: pointer; transition: background-color var(--dur-switch) var(--ease-out); }
+.switch::after { content: ''; position: absolute; inset-block-start: calc((var(--switch-h) - var(--switch-knob)) / 2); inset-inline-start: calc((var(--switch-h) - var(--switch-knob)) / 2); inline-size: var(--switch-knob); block-size: var(--switch-knob); border-radius: var(--radius-round); background: var(--color-bg); box-shadow: inset 0 0 0 var(--border-w) var(--color-line-strong); transition: translate var(--dur-switch) var(--ease-out); }
+.switch:checked { background: var(--color-btn); box-shadow: none; }
+.switch:checked::after { translate: calc(var(--switch-w) - var(--switch-h)) 0; }
+```
+
+Rules: `<input type="checkbox" role="switch">` with a visible label on the left, the switch on the right of the row. A switch acts at once; if the change needs a Save button, use a checkbox. Under Reduce motion the knob jumps.
+
+### Select
+
+Relative: the Input.
+
+```css
+/* EXTENSION: select. A native select dressed like the Input. */
+.select { appearance: none; inline-size: 100%; min-block-size: var(--control-h); padding: 0 calc(var(--space-4) + var(--icon-md)) 0 var(--space-4); border: var(--border-w) solid var(--color-edge); border-radius: var(--radius-sm); background: transparent; color: var(--color-ink); font: inherit; font-size: var(--type-small-size); }
+.select-wrap { position: relative; }
+.select-wrap .vd-icon { position: absolute; inset-inline-end: var(--space-3); inset-block-start: 50%; translate: 0 -50%; pointer-events: none; color: var(--color-muted); }
+```
+
+Rules: always the native `<select>`, so it works with every keyboard, screen reader and phone. A visible label above it, like the Input. A chevron icon on the right. Up to about seven options; more than that becomes a searchable list in a Menu.
