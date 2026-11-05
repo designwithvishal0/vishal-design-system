@@ -40,6 +40,12 @@ He confirmed the written description of his visual language is right, and answer
 
 The list of settled differences (header follows the theme, the dark orange values, the derived spacing scale, the new surface, line, shadow and text-aa values) is confirmed.
 
+## The standard
+
+Vishal's words, 5 November 2026. This is the opening section of SKILL.md, above every rule, titled "The standard".
+
+Whoever uses this skill is making work to a standard, so the standard has to be clear. The standard is a professional senior designer who loves the craft and shows it in the work. Every screen should look like that person made it with care: one clear idea, a deliberate hierarchy, real content, even spacing, finished details and, where it fits, one moment people remember. When no rule covers a case, ask one question: would that designer ship this? If not, it is not done.
+
 ## Interview answers
 
 Recorded word for word, 5 November 2026. Nothing here is filled in by an agent or taken from the handoff.
@@ -61,7 +67,7 @@ Three things.
 Visually:
 1. Lift a button or card on hover. Hover changes colour, press scales down slightly, nothing jumps up.
 2. Put dark on dark. A dark card on a dark page has to be clearly separated, or it is wrong.
-3. Make it look like a template, a UI kit or an agency site. No service grids, no logo walls.
+3. Make something that looks like a UI kit assembled by someone, instead of designed by a senior designer. Every screen has to meet the standard at the top of the skill. If it could be any product's screen with the logo swapped, it is not done. *(Replaced by Vishal, 5 Nov 2026.)*
 4. Grey down colour. Pastels stay bright, never muddy.
 5. Crop or shrink screens and thumbnails until you cannot read them.
 6. Make numbers glow or colour them for effect. I said "Eww" to that once and I meant it.
@@ -71,5 +77,21 @@ In the experience:
 1. Show fake prototypes made of images. If it says prototype, it is real and clickable.
 2. Let controls cover the content.
 3. Hide content on desktop. Phones can trim long paragraphs, desktop shows everything.
-4. Add motion for decoration: cursor followers, rolling button labels, parallax.
+4. Reuse the same few motions on every design. The motions on my site, like words that rise, numbers that count, scroll that scrubs and the "unsure." letters, are examples, not a set to copy. Each product gets the motion that fits it. Any kind of motion is welcome when it suits the design, improves the experience and feels in context. Motion that looks cheap or out of place does not go in, like the cursor followers, rolling button labels and parallax I removed from my own site. Everything must turn off cleanly under Reduce motion. *(Replaced by Vishal, 5 Nov 2026.)*
 5. Put lorem ipsum, invented numbers or invented results anywhere. Concept work is called concept work.
+
+### Thinking
+
+**3. When you start a new product, how do you decide what the layout is built around?**
+
+I build the layout around the moment that matters most and the question the user has in it. On my site that is "I design for the moment people are unsure." For ixigo it was "Will I travel tonight?" But not every screen is an unsure moment, so I first work out what kind of moment it is.
+
+My steps:
+1. Whose screen is it, and who else looks at it? A reading profile has the owner and visitors, and they want different things. Pick the main viewer from what the product is trying to achieve, and serve the other one second.
+2. How often and how much is at stake? A rare, high stakes moment like ixigo gets one clear answer, big and first. A tool used fifty times a day, like messaging, gets speed: things stay in the same place, it is dense, and the frequent action is always in reach.
+3. Write the main question in the user's own words, then put the answer in the most prominent place. Prominence can come from position, weight or contrast, not only size.
+4. List the jobs people repeat on this screen, like writing a message, and keep them within reach even though they are not the main question.
+5. Order the rest by what they need next, not by what the product wants to show. Things they need later move lower. They are not removed. Everything the brief requires appears; the question decides its order and weight, never whether it is there.
+6. Check the main question in its different states: nothing new, a little, a lot.
+
+For messaging, the question might be "What needs me right now?" For a reading profile, the owner asks "What am I reading, and how am I doing?" and a visitor asks "Is this person's taste worth following?" Building for a different main viewer is one honest way to get a genuinely different direction.
