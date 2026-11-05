@@ -4,4 +4,8 @@ export { Button } from './components/Button.jsx';
 export { Input } from './components/Input.jsx';
 export { Card } from './components/Card.jsx';
 export { Tag } from './components/Tag.jsx';
+export { Nav, NavList } from './components/Nav.jsx';
+export { List } from './components/List.jsx';
+export { Modal, Sheet } from './components/Modal.jsx';
+export { Avatar } from './components/Avatar.jsx';
 export * from './components/icons.jsx';
