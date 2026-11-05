@@ -72,6 +72,8 @@ Upload now has a recipe; the empty and offline states were already in the checkl
 
 Vishal spotted one more: the empty claim form showed "₹0" in display type, which looks broken. The claim flow now shows a quiet line in its place until an amount is typed, and the skill has a new rule: a display number never shows a meaningless zero.
 
+Changed after the test: the line ‘About ₹43,380 is waiting on it’ used amber’s heading colour on its wash and failed contrast at 4.42 to 1 when switched to amber. It now uses the muted colour, as the skill already said. Everything else is as the agent built it.
+
 ## Second test: Figma Make
 
 **When:** 6 November 2026.
