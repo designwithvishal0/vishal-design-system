@@ -98,7 +98,8 @@ export const threads = [
   },
 ];
 
-// The channel view: recent messages in #launch, oldest first.
+// The channel view: recent messages in each channel, oldest first. A thread's replies live in the
+// thread only, so the same words never appear twice (a message here and a reply there).
 export const channelMessages = {
   launch: [
     { id: 'l1', author: 'asha', day: 'Yesterday', time: '3:48', text: 'Release review moved to Friday 4:30. Same link.' },
@@ -107,8 +108,6 @@ export const channelMessages = {
     { id: 'l4', author: 'tom', time: '9:40', text: 'Build 2.4 (412) is on TestFlight. Release notes are in the build.' },
     { id: 'l5', author: 'tom', time: '9:41', text: 'Known issue: the widget can show last month’s balance after a restart. Fix is in review.' },
     { id: 'l6', author: 'dev', time: '9:58', text: 'Fix merged. Next build tonight.' },
-    { id: 'l7', author: 'asha', time: '10:02', text: '@Rohan can you post the final empty state frame here when it is in? Ira is waiting on it.' },
-    { id: 'l8', author: 'ira', time: '10:05', text: 'I need the final line by 3 today to make the store submission.' },
   ],
   design: [
     { id: 'g1', author: 'maya', day: 'Yesterday', time: '4:05', text: 'Critique on Friday at 4: the new onboarding. Three screens, one question each.', thread: 't-onboarding' },
@@ -117,11 +116,9 @@ export const channelMessages = {
   ],
   engineering: [
     { id: 'e1', author: 'dev', time: '8:41', text: 'The home screen widget shows last month’s balance on iOS 18 after a restart.', thread: 't-widget' },
-    { id: 'e2', author: 'tom', time: '9:58', text: 'Pushed to `release/2.4`. Can someone run it on a real device overnight?' },
   ],
   support: [
     { id: 'p1', author: 'kabir', time: '8:30', text: '12 tickets since Monday about the round up feature charging twice.', thread: 't-refunds' },
-    { id: 'p2', author: 'kabir', time: '9:31', text: '@Rohan what should the message to these customers say? They are asking if they lost money.' },
   ],
   general: [
     { id: 'n1', author: 'asha', day: 'Monday', time: '11:20', text: 'Welcome Leila, who joins us to lead data. Say hello.' },

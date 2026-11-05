@@ -40,8 +40,12 @@ const active = everyone.filter((p) => p.last).sort((a, b) => order(b.last) - ord
 const quiet = everyone.filter((p) => !p.last);
 
 export function App() {
+  // Opening a person reads them: their count clears at once. The "New" line stays where the unread
+  // messages began, so you can still find them while you are there.
+  const firstNew = (id) => everyone.find((p) => p.id === id).items.find((m) => m.unread)?.id;
   const [openId, setOpenId] = useState(active[0].id);
-  const [seen, setSeen] = useState({});
+  const [seen, setSeen] = useState({ [active[0].id]: true });
+  const [newFrom, setNewFrom] = useState({ [active[0].id]: firstNew(active[0].id) });
   const [sent, setSent] = useState({});
   const [where, setWhere] = useState('all');
   const [sendIn, setSendIn] = useState(DM);
@@ -50,14 +54,17 @@ export function App() {
 
   const person = everyone.find((p) => p.id === openId);
   const lanes = useMemo(() => [...new Set(person.items.map((m) => m.channel))], [person]);
+  // The same filter order for everyone: Everything, Direct, then channels A to Z.
+  const filters = ['all', ...(lanes.includes('dm') ? ['dm'] : []), ...lanes.filter((c) => c !== 'dm').sort()];
   const shared = lanes.filter((c) => c !== 'dm');
   const timeline = [...person.items, ...(sent[openId] ?? [])]
     .filter((m) => where === 'all' || m.channel === where)
     .map((m) => ({ ...m, lane: lanes.indexOf(m.channel) }));
-  const firstUnread = !seen[openId] ? person.items.find((m) => m.unread)?.id : undefined;
+  const firstUnread = newFrom[openId];
 
   const openPerson = (id) => {
-    setSeen((s) => ({ ...s, [openId]: true }));
+    if (!seen[id]) setNewFrom((n) => ({ ...n, [id]: firstNew(id) }));
+    setSeen((s) => ({ ...s, [id]: true }));
     setOpenId(id); setWhere('all'); setSendIn(DM); setPhoneView('person');
   };
 
@@ -123,11 +130,11 @@ export function App() {
             <p className="pf-role">{people[openId].role}</p>
             <h1 className="vd-type-heading" id="pf-name">{people[openId].name}</h1>
             {person.items.length > 0 && (
-              <p className="pf-muted">{person.items.length} messages between you, from {shared.length} {shared.length === 1 ? 'channel' : 'channels'}{lanes.includes('dm') ? ' and direct messages' : ''}.</p>
+              <p className="pf-muted">{person.items.length} {person.items.length === 1 ? 'message' : 'messages'} between you, from {shared.length} {shared.length === 1 ? 'channel' : 'channels'}{lanes.includes('dm') ? ' and direct messages' : ''}.</p>
             )}
             {lanes.length > 1 && (
               <div className="pf-tabs" role="tablist" aria-label="Show messages from">
-                {['all', ...lanes].map((c) => (
+                {filters.map((c) => (
                   <button key={c} role="tab" aria-selected={where === c} className="pf-tab vd-ul-tab" onClick={() => setWhere(c)}>
                     {c === 'all' ? 'Everything' : c === 'dm' ? 'Direct' : `#${c}`}
                   </button>
