@@ -152,7 +152,7 @@ export function Gallery({ theme, accent }) {
           <Cover size="lg" title="Piranesi" />
           <Cover size="lg" title="Tomorrow, and Tomorrow, and Tomorrow" />
         </div>
-        <p className="pv-cap">Extension. Neutral, 2 by 3. With no image: small stays plain, medium shows initials, large shows the title.</p>
+        <p className="pv-cap">Extension. Neutral, 2 by 3. With no image only the large cover shows the title.</p>
       </section>
 
       <section>

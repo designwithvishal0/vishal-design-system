@@ -250,7 +250,7 @@
   --icon-stroke: 1.5px; /* EXTENSION: Icon line width at every size. Outline icons with rounded ends, to match the soft shapes of Bricolage (Vishal, 5 Nov 2026). */
   --icon-lg: 24px; /* EXTENSION: Largest icon snap size (Vishal, 5 Nov 2026). */
   --row-h-dense: 32px; /* EXTENSION: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between. */
-  --cover-sm: 20px; /* EXTENSION: Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 20 by 30 (Vishal, 5 Nov 2026). */
+  --cover-sm: 16px; /* EXTENSION: Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 16 by 24, which keeps dense rows at 32px (Vishal, 5 Nov 2026). */
   --radius-xs: 4px; /* site: border-radius: 4px, focus outline */
   --radius-sm: 12px; /* site: border-radius: 12px */
   --radius-cover: 4px; /* EXTENSION: Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026). */

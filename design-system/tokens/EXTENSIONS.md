@@ -19,7 +19,7 @@ Every token that is not read from the live portfolio. Each one fills a gap the p
 - `icon-stroke`: Icon line width at every size. Outline icons with rounded ends, to match the soft shapes of Bricolage (Vishal, 5 Nov 2026).
 - `icon-lg`: Largest icon snap size (Vishal, 5 Nov 2026).
 - `row-h-dense`: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between.
-- `cover-sm`: Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 20 by 30 (Vishal, 5 Nov 2026).
+- `cover-sm`: Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 16 by 24, which keeps dense rows at 32px (Vishal, 5 Nov 2026).
 - `radius-cover`: Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026).
 - `radius-cover-lg`: Corner of the medium and large book covers (Vishal, 5 Nov 2026).
 - `radius-list-row`: Hover and selected background of a list row. Its own token, separate from the 28px used for the big portfolio rows (Vishal, 5 Nov 2026).

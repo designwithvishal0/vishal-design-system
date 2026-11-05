@@ -331,3 +331,9 @@ Every screen covers:
 For messaging, that means zero unread versus forty, a message stuck sending, and a channel with no messages yet. For a reading profile, it means no books this year, a challenge not set yet, and a profile with no reviews.
 Why: the happy path is where a screen spends the least time. Real people see the empty, slow and broken moments, and that is where trust is won or lost.
 When it may bend: none. Every state is designed, even when it is simple.
+
+**Cover decisions (5 November 2026)**
+
+a. "Medium covers stay plain, no initials. Initials mean a person in my system, because avatars use them. In lists the title already sits next to the cover. Only large covers show the title."
+b. "Large cover at 96 by 144 is approved."
+c. "Dense rows stay 32px. Make the small cover 16 by 24, still 2 by 3."

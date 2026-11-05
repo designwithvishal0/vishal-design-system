@@ -239,8 +239,8 @@ export const fixed = {
   },
 
   'cover-sm': {
-    value: '20px',
-    ...ext('Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 20 by 30 (Vishal, 5 Nov 2026).'),
+    value: '16px',
+    ...ext('Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 16 by 24, which keeps dense rows at 32px (Vishal, 5 Nov 2026).'),
     use: 'Small book cover width',
   },
 

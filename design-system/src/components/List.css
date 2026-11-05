@@ -35,7 +35,7 @@
 .vd-list__row.is-selected { background: var(--accent-wash); --color-muted: var(--accent-muted); box-shadow: var(--elev-panel); }
 
 /* Dense: one line per row, title and meta side by side. */
-.vd-list--dense .vd-list__row { min-height: var(--row-h-dense); padding-block: var(--space-snug); column-gap: var(--space-2); }
+.vd-list--dense .vd-list__row { min-height: var(--row-h-dense); padding-block: var(--space-1); column-gap: var(--space-2); }
 .vd-list--dense .vd-list__main { flex-direction: row; align-items: baseline; gap: var(--space-2); }
 .vd-list--dense .vd-list__title { font-size: var(--type-small-size); font-weight: var(--weight-ui); }
 .vd-list--dense .vd-list__meta { font-size: var(--type-label-size); }
