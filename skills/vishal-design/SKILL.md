@@ -98,6 +98,7 @@ These make a screen look like Vishal's. Following them gives a clean screen. Sec
 | Conventions win: the composer at the bottom of a chat, unread counts on channels, five stars for a rating. The system dresses a convention; it does not replace it. | People already know how these work. Breaking that costs them time. | Never for the sake of looking different. |
 | Real content only: real names, times like "9:41" and "Mon", real book titles. No lorem ipsum, no invented numbers or results. | Fake content hides layout problems and breaks trust. | Never. |
 | Copy is short and concrete. No hyphens or em dashes in prose, no filler words, sentence case, "Send" is always "Send". | Vishal's voice is plain and specific. | Never. |
+| Counts agree across the whole screen: a headline, a sidebar badge and a list tag that count the same thing show the same number, and all of them drop the moment it is read. Work every count out from the data, never type one. | A count that disagrees with another tells people the screen cannot be trusted. | Never. |
 | Both themes are designed, not inverted, and pass every rule. | Vishal's site runs in both, and a colour that passes in light can fail in dark. | Never. |
 
 ## 4. Visual finesse
@@ -280,6 +281,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 - [ ] Long names truncate, long messages wrap, nothing breaks the layout.
 - [ ] Offline shows the last saved content with its time ("Updated 9:41"); sent items show sending, sent or failed.
 - [ ] Every action confirms quietly; disabled things say why.
+- [ ] Every count agrees with every other count of the same thing, before and after reading.
 
 **8. Everywhere**
 - [ ] Light and dark both pass, with no dark on dark.
