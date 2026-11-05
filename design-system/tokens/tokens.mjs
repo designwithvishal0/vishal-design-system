@@ -230,6 +230,7 @@ export const fixed = {
   'section-inner': { value: '72px', mobile: '48px', ...site('72px inside a section on the home page (handoff 2.6). 48px on phones, by Vishal 5 Nov 2026'), use: 'Inside a section' },
   'icon-sm': { value: '16px', ...ext('Icons scale with their text but snap to 16, 20 or 24px so their lines stay crisp (Vishal, 5 Nov 2026). 16px sits with small text.'), use: 'Icon next to small text' },
   'icon-md': { value: '20px', ...ext('Icon snap size for body text (Vishal, 5 Nov 2026).'), use: 'Icon next to body text' },
+  'icon-stroke': { value: '1.5px', ...ext('Icon line width at every size. Outline icons with rounded ends, to match the soft shapes of Bricolage (Vishal, 5 Nov 2026).'), use: 'Icon stroke' },
   'icon-lg': { value: '24px', ...ext('Largest icon snap size (Vishal, 5 Nov 2026).'), use: 'Icon next to headings' },
   'row-h-dense': {
     value: '32px',
@@ -239,7 +240,7 @@ export const fixed = {
 
   'cover-sm': {
     value: '20px',
-    ...ext('Width of the small book cover used in dense lists. The height follows the 5 to 7 cover ratio, so 20 by 28.'),
+    ...ext('Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 20 by 30 (Vishal, 5 Nov 2026).'),
     use: 'Small book cover width',
   },
 
@@ -249,6 +250,7 @@ export const fixed = {
   'radius-cover': { value: '4px', ...ext('Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026).'), use: 'Small book cover' },
   'radius-cover-lg': { value: '6px', ...ext('Corner of the medium and large book covers (Vishal, 5 Nov 2026).'), use: 'Medium and large book covers' },
   'radius-md': { value: '16px', ...site('border-radius: 16px'), use: 'Thumbnails, video boxes, menus' },
+  'radius-list-row': { value: '12px', ...ext('Hover and selected background of a list row. Its own token, separate from the 28px used for the big portfolio rows (Vishal, 5 Nov 2026).'), use: 'List rows and sidebar items' },
   'radius-media': { value: '20px', ...site('hero media slot, handoff 2.7'), use: 'Large media slots' },
   'radius-lg': { value: '24px', ...site('border-radius: 24px'), use: 'Cards' },
   'radius-row': { value: '28px', ...site('work rows and How I work hover wash, handoff 2.7'), use: 'Wash panels and rows' },

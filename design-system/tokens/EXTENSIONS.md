@@ -16,11 +16,13 @@ Every token that is not read from the live portfolio. Each one fills a gap the p
 - `row-h`: Comfortable single line list row. Taller than the 44px button so a row never reads as a button. Two line rows size to their content (Vishal, 5 Nov 2026).
 - `icon-sm`: Icons scale with their text but snap to 16, 20 or 24px so their lines stay crisp (Vishal, 5 Nov 2026). 16px sits with small text.
 - `icon-md`: Icon snap size for body text (Vishal, 5 Nov 2026).
+- `icon-stroke`: Icon line width at every size. Outline icons with rounded ends, to match the soft shapes of Bricolage (Vishal, 5 Nov 2026).
 - `icon-lg`: Largest icon snap size (Vishal, 5 Nov 2026).
 - `row-h-dense`: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between.
-- `cover-sm`: Width of the small book cover used in dense lists. The height follows the 5 to 7 cover ratio, so 20 by 28.
+- `cover-sm`: Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 20 by 30 (Vishal, 5 Nov 2026).
 - `radius-cover`: Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026).
 - `radius-cover-lg`: Corner of the medium and large book covers (Vishal, 5 Nov 2026).
+- `radius-list-row`: Hover and selected background of a list row. Its own token, separate from the 28px used for the big portfolio rows (Vishal, 5 Nov 2026).
 - `state-disabled-opacity`: The site has no disabled state.
 - `accent-sky-ink, accent-sky-text`: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash.
 - `accent-orange-wash (dark only)`: Dark theme only. The site value is #1B1E2C, a navy that reads as blue next to orange. Replaced with a dark burnt orange (hue 24) set at the same depth as the other dark washes: 1.36 to 1 against the page, where amber is 1.41. Orange text on it is 6.1 to 1.

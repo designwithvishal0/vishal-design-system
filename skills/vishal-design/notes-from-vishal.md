@@ -300,3 +300,13 @@ Small things that make a screen feel finished:
 
 Why: these are the details nobody notices when they are right, and everybody notices when they are wrong. They are the difference between a screen that is built and a screen that is finished.
 When it may bend: a signature moment can break the radius or image rules for effect, like a cover shown huge and tilted, as long as it is the one moment on the screen.
+
+**Decisions on the answer 9 differences (5 November 2026)**
+
+1. "Icon stroke becomes 1.5px at every size."
+2. "Arrows are filled, including the send arrow."
+3. "Covers keep the real 2 by 3 shape, so the small cover is 20 by 30."
+4. "Small covers stay plain. Medium and large covers show the title when there is no image."
+5. "List row hover and selected backgrounds keep 12px. Add it as its own radius token for list rows, separate from the 28 used for big portfolio rows."
+
+Built as asked, with two calls to confirm: a full title does not fit a 48px medium cover without breaking words, so the medium cover shows the title's initials (answer 9 allows "title or initials"); and the large cover is 96px wide instead of 72px so a title fits in whole words.

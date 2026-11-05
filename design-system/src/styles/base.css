@@ -57,7 +57,10 @@ a { color: inherit; }
 
 /* Icons scale with their text but snap to 16, 20 or 24px so their lines stay crisp:
    about 16px beside small text, 20px beside body text, 24px at most. */
-.vd-icon { flex: none; width: 1.1em; height: 1.1em; }
+.vd-icon { flex: none; width: 1.1em; height: 1.1em; stroke-width: var(--icon-stroke); }
+/* The stroke stays 1.5px at every icon size instead of scaling with the drawing. */
+.vd-icon :is(path, circle, line, rect, polyline) { vector-effect: non-scaling-stroke; }
+.vd-icon--filled { stroke: none; }
 @supports (width: round(nearest, 1em, 1em)) {
   .vd-icon {
     width: clamp(var(--icon-sm), round(nearest, 1.1em, calc(var(--icon-md) - var(--icon-sm))), var(--icon-lg));

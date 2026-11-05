@@ -145,6 +145,17 @@ export function Gallery({ theme, accent }) {
       </section>
 
       <section>
+        <h2 className="vd-type-title">Cover</h2>
+        <div className="pv-row">
+          <Cover />
+          <Cover size="md" title="The Remains of the Day" />
+          <Cover size="lg" title="Piranesi" />
+          <Cover size="lg" title="Tomorrow, and Tomorrow, and Tomorrow" />
+        </div>
+        <p className="pv-cap">Extension. Neutral, 2 by 3. With no image: small stays plain, medium shows initials, large shows the title.</p>
+      </section>
+
+      <section>
         <h2 className="vd-type-title">Modal and Sheet</h2>
         <div className="pv-row">
           <Button onClick={() => setModal('center')}>Open modal</Button>

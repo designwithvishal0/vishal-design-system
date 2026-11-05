@@ -11,7 +11,7 @@
   min-height: var(--row-h);
   padding: var(--space-2) var(--space-3);
   border: 0;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-list-row);
   background: transparent;
   color: var(--color-ink);
   font: inherit;

@@ -247,14 +247,16 @@
   --section-inner: 72px; /* site: 72px inside a section on the home page (handoff 2.6). 48px on phones, by Vishal 5 Nov 2026 */
   --icon-sm: 16px; /* EXTENSION: Icons scale with their text but snap to 16, 20 or 24px so their lines stay crisp (Vishal, 5 Nov 2026). 16px sits with small text. */
   --icon-md: 20px; /* EXTENSION: Icon snap size for body text (Vishal, 5 Nov 2026). */
+  --icon-stroke: 1.5px; /* EXTENSION: Icon line width at every size. Outline icons with rounded ends, to match the soft shapes of Bricolage (Vishal, 5 Nov 2026). */
   --icon-lg: 24px; /* EXTENSION: Largest icon snap size (Vishal, 5 Nov 2026). */
   --row-h-dense: 32px; /* EXTENSION: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between. */
-  --cover-sm: 20px; /* EXTENSION: Width of the small book cover used in dense lists. The height follows the 5 to 7 cover ratio, so 20 by 28. */
+  --cover-sm: 20px; /* EXTENSION: Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 20 by 30 (Vishal, 5 Nov 2026). */
   --radius-xs: 4px; /* site: border-radius: 4px, focus outline */
   --radius-sm: 12px; /* site: border-radius: 12px */
   --radius-cover: 4px; /* EXTENSION: Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026). */
   --radius-cover-lg: 6px; /* EXTENSION: Corner of the medium and large book covers (Vishal, 5 Nov 2026). */
   --radius-md: 16px; /* site: border-radius: 16px */
+  --radius-list-row: 12px; /* EXTENSION: Hover and selected background of a list row. Its own token, separate from the 28px used for the big portfolio rows (Vishal, 5 Nov 2026). */
   --radius-media: 20px; /* site: hero media slot, handoff 2.7 */
   --radius-lg: 24px; /* site: border-radius: 24px */
   --radius-row: 28px; /* site: work rows and How I work hover wash, handoff 2.7 */
