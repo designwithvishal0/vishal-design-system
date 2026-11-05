@@ -65,6 +65,7 @@ Keyboard first is kept in [`products/messaging/dropped/keyboard-first`](products
 
 ## Where it broke
 
+- "My portfolio is a site people read once. The system had no rules for a tool people live in: panels that scroll on their own, unread counts, keyboard use. All of it had to be built from the closest relative, and the skill now carries those rules."
 - **The display voice is big by nature.** The heavy narrow type only works at 40px and up. On dense screens it shrinks to one number, so a tool has little room for its signature moment, and every heading under 40px had to go back to full width.
 - **One accent per screen** limits charts to three series and rules out telling many people apart by colour. People are told apart by name.
 - **Status colours** are only live green and error red. There is no warning or info colour.
