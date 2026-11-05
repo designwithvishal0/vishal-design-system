@@ -39,15 +39,14 @@ export function App() {
 
   const commands = useMemo(() => [
     ...channels.map((c, i) => ({ id: `ch-${c.id}`, label: `#${c.name}`, hint: c.unread ? `${c.unread} new` : c.topic, keys: `Alt ${i + 1}`, run: () => go(c.id), icon: <IconHash /> })),
+    { id: 'new', label: 'New message', hint: `In #${current}`, keys: '/', run: () => { setBarOpen(false); setQuery(''); requestAnimationFrame(() => composerRef.current?.querySelector('textarea')?.focus()); } },
+    { id: 'mentions', label: 'Go to mentions', hint: channels.some((c) => c.mention) ? `${channels.filter((c) => c.mention).length} channels mention you` : 'Nobody has mentioned you', keys: '', run: () => { const c = channels.find((x) => x.mention); if (c) go(c.id); else setBarOpen(false); } },
+    { id: 'read-all', label: 'Mark all as read', hint: `${channels.reduce((n, c) => n + c.unread, 0)} unread`, keys: 'Shift Esc', run: () => { setChannels((cs) => cs.map((c) => ({ ...c, unread: 0, mention: false }))); setBarOpen(false); } },
     ...['maya', 'dev', 'asha'].map((p) => ({ id: `dm-${p}`, label: `Message ${people[p].name}`, hint: people[p].role, keys: '', run: () => setBarOpen(false), icon: <Avatar name={people[p].name} size="xs" /> })),
-    { id: 'read-all', label: 'Mark every channel as read', hint: `${channels.reduce((n, c) => n + c.unread, 0)} unread`, keys: 'Shift Esc', run: () => { setChannels((cs) => cs.map((c) => ({ ...c, unread: 0, mention: false }))); setBarOpen(false); } },
-    { id: 'theme', label: 'Switch theme', hint: 'Light and dark', keys: '', run: () => { const d = document.documentElement; d.dataset.theme = d.dataset.theme === 'dark' ? 'light' : 'dark'; setBarOpen(false); } },
-  ], [channels]);
+  ], [channels, current]);
 
   const results = commands.filter((c) => c.label.toLowerCase().includes(query.toLowerCase()));
 
-  // The dialog moves focus to its first button when it opens; the bar wants it in the field.
-  useEffect(() => { if (barOpen) requestAnimationFrame(() => document.getElementById('kb-input')?.focus()); }, [barOpen]);
   const openBar = () => { setBarOpen(true); setActive(0); };
 
   // Global keys: Mod K opens the bar, Alt and a number jumps to a channel, Shift Esc marks all read.
@@ -56,6 +55,7 @@ export function App() {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); setBarOpen(true); setActive(0); }
       else if (e.altKey && /^Digit[1-9]$/.test(e.code)) { const c = channels[Number(e.code.slice(5)) - 1]; if (c) { e.preventDefault(); go(c.id); } }
       else if (e.shiftKey && e.key === 'Escape') { setChannels((cs) => cs.map((c) => ({ ...c, unread: 0, mention: false }))); }
+      else if (e.key === '/' && !/INPUT|TEXTAREA/.test(document.activeElement?.tagName)) { e.preventDefault(); composerRef.current?.querySelector('textarea')?.focus(); }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
@@ -128,7 +128,8 @@ export function App() {
         </main>
       </div>
 
-      <Modal open={barOpen} onClose={() => { setBarOpen(false); setQuery(''); }} title="Jump to or do anything" className="kb-bar">
+      {/* A command bar is a field, not a dialog: no heading, no close button, Escape closes it. */}
+      <Modal open={barOpen} onClose={() => { setBarOpen(false); setQuery(''); }} label="Jump to or do anything" placement="top" initialFocus="kb-input" className="kb-bar">
         <Input id="kb-input" label="Type a channel, a person or an action" hideLabel placeholder="Type a channel, a person or an action" leading={<IconSearch />}
           value={query} onChange={(e) => { setQuery(e.target.value); setActive(0); }} onKeyDown={onBarKey}
           role="combobox" aria-expanded="true" aria-controls="kb-results" aria-activedescendant={results[active] ? `kb-${results[active].id}` : undefined} />
