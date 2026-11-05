@@ -22,6 +22,7 @@ export function App() {
             {ACCENTS.map((a) => <option key={a}>{a}</option>)}
           </select>
         </label>
+        <p className="pv-toolbar__note">Only parts that carry the product colour change: the wash card, accent tags, the accent avatar and selected rows. Everything else stays neutral by design.</p>
       </div>
       <div className="pv-panes">
         <Gallery theme="light" accent={screenAccent} />

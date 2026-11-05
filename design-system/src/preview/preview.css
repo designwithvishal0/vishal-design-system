@@ -1,4 +1,4 @@
-.pv-toolbar { display: flex; align-items: center; justify-content: space-between; padding: var(--space-3) var(--space-6); background: var(--color-bg); color: var(--color-ink); border-bottom: var(--border-w) solid var(--color-line); }
+.pv-toolbar { display: flex; flex-wrap: wrap; row-gap: var(--space-2); align-items: center; justify-content: space-between; padding: var(--space-3) var(--space-6); background: var(--color-bg); color: var(--color-ink); border-bottom: var(--border-w) solid var(--color-line); }
 .pv-toolbar__pick { display: flex; align-items: center; gap: var(--space-2); font-size: var(--type-small-size); }
 .pv-toolbar select { font: inherit; padding: var(--space-1) var(--space-2); border: var(--border-w) solid var(--color-edge); border-radius: var(--radius-sm); background: transparent; color: inherit; }
 
@@ -15,3 +15,7 @@
 .pv-stack { display: flex; flex-direction: column; gap: var(--space-2); }
 .pv-chip { display: inline-block; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); font-size: var(--type-label-size); font-weight: var(--type-label-weight); }
 .pv-sidebar { width: calc(var(--space-10) * 2); padding: var(--space-3); border: var(--border-w) solid var(--color-line-strong); border-radius: var(--radius-lg); background: var(--color-surface-1); }
+
+/* Where the product colour lands: a label in the label role, in the accent's text colour (ink when neutral). */
+.pv-takes { margin: 0; color: var(--accent-text-aa); font-size: var(--type-label-size); font-weight: var(--type-label-weight); line-height: var(--type-label-lh); }
+.pv-toolbar__note { flex-basis: 100%; margin: 0; max-inline-size: var(--measure-max); color: var(--color-muted); font-size: var(--type-label-size); line-height: var(--type-label-lh); }

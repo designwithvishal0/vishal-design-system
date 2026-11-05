@@ -60,11 +60,14 @@ export function Gallery({ theme, accent }) {
             <Card.Title>On the surface</Card.Title>
             <Card.Body>A step off the page, with a strong border. Hover is a quiet overlay.</Card.Body>
           </Card>
-          <Card variant="wash">
-            <Card.Meta>Accent wash</Card.Meta>
-            <Card.Title>Colour comes from one accent</Card.Title>
-            <Card.Body>Small text here uses the accent's muted colour.</Card.Body>
-          </Card>
+          <div className="pv-stack">
+            <p className="pv-takes">Takes the accent</p>
+            <Card variant="wash">
+              <Card.Meta>Accent wash</Card.Meta>
+              <Card.Title>Colour comes from one accent</Card.Title>
+              <Card.Body>Small text here uses the accent's muted colour.</Card.Body>
+            </Card>
+          </div>
         </div>
         <p className="pv-cap">With no product accent the wash card is neutral. A product picks one of these five as its own colour:</p>
         <div className="pv-row">
@@ -81,6 +84,7 @@ export function Gallery({ theme, accent }) {
           <Tag variant="accent">Draft</Tag>
           <Tag variant="live">Open to work</Tag>
         </div>
+        <p className="pv-takes">Takes the accent: the “Draft” tag</p>
       </section>
 
       <section>
@@ -92,6 +96,7 @@ export function Gallery({ theme, accent }) {
           <Avatar name="Kabir Shah" size="lg" status="live" />
           <Avatar name="Ira Bose" size="xl" tone="accent" />
         </div>
+        <p className="pv-takes">Takes the accent: the large avatar, “IB”</p>
         <p className="pv-cap">People share one neutral surface. The accent avatar marks a single person.</p>
       </section>
 
@@ -127,6 +132,7 @@ export function Gallery({ theme, accent }) {
         <div className="pv-grid">
           <div className="pv-stack">
             <p className="pv-cap">Comfortable</p>
+            <p className="pv-takes">Takes the accent: the selected row, Dev Iyer</p>
             <List>
               <List.Item leading={<Avatar name="Maya Rao" />} title="Maya Rao" meta="Shared the Figma file" trailing="9:41" />
               <List.Item selected leading={<Avatar name="Dev Iyer" />} title="Dev Iyer" meta="Can we ship Friday?" trailing={<Tag variant="solid">2</Tag>} />
