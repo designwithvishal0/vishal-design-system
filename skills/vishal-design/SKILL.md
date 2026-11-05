@@ -49,11 +49,14 @@ Set up once per app:
 // The ../ count depends on where this file sits. Inside this repo itself, point at design-system/ directly.
 import '../vishal-design-system/design-system/src/styles/base.css';
 import { Button, List, Avatar } from '../vishal-design-system/design-system/src/index.js';
+import './app.css'; // your own styles last
 
 // So every screen can be checked in both themes from a link: ?theme=light or ?theme=dark
 const theme = new URLSearchParams(location.search).get('theme');
 if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
 ```
+
+Load the system’s styles first and your app’s styles after them, in your entry file: `base.css`, then the component imports, then your own CSS. Never override a component’s colours or variants to win the cascade. If a component looks wrong, fix the import order, not the component.
 
 Put `data-accent="violet"` (or orange, amber, teal, sky) on the product's root to give it its one colour. Leave it out to stay neutral. Check every screen with `data-theme="light"` and `data-theme="dark"`.
 
@@ -295,6 +298,7 @@ Run it in this order on every finished screen and mark each line pass or fail. J
 - [ ] Small accent text uses `text-aa`.
 - [ ] Shadows only on things that float; no hover lift.
 - [ ] One primary button per view. A composer's Send counts.
+- [ ] Primary buttons are the ink pill in both themes, checked on the rendered screen in light and dark.
 
 **6. Content**
 - [ ] Real names, times and titles; no lorem ipsum; no invented numbers.
