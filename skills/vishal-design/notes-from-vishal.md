@@ -164,3 +164,30 @@ Examples:
 1. A dense chat thread: built from the dense List and Avatar, separated by space and hairlines, timestamps in tabular numbers, 32px rows. No bubbles.
 2. A reading stats chart: bars filled with the product's accent wash, labels in muted text, one big number using the stat style, used once on the screen.
 3. A star rating: drawn as filled icons in the product colour, sized from the type scale, passing contrast.
+
+### Visual finesse
+
+**6. Typography: how do you decide hierarchy on a screen, how many sizes and weights you allow at once, and which details you always fix?**
+
+Hierarchy comes from the user's question. The answer to the main question gets the strongest type on the screen, and everything else steps down in the order people need it. I build that contrast with size, weight and width together, never with colour alone.
+
+Limits on one screen:
+1. One display moment at most: heavy and narrow Bricolage, 760 to 800 weight, 75 to 85% width, only at 40px and above. On dense screens it appears once, as a page title or one stat.
+2. At most four text sizes below that, taken from the scale: 13, 15, 16, 18 and 20px. Body is 18px, or 16px on phones and dense screens. Nothing below 13px.
+3. At most three weights visible: 400 for reading, 500 to 650 for interface text like labels and buttons, and the display weight. Buttons and labels never go above 650.
+4. Emphasis comes from weight or position. Not from colour, not from italics, not from underlines that are not links.
+
+Details I always fix:
+1. Line length: paragraphs stay between about 46 characters and 760px wide. Never full width text.
+2. Line height: display tight at .92 to .95, body at 1.5, interface text at 1.3 to 1.4.
+3. Tracking: display slightly tighter, -.01 to -.025em. Small uppercase eyebrows slightly looser, .14em at 13px. Body left alone.
+4. Numbers: tabular figures for times, counts, prices, ratings and anything in a column, so they line up. Numbers in columns align right.
+5. Headings never end with one word alone on the last line. Balance the lines.
+6. Real punctuation: curly quotes and apostrophes, a real ellipsis, a non breaking space between a number and its unit. In prose, ranges are written with "to".
+7. Case: sentence case for interface text. Uppercase only for small eyebrows.
+8. Alignment: text aligns left. Centred text only for very short lines, never for paragraphs.
+9. Truncation: names and titles in lists truncate to one line with an ellipsis, and message previews to two lines. The answer to the main question is never truncated.
+10. Muted text is for secondary information only and still passes 4.5 to 1.
+
+Why: type is most of what people see on a screen. When the hierarchy is right, a screen reads in two seconds, and when the details are fixed, it looks finished even before colour or images arrive.
+When it may bend: marketing or launch moments can push the display size beyond the usual, but still one moment per screen.
