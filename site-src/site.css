@@ -1,0 +1,16 @@
+/* The hand in page: a scrolling page, so section gaps from the tokens. */
+.site { display: flex; flex-direction: column; gap: var(--section-gap); padding-block: var(--section-inner) var(--section-gap); }
+.site__head { display: flex; flex-direction: column; gap: var(--space-5); }
+.site__head > * { margin: 0; }
+.site__head h1 { max-inline-size: 14ch; text-wrap: balance; }
+.site__lead { max-inline-size: var(--measure-max); font-size: var(--type-lead-size); font-weight: var(--type-lead-weight); line-height: var(--type-lead-lh); color: var(--color-muted); }
+.site__links { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.site__product { display: flex; flex-direction: column; gap: var(--space-6); }
+.site__product h2 { margin: 0; }
+.site__layouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(var(--space-6) * 10)), 1fr)); gap: var(--space-6); margin: 0; padding: 0; list-style: none; }
+.site__layout { display: flex; flex-direction: column; gap: var(--space-3); padding-block-start: var(--space-4); border-top: var(--border-w) solid var(--color-line-strong); }
+.site__layout > * { margin: 0; }
+.site__name { display: flex; align-items: center; gap: var(--space-2); font-size: var(--type-title-size); font-weight: var(--type-title-weight); line-height: var(--type-title-lh); }
+.site__idea { max-inline-size: var(--measure-max); font-size: var(--type-small-size); line-height: var(--type-body-lh); }
+.site__open { display: flex; gap: var(--space-4); font-size: var(--type-small-size); }
+.site__open a { color: var(--color-ink); }
