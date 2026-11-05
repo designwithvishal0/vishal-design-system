@@ -80,7 +80,7 @@ Code in a message uses the system monospace, the one font exception:
 .message pre { margin: var(--space-2) 0 0; padding: var(--space-3); overflow-x: auto; border: var(--border-w) solid var(--color-line-strong); border-radius: var(--radius-sm); background: var(--color-surface-1); font-family: var(--font-mono); font-size: var(--type-label-size); line-height: var(--type-body-lh); }
 ```
 
-Rules: a mention of the reader is weight 650 in `--accent-text-aa`, so it never relies on colour alone. Consecutive messages from one person within five minutes drop the avatar and name and keep the 32px rhythm. Group days with an `eyebrow` divider like "TODAY". Long messages wrap; names truncate to one line. A message sending shows "Sending" in muted text; failed shows "Not sent. Retry" in `--color-error` with a Button `ghost` `sm`.
+Rules: a mention of the reader is weight 650 in `--accent-text-aa`, so it never relies on colour alone. Consecutive messages from one person within five minutes drop the avatar and name and keep the 32px rhythm. A day divider ("Yesterday", "Today") in `label` text on a hairline appears where the day changes, so no message repeats its day. Above the first unread message, a "New" divider in `eyebrow` text and `--accent-text-aa` on a `line-strong` hairline. Long messages wrap; names truncate to one line. A message sending shows "Sending" in muted text; failed shows "Not sent. Retry" in `--color-error` with a Button `ghost` `sm`.
 
 ### 2. A long list of books
 
