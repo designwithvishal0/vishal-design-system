@@ -1,6 +1,6 @@
 import { Button } from '../shared/ds.js';
 import { ProfileNav, Challenge, NowReading, ShelfRow, Reviews, PerMonthChart, Identity } from '../shared/parts.jsx';
-import { currentlyReading, reviews, stats, readThisYear } from '../shared/data.js';
+import { currentlyReading, reviews, stats, readThisYear , reader } from '../shared/data.js';
 import './year.css';
 
 // Direction 1, My year. For the owner. Question: "What am I reading, and how am I doing?"
@@ -12,7 +12,7 @@ const lastFive = readThisYear.slice(-5).reverse();
 export function App() {
   return (
     <div data-accent="amber">
-      <ProfileNav />
+      <ProfileNav viewer={reader.name} />
       <main className="vd-container page">
         <section className="page__section" aria-label="Your year">
           <Identity size="md" />

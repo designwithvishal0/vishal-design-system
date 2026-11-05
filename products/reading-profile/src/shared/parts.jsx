@@ -5,12 +5,13 @@ import './parts.css';
 
 const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/** The site bar. A profile is a page inside the product, so no nav link is current. */
-export function ProfileNav() {
+/** The site bar. A profile is a page inside the product, so no nav link is current.
+ *  viewer is whoever is looking: the owner on their own page, a visitor on someone else's. */
+export function ProfileNav({ viewer = 'You' }) {
   return (
     <Nav brand="Margins" label="Margins" actions={<>
       <Input label="Search books" hideLabel placeholder="Search books" leading={<IconSearch />} className="rp-search" />
-      <Avatar name="You" size="sm" />
+      <Avatar name={viewer} size="sm" />
     </>}>
       <Nav.Link href="#home">Home</Nav.Link>
       <Nav.Link href="#books">My books</Nav.Link>

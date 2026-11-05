@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Cover } from '../shared/ds.js';
 import { ProfileNav, NowReading, ShelfRow, Stars, Identity } from '../shared/parts.jsx';
-import { currentlyReading, readThisYear, reviews, months, challenge, coverOf } from '../shared/data.js';
+import { currentlyReading, readThisYear, reviews, months, challenge, coverOf , reader } from '../shared/data.js';
 import './story.css';
 
 // Direction 3, My reading story. The year told as a timeline of what was read and when.
@@ -32,7 +32,7 @@ export function App() {
 
   return (
     <div data-accent="amber">
-      <ProfileNav />
+      <ProfileNav viewer={reader.name} />
       <main className="vd-container page">
         <section className="page__section" aria-labelledby="st-title">
           <Identity size="md" />
