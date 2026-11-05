@@ -1,6 +1,6 @@
 # Extending the system
 
-The system was built from a portfolio. A chat app or a reading profile needs things the portfolio never had. This is how to build them so they still look like Vishal's work.
+The system was built from a portfolio. A chat app, a form, a dashboard or a checkout needs things the portfolio never had. This is how to build them so they still look like Vishal's work.
 
 ## What holds and what bends
 
@@ -144,6 +144,14 @@ Relative: Card `plain`. Three different empties, each in plain words with one ne
 | No results | "Nothing in #design matches "pricing"." Button: "Search all channels" | "No books on this shelf match "Ishiguro"." Button: "Clear the filter" |
 | All done | "You're all caught up." (a good place for the signature moment) | "Challenge complete: 50 of 50." |
 
+The same three in other products:
+
+| Empty | Dashboard | Settings | Checkout |
+| --- | --- | --- | --- |
+| First use | "No orders yet. Your first one will show up here within a minute." Button: "Share your store link" | Nothing to design: settings always have defaults | "Your cart is empty." Button: "Keep shopping" |
+| No results | "No orders from Pune in October." Button: "Show all cities" | "No setting matches "invoice"." Button: "Clear the search" | "This code is not valid. Check it or try another." under the code field |
+| All done | "Every order shipped today." | "Saved." in a quiet toast | "Paid. Your order number is 4821." (the flow's signature moment) |
+
 Rules: `title` for the line, `small` for the detail, one Button. Never a blank area, never an illustration without an action.
 
 ### 6. Loading
@@ -171,6 +179,49 @@ A command bar is a field, not a dialog: no heading and no close button. Use `Mod
 ```
 
 Rules: opens with Cmd K or Ctrl K. It holds a few real actions (New message, Go to mentions, Mark all as read) as well as places, or it is named for what it does, like "Jump to a channel or person". Arrow keys move the selected row (the accent wash), Enter runs it, Escape closes it. Every result shows its shortcut in `label` text on the right. The bar is a convenience: everything it does is also reachable by mouse.
+
+### 8. A multi step form
+
+Relative: Input, Button, the eyebrow and the progress bar from example 3. Example: a five step loan application.
+
+```jsx
+<form aria-labelledby="step-title" noValidate>
+  <p className="vd-type-eyebrow">Step 2 of 5</p>
+  <h1 className="vd-type-heading" id="step-title">Where do you work?</h1>
+  <Input label="Company name" />
+  <Input label="Monthly salary" hint="Before tax, in rupees" inputMode="numeric" />
+  <div className="form__actions">
+    <Button type="button" variant="ghost">Back</Button>
+    <Button type="submit" variant="primary">Continue</Button>
+  </div>
+</form>
+```
+
+Rules: one question per step, asked in the user's words as the heading ("Where do you work?", never "Employment details"). The step count sits in the eyebrow; a thin bar may show progress. Fields stack in one column at the reading measure, 24px apart, label to field 8px. Continue is the one primary button, bottom left, aligned to the fields; Back is a ghost to its left. Errors appear after leaving a field or pressing Continue, never while typing, next to the field, and keep what was typed. A form gets no signature moment until the end: the confirmation can carry it ("Applied. You will hear back by Friday."). Long forms save as you go and say so ("Saved 9:41").
+
+### 9. A data dashboard
+
+Relative: the `stat` roles, Card `surface`, the chart and table recipes. Example: a store owner's sales overview.
+
+Rules: the main question leads, answered in one number in `stat` or `stat-sm` ("₹2.4 lakh this week, up 12%"). Everything else is quieter: a chart that explains the number (chart recipe, one accent), then the table of what is behind it (table recipe). Never a grid of equal stat cards: four numbers the same size answer nothing (rule 8, correct versus good). Each number says what it is compared with ("up 12% on last week"). Up and down are words or arrows with the number, never green and red alone (status colours are only live and error). The date range is a Select at the top right, in the same place on every dashboard. A dashboard used daily keeps its layout fixed; nothing animates on refresh except the numbers that changed, which may count once.
+
+### 10. Checkout and payment
+
+Relative: Input, Card `surface`, the List and the primary Button. Example: paying for a cart of three items.
+
+Rules: the question is "What will I pay, and is it safe?" The total is always visible: in a summary beside the form on desktop, and above the pay button on phones. The pay button says the amount ("Pay ₹1,840"), is the one primary button, and is never hidden by a sheet or a keyboard. Card fields use the right keyboards (`inputMode="numeric"`) and autofill names, show the card brand once it is known, and never clear on an error. Errors from the bank are translated into what to do next ("Your bank declined this card. Try another card or UPI."). While paying, the button shows a spinner and stays pressed (the only place for a spinner); the page never lets anyone pay twice. Success is the flow's signature moment: one heading, the order number, what happens next. Prices use tabular numerals and the real currency format.
+
+### 11. A settings page
+
+Relative: NavList, the Switch, Select and List recipes. Example: notification settings in a banking app.
+
+Rules: settings are a reference screen, the one place a screen may stay even (section 8): groups of rows, each row a label, a one line explanation in `small` muted text, and its control on the right. Group with space and an eyebrow, never a card around each row. Switches take effect at once and confirm quietly ("Saved" toast); anything that cannot be undone, like closing an account, sits last, behind a button that names the action and a Modal that asks once. A long settings page gets a NavList rail on desktop and a search field at the top. No signature moment.
+
+### 12. An onboarding flow
+
+Relative: the multi step form (example 8), `display`, the progress bar. Example: the first three screens of a fitness app.
+
+Rules: onboarding is rare and sets the tone, so it may be big: one question or one promise per screen in `display`, with lots of space. Ask only what changes what the user sees next, and say why ("We use your goal to plan your first week"). Every step can be skipped unless the product cannot work without it. The last screen is the payoff and the right place for the signature moment: the user's own plan, made from their answers, not a generic welcome. Under Reduce motion, screens change with a quick fade.
 
 ## Fixed recipes for missing components
 

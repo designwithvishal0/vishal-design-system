@@ -28,8 +28,8 @@ Reference files:
 | --- | --- |
 | [reference/tokens.md](reference/tokens.md) | Every token with its value and use, and how to set the theme and accent |
 | [reference/components.md](reference/components.md) | The components, their props and when to use each |
-| [reference/extending.md](reference/extending.md) | How to build what does not exist yet: seven worked examples, and one fixed recipe each for tabs, menu, toast, tooltip, table, checkbox, switch and select |
-| [reference/examples.md](reference/examples.md) | Good and bad versions of eight rules, in messaging and a reading profile |
+| [reference/extending.md](reference/extending.md) | How to build what does not exist yet: twelve worked examples (a chat thread, a book list, a challenge, a rating, empty states, loading, a command bar, a multi step form, a dashboard, checkout, settings, onboarding), and one fixed recipe each for tabs, menu, toast, tooltip, table, checkbox, switch, chart and select |
+| [reference/examples.md](reference/examples.md) | Good and bad versions of the rules in seven kinds of product, and one example of every rule outside messaging and reading |
 | [`notes-from-vishal.md`](notes-from-vishal.md) | His answers, word for word. Read it when a rule here feels unclear |
 
 Set up once per app:
@@ -56,7 +56,7 @@ Build the layout around the moment that matters most and the question the user h
 | 5. Order everything else by what people need next, not by what the product wants to show. Later things move lower. Nothing the brief requires is removed: the question decides order and weight, never whether it is there. | People read top to bottom. Dropping a required part breaks the brief. | Never. |
 | 6. Check the main question in its states: nothing new, a little, a lot. | A layout that only works with three items is not a layout. | Never. |
 
-Example questions. Messaging: "What needs me right now?" Reading profile, owner: "What am I reading, and how am I doing?" Reading profile, visitor: "Is this person's taste worth following?"
+Example questions. Messaging: "What needs me right now?" Reading profile, owner: "What am I reading, and how am I doing?" A checkout: "What will I pay, and is it safe?" A sales dashboard: "How is my store doing this week?" A loan form: "How much longer is this?" A settings page has no single question: it is a reference screen (section 8).
 
 ## 2. Three directions
 
@@ -81,7 +81,7 @@ Write the three like this before any code:
    Viewer: ... Question: "..." Organised by: ... Best for: ... Gives up: ... Signature moment: ...
 ```
 
-Vishal's own examples. Messaging: **Threads first** (conversations are the unit, channels sit behind them), **Needs you** (one inbox of only what needs a reply or a decision, everything else waits), **Keyboard first** (a command bar drives everything, for people who live in it all day). Reading profile: **My year** (the challenge and progress lead, for the owner), **My taste** (shelves, ratings and reviews lead, for a visitor deciding whether to follow), **My reading story** (the year as a timeline of what was read and when).
+Vishal's own examples. Messaging: **Threads first** (conversations are the unit, channels sit behind them), **Needs you** (one inbox of only what needs a reply or a decision, everything else waits), **Keyboard first** (a command bar drives everything, for people who live in it all day). Reading profile: **My year** (the challenge and progress lead, for the owner), **My taste** (shelves, ratings and reviews lead, for a visitor deciding whether to follow), **My reading story** (the year as a timeline of what was read and when). A sales dashboard, for contrast: **Exceptions first** (only what went wrong today), **The week as a story** (a timeline of the week's orders), **One number per team** (each team's one figure, for a founder at a glance).
 
 ## 3. Clean: what every screen gets
 
@@ -174,7 +174,7 @@ A signature moment is where the screen's main idea stops being read and starts b
 
 **The remove test**: remove it. If the screen loses meaning, it was a signature moment. If it only loses decoration, it was not.
 
-Messaging: the last thing needing you is cleared and the screen settles into "You're all caught up." Reading profile: "34 of 50" counts up once to where you are.
+Messaging: the last thing needing you is cleared and the screen settles into "You're all caught up." Reading profile: "34 of 50" counts up once to where you are. Checkout: "Paid" with the order number, at the end of the flow. Onboarding: the user's own first week, built from their answers. A settings page or an error: none.
 
 ### Motion with meaning
 
