@@ -462,3 +462,31 @@ For messaging: switching channels swaps the thread quickly while the sidebar sta
 
 Why: motion is how a screen explains change. Used with a job, it makes a product feel clear and alive. Used without one, it feels cheap and slows people down.
 When it may bend: a launch or hero moment can take longer and be more expressive, as long as it never blocks the user and passes the signature moment's remove test.
+
+### Judgement
+
+**15. Trade offs: when two of your rules conflict (density against space, a striking moment against speed, the product's colour against legibility), what wins and why?**
+
+*(Given in two parts, recorded together as one answer.)*
+
+When two rules fight, the higher one in this order wins:
+1. Access and honesty. Contrast, keyboard, touch targets, real content, nothing invented. This is never traded away.
+2. The user's task. The main question answered first, and speed in tools people use all day.
+3. Clarity. A hierarchy you read in two seconds, and text you can actually read.
+4. Consistency with the system.
+5. Character and the signature moment.
+6. Taste details that only I would notice.
+
+The conflicts that come up most:
+1. Density against space. How often people use it decides. In a tool used all day, density wins inside lists, but groups are still separated by space, and nothing goes below the scale or the touch target size. On rare, high stakes screens, space wins.
+2. A striking moment against speed. Speed wins in frequent tools. The moment shrinks to something small and quick, or moves to after the action, and it never blocks. A first visit or a launch can have the big version.
+3. The product's colour against legibility. Legibility wins. The colour moves to a wash or a large heading, and small text uses the darker text shade. A colour is darkened, never pushed below contrast.
+4. My look against what people already know. Conventions win, like the composer at the bottom of a chat or unread counts on channels. My system dresses the convention, it does not replace it.
+5. Consistency against a better idea on one screen. Consistency wins. If the new idea really is better, change the component everywhere, never on one screen only.
+6. The brief against my idea. Everything the brief requires appears. My idea decides its order and weight.
+7. Motion against Reduce motion. Reduce motion always wins.
+
+When it is still unclear, I ask: which choice would the main viewer thank me for a week later? Then I write the trade off down in that layout's description, so the reason is visible.
+
+Why: every real design is a set of trade offs. Knowing what wins, and saying so out loud, is what makes a design defendable instead of a guess.
+When it may bend: the order does not bend. If a case seems to need it, write down why and treat it as a place where the system needs to grow.
