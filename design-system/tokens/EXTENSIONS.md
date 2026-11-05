@@ -16,6 +16,8 @@ Every token that is not read from the live portfolio. Each one fills a gap the p
 - `row-h-dense`: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between.
 - `state-disabled-opacity`: The site has no disabled state.
 - `accent-sky-ink, accent-sky-text`: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash.
+- `accent-orange-wash (dark only)`: Dark theme only. The site value is #1B1E2C, a navy that reads as blue next to orange. Replaced with a dark burnt orange (hue 24) set at the same depth as the other dark washes: 1.36 to 1 against the page, where amber is 1.41. Orange text on it is 6.1 to 1.
+- `accent-orange-muted (dark only)`: Dark theme only. The site value is #B8BCCB, a blue grey chosen for the navy wash. Replaced with a warm light tone that gives 8.7 to 1 on the burnt orange wash.
 - `accent-<name>-text-aa (all five accents)`: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes.
 - `accent-wash, accent-muted, accent-ink, accent-text, accent-text-aa`: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026).
 - `prefers-reduced-motion block`: Zeroes every duration at token level. The site has a Reduce motion toggle, but no token level rule.

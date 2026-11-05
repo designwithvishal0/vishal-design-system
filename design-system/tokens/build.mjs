@@ -44,8 +44,10 @@ for (const [name, a] of Object.entries(accents)) {
     // text-aa is always an extension: it is added by this system.
     const isExt = key === 'textAa' || (a.ext && (key === 'ink' || key === 'text'));
     const t = key === 'textAa' ? { ext: textAaNote } : isExt ? { ext: a.ext } : { from: a.from };
+    // A value can also be an extension in the dark theme only (extDark), as with orange.
+    const tDark = a.extDark?.[key] ? { ext: a.extDark[key] } : t;
     light.push(line(`accent-${name}-${label}`, a[key][0], t));
-    dark.push(line(`accent-${name}-${label}`, a[key][1], t));
+    dark.push(line(`accent-${name}-${label}`, a[key][1], tDark));
   }
 }
 
@@ -143,6 +145,7 @@ const byWhy = new Map();
 const add = (name, why) => byWhy.set(why, [...(byWhy.get(why) ?? []), name]);
 for (const [name, t] of Object.entries({ ...themed, ...fixed })) if (t.ext) add(name, t.ext);
 for (const [name, a] of Object.entries(accents)) if (a.ext) add(`accent-${name}-ink, accent-${name}-text`, a.ext);
+for (const [name, a] of Object.entries(accents)) for (const [key, why] of Object.entries(a.extDark ?? {})) add(`accent-${name}-${key} (dark only)`, why);
 add('accent-<name>-text-aa (all five accents)', textAaNote);
 add('accent-wash, accent-muted, accent-ink, accent-text, accent-text-aa', `Default accent is ${defaultAccent} when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026).`);
 add('prefers-reduced-motion block', 'Zeroes every duration at token level. The site has a Reduce motion toggle, but no token level rule.');

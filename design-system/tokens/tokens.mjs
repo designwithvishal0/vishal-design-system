@@ -87,8 +87,14 @@ export const themed = {
 export const accents = {
   orange: {
     from: '.kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo)',
-    wash: ['#FFE2CC', '#1B1E2C'], muted: ['#4F4640', '#B8BCCB'], ink: ['#A34400', '#FF9A57'], text: ['#F07322', '#FF8A3D'],
+    // The site's dark ixigo wash is #1B1E2C, a navy, and its muted text #B8BCCB, a blue grey. Beside orange
+    // text they read as blue, so the dark wash and muted text are replaced (extDark below).
+    wash: ['#FFE2CC', '#43210A'], muted: ['#4F4640', '#E3C3A8'], ink: ['#A34400', '#FF9A57'], text: ['#F07322', '#FF8A3D'],
     textAa: ['#A34E17', '#FF8A3D'],
+    extDark: {
+      wash: 'Dark theme only. The site value is #1B1E2C, a navy that reads as blue next to orange. Replaced with a dark burnt orange (hue 24) set at the same depth as the other dark washes: 1.36 to 1 against the page, where amber is 1.41. Orange text on it is 6.1 to 1.',
+      muted: 'Dark theme only. The site value is #B8BCCB, a blue grey chosen for the navy wash. Replaced with a warm light tone that gives 8.7 to 1 on the burnt orange wash.',
+    },
   },
   violet: {
     from: ':root --w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo (the base set, replaced by orange on the home page)',

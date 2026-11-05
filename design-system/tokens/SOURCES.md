@@ -18,6 +18,8 @@ Five accents, one per screen, never mixed. Orange is the default when a screen n
 
 Dropped: coral (too close to orange, weakest contrast), and the home page blue, lime and light blue.
 
+**Orange in dark theme differs from the site, on purpose.** The site's dark ixigo wash is `#1B1E2C` and its muted text is `#B8BCCB`. Those are a navy and a blue grey, picked for the site's old blue sections, and beside orange text they read as blue: the wash card, the chip, the selected row and the accent avatar all looked blue in dark mode. The tokens use a dark burnt orange wash `#43210A` and a warm muted text `#E3C3A8` instead, built the way the other accents work in dark (amber's dark brown wash, teal's dark green). Both are extensions, marked in the file. Contrast: orange text on the new wash is 6.1 to 1, the heading ink 6.9 to 1, the muted text 8.7 to 1, and the wash sits 1.36 to 1 from the page, close to amber at 1.41. The light theme still uses the site values.
+
 **The contrast rule.** The site's exact accent text colours are for headings and large text only. Every accent also has `text-aa`, the same hue darkened until it passes 4.6 to 1 on its wash, on the page and on surface-1. Use `text-aa` for any small text. The light values are an extension. The dark values already pass and equal the site values. `node tokens/build.mjs` fails if any `text-aa` value drops below 4.5 to 1.
 
 Why it matters, light theme, exact site text colour:
