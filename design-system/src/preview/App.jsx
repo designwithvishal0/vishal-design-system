@@ -1,3 +1,4 @@
+import { IconChevronDown } from '../index.js';
 import { useState } from 'react';
 import { Gallery } from './Gallery.jsx';
 
@@ -18,10 +19,14 @@ export function App() {
         <div className="pv-toolbar__accent">
         <label className="pv-toolbar__pick">
           Product accent
-          <select value={accent} onChange={(e) => setAccent(e.target.value)}>
-            <option value={NEUTRAL}>none, neutral</option>
-            {ACCENTS.map((a) => <option key={a}>{a}</option>)}
-          </select>
+          {/* The Select recipe from the skill: the native select dressed like the Input, with IconChevronDown. */}
+          <span className="select-wrap">
+            <select className="select" value={accent} onChange={(e) => setAccent(e.target.value)}>
+              <option value={NEUTRAL}>none, neutral</option>
+              {ACCENTS.map((a) => <option key={a}>{a}</option>)}
+            </select>
+            <IconChevronDown />
+          </span>
         </label>
         <p className="pv-toolbar__note">Only parts that carry the product colour change: the wash card, accent tags, the accent avatar and selected rows. Everything else stays neutral by design.</p>
         </div>
