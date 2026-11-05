@@ -29,13 +29,13 @@
 .vd-nav__links { display: flex; gap: var(--space-6); }
 .vd-nav__link { padding-block: var(--space-3); color: var(--color-muted); font-size: var(--type-small-size); font-weight: var(--type-small-weight); white-space: nowrap; }
 .vd-nav__link[aria-current='page'] { color: var(--color-ink); }
-.vd-nav__actions { display: flex; align-items: center; justify-content: flex-end; gap: var(--space-2); }
+.vd-nav__actions, .vd-nav__desk { display: flex; align-items: center; justify-content: flex-end; gap: var(--space-2); }
 .vd-nav__menu, .vd-nav__sheet { display: none; }
 
 /* Phones: name on the left, Menu on the right, nothing else in the bar. */
 @media (max-width: 759px) {
-  .vd-nav__in { grid-template-columns: 1fr auto; }
-  .vd-nav__links, .vd-nav__actions { display: none; }
+  .vd-nav__in { grid-template-columns: 1fr auto auto; }
+  .vd-nav__links, .vd-nav__desk { display: none; }
   .vd-nav__menu { display: inline-flex; }
   .vd-nav--open .vd-nav__sheet {
     display: flex;

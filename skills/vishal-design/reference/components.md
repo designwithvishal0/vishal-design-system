@@ -66,7 +66,7 @@ Counts over 99 show as "99+". On a selected row an `accent` tag takes the page c
 </Nav>
 ```
 
-In an app, the bar holds the product's name on the left, its top level views as links in the centre (the current one underlined), and on the right a search or command trigger and the person's avatar. Channels, folders and filters never go in the bar: they belong in a rail or a list.
+In an app, the bar holds the product's name on the left, its top level views as links in the centre (the current one underlined), and on the right a search or command trigger and the person's avatar. Channels, folders and filters never go in the bar: they belong in a rail or a list. On phones everything in `actions` moves into the menu; put what must stay in the bar, like a search button, in `persistent`.
 
 `NavList` is the vertical sidebar list (extension). `NavList.Heading` with an optional `action`, `NavList.Item` with `current`, `unread` (weight 650), `leading`, `trailing`. The current item is a neutral surface, never the accent, so the sidebar never competes with the content.
 
