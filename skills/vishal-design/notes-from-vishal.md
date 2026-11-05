@@ -232,3 +232,35 @@ When it may bend: a single moment can get extra space to make it land, like the 
 2. "Comfortable single line List rows become 48px, so rows do not read as buttons. Two line rows size to their content."
 3. "Icons scale with the text but snap to 16, 20 or 24px, so their lines stay crisp."
 4. "On phones, section gaps shrink: 96px between sections and 48px inside, instead of 160 and 72. My case studies already shrink their sections on small screens."
+
+**8. Colour and depth: where is colour allowed to appear, how do you use hairlines, surfaces and shadows, and how is dark mode designed rather than inverted?**
+
+The page is neutral. Colour belongs to the product, not to me, and depth is drawn with lines, not shadows.
+
+Where colour may appear:
+1. One product colour per screen, never two mixed.
+2. It appears in a few places only: a wash for one group that should stand out, a selected state, headings and large accent text, and the screen's signature moment.
+3. Small accent text always uses the darker text shade that passes 4.5 to 1. The exact accent colour is for headings and large text only.
+4. Status colours are separate and carry meaning only: green means live or available, red means error. Never used for decoration.
+5. Colour never carries meaning alone. A selected row also changes weight or gets a mark, so it still works for people who cannot see the colour.
+6. Pastels stay bright. Never greyed down or muddy.
+7. Most of the screen stays neutral. If colour is everywhere, it stops meaning anything.
+
+How depth works:
+1. Levels go page, then surface, then wash. A surface is one quiet step off the page.
+2. Lines: the hairline for dividers and lists, the stronger line for edges of cards and surfaces, and a 1px ring on images and media.
+3. A shadow means one thing only: this floats above the page. Menus, popovers, dialogs, toasts, hover previews and device frames get one. Cards, rows, panels and buttons never do.
+4. Modals and sheets sit on a scrim so the page behind clearly steps back.
+
+How dark mode is designed, not inverted:
+1. The page is near black #0C0C0E, not pure black, and text is warm off white #F2F1EC, not pure white. Pure black and white strain the eyes.
+2. Things that rise get lighter, because shadows barely show on a dark page. Surfaces step up in lightness, and floating things get a 1px ring as well as a shadow.
+3. Lines switch to their own dark tokens. Washes get their own deep dark values, not inverted pastels, and accent text gets its own lighter tone.
+4. Contrast is checked again in dark. A colour that passes in light can fail in dark.
+5. No dark on dark: every card and panel stays clearly separated from the page.
+6. The one dark moment, like my closing panel, becomes a lifted surface with an edge in dark mode, so it still stands apart.
+
+Why: a neutral page lets the product be the only thing with colour, so every product looks like itself. Lines work in both themes, while shadows break in dark mode.
+When it may bend: a launch or marketing moment can use a full colour
+
+*(This last sentence arrived cut off. Waiting for Vishal to finish it.)*
