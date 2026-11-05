@@ -54,7 +54,7 @@ Parts: `Card.Title`, `Card.Body`, `Card.Meta parts={['Product', 'Type', 'Concept
 | `accent` | Wash with `text-aa`. One kind of highlight per screen |
 | `live` | Green dot with a slow pulse. Availability only |
 
-Counts over 99 show as "99+".
+Counts over 99 show as "99+". On a selected row an `accent` tag takes the page colour, so it stays a pill on the wash.
 
 ## Nav and NavList
 
