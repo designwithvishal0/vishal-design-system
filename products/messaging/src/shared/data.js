@@ -16,14 +16,15 @@ export const people = {
 
 export const workspace = { name: 'Kite', team: 'Kite team' };
 
-// unread: messages you have not seen. mention: one of them names you.
-export const channels = [
-  { id: 'launch', name: 'launch', topic: 'Kite 2.4 ships Thursday 13 November', unread: 6, mention: true },
-  { id: 'design', name: 'design', topic: 'Reviews, critiques and files', unread: 3, mention: false },
-  { id: 'engineering', name: 'engineering', topic: 'Builds, releases and incidents', unread: 14, mention: false },
-  { id: 'support', name: 'support', topic: 'What customers are telling us', unread: 2, mention: true },
-  { id: 'general', name: 'general', topic: 'Team wide news', unread: 0, mention: false },
-  { id: 'random', name: 'random', topic: 'Lunch, links and everything else', unread: 0, mention: false },
+// The channels. Their unread counts are not typed in: they are worked out from channelMessages
+// and lastRead below, so every count on every screen agrees with the messages you can see.
+const baseChannels = [
+  { id: 'launch', name: 'launch', topic: 'Kite 2.4 ships Thursday 13 November', lastRead: 'l2' },
+  { id: 'design', name: 'design', topic: 'Reviews, critiques and files', lastRead: null },
+  { id: 'engineering', name: 'engineering', topic: 'Builds, releases and incidents', lastRead: null },
+  { id: 'support', name: 'support', topic: 'What customers are telling us', lastRead: null },
+  { id: 'general', name: 'general', topic: 'Team wide news', lastRead: 'n1' },
+  { id: 'random', name: 'random', topic: 'Lunch, links and everything else', lastRead: null },
 ];
 
 export const directs = [
@@ -140,6 +141,17 @@ export const waitingOnOthers = [
 ];
 
 export const firstName = (id) => people[id].name.split(' ')[0];
-export const channelById = (id) => channels.find((c) => c.id === id);
 export const threadById = (id) => threads.find((t) => t.id === id);
+
+// Unread: messages after the last one you read, not counting your own. Mention: one of them names you.
+const unreadIn = (c) => {
+  const all = channelMessages[c.id];
+  const after = c.lastRead ? all.slice(all.findIndex((m) => m.id === c.lastRead) + 1) : all;
+  return after.filter((m) => m.author !== me);
+};
+export const channels = baseChannels.map((c) => {
+  const unread = unreadIn(c);
+  return { ...c, unread: unread.length, mention: unread.some((m) => m.text.includes('@Rohan')) };
+});
+export const channelById = (id) => channels.find((c) => c.id === id);
 export const totalUnread = channels.reduce((n, c) => n + c.unread, 0);

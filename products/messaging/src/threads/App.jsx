@@ -77,11 +77,11 @@ export function App() {
       <div className="app__body tf" data-phone={phoneView}>
         <aside className="panel panel--line tf-side">
           <NavList label="Show threads from">
-            <NavList.Heading>Show threads from</NavList.Heading>
+            <NavList.Heading>New replies by channel</NavList.Heading>
             <NavList.Item as="button" current={filter === 'all'} onClick={() => setFilter('all')}>All channels</NavList.Item>
             {channels.map((c) => (
               <NavList.Item key={c.id} as="button" leading={<IconHash />} current={filter === c.id} onClick={() => setFilter(c.id)}
-                trailing={<span className="tf-count">{threads.filter((t) => t.channel === c.id).length || ''}</span>}>
+                trailing={<span className="tf-count">{threads.filter((t) => t.channel === c.id && unreadOf(t) > 0).length || ''}</span>}>
                 {c.name}
               </NavList.Item>
             ))}
