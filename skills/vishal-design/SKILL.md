@@ -114,7 +114,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | Code, and only code, is set in `--font-mono` at the `small` size, inline on `surface-2` with `radius-code` (4px), blocks on `surface-1` with a `line-strong` edge and `radius-sm`. | People expect code in monospace, and conventions win. It is the system font, so nothing new loads. | Never for anything that is not code. |
 | Emphasis comes from weight or position, never colour alone, italics, or underlines that are not links. | Colour alone fails people who cannot see it; underline means link. | Never. |
 | Paragraphs run between `--measure-min` (46ch) and `--measure-max` (760px). Never full width text. | Long lines are hard to follow back. | Never. |
-| Line height: display .92 to .95, body 1.5, interface text 1.3 to 1.4 (`small` sits at 1.45). Tracking: display -.01 to -.025em, `eyebrow` .14em uppercase, body untouched. | Tight display reads as one shape; body needs air. | Never. |
+| Line height: display .92 to .95, body 1.5, interface text 1.3 to 1.4 (`small`, `meta` and `label` all at 1.4). Tracking: display -.01 to -.025em, `eyebrow` .14em uppercase, body untouched. | Tight display reads as one shape; body needs air. | Never. |
 | Tabular numerals for times, counts, prices and ratings; numbers in columns align right. | Digits line up and do not jitter as they change. | Never. |
 | Headings never leave one word alone on the last line: use `text-wrap: balance`. | A lone word makes a heading look unfinished. | Never. |
 | Real punctuation: curly quotes, a real ellipsis, a non breaking space between a number and its unit, ranges written with "to". | These are the details that read as finished. | Never. |

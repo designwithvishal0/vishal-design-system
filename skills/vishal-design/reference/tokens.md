@@ -88,7 +88,7 @@ One family: Bricolage Grotesque Variable (`--font-sans`). The one exception is c
 | `story` | 24 (19) | 400 | 100% | 1.45 | -.005em | Long intro text |
 | `lead` | 18 | 500 | 100% | 1.5 | 0 | Lead paragraph |
 | `body` | 18 (16) | 400 | 100% | 1.5 | 0 | Reading text |
-| `small` | 15 | 500 | 100% | 1.45 | 0 | Interface text, nav, list meta |
+| `small` | 15 | 500 | 100% | 1.4 | 0 | Interface text, nav, list meta |
 | `meta` | 14 | 600 | 100% | 1.4 | 0 | Card meta line: Product · Type · Concept · 2026 |
 | `label` | 13 | 600 | 100% | 1.4 | 0 | Labels, tags |
 | `eyebrow` | 13 | 600 | 100% | 1.4 | .14em, uppercase | The only uppercase text |
