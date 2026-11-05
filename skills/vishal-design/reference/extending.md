@@ -65,9 +65,10 @@ Relative: the dense List row and Avatar. No bubbles.
 ```
 
 ```css
-/* EXTENSION: chat message. A dense List row where the body wraps under the name. */
-.thread .vd-list__main { flex-direction: column; align-items: flex-start; gap: var(--space-1); }
-.thread .message { margin: 0; max-width: var(--measure-max); font-size: var(--type-small-size); line-height: var(--type-body-lh); white-space: normal; }
+/* EXTENSION: chat message. The name and time share one line; the message sits under both. */
+.thread .vd-list__main { display: grid; grid-template-columns: auto 1fr; align-items: baseline; column-gap: var(--space-2); }
+.thread .vd-list__title { font-weight: var(--weight-ui); }
+.thread .message { grid-column: 1 / -1; margin: 0; max-width: var(--measure-max); font-size: var(--type-small-size); line-height: var(--type-body-lh); white-space: normal; }
 .thread time { font-variant-numeric: tabular-nums; color: var(--color-muted); }
 ```
 
