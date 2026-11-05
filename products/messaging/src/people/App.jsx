@@ -111,7 +111,7 @@ export function App() {
           <NavList label="Channels">
             <NavList.Heading>Channels</NavList.Heading>
             {channels.map((c) => (
-              <NavList.Item key={c.id} as="a" href={`#${c.id}`} leading={<IconHash />}
+              <NavList.Item key={c.id} as="a" href={`#${c.id}`} leading={<IconHash />} unread={c.unread > 0}
                 trailing={c.unread ? <span className="pf-count">{c.unread}</span> : null}>{c.name}</NavList.Item>
             ))}
           </NavList>

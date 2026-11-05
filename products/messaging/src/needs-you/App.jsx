@@ -130,7 +130,7 @@ export function App() {
                 <h1 className="vd-type-title" id="ny-title">{convo.title}</h1>
                 {isNeed && <div className="ny-convo__actions"><Button size="sm" onClick={() => done(open)}>Mark as done</Button></div>}
               </header>
-              <div className="ny-convo__scroll"><Thread label="Messages" messages={messages} /></div>
+              <div className="ny-convo__scroll"><Thread label="Messages" messages={messages} renderAfter={(m) => m.thread && <p className="ny-replies">{threadById(m.thread).replies.length} replies</p>} /></div>
               <footer className="ny-convo__composer">
                 <Composer label={`Reply to ${convo.replyTo}`} placeholder={`Reply to ${convo.replyTo}`} onSend={send} />
               </footer>

@@ -23,6 +23,7 @@ export function App() {
   const [openId, setOpenId] = useState('t-goals');
   const [flashId, setFlashId] = useState(null);
   const [phoneView, setPhoneView] = useState('list');
+  const [alsoChannel, setAlsoChannel] = useState(false);
   const scroller = useRef(null);
 
   // The order is fixed at arrival. Filtering hides rows, it never reorders them.
@@ -80,7 +81,7 @@ export function App() {
             <NavList.Heading>New replies by channel</NavList.Heading>
             <NavList.Item as="button" current={filter === 'all'} onClick={() => setFilter('all')}>All channels</NavList.Item>
             {channels.map((c) => (
-              <NavList.Item key={c.id} as="button" leading={<IconHash />} current={filter === c.id} onClick={() => setFilter(c.id)}
+              <NavList.Item key={c.id} as="button" leading={<IconHash />} current={filter === c.id} unread={threads.some((t) => t.channel === c.id && unreadOf(t) > 0)} onClick={() => setFilter(c.id)}
                 trailing={<span className="tf-count">{threads.filter((t) => t.channel === c.id && unreadOf(t) > 0).length || ''}</span>}>
                 {c.name}
               </NavList.Item>
@@ -147,7 +148,9 @@ export function App() {
                 <Thread label="Messages" messages={[open.root, ...open.replies]} firstUnread={firstUnread ?? open.seenFrom} flashId={flashId} onRetry={retry} />
               </div>
               <footer className="tf-open__composer">
-                <Composer label={`Reply in thread in #${open.channel}`} placeholder={`Reply to ${firstName(open.root.author)}`} onSend={send} />
+                <Composer label={`Reply in thread in #${open.channel}`} placeholder={`Reply to ${firstName(open.root.author)}`} onSend={(t) => { send(t); setAlsoChannel(false); }} />
+                {/* Slack convention: a thread reply can also go to the channel. */}
+                <label className="tf-also"><input type="checkbox" className="check" checked={alsoChannel} onChange={(e) => setAlsoChannel(e.target.checked)} /> Also send to #{open.channel}</label>
               </footer>
             </>
           )}

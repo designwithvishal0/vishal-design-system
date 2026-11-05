@@ -59,3 +59,6 @@
   .ny-convo__scroll { padding-inline: var(--space-2); }
   .ny-convo__composer { position: sticky; bottom: 0; background: var(--color-bg); padding-inline: var(--layout-gutter); }
 }
+
+/* Slack convention: a message that started a thread shows its reply count under it. */
+.thread__body .ny-replies { margin-top: var(--space-1); color: var(--accent-text-aa); font-size: var(--type-label-size); font-weight: var(--weight-ui); }
