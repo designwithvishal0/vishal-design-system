@@ -36,7 +36,7 @@ export function App() {
       <main className="vd-container page">
         <section className="page__section" aria-labelledby="st-title">
           <Identity size="md" />
-          <h1 className="vd-type-heading-lg st-title" id="st-title">2026 so far, in {readThisYear.length} books</h1>
+          <h1 className="vd-type-heading st-title" id="st-title">2026 so far, in {readThisYear.length} books</h1>
           <div className="rp-split">
             <NowReading books={currentlyReading} size="sm" id="st-now" heading="Reading now" />
             <ShelfRow id="st-shelves" heading="Shelves" />
@@ -46,7 +46,7 @@ export function App() {
         <section className="st-year" aria-label="The year, month by month">
           <aside className="st-count" aria-live="polite">
             <p className="vd-type-eyebrow">By the end of {months[month]}</p>
-            <p className="vd-type-stat-sm">{sofar.length} <span className="st-of">of {challenge.goal}</span></p>
+            <p className="vd-type-heading">{sofar.length} <span className="st-of">of {challenge.goal}</span></p>
             <div className="rp-bar" role="progressbar" aria-label="Reading challenge progress" aria-valuenow={sofar.length} aria-valuemin={0} aria-valuemax={challenge.goal}>
               <span className="st-fill" style={{ inlineSize: `${(sofar.length / challenge.goal) * 100}%` }} />
             </div>

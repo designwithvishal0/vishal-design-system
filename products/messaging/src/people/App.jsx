@@ -121,7 +121,7 @@ export function App() {
           <header className="pf-open__head">
             <Button className="pf-back" variant="ghost" size="sm" onClick={() => setPhoneView('list')}>Back to people</Button>
             <p className="pf-role">{people[openId].role}</p>
-            <h1 className="vd-type-stat-sm" id="pf-name">{people[openId].name}</h1>
+            <h1 className="vd-type-heading" id="pf-name">{people[openId].name}</h1>
             {person.items.length > 0 && (
               <p className="pf-muted">{person.items.length} messages between you, from {shared.length} {shared.length === 1 ? 'channel' : 'channels'}{lanes.includes('dm') ? ' and direct messages' : ''}.</p>
             )}

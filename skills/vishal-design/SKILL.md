@@ -256,6 +256,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 - [ ] One display moment at most; on a dense screen, one `stat-sm` at most.
 - [ ] At most four text sizes in total below the display moment, headings included, and at most three weights; nothing under 13px except avatar initials (10px at least, weight 600).
 - [ ] Weight 800 only at 56px and up; no interface text above 650.
+- [ ] The display style (narrow width, display weight) only at 40px and up. Anything smaller, a section heading, a block title, a month, a person's name in a panel, a number in a sidebar, uses the normal heading: full width, weight 700.
 - [ ] Paragraphs between 46ch and 760px wide.
 
 **4. Space and alignment**

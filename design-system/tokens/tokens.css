@@ -320,37 +320,37 @@
   --type-stat-tracking: -0.02em;
   --type-stat-numeric: normal;
   --type-stat-transform: none;
-  --type-stat-sm-size: 40px; /* site: .proof strong for size and width. Weight 760, and 720 on phones like the work titles .tt, by Vishal 5 Nov 2026, so 800 stays at 56px and above (handoff 9.1). Tabular numerals */
+  --type-stat-sm-size: 40px; /* site: .proof strong for size and width. Weight 760, and 720 on phones like the work titles .tt, by Vishal 5 Nov 2026, so 800 stays at 56px and above (handoff 9.1). Tabular numerals. On phones it is 32px, so normal width and weight 700: Display style (narrow width, display weight) only at 40px and up, by Vishal 6 Nov 2026 */
   --type-stat-sm-weight: 760;
   --type-stat-sm-stretch: 75%;
   --type-stat-sm-lh: 1;
   --type-stat-sm-tracking: normal;
   --type-stat-sm-numeric: tabular-nums;
   --type-stat-sm-transform: none;
-  --type-heading-lg-size: 40px; /* site: .ltext h3 */
+  --type-heading-lg-size: 40px; /* site: .ltext h3. Normal width on phones (28px): Display style (narrow width, display weight) only at 40px and up, by Vishal 6 Nov 2026 */
   --type-heading-lg-weight: 700;
   --type-heading-lg-stretch: 85%;
   --type-heading-lg-lh: 1.05;
   --type-heading-lg-tracking: -0.01em;
   --type-heading-lg-numeric: normal;
   --type-heading-lg-transform: none;
-  --type-heading-size: clamp(26px, 3vw, 36px); /* site: #res-h */
+  --type-heading-size: clamp(26px, 3vw, 36px); /* site: #res-h. Normal width, as it is under 40px: Display style (narrow width, display weight) only at 40px and up, by Vishal 6 Nov 2026 */
   --type-heading-weight: 700;
-  --type-heading-stretch: 85%;
+  --type-heading-stretch: 100%;
   --type-heading-lh: 1.1;
   --type-heading-tracking: -0.01em;
   --type-heading-numeric: normal;
   --type-heading-transform: none;
-  --type-title-size: 22px; /* site: .aud strong, .jobs dt */
+  --type-title-size: 22px; /* site: .aud strong, .jobs dt. Normal width, as it is under 40px: Display style (narrow width, display weight) only at 40px and up, by Vishal 6 Nov 2026 */
   --type-title-weight: 700;
-  --type-title-stretch: 85%;
+  --type-title-stretch: 100%;
   --type-title-lh: 1.2;
   --type-title-tracking: -0.01em;
   --type-title-numeric: normal;
   --type-title-transform: none;
-  --type-title-sm-size: 20px; /* site: .whead h2, .card strong */
+  --type-title-sm-size: 20px; /* site: .whead h2, .card strong. Normal width, as it is under 40px: Display style (narrow width, display weight) only at 40px and up, by Vishal 6 Nov 2026 */
   --type-title-sm-weight: 700;
-  --type-title-sm-stretch: 85%;
+  --type-title-sm-stretch: 100%;
   --type-title-sm-lh: 1.2;
   --type-title-sm-tracking: normal;
   --type-title-sm-numeric: normal;
@@ -416,11 +416,13 @@
     --type-display-xl-size: 52px; /* site: .ct h2 */
     --type-display-size: 40px; /* site: .sh, .phead h2, hero */
     --type-stat-size: 56px; /* site: .stats dd */
-    --type-stat-sm-size: 32px; /* site: .proof strong for size and width. Weight 760, and 720 on phones like the work titles .tt, by Vishal 5 Nov 2026, so 800 stays at 56px and above (handoff 9.1). Tabular numerals */
-    --type-stat-sm-weight: 720;
-    --type-heading-lg-size: 28px; /* site: .ltext h3 */
-    --type-heading-size: 24px; /* site: #res-h */
-    --type-title-size: 19px; /* site: .aud strong, .jobs dt */
+    --type-stat-sm-size: 32px; /* site: .proof strong for size and width. Weight 760, and 720 on phones like the work titles .tt, by Vishal 5 Nov 2026, so 800 stays at 56px and above (handoff 9.1). Tabular numerals. On phones it is 32px, so normal width and weight 700: Display style (narrow width, display weight) only at 40px and up, by Vishal 6 Nov 2026 */
+    --type-stat-sm-weight: 700;
+    --type-stat-sm-stretch: 100%;
+    --type-heading-lg-size: 28px; /* site: .ltext h3. Normal width on phones (28px): Display style (narrow width, display weight) only at 40px and up, by Vishal 6 Nov 2026 */
+    --type-heading-lg-stretch: 100%;
+    --type-heading-size: 24px; /* site: #res-h. Normal width, as it is under 40px: Display style (narrow width, display weight) only at 40px and up, by Vishal 6 Nov 2026 */
+    --type-title-size: 19px; /* site: .aud strong, .jobs dt. Normal width, as it is under 40px: Display style (narrow width, display weight) only at 40px and up, by Vishal 6 Nov 2026 */
     --type-story-size: 19px; /* site: .about2 .story */
     --type-body-size: 16px; /* site: body */
   }

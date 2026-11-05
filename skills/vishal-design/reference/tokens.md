@@ -80,11 +80,11 @@ One family: Bricolage Grotesque Variable (`--font-sans`). The one exception is c
 | `display-xl` | 56 to 136 (52) | 800 | 75% | .92 | -.025em | A closing statement or launch moment |
 | `display` | 56 to 88 (40) | 760 | 82% | .92 | -.01em | Page title, the main answer |
 | `stat` | 56 to 104 (56) | 800 | 75% | .95 | -.02em | One big number on a calm screen |
-| `stat-sm` | 40 (32) | 760 (720) | 75% | 1 | 0 | The one heavy number or name on a dense screen. Tabular numerals |
-| `heading-lg` | 40 (28) | 700 | 85% | 1.05 | -.01em | Large heading |
-| `heading` | 26 to 36 (24) | 700 | 85% | 1.1 | -.01em | Section heading |
-| `title` | 22 (19) | 700 | 85% | 1.2 | -.01em | Block or card title |
-| `title-sm` | 20 | 700 | 85% | 1.2 | 0 | Small title |
+| `stat-sm` | 40 (32) | 760 (700) | 75% (100%) | 1 | 0 | The one heavy number or name on a dense screen. Tabular numerals |
+| `heading-lg` | 40 (28) | 700 | 85% (100%) | 1.05 | -.01em | Large heading |
+| `heading` | 26 to 36 (24) | 700 | 100% | 1.1 | -.01em | Section heading |
+| `title` | 22 (19) | 700 | 100% | 1.2 | -.01em | Block or card title |
+| `title-sm` | 20 | 700 | 100% | 1.2 | 0 | Small title |
 | `story` | 24 (19) | 400 | 100% | 1.45 | -.005em | Long intro text |
 | `lead` | 18 | 500 | 100% | 1.5 | 0 | Lead paragraph |
 | `body` | 18 (16) | 400 | 100% | 1.5 | 0 | Reading text |
@@ -92,6 +92,8 @@ One family: Bricolage Grotesque Variable (`--font-sans`). The one exception is c
 | `meta` | 14 | 600 | 100% | 1.4 | 0 | Card meta line: Product · Type · Concept · 2026 |
 | `label` | 13 | 600 | 100% | 1.4 | 0 | Labels, tags |
 | `eyebrow` | 13 | 600 | 100% | 1.4 | .14em, uppercase | The only uppercase text |
+
+The narrow display width only appears at 40px and up; every role smaller than that is full width.
 
 Weights: `--weight-regular` 400, `-medium` 500, `-semi` 600, `-ui` 650 (buttons, the ceiling for interface text), `-bold` 700, `-display` 760, `-heavy` 800 (56px and up only).
 
