@@ -1,0 +1,12 @@
+{
+  "name": "vishal-design-system",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "tokens": "node tokens/build.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.2.0"
+  }
+}
