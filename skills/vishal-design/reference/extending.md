@@ -250,7 +250,7 @@ Relative: the progress bar and the accent roles. Up to three series, from steps 
 | --- | --- | --- |
 | One series | `--accent-wash` with a `line-strong` edge (Vishal's answer 5) | A single measure, like books per month |
 | First of two or three | `--accent-ink` | The series that answers the main question |
-| Second | `--color-ink` at a lighter step: `--accent-wash` with a `line-strong` edge for bars, a solid ink line for lines | The comparison |
+| Second | Bars: `--accent-wash` with a `line-strong` edge. Lines: a 1px solid `--color-ink` line | The comparison |
 | Third | `--color-muted`, dashed for lines | Context, like last year |
 
 ```css
