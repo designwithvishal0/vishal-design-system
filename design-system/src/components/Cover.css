@@ -4,13 +4,13 @@
   flex: none;
   width: var(--w);
   aspect-ratio: 5 / 7;
-  border-radius: var(--radius-xs);
+  border-radius: var(--radius-cover);
   /* Neutral on every row, selected or not. The 1px edge uses line-strong because the plain hairline
      (--color-line) is darker than surface-2 in dark theme and would disappear. */
   background: var(--color-surface-2);
   box-shadow: inset 0 0 0 var(--border-w) var(--color-line-strong);
   overflow: hidden;
 }
-.vd-cover--md { --w: var(--space-7); }
-.vd-cover--lg { --w: var(--space-8); border-radius: var(--radius-sm); }
+.vd-cover--md { --w: var(--space-7); border-radius: var(--radius-cover-lg); }
+.vd-cover--lg { --w: var(--space-8); border-radius: var(--radius-cover-lg); }
 .vd-cover__img { display: block; width: 100%; height: 100%; object-fit: cover; }

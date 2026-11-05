@@ -46,7 +46,7 @@ Everything else matched the handoff: the core and dark colours, the closing pane
 ## Where the handoff and the live site disagree, or need Vishal
 
 - **Header colour.** Handoff 2.2 says the header is always light in both themes. The live home page in dark theme shows a dark header, and the `bar-light` rule is not applied there. The Nav component follows the theme by default and has a `tone="light"` option that forces the light set.
-- **Weight 800 only at 56px and above.** Handoff 9.1 describes it that way. The site's own `.proof strong` is 40px at weight 800, and Vishal's Stage 1 answer allows the heavy narrow style at a smaller size once per screen. The `stat-sm` role keeps 40px at 800. Never heavier than 650 for paragraphs, buttons and labels, which the components follow.
+- **Weight 800 only at 56px and above.** Settled 5 Nov 2026. `stat-sm` stays 40px (32px on phones) but drops to weight 760, and 720 on phones, like the work titles on phones. It uses tabular numerals. Weight 800 now appears only at 56px and above, as handoff 9.1 says.
 - **No brand accent.** Settled 5 Nov 2026. An earlier pass made orange the default accent. Vishal corrected it: orange is ixigo's product colour, not his, and handoff 9.3 stands. The accent tokens are now neutral by default and components stay neutral until a product sets an accent.
 
 ## Left out on purpose
@@ -54,6 +54,10 @@ Everything else matched the handoff: the core and dark colours, the closing pane
 - `--u1` to `--u7` and `--t-sells`: the rainbow on "unsure." and "sells?". Handoff 9.3 says never copy the pencil set anywhere else.
 - Hero fluid sizes `--hl` and `--hu`, the iPhone frame radius (46px), case study palettes and fonts, the switch control, video controls and the old B2 `tokens.css`.
 - Radii of 2, 9, 18 and 48px: each appears once. Folded into the nearest step.
+
+## Book covers (extension)
+
+Covers are neutral: `surface-2` with a 1px `line-strong` edge, on every row. The plain hairline would vanish on dark rows, which breaks the no dark on dark rule. Corners have their own tokens so covers never borrow the focus ring radius: `radius-cover` 4px for the small cover, `radius-cover-lg` 6px for medium and large (Vishal, 5 Nov 2026).
 
 ## Other contrast notes
 
