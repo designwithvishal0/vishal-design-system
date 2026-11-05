@@ -490,3 +490,30 @@ When it is still unclear, I ask: which choice would the main viewer thank me for
 
 Why: every real design is a set of trade offs. Knowing what wins, and saying so out loud, is what makes a design defendable instead of a guess.
 When it may bend: the order does not bend. If a case seems to need it, write down why and treat it as a place where the system needs to grow.
+
+**16. Correct versus good: what makes a screen correct but bland, like the B2 direction I rejected as "bland" and "wireframe", and what is the one move that takes it from correct to good?**
+
+A correct screen follows every rule but makes no decision. That is why B2 felt "bland" and like a "wireframe": clean font, one accent, even spacing, nothing wrong, and nothing chosen.
+
+Signs a screen is correct but bland:
+1. Everything is equally loud. Same weights, same sizes, nothing leads.
+2. Even spacing everywhere, so there is no rhythm.
+3. Every section has the same layout, usually a grid of cards.
+4. Headings are labels like "Overview", "Dashboard" or "Recent activity", instead of the user's question.
+5. Generic content that could belong to any product.
+6. Decoration added to make up for it: gradients, shadows, extra icons.
+
+The one move: commit. Decide the one thing that matters most on this screen, make it unmistakably stronger, and make everything else quieter. Good design is contrast in service of one idea. Bigger, heavier, better written for the one thing, calmer for the rest.
+
+Adding decoration never fixes a bland screen. Choosing and contrasting does.
+
+Examples:
+1. Messaging, bland: three columns copied from a known chat app, every channel at the same weight, a sidebar titled "Channels". Good: the three things that need a reply lead the screen under "What needs you right now?", and everything else sits quietly below.
+2. Reading profile, bland: a row of equal stat cards, "Books read 34", "Pages 9,820", "Average rating 4.2", and shelves as equal rows. Good: "34 of 50" set big, heavy and narrow, with "16 to go by December" under it and the current book's cover beside it. The rest stays calm.
+
+The test: squint at the screen. If nothing stands out, it is bland. Then describe the screen in one sentence. If another product could use the same sentence, it is not good yet.
+
+Why: people trust a screen that knows what matters. A screen that treats everything the same leaves the user to do the designer's job.
+When it may bend: a pure reference screen, like settings or a list of everything, can stay even and calm, because its job is to be scanned, not to say one thing.
+
+*The interview is complete: sixteen of sixteen answered, 5 November 2026.*
