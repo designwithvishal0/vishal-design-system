@@ -107,4 +107,4 @@ Vishal spotted one more: the empty claim form showed "₹0" in display type, whi
 | 4 | The theme button said "Switch to dark" while the page was already dark. | Fixed in the skill: a toggle's label names the action it takes, not the state it's in, so on a dark page it reads "Switch to light". There is a checklist line for it. |
 | 5 | Figma Make's preview stayed on the old site until it was restarted. | Nothing in the skill: this is a tool issue. |
 
-Like the first test, the misses were details the skill had not spelled out, not wrong rules. The three skill misses, 1, 2 and 4, came from the skill being read too literally, and both are now written down plainly.
+Like the first test, the misses were details the skill had not spelled out, not wrong rules. The three skill misses, 1, 2 and 4, came from the skill being read too literally, and all three are now written down plainly.
