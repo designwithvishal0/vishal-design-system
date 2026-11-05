@@ -79,7 +79,7 @@ Rows divided by hairlines.
 | `density` | `comfortable`: 48px single line rows, taller than a button. `dense`: 32px rows (extension) for chat and long lists |
 | `List.Item` | `leading`, `title`, `meta`, `trailing`, `selected`, `as="button"` or `as="a"` for interactive rows |
 
-In a dense row title and meta sit on one line, and the meta truncates before the title. The selected row takes the accent wash. Times, counts and ratings go in `trailing` and use tabular numerals.
+Titles truncate to one line and meta to two by default. In a dense row title and meta sit on one line, and the meta truncates before the title. The selected row takes the accent wash. Times, counts and ratings go in `trailing` and use tabular numerals.
 
 ## Modal and Sheet
 
