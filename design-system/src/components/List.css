@@ -27,6 +27,9 @@
 .vd-list__lead { display: inline-flex; color: var(--color-muted); }
 .vd-list__main { display: flex; flex-direction: column; min-width: 0; }
 .vd-list--dense .vd-list__title, .vd-list--dense .vd-list__meta { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* In a dense row the meta (an author, a time) gives way first, so the title stays whole as long as possible. */
+.vd-list--dense .vd-list__title { flex: 0 0 auto; max-width: 100%; }
+.vd-list--dense .vd-list__meta { flex: 1 1 auto; }
 .vd-list__title { font-size: var(--type-body-size); font-weight: var(--type-lead-weight); line-height: var(--type-body-lh); }
 .vd-list__meta { color: var(--color-muted); font-size: var(--type-small-size); line-height: var(--type-small-lh); }
 .vd-list__trail { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--color-muted); font-size: var(--type-small-size); }

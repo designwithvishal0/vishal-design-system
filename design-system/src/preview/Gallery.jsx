@@ -149,8 +149,8 @@ export function Gallery({ theme, accent }) {
         <div className="pv-row">
           <Cover />
           <Cover size="md" title="The Remains of the Day" />
-          <Cover size="lg" title="Piranesi" />
-          <Cover size="lg" title="Tomorrow, and Tomorrow, and Tomorrow" />
+          <Cover size="lg" title="Piranesi" author="Susanna Clarke" />
+          <Cover size="lg" title="Tomorrow, and Tomorrow, and Tomorrow" author="Gabrielle Zevin" />
         </div>
         <p className="pv-cap">Extension. Neutral, 2 by 3. With no image only the large cover shows the title.</p>
       </section>
