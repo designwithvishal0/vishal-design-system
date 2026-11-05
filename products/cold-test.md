@@ -1,0 +1,69 @@
+# Cold test: a product the skill had never seen
+
+**When:** 6 November 2026.
+
+**Who:** a fresh Claude Code agent with no memory of this work.
+
+**What it had:** only `skills/vishal-design/` and the components in `design-system/`. It was not allowed to read `products/`.
+
+**The brief it got:** "Design an employee's health insurance claim flow for a company benefits app. An employee who has paid a hospital or clinic bill wants to claim the money back from their company's group health insurance. Cover: starting a claim, adding the bill and documents, the claim amount, reviewing and submitting, and tracking the claim's status afterwards. Make three different layout directions, pick one, and build the picked one as a runnable React screen in the design system."
+
+## What it made
+
+**Three directions:**
+
+1. **What you'll get back.** The amount the employee will get back is worked out live and leads every screen.
+2. **One question at a time.** Five short steps, then a timeline.
+3. **Nothing missing.** Documents first, as a checklist of what the insurer needs.
+
+**Its pick:** direction 1, because "the main viewer's real question is about money".
+
+**What it built:**
+- A claims home.
+- A new claim form, with a sticky summary in the wash saying "You could get back about ₹47,340".
+- A review step.
+- A claim page with a four step status timeline.
+- An inline request from the insurer for a missing document.
+
+It built in teal. The app builds, and the tokens check passes. It checked the screens in light, in dark and at 375px wide with no sideways scroll. The build stayed in `scratch/` and is not part of the hand in.
+
+**What worked:**
+- The directions template forced real structural differences between the three.
+- The frequency and stakes test settled the layout early.
+- The new checkout and multi step form examples answered where the pay button goes, when errors appear, and that a form gets no signature moment until the end.
+- The select, checkbox, progress bar and toast recipes passed the tokens check first time.
+- "Work every count out from the data" made the counts agree with no extra effort.
+
+## Where it got stuck or guessed, and the fix
+
+| # | Where it got stuck | What it guessed | Fixed in the skill |
+| --- | --- | --- | --- |
+| 1 | The tokens check crashed on an absolute path. The skill never said how to check an app's own CSS. | A path relative to `design-system/`. | The script now takes absolute or relative paths. Checklist: the exact command for an app's own `src`. |
+| 2 | The setup import assumes the app sits two levels deep. | Three levels. | Setup says to point the `../` at the repo's `design-system/`. |
+| 3 | A new product has no data. The skill said "no invented numbers" without saying how to show sample data. | Computed totals, plus a "Concept, sample data" footer. | Rule 3, Real content: sample records that could be real, every total computed, and the screen labelled once as a concept. |
+| 4 | A form page is neither a scrolling page nor an app shell, so no gaps were defined. | 24 between fields, 48 between groups. | Section 4, Space: a form page has 24 between fields, 48 between groups, and `section-inner` above the actions. |
+| 5 | Components quietly add text sizes (an `sm` button is 14, a List title is 18), which can break the four size rule. | It avoided `sm` buttons and List. | components.md has a table of the sizes each component brings, and the checklist points to it. |
+| 6 | "Three weights" clashed with 700 headings plus a display weight. | Followed the tokens; the checklist failed by the letter. | Rule rewritten: below the display moment, three weights (400, 500 to 650, 700); the display moment adds its own. |
+| 7 | A wash card turns all text accent ink, so a number on it came out teal. | Set the number to ink. | New rule: numbers stay ink, even on a wash. |
+| 8 | No radio button. | The checkbox, made round. | New recipe: radio choice. |
+| 9 | No file upload, though the brief needed one. | A labelled button around a hidden input, file rows, and a size error. | New recipe: file upload, with accepted types, progress, errors, retry and drop. |
+| 10 | Only seven icons; the Select recipe asks for a chevron that did not exist. | Drew four icons. | Added check, chevron, file and back icons to `icons.jsx`. New rule: a missing icon is drawn in the same family and listed as an extension. |
+| 11 | No status timeline. | A dot rail. | New recipe: status timeline. |
+| 12 | No pending or warning status. | Accent tag for "needs you", outline tags for the rest. | Rule: other statuses are words in an outline Tag; the one that needs the user gets the accent Tag. |
+| 13 | No guidance on money inputs. | `leading="₹"` and a hint. | components.md: a money input with the currency sign, keyboard, tabular numbers and the format in the hint. |
+| 14 | "Answer first" clashed with "total above the pay button" on phones. | Followed checkout; the first checklist line failed on phones. | Section 1: when the answer is worked out from a form, phones also show it as a one line answer pinned at the top. |
+| 15 | Reduce motion left reveal, stagger, switch and ping running. | Its own media query. | The tokens now zero every motion duration. Toast time stays, because it is not motion. |
+| 16 | No width for a side summary. | `panel-list`. | tokens.md: `panel-list` is the width for a side summary too. |
+| 17 | No back link recipe; aligning the icon was only partly right. | A negative margin. | New recipe: a back link whose icon hangs in the margin. |
+| 18 | Where review happens was not said. | On the same page. | Section 1: review is on the same page, read only; a Modal is only for one yes or no. |
+| 19 | One top level view still gave an empty menu on phones. | Accepted it. | components.md: one view means no links, with the avatar in `persistent`. |
+| 20 | A disabled button fails 4.5 to 1. | Exempt, with a reason shown. | Checklist: disabled controls are exempt, but must say why they are disabled. |
+| 21 | No way to switch themes while checking. | A `?theme=` parameter. | Setup includes the `?theme=` snippet. |
+
+## What it still left unfinished, by its own checklist
+
+- Upload progress and failure states.
+- An "all caught up" empty state.
+- Offline.
+
+Upload now has a recipe; the empty and offline states were already in the checklist and it skipped them. Most of its guesses were missing recipes or missing tokens. Two were rules that disagreed with each other (6 and 14), and those are now settled in the rules themselves.

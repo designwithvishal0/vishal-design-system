@@ -432,6 +432,7 @@
 @media (prefers-reduced-motion: reduce) {
   :root {
     --dur-press: 0s; --dur-fast: 0s; --dur-base: 0s; --dur-slow: 0s; --dur-spring: 0s; --dur-colour: 0s;
+    --dur-reveal: 0s; --dur-stagger: 0s; --dur-switch: 0s; --dur-ping: 0s; /* --dur-toast is how long a toast stays, not motion */
   }
 }
 

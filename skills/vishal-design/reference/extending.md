@@ -225,7 +225,7 @@ Rules: onboarding is rare and sets the tone, so it may be big: one question or o
 
 ## Fixed recipes for missing components
 
-The system ships eight components. These nine more are not components yet, so every product builds them from one fixed recipe, the same way each time. Mark each as an extension in the hand back.
+The system ships eight components. These twelve more are not components yet, so every product builds them from one fixed recipe, the same way each time. Mark each as an extension in the hand back.
 
 ### Tabs
 
@@ -347,6 +347,69 @@ Relative: the progress bar and the accent roles. Up to three series, from steps 
 
 Rules: labels sit directly on the chart, at the end of each line or on each bar, never in a legend. Colour never carries the meaning alone: series also differ by weight, dash or position. Axis labels in muted `label` text, numbers in tabular numerals. Hairline gridlines only where they help reading values; no chart borders, no shadows, no gradients. More than three series is outside the system: split it into small charts, one per series, or a table.
 
+### Radio choice
+
+Relative: the checkbox recipe, made round, inside a comfortable List row. For one choice from two to six options, like "Who was treated?". More than six: a Select.
+
+```jsx
+<fieldset className="choices"><legend className="vd-type-eyebrow">Who was treated</legend>
+  <label className="choice"><input type="radio" name="who" className="radio" defaultChecked /> You</label>
+  <label className="choice"><input type="radio" name="who" className="radio" /> Your mother</label>
+</fieldset>
+```
+
+```css
+/* EXTENSION: radio choice */
+.choices { display: flex; flex-direction: column; gap: var(--space-1); margin: 0; padding: 0; border: 0; }
+.choice { display: flex; align-items: center; gap: var(--space-3); min-block-size: var(--row-h); padding-inline: var(--space-3); border-radius: var(--radius-list-row); font-size: var(--type-small-size); cursor: pointer; }
+.choice:has(:checked) { background: var(--accent-wash); font-weight: var(--weight-ui); }
+.radio { appearance: none; inline-size: var(--check-size); block-size: var(--check-size); margin: 0; border: var(--border-w) solid var(--color-edge); border-radius: var(--radius-round); display: inline-grid; place-content: center; }
+.radio:checked { border-color: var(--color-btn); }
+.radio:checked::after { content: ''; inline-size: 50%; block-size: 50%; border-radius: var(--radius-round); background: var(--color-btn); }
+.choice:has(:focus-visible) { outline: var(--focus-width) solid var(--color-ink); outline-offset: var(--focus-offset); }
+```
+
+Rules: the chosen row gets the wash, weight 650 and the filled mark, so colour never carries it alone. Arrow keys move between options, as native radios do.
+
+### File upload
+
+Relative: the outline Button and the comfortable List row.
+
+```jsx
+<label className="vd-btn vd-btn--outline upload">
+  <IconFile /> Add bills and documents
+  <input type="file" multiple accept="image/*,application/pdf" className="vd-sr" />
+</label>
+<List className="files">{/* one row per file: Cover-like file icon, name, size, state, Remove */}</List>
+```
+
+```css
+/* EXTENSION: file upload. The label is the button, so focus shows on it. */
+.upload:has(:focus-visible) { outline: var(--focus-width) solid var(--color-ink); outline-offset: var(--focus-offset); }
+.files .bar { block-size: var(--space-1); } /* the progress bar from example 3, thinner */
+```
+
+Rules: say what is accepted and the size limit in a hint before anyone picks a file ("PDF or photo, up to 10 MB each"). On desktop the whole section also accepts a drop, with the section's edge turning `line-strong` and the words "Drop to add". Each file is a row: icon, name (truncated in the middle), size, and its state: a thin progress bar while uploading, "Added" when done, or the error in `--color-error` with Retry and Remove. A failed file never removes the good ones. Photos of bills show a small preview once added.
+
+### Status timeline
+
+Relative: the progress bar and the dense List. For a claim, an order or an application being tracked.
+
+```css
+/* EXTENSION: status timeline. A line-strong rail; done steps ink with a check, the current one ringed in accent ink. */
+.steps { display: flex; flex-direction: column; gap: var(--space-5); margin: 0; padding: 0 0 0 var(--space-5); list-style: none; border-inline-start: var(--border-w) solid var(--color-line-strong); }
+.step { position: relative; display: flex; flex-direction: column; gap: var(--space-1); }
+.step::before { content: ''; position: absolute; inset-inline-start: calc(var(--space-5) * -1 - var(--space-2) / 2); inset-block-start: var(--space-1); inline-size: var(--space-2); block-size: var(--space-2); border-radius: var(--radius-round); background: var(--color-surface-2); box-shadow: 0 0 0 var(--border-w) var(--color-line-strong); }
+.step.is-done::before { background: var(--color-ink); box-shadow: none; }
+.step.is-current::before { background: var(--color-bg); box-shadow: 0 0 0 var(--focus-width) var(--accent-ink); }
+```
+
+Rules: each step is a past tense fact with its date ("Documents checked, 4 Nov"); the current step says what happens next and when ("Approval usually takes 5 working days"). A step that needs the user shows its action right there. Future steps are muted. The timeline is never the signature moment; the outcome is.
+
+### A back link
+
+A ghost `sm` Button with `IconBack` before the word, pulled left by its own padding plus the icon and its gap (`calc((var(--space-4) + var(--icon-sm) + var(--space-2)) * -1)`), so the icon hangs in the margin and the word lines up with the text edge below, like a hanging bullet.
+
 ### Select
 
 Relative: the Input.
@@ -358,4 +421,4 @@ Relative: the Input.
 .select-wrap .vd-icon { position: absolute; inset-inline-end: var(--space-3); inset-block-start: 50%; translate: 0 -50%; pointer-events: none; color: var(--color-muted); }
 ```
 
-Rules: always the native `<select>`, so it works with every keyboard, screen reader and phone. A visible label above it, like the Input. A chevron icon on the right. Up to about seven options; more than that becomes a searchable list in a Menu.
+Rules: always the native `<select>`, so it works with every keyboard, screen reader and phone. A visible label above it, like the Input. `IconChevronDown` on the right. Up to about seven options; more than that becomes a searchable list in a Menu.

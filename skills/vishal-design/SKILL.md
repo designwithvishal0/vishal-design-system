@@ -37,8 +37,13 @@ Reference files:
 Set up once per app:
 
 ```js
+// The ../ count depends on where your app sits: point it at the repo's design-system/ folder.
 import '../../design-system/src/styles/base.css';
 import { Button, List, Avatar } from '../../design-system/src/index.js';
+
+// So every screen can be checked in both themes from a link: ?theme=light or ?theme=dark
+const theme = new URLSearchParams(location.search).get('theme');
+if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
 ```
 
 Put `data-accent="violet"` (or orange, amber, teal, sky) on the product's root to give it its one colour. Leave it out to stay neutral. Check every screen with `data-theme="light"` and `data-theme="dark"`.
@@ -53,10 +58,11 @@ Build the layout around the moment that matters most and the question the user h
 | --- | --- | --- |
 | 1. Name whose screen it is and who else looks at it. Pick the main viewer from what the product is trying to achieve; serve the other one second. | Most screens are seen by more than one kind of person, like the owner of a profile and its visitors, or the employee filing a claim and the HR admin checking it, and they want different things. One layout cannot lead with both. | Never. A second viewer is served, never ignored. |
 | 2. Decide how often it is used and how much is at stake. Rare and high stakes gets one clear answer, big and first. Used fifty times a day gets speed: things stay in place, it is dense, the frequent action is always in reach. | The same screen design fails at the wrong frequency: a hero slows a tool, and a dense tool hides a rare answer. | Never. |
-| 3. Write the main question in the user's own words, then put its answer in the most prominent place. Prominence can come from position, weight or contrast, not only size. | The answer is what people came for. If they must hunt, the screen has failed before any detail matters. | A pure reference screen, like settings, can stay even (section 8). |
-| 4. List the jobs people repeat here, like writing a message, adding an expense or approving a request, and keep them within reach. | Repeated jobs are not the main question but are done most often. | Never. |
-| 5. Order everything else by what people need next, not by what the product wants to show. Later things move lower. Nothing the brief requires is removed: the question decides order and weight, never whether it is there. | People read top to bottom. Dropping a required part breaks the brief. | Never. |
-| 6. Check the main question in its states: nothing new, a little, a lot. | A layout that only works with three items is not a layout. | Never. |
+| 3. Write the main question in the user's own words, then put its answer in the most prominent place. Prominence can come from position, weight or contrast, not only size. When the answer is worked out from a form, like a total or an estimate, it sits beside the form on desktop and, on phones, as a one line answer pinned at the top as well as in full above the main button. | The answer is what people came for. If they must hunt, the screen has failed before any detail matters. | A pure reference screen, like settings, can stay even (section 8). |
+| 4. Review before a submit happens on the same page, read only, so the answer stays in view; a Modal is only for one yes or no decision. |
+| 5. List the jobs people repeat here, like writing a message, adding an expense or approving a request, and keep them within reach. | Repeated jobs are not the main question but are done most often. | Never. |
+| 6. Order everything else by what people need next, not by what the product wants to show. Later things move lower. Nothing the brief requires is removed: the question decides order and weight, never whether it is there. | People read top to bottom. Dropping a required part breaks the brief. | Never. |
+| 7. Check the main question in its states: nothing new, a little, a lot. | A layout that only works with three items is not a layout. | Never. |
 
 Example questions. Messaging: "What needs me right now?" Reading profile, owner: "What am I reading, and how am I doing?" A checkout: "What will I pay, and is it safe?" A sales dashboard: "How is my store doing this week?" A loan form: "How much longer is this?" A settings page has no single question: it is a reference screen (section 8).
 
@@ -100,7 +106,7 @@ These make a screen look like Vishal's. Following them gives a clean screen. Sec
 | Conventions win. The system dresses a convention; it does not replace it. For example: the composer at the bottom of a chat, five stars for a rating, card number then expiry then CVV at checkout, the total beside the pay button. | People already know how these work. Breaking that costs them time. | Never for the sake of looking different. |
 | Navigation marks only the active item: the current Nav link or tab is underlined, the others show no line until hovered. | A line under every tab marks nothing. | Never. |
 | A command bar is a field near the top of the screen with results below: no heading, no close button, focus in the field, Escape closes it. | It exists for speed; a dialog's chrome slows it and moves focus to the close button. | Never. |
-| Real content only: real names, times like "9:41" and "Mon", real titles, prices and places. No lorem ipsum, no invented numbers or results. | Fake content hides layout problems and breaks trust. | Never. |
+| Real content only: real names, times like "9:41" and "Mon", real titles, prices and places. No lorem ipsum, no invented numbers or results. | Fake content hides layout problems and breaks trust. | A new product with no data yet: write sample records that could be real (real hospitals, plausible amounts), work every total out from them, never type a result, and label the screen once, quietly, as a concept with sample data. |
 | Copy is short and concrete. No hyphens or em dashes in prose, no filler words, sentence case, "Send" is always "Send". | Vishal's voice is plain and specific. | Never. |
 | Opening something clears its unread count at once: the badge, the bold and the list tag drop the moment it is opened, not when the person leaves. A "New" line may stay inside it so they can still find where the unread part began. | People open things to read them; a count that stays after opening says the product did not notice. | Never. |
 | Counts agree across the whole screen: a headline, a sidebar badge and a list tag that count the same thing show the same number, and all of them drop the moment it is read. Work every count out from the data, never type one. | A count that disagrees with another tells people the screen cannot be trusted. | Never. |
@@ -116,7 +122,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | --- | --- | --- |
 | One display moment per screen: `display`, `display-xl` or `stat` (weight 760 to 800, width 75 to 85%, 56px and up). On a dense screen, one `stat-sm` (40px, 760) for a page title or one stat. In an app with several panels it goes in the panel that answers the main question, never one per panel. | Hierarchy comes from the user's question. Two loud things fight. | A launch moment may push the display size further, still one per screen. |
 | Below the display moment, at most four text sizes in total on one screen, headings included. Pick them from the roles: 13, 14, 15, 16, 18 and 20px (`label`, `meta`, `small`, `body` on phones, `body`, `title-sm`) and the heading tier 22 to 40px (`title`, `heading`, `heading-lg`). Nothing below 13px. | Too many sizes and nothing reads as a step. | Never more than four. Below 13px only for avatar initials: they are a mark, not reading text, so they may drop to 10px (`--avatar-initials-min`), at weight 600. |
-| At most three weights visible: 400 for reading, 500 to 650 for interface text, and the display weight. Buttons and labels never go above 650. Weight 800 only at 56px and up. | Heavy weight on anything read line by line is shouting. | Never. |
+| Below the display moment, at most three weights: 400 for reading, 500 to 650 for interface text, 700 for headings. The display moment adds its own weight (760 or 800), so a screen with one shows four. Buttons and labels never go above 650. Weight 800 only at 56px and up. | Heavy weight on anything read line by line is shouting. | Never. |
 | Code, and only code, is set in `--font-mono` at the `small` size, inline on `surface-2` with `radius-code` (4px), blocks on `surface-1` with a `line-strong` edge and `radius-sm`. | People expect code in monospace, and conventions win. It is the system font, so nothing new loads. | Never for anything that is not code. |
 | The `eyebrow` (13px, uppercase) may head a group inside a panel, like "Waiting on others". Never set a name in it: names of people, places, products, channels and titles keep their own case. | A group label helps scanning; uppercase would turn "#launch" into "#LAUNCH", which is not its name. | Never on names. |
 | Emphasis comes from weight or position, never colour alone, italics, or underlines that are not links. | Colour alone fails people who cannot see it; underline means link. | Never. |
@@ -133,7 +139,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | Rule | Why | Break only when |
 | --- | --- | --- |
 | Every gap comes from the scale: 4, 6, 8, 12, 16, 24, 32, 48, 72, 96, 120, 160 (`--space-1` to `--space-11`). | No random values: rhythm is what makes a screen look intentional. | Never. |
-| The gap grows with the level: inside a component, then between components, then between sections. Scrolling pages, like a profile, a report or a landing page: `--section-gap` 160 between sections, `--section-inner` 72 inside; 96 and 48 on phones. App layouts that fill the screen, like a chat app, an inbox or a dashboard, have no sections: their panels and groups use component gaps of 24 to 48 (`--space-5` to `--space-7`). | The size of a gap tells people what belongs together. | The signature moment may get extra space to land. Never less than the scale. |
+| The gap grows with the level: inside a component, then between components, then between sections. Scrolling pages, like a profile, a report or a landing page: `--section-gap` 160 between sections, `--section-inner` 72 inside; 96 and 48 on phones. App layouts that fill the screen, like a chat app, an inbox or a dashboard, have no sections: their panels and groups use component gaps of 24 to 48 (`--space-5` to `--space-7`). A form or flow page is a scrolling page with one section: 24 between fields, 48 between groups of fields, and `--section-inner` above the actions; a side summary beside it is `--panel-list` (384px) wide. | The size of a gap tells people what belongs together. | The signature moment may get extra space to land. Never less than the scale. |
 | Group with space first, a wash second, a 1px hairline third. Never a box around everything; cards are for things you pick up as a whole. | Each step is louder than the last; use the quietest one that works. | Never. |
 | A label and its input are 8px apart; two fields are 24px apart. | One decision is one group. | Never. |
 | Rows repeat: 48px comfortable (`--row-h`), 32px dense (`--row-h-dense`). | Dense screens keep rhythm through repetition. | Two line rows grow to their content. |
@@ -147,7 +153,8 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | --- | --- | --- |
 | One product colour per screen, used in few places: one wash for a group that should stand out, a selected state, headings and large accent text, the signature moment. | If colour is everywhere, it stops meaning anything. | A launch may use one full colour field. |
 | Small accent text uses `--accent-text-aa`. The exact `--accent-text` is for headings and large text only. | Several exact accents fail at small sizes; orange is 2.4 to 1 on its wash. | Never. |
-| Status colours carry meaning only: `--color-live` for live or available, `--color-error` for errors. | Decorative green or red teaches people to ignore status. | Never. |
+| Status colours carry meaning only: `--color-live` for live or available, `--color-error` for errors. Every other status, like pending, under review or paid, is a word in an `outline` Tag; the one status that needs the user gets the `accent` Tag. | Decorative green or red teaches people to ignore status, and words say what colours cannot. | Never. |
+| Numbers stay ink: a `stat` or amount on a wash uses `--color-ink`, not the wash's accent ink. | A coloured number reads as decoration (section 10). | The exact `--accent-text` may set a display word, never a number. |
 | Colour never carries meaning alone: a selected row also gets the wash plus weight or a mark. | It must work for people who cannot see the colour. | Never. |
 | Pastels stay bright. Never grey them down. | Muddy colour reads as tired. | Never. |
 | Depth goes page, then surface, then wash. Lines: `--color-line` for dividers, `--color-line-strong` for edges of cards, surfaces and covers, `--elev-2` ring on images. Shadows (`--elev-3`, `--elev-4`) only on menus, popovers, dialogs, toasts and hover previews. Modals and sheets sit on `--color-scrim`. | Lines say where things are in both themes; shadows say what floats. | Never. |
@@ -158,6 +165,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | Rule | Why | Break only when |
 | --- | --- | --- |
 | One icon family: outline, 1.5px stroke, rounded ends. Filled only for active states and arrows. Sizes snap to 16, 20 or 24px with the text. Icons take the text colour beside them. | It matches the soft shapes of Bricolage, and mixed families look assembled. | Never. |
+| Icons come from `icons.jsx`. If one is missing, draw it in the same family (24px grid, 1.5px stroke, rounded ends, arrows filled), add it there and list it as an extension. | One family looks designed; borrowed sets look assembled. | Never from another icon set. |
 | An icon must stand for something; never decoration. An icon only button has an `aria-label` and a 44px target. | Decorative icons add noise and nothing for screen readers. | Never. |
 | Images and covers are shown whole, uncropped, at a size you can read. Covers keep the real 2 by 3 shape. Photos crop around the subject, eyes in the upper third. | A cropped screen or cut title is the opposite of showing the work. | A signature moment may show a cover huge and tilted, once. |
 | Real images over placeholders, whenever a real source exists: book covers from Open Library by ISBN, product photos from the catalogue, logos from the company, people's photos when the product has them. The placeholder is only for an image that fails to load. | A wall of grey boxes makes a real screen look like a wireframe, and hides how real images change the layout. | Never when a source exists. Concept work with no source says so. |
@@ -259,7 +267,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 
 **3. Hierarchy**
 - [ ] One display moment at most; on a dense screen, one `stat-sm` at most.
-- [ ] At most four text sizes in total below the display moment, headings included, and at most three weights; nothing under 13px except avatar initials (10px at least, weight 600).
+- [ ] At most four text sizes in total below the display moment, headings included (count the sizes the components bring: [components.md](reference/components.md#text-sizes-each-component-brings)), and at most three weights below the display moment (400, 500 to 650, 700); nothing under 13px except avatar initials (10px at least, weight 600).
 - [ ] Weight 800 only at 56px and up; no interface text above 650.
 - [ ] The display style (narrow width, display weight) only at 40px and up. Anything smaller, a section heading, a block title, a month, a person's name in a panel, a number in a sidebar, uses the normal heading: full width, weight 700.
 - [ ] Paragraphs between 46ch and 760px wide.
@@ -298,7 +306,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 - [ ] Reduce motion on: nothing breaks, the meaning stays.
 
 **9. Access**
-- [ ] Text passes 4.5 to 1; large text, icons and input borders pass 3 to 1; colour never carries meaning alone.
+- [ ] Text passes 4.5 to 1; large text, icons and input borders pass 3 to 1; colour never carries meaning alone. A disabled control is exempt, but must say in readable text why it is disabled.
 - [ ] Everything works by keyboard in a logical order, with the 2px focus ring at a 3px offset.
 - [ ] Dialogs keep focus inside, close on Escape and return focus.
 - [ ] Touch targets 44px with 8px between; hover only on devices with a mouse.
@@ -315,7 +323,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 - [ ] Looked at fresh: would a senior designer who loves the craft ship this?
 
 **Tokens only**
-- [ ] `npm run check` in `design-system/` passes for any new CSS.
+- [ ] The tokens check passes for your app's own CSS and JSX: `node design-system/scripts/check-tokens-only.mjs <your src folder>` (an absolute path or one relative to where you run it). `npm run check` at the repo root checks the system and the products.
 
 ## 10. Never do
 

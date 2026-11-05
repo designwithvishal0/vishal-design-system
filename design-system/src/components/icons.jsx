@@ -11,3 +11,7 @@ export const IconHash = (p) => (<svg {...base} {...p}><path d="M5 9h14M5 15h14M1
 export const IconMenu = (p) => (<svg {...base} {...p}><path d="M4 8h16M4 16h16" /></svg>);
 export const IconStar = (p) => (<svg {...base} {...p}><path d="M12 4l2.4 5 5.6.7-4.1 3.8 1.1 5.5L12 16.3 7 19l1.1-5.5L4 9.7 9.6 9z" /></svg>);
 export const IconPlus = (p) => (<svg {...base} {...p}><path d="M12 5v14M5 12h14" /></svg>);
+export const IconCheck = (p) => (<svg {...base} {...p}><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>);
+export const IconChevronDown = (p) => (<svg {...base} {...p}><path d="M6 9.5l6 6 6-6" /></svg>);
+export const IconFile = (p) => (<svg {...base} {...p}><path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10.5a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5z" /><path d="M14 3.5V8h4" /></svg>);
+export const IconBack = (p) => (<svg {...filled} {...p}><path d="M20 10.75H8.8l4.1-4.1L11.1 5l-7 7 7 7 1.8-1.65-4.1-4.1H20z" /></svg>);

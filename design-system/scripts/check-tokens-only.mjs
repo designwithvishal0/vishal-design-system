@@ -1,17 +1,21 @@
+// Usage: node design-system/scripts/check-tokens-only.mjs [folder or file ...]
 // Fails if any component or layout CSS or JSX hard codes a colour, size, duration, curve or z index.
 // Everything must come from a token (var(--...)). Run: npm run check
 //
 // Allowed on purpose: unitless numbers (line heights, flex), em and % units, calc() over tokens,
 // and px inside an @media line, because a breakpoint cannot be a variable.
 import { readdirSync, readFileSync, statSync } from 'node:fs';
-import { join, extname, relative } from 'node:path';
+import { join, extname, relative, isAbsolute, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dirs = process.argv.slice(2).length ? process.argv.slice(2) : ['src/components', 'src/preview', 'src/styles/base.css'];
 
+const statExists = (p) => { try { statSync(p); return true; } catch { return false; } };
 const walk = (p) => (statSync(p).isDirectory() ? readdirSync(p).flatMap((f) => walk(join(p, f))) : [p]);
-const files = dirs.flatMap((d) => walk(join(root, d))).filter((f) => ['.css', '.jsx'].includes(extname(f)));
+// Paths may be absolute, or relative to where the command runs, or to design-system/ (the old default).
+const at = (d) => (isAbsolute(d) ? d : statExists(resolve(d)) ? resolve(d) : join(root, d));
+const files = dirs.flatMap((d) => walk(at(d))).filter((f) => ['.css', '.jsx'].includes(extname(f)));
 
 const rules = [
   ['hex colour', /#[0-9a-fA-F]{3,8}\b/],

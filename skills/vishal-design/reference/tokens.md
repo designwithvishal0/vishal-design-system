@@ -122,6 +122,8 @@ Paragraph width: `--measure-min` 46ch to `--measure-max` 760px.
 
 App layouts that fill the screen, like a chat app, an inbox or a dashboard, do not use section gaps. Their panels and groups use 24 to 48 (`--space-5` to `--space-7`).
 
+Panels: `--panel-rail` 224px (a sidebar), `--panel-list` 384px (a list panel in an app, or a side summary beside a form on a scrolling page).
+
 Layout: `--layout-max` 1376px, `--layout-gutter` 32 (phone 16), `--layout-inset` 16 (phone 8), `--layout-bar` 56 (phone 52). Breakpoints: phone at 759px and below, tablet at 1023px and below.
 
 Sizes: `--control-h` 44 (buttons and touch targets), `--control-h-sm` 36, `--control-pad-x` 22, `--row-h` 48 (comfortable list row), `--row-h-dense` 32, `--icon-sm` 16, `--icon-md` 20, `--icon-lg` 24, `--icon-stroke` 1.5px, `--cover-sm` 16 (cover 16 by 24).
@@ -178,7 +180,7 @@ A shadow means one thing: this floats above the page. Cards, rows, panels and bu
 | `--ease-in-out` | (.7, 0, .2, 1) | Large reveals |
 | `--ease-spring` | (.2, .9, .25, 1.1) | Expressive moments only |
 
-Under `prefers-reduced-motion` every duration becomes 0. Design that state on purpose.
+Under `prefers-reduced-motion` every motion duration becomes 0, including reveal, stagger, switch and the live dot ping. `--dur-toast` stays: it is how long a toast is shown, not a motion. Design that state on purpose.
 
 ## States
 

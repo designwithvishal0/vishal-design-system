@@ -4,8 +4,27 @@ Import from `design-system/src/index.js`. Every component uses tokens only, work
 
 ```js
 import { Button, Input, Card, Tag, Nav, NavList, List, Modal, Sheet, Avatar, Cover,
-         IconSearch, IconSend, IconHash, IconMenu, IconClose, IconPlus, IconStar } from '../../design-system/src/index.js';
+         IconSearch, IconSend, IconHash, IconMenu, IconClose, IconPlus, IconStar,
+         IconCheck, IconChevronDown, IconFile, IconBack } from '../../design-system/src/index.js';
 ```
+
+## Text sizes each component brings
+
+Count these against the four sizes a screen may use (SKILL.md section 4).
+
+| Component | Sizes |
+| --- | --- |
+| Button | `small` 15; `sm` buttons use `meta` 14 |
+| Input | label and hint `label` 13, text `small` 15 |
+| Tag | `label` 13 |
+| Card | title `title-sm` 20, body `body` 18, meta `meta` 14 |
+| List comfortable | title `body` 18, meta `small` 15 |
+| List dense | title `small` 15, meta `label` 13 |
+| Nav, NavList | `small` 15, headings `label` 13 |
+| Modal | title `title` 22 |
+| Cover (large, no image) | `label` 13 |
+
+On a screen built at 15 and 13, prefer `md` buttons and the dense List; an `sm` button adds a fifth size.
 
 ## Button
 
@@ -30,6 +49,7 @@ Field with a visible label, hint and error. Extension: the site has no inputs.
 | `hideLabel` | Keeps the label for screen readers only. Only where the purpose is obvious, like a search field with an icon |
 | `hint`, `error` | Text under the field. `error` turns the border and text red |
 | `multiline` | A textarea that grows with its content (a message composer) |
+| money | `leading="₹"` (or the currency sign), `inputMode="decimal"`, digits in tabular numerals, the format in `hint` ("In rupees, like 47,340"). Accept commas and spaces as typed and keep what was typed on an error |
 | `leading` | An icon inside the field, left side |
 
 Label to field 8px, field to field 24px. Keep what the user typed when an error appears.
@@ -66,7 +86,7 @@ Counts over 99 show as "99+". On a selected row an `accent` tag takes the page c
 </Nav>
 ```
 
-In an app, the bar holds the product's name on the left, its top level views as links in the centre (the current one underlined), and on the right a search or command trigger and the person's avatar. Places inside a view, like channels, folders, accounts and filters, never go in the bar: they belong in a rail or a list. On phones everything in `actions` moves into the menu; put what must stay in the bar, like a search button, in `persistent`.
+A product with one top level view has no links: put the avatar in `persistent` and leave `actions` empty, so phones show no empty menu. In an app, the bar holds the product's name on the left, its top level views as links in the centre (the current one underlined), and on the right a search or command trigger and the person's avatar. Places inside a view, like channels, folders, accounts and filters, never go in the bar: they belong in a rail or a list. On phones everything in `actions` moves into the menu; put what must stay in the bar, like a search button, in `persistent`.
 
 `NavList` is the vertical sidebar list (extension). `NavList.Heading` with an optional `action`, `NavList.Item` with `current`, `unread` (weight 650), `leading`, `trailing`. The current item is a neutral surface, never the accent, so the sidebar never competes with the content.
 
