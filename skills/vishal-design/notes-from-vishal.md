@@ -195,3 +195,33 @@ When it may bend: marketing or launch moments can push the display size beyond t
 **Decision on the type differences (5 November 2026)**
 
 "My size list in answer 6 was the body and interface tier, not the whole scale. Keep the 14px meta role and the 22px title role, keep the heading tier from 24px to 40px, and add an eyebrow token: 13px, weight 600, uppercase, .14em tracking."
+
+**7. Spacing and alignment: how do you keep rhythm, what do you do about optical alignment, and how do you decide what gets grouped versus separated?**
+
+Spacing is how I show what belongs together. Things that belong together sit close, things that do not get more room. If a screen feels congested, I add space. I never shrink things to fit.
+
+Rhythm:
+1. Every gap comes from one scale built on steps of 4 and 8: 4, 8, 12, 16, 24, 32, 48, 72, 120, 160. No random values.
+2. The gap grows with the level. Inside a component is smaller than between components, which is smaller than between sections. On my home page that is 72 inside a section and 160 between sections.
+3. Panels sit 16px in from the screen edge (8px on phones), with a 32px side gutter (16px on phones) and content capped at 1376px.
+4. On phones the gaps roughly halve, but the order of small, medium and large stays the same.
+5. Dense screens keep rhythm through repetition: every row the same height, 32px for dense lists and 48px for comfortable ones.
+
+Grouping versus separating, in this order:
+1. Space first. If space alone shows the groups, stop there.
+2. A colour wash second, for a group that needs to stand out as one unit.
+3. A 1px hairline third, for lists and dividers.
+4. Never a box around everything. Cards are for things you can pick up as a whole.
+A group is one decision or one task. A label and its input are one group, so 8px apart. Two fields are separate groups, so 24px apart.
+
+Optical alignment, because what looks right beats what measures right:
+1. Icons sit centred on the text they belong to, not on the box. Icon size follows the text: 16px with small text, 20px with body text.
+2. Text inside a pill looks centred, not just measured centred. Buttons are 44px tall with 22px side padding, and I nudge by a pixel if descenders make it look low.
+3. Shapes that point, like play triangles and arrows, shift slightly towards their point so they look centred.
+4. Round things look smaller than square things of the same size, so circles and avatars get a little more size or space to match.
+5. Everything lines up to the text's left edge, not the icon's. When an icon starts a row, the text after it is what aligns with the rest of the page.
+6. Numbers in columns align right, so their digits line up.
+7. Touch targets have at least 8px between them so taps never hit the wrong one.
+
+Why: when spacing is even and grouping is clear, people understand a screen before they read it. Uneven spacing is the fastest way to make a screen look amateur.
+When it may bend: a single moment can get extra space to make it land, like the one signature moment on the screen. Never less space than the scale allows.
