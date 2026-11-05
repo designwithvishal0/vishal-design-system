@@ -16,6 +16,8 @@ Every token that is not read from the live portfolio. Each one fills a gap the p
 - `z-popover`: The site has one popover and no scale. Menus and popovers sit above the bar.
 - `z-overlay`: Modals and sheets sit above everything.
 - `check-size`: Checkbox box. The site has no checkbox. Same as the icon size beside body text.
+- `panel-rail`: Width of a sidebar or channel rail in an app that fills the screen. Seven steps of 32.
+- `panel-list`: Width of a list panel in an app that fills the screen, like a thread list or an inbox. Twelve steps of 32.
 - `row-h`: Comfortable single line list row. Taller than the 44px button so a row never reads as a button. Two line rows size to their content (Vishal, 5 Nov 2026).
 - `icon-sm`: Icons scale with their text but snap to 16, 20 or 24px so their lines stay crisp (Vishal, 5 Nov 2026). 16px sits with small text.
 - `icon-md`: Icon snap size for body text (Vishal, 5 Nov 2026).

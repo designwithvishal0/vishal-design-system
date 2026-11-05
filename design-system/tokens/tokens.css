@@ -253,6 +253,8 @@
   --switch-h: 34px; /* site: switch .sw, 62 by 34 (handoff 3) */
   --switch-knob: 26px; /* site: switch knob, 26px (handoff 3) */
   --check-size: 20px; /* EXTENSION: Checkbox box. The site has no checkbox. Same as the icon size beside body text. */
+  --panel-rail: 224px; /* EXTENSION: Width of a sidebar or channel rail in an app that fills the screen. Seven steps of 32. */
+  --panel-list: 384px; /* EXTENSION: Width of a list panel in an app that fills the screen, like a thread list or an inbox. Twelve steps of 32. */
   --row-h: 48px; /* EXTENSION: Comfortable single line list row. Taller than the 44px button so a row never reads as a button. Two line rows size to their content (Vishal, 5 Nov 2026). */
   --section-gap: 160px; /* site: 160px between sections on the home page (handoff 2.6). 96px on phones, by Vishal 5 Nov 2026, as his case studies shrink sections on small screens */
   --section-inner: 72px; /* site: 72px inside a section on the home page (handoff 2.6). 48px on phones, by Vishal 5 Nov 2026 */

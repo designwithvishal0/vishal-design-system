@@ -27,6 +27,26 @@ Never invent a colour for decoration, a new font, a new shadow style or a radius
 
 If something cannot be built without breaking a rule that holds, do not quietly break it. Write it down under "Where it breaks" in the README.
 
+## App shells: screens that fill the window
+
+Messaging, inboxes and tools fill the window instead of scrolling as a page. Build every one the same way.
+
+| Rule | Why | Break only when |
+| --- | --- | --- |
+| The page never scrolls. The top bar stays, and each panel scrolls on its own. | A tool used all day keeps everything in place, so nothing moves under the hand. | On phones, where one panel shows at a time and the page may scroll. |
+| Panels are columns: a rail (`--panel-rail`, 224px), a list (`--panel-list`, 384px) and the main pane (the rest). Use only the panels the idea needs. | Fixed widths keep the same things in the same place on every screen. | Never with a width typed by hand. |
+| Panels are separated by a `line-strong` edge, never a shadow or a gap. | Lines work in both themes and keep the panels flat. | Never. |
+| No section gaps: groups inside a panel use 24 to 48 (`--space-5` to `--space-7`). | Section gaps are for scrolling pages. | Never. |
+| Pane headers and composers line up with the message text, not the avatars. | Edges align to the text. | Never. |
+| Tablet (1023px and below): the rail folds into tabs above the list. Phone (759px and below): one panel at a time, with a ghost "Back" button, and the composer sticks to the bottom. | Three panels do not fit, and a phone has room for one task. | Never. |
+
+```css
+/* EXTENSION: app shell */
+.app { height: 100dvh; display: grid; grid-template-rows: auto 1fr; }
+.app__body { min-height: 0; display: grid; grid-template-columns: var(--panel-rail) var(--panel-list) 1fr; }
+.panel { min-height: 0; min-width: 0; overflow: auto; border-right: var(--border-w) solid var(--color-line-strong); }
+```
+
 ## Worked examples
 
 These apply Vishal's rules to things the portfolio never had. Where an example sets a detail his answers do not cover, like grouping messages sent within five minutes, it follows the convention people already know, because conventions win over his look (trade off 4).

@@ -191,7 +191,7 @@ A product's own brand colour is allowed. Add it as a new accent pair built exact
 
 Why: the parts that hold are what make it his; everything else is a means to serve the product. Break only by writing it down: if something truly cannot be built without breaking a fixed part, record it as a place where the system breaks.
 
-Worked examples, from a chat thread with no bubbles to a reading challenge and empty states, plus one fixed recipe each for tabs, menu, toast, tooltip, table, checkbox, switch and select, so every product builds them the same way: [reference/extending.md](reference/extending.md).
+Screens that fill the window, like messaging, follow the app shell recipe: fixed panel widths, panels that scroll on their own, one panel at a time on phones. Worked examples, from a chat thread with no bubbles to a reading challenge and empty states, plus one fixed recipe each for tabs, menu, toast, tooltip, table, checkbox, switch and select, so every product builds them the same way: [reference/extending.md](reference/extending.md).
 
 ## 7. Trade offs
 

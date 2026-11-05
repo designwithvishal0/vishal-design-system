@@ -237,6 +237,8 @@ export const fixed = {
   'switch-h': { value: '34px', ...site('switch .sw, 62 by 34 (handoff 3)'), use: 'Switch track height' },
   'switch-knob': { value: '26px', ...site('switch knob, 26px (handoff 3)'), use: 'Switch knob' },
   'check-size': { value: '20px', ...ext('Checkbox box. The site has no checkbox. Same as the icon size beside body text.'), use: 'Checkbox' },
+  'panel-rail': { value: '224px', ...ext('Width of a sidebar or channel rail in an app that fills the screen. Seven steps of 32.'), use: 'App rail' },
+  'panel-list': { value: '384px', ...ext('Width of a list panel in an app that fills the screen, like a thread list or an inbox. Twelve steps of 32.'), use: 'App list panel' },
   'row-h': {
     value: '48px',
     ...ext('Comfortable single line list row. Taller than the 44px button so a row never reads as a button. Two line rows size to their content (Vishal, 5 Nov 2026).'),
