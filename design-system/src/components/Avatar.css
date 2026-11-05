@@ -1,0 +1,38 @@
+.vd-avatar {
+  --size: var(--control-h-sm);
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--radius-round);
+  background: var(--color-surface-2);
+  box-shadow: inset 0 0 0 var(--border-w) var(--color-line-strong);
+  color: var(--color-ink);
+  font-size: calc(var(--size) * 0.38);
+  font-weight: var(--weight-ui);
+  line-height: 1;
+  user-select: none;
+}
+.vd-avatar--xs { --size: var(--space-5); }
+.vd-avatar--sm { --size: var(--space-6); }
+.vd-avatar--lg { --size: var(--control-h); }
+.vd-avatar--xl { --size: var(--layout-bar); }
+
+/* Small text in an accent uses text-aa. */
+.vd-avatar--accent { background: var(--accent-wash); box-shadow: none; color: var(--accent-text-aa); }
+
+.vd-avatar__img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
+
+.vd-avatar__status {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-round);
+  background: var(--color-live);
+  outline: calc(var(--border-w) * 2) solid var(--color-bg);
+}
+.vd-avatar__status::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: var(--color-live); animation: vd-ping var(--dur-ping) var(--ease-out) infinite; }
