@@ -157,6 +157,7 @@ One example per rule from a product that is neither a chat app nor a reading pro
 | 4. Tabular numerals | Prices in a cart line up by the rupee digit. |
 | 4. Balanced headings | "Where do you work?" never leaves "work?" alone on a line. |
 | 4. Real punctuation | "₹1,840" and "9 to 5" and curly quotes in a review prompt. |
+| 4. Real characters, never escapes on screen | A fee reads "₹500" with a real non breaking space typed or written as `{"\u00A0"}` in JSX; the rendered screen never shows "\u00A0" or "&nbsp;". |
 | 4. Text aligns left | A pricing page's plan descriptions are left aligned, even inside centred cards. |
 | 4. Truncate names, never the main answer | A long company name in a table row truncates; the claim amount on the claim page never does. |
 | 4. Every gap from the scale | A multi step form uses 24 between fields and 48 between groups, nothing typed by hand. |

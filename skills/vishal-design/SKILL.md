@@ -131,7 +131,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | Line height: display .92 to .95, body 1.5, interface text 1.3 to 1.4 (`small`, `meta` and `label` all at 1.4). Tracking: display -.01 to -.025em, `eyebrow` .14em uppercase, body untouched. | Tight display reads as one shape; body needs air. | Never. |
 | Tabular numerals for times, counts, prices and ratings; numbers in columns align right. | Digits line up and do not jitter as they change. | Never. |
 | Headings never leave one word alone on the last line: use `text-wrap: balance`. | A lone word makes a heading look unfinished. | Never. |
-| Real punctuation: curly quotes, a real ellipsis, a non breaking space between a number and its unit, ranges written with "to". | These are the details that read as finished. | Never. |
+| Real punctuation: curly quotes, a real ellipsis, a non breaking space between a number and its unit, ranges written with "to". Type the real character. Never write a character escape like `\u00A0` or `&nbsp;` as text: in JSX it renders literally unless it sits inside braces as a string, so use the real character or `{"\u00A0"}`. | These are the details that read as finished, and an escape that shows on screen reads as broken. | Never. |
 | Text aligns left. Centre only very short lines. | Ragged centred paragraphs are hard to read. | Never for paragraphs. |
 | Names and titles in lists truncate to one line with an ellipsis; previews, like a message, an email or a description, to two lines. The answer to the main question never truncates. | Truncation keeps rows even; the answer must always be whole. | Never on the main answer. |
 
@@ -257,7 +257,7 @@ Why: people trust a screen that knows what matters. Break only for a pure refere
 
 ## 9. Hygiene checklist
 
-Run it in this order on every finished screen and mark each line pass or fail. Biggest problems first: fixing details on a screen with the wrong idea is wasted work. Never skip a step; on a small screen some take seconds. A screen with any fail is not done.
+Run it in this order on every finished screen and mark each line pass or fail. Judge the rendered screen in a browser, not the code: a line passes only when it holds on screen. Biggest problems first: fixing details on a screen with the wrong idea is wasted work. Never skip a step; on a small screen some take seconds. A screen with any fail is not done.
 
 **1. The question**
 - [ ] Squinting, the first thing seen is the answer to the main viewer's question.
@@ -289,6 +289,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 - [ ] Real names, times and titles; no lorem ipsum; no invented numbers.
 - [ ] Real images wherever a source exists; a placeholder only where an image failed to load.
 - [ ] Curly quotes and apostrophes everywhere, sample data included.
+- [ ] Look at the rendered screen, not just the code. Any visible \u, &nbsp; or broken character fails the check.
 - [ ] No hyphens or em dashes in prose; codes, IDs, phone numbers, file names, dates in data and code keep their real characters, hyphens included; sentence case; the same words for the same thing.
 
 **7. States**
