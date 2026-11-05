@@ -1,5 +1,6 @@
 /* ---- Top bar ---- */
 .vd-nav {
+  position: relative;
   height: var(--layout-bar);
   background: color-mix(in srgb, var(--color-bg) var(--glass-mix), transparent);
   -webkit-backdrop-filter: var(--glass-filter);
@@ -20,30 +21,36 @@
   height: 100%;
   margin-inline: auto;
 }
-.vd-nav__brand { font-size: var(--type-small-size); font-weight: var(--weight-semi); text-decoration: none; }
+.vd-nav__brand { font-size: var(--type-small-size); font-weight: var(--weight-semi); line-height: 1; text-decoration: none; white-space: nowrap; }
 .vd-nav__links { display: flex; gap: var(--space-6); }
-.vd-nav__link { padding-block: var(--space-3); font-size: var(--type-small-size); font-weight: var(--type-small-weight); }
+.vd-nav__link { padding-block: var(--space-3); font-size: var(--type-small-size); font-weight: var(--type-small-weight); white-space: nowrap; }
 .vd-nav__link[aria-current='page'] { background-size: 100% var(--border-w), 100% var(--border-w); }
 .vd-nav__actions { display: flex; align-items: center; justify-content: flex-end; gap: var(--space-2); }
-.vd-nav__menu { display: none; }
+.vd-nav__menu, .vd-nav__sheet { display: none; }
 
+/* Phones: name on the left, Menu on the right, nothing else in the bar. */
 @media (max-width: 759px) {
   .vd-nav__in { grid-template-columns: 1fr auto; }
-  .vd-nav__links { display: none; }
+  .vd-nav__links, .vd-nav__actions { display: none; }
   .vd-nav__menu { display: inline-flex; }
-  .vd-nav--open .vd-nav__links {
+  .vd-nav--open .vd-nav__sheet {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: var(--space-4);
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    padding: var(--space-2) var(--layout-gutter) var(--space-4);
+    padding: var(--space-2) var(--layout-gutter) var(--space-5);
     background: var(--color-bg);
     border-bottom: var(--border-w) solid var(--color-line);
     z-index: var(--z-popover);
   }
+  .vd-nav__sheet-links { display: flex; flex-direction: column; }
+  .vd-nav__sheet-links .vd-nav__link { align-self: flex-start; padding-block: var(--space-3); font-size: var(--type-lead-size); }
+  /* Book a call and Resume sit side by side at equal width, as the site's closing buttons do. */
+  .vd-nav__sheet-actions { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+  .vd-nav__sheet-actions .vd-btn { width: 100%; }
 }
 
 /* ---- Vertical list ---- */

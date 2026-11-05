@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import './Nav.css';
 import { cx } from './cx.js';
 import { Button } from './Button.jsx';
@@ -6,24 +6,31 @@ import { IconMenu, IconClose } from './icons.jsx';
 
 /**
  * Top bar, from the portfolio header. Name on the left, links in the middle, actions on the right.
- * Frosted, sticky. Under 760px the links fold into a Menu button.
+ * Frosted, sticky. Under 760px the bar shows only the name and a Menu button. The links and the
+ * actions (Book a call, Resume) move into the open menu, so nothing wraps or crowds the bar.
  *   tone="light"  forces the light colour set in either theme. The handoff says the header is always
  *                 light, the live home page follows the theme, so both are supported.
  *   bordered      the hairline under the bar, which the site shows once the page has scrolled
  */
 export function Nav({ brand, brandHref = '#', children, actions, tone, bordered = false, sticky = true, label = 'Sections', className }) {
   const [open, setOpen] = useState(false);
+  const menuId = useId();
+  const close = (e) => { if (e.target.closest('a')) setOpen(false); };
   return (
     <header className={cx('vd-nav', sticky && 'vd-nav--sticky', bordered && 'vd-nav--bordered', open && 'vd-nav--open', className)} data-theme={tone === 'light' ? 'light' : undefined}>
       <div className="vd-nav__in">
         <a className="vd-nav__brand" href={brandHref}>{brand}</a>
-        <nav className="vd-nav__links" aria-label={label}>{children}</nav>
-        <div className="vd-nav__actions">
-          {actions}
-          <Button className="vd-nav__menu" icon size="sm" variant="ghost" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}>
-            {open ? <IconClose /> : <IconMenu />}
-          </Button>
-        </div>
+        <nav className="vd-nav__links" aria-label={label} onClick={close}>{children}</nav>
+        {/* Wide screens: the actions sit in the bar. */}
+        <div className="vd-nav__actions">{actions}</div>
+        <Button className="vd-nav__menu" icon size="sm" variant="ghost" aria-label="Menu" aria-expanded={open} aria-controls={menuId} onClick={() => setOpen(!open)}>
+          {open ? <IconClose /> : <IconMenu />}
+        </Button>
+      </div>
+      {/* Phones: the bar holds only the name and Menu. Links and actions live in the open menu. */}
+      <div className="vd-nav__sheet" id={menuId} hidden={!open}>
+        <nav className="vd-nav__sheet-links" aria-label={`${label} menu`} onClick={close}>{children}</nav>
+        {actions && <div className="vd-nav__sheet-actions">{actions}</div>}
       </div>
     </header>
   );
