@@ -7,6 +7,8 @@ description: Design an interface in Vishal Yadav's design system for a product i
 
 This skill turns a product brief into screens that look like Vishal Yadav designed them. His system lives in `design-system/` in this repo: tokens in `design-system/tokens/`, React components in `design-system/src/`. Everything here comes from his portfolio and from his own answers in [`notes-from-vishal.md`](notes-from-vishal.md). When this file and his notes disagree, his notes win.
 
+If `design-system/` is not next to this skill, clone https://github.com/designwithvishal0/vishal-design-system first and work inside it. Never rebuild the tokens or components from this file. Values written here are a summary, not the system.
+
 ## The standard
 
 Whoever uses this skill is making work to a standard, so the standard has to be clear. The standard is a professional senior designer who loves the craft and shows it in the work. Every screen should look like that person made it with care: one clear idea, a deliberate hierarchy, real content, even spacing, finished details and, where it fits, one moment people remember. When no rule covers a case, ask one question: would that designer ship this? If not, it is not done.
