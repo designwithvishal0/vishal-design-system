@@ -1,0 +1,53 @@
+/* Threads first. Three panels: channel filters, the threads you follow, the open thread. */
+.tf { grid-template-columns: calc(var(--space-6) * 7) calc(var(--space-6) * 12) 1fr; }
+.tf-search { inline-size: calc(var(--space-6) * 7); }
+.tf-side { padding: var(--space-5) var(--space-3); }
+.tf-count { color: var(--color-muted); font-size: var(--type-label-size); font-variant-numeric: tabular-nums; }
+.tf-muted { margin: 0; color: var(--color-muted); font-size: var(--type-small-size); line-height: var(--type-small-lh); }
+.tf-time { color: var(--color-muted); font-variant-numeric: tabular-nums; }
+
+.tf-list { display: flex; flex-direction: column; }
+.tf-list__head { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5) var(--space-5) var(--space-4); }
+.tf-list__head p { margin: 0; }
+.tf-rows { padding: 0 var(--space-3) var(--space-5); }
+.tf-rows .vd-list__title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: var(--type-small-size); font-weight: var(--weight-ui); line-height: var(--type-small-lh); }
+.tf-rows .vd-list__meta { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--type-label-size); }
+.tf-rows .vd-list__row { align-items: flex-start; }
+.tf-rows .vd-list__trail { align-self: center; }
+.tf-empty { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2); padding: var(--space-5); }
+.tf-empty p { margin: 0; }
+
+/* Tabs only on phones, where the filter panel is hidden (skill recipe: Tabs). */
+.tf-tabs { display: none; gap: var(--space-5); padding: 0 var(--space-5); overflow-x: auto; border-bottom: var(--border-w) solid var(--color-line); }
+.tf-tab { flex: none; padding: var(--space-3) 0; border: 0; background: none; color: var(--color-muted); font: inherit; font-size: var(--type-small-size); cursor: pointer; }
+.tf-tab[aria-selected='true'] { color: var(--color-ink); background-size: 100% var(--border-w), 100% var(--border-w); }
+
+.tf-open { display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; }
+.tf-open__head { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5) var(--space-6) var(--space-4); border-bottom: var(--border-w) solid var(--color-line); }
+.tf-open__head h1, .tf-open__head p { margin: 0; }
+.tf-open__head .vd-type-title { text-wrap: balance; max-inline-size: var(--measure-max); }
+.tf-open__actions { display: flex; align-items: center; gap: var(--space-2); }
+.tf-back { display: none; align-self: flex-start; margin-inline-start: calc(var(--space-3) * -1); }
+.tf-open__scroll { min-height: 0; overflow: auto; padding: var(--space-4) var(--space-5); }
+.tf-open__composer { padding: var(--space-4) var(--space-5) var(--space-5); border-top: var(--border-w) solid var(--color-line); }
+
+/* Tablet: the filter panel folds into the tabs. */
+@media (max-width: 1023px) {
+  .tf { grid-template-columns: calc(var(--space-6) * 11) 1fr; }
+  .tf-side { display: none; }
+  .tf-tabs { display: flex; }
+}
+
+/* Phone: one panel at a time, the list or the open thread. */
+@media (max-width: 759px) {
+  .tf { grid-template-columns: 1fr; }
+  .tf-search { display: none; }
+  .tf[data-phone='list'] .tf-open { display: none; }
+  .tf[data-phone='thread'] .tf-list { display: none; }
+  .tf-back { display: inline-flex; }
+  .panel--line { border-right: 0; }
+  .tf-open { min-height: calc(100dvh - var(--layout-bar)); }
+  .tf-open__head { padding-inline: var(--layout-gutter); }
+  .tf-open__scroll { padding-inline: var(--space-2); }
+  .tf-open__composer { position: sticky; bottom: 0; background: var(--color-bg); padding-inline: var(--layout-gutter); }
+}
