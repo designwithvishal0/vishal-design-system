@@ -49,7 +49,7 @@ Build the layout around the moment that matters most and the question the user h
 
 | Step | Why | Break only when |
 | --- | --- | --- |
-| 1. Name whose screen it is and who else looks at it. Pick the main viewer from what the product is trying to achieve; serve the other one second. | A reading profile has an owner and visitors, and they want different things. One layout cannot lead with both. | Never. A second viewer is served, never ignored. |
+| 1. Name whose screen it is and who else looks at it. Pick the main viewer from what the product is trying to achieve; serve the other one second. | Most screens are seen by more than one kind of person, like the owner of a profile and its visitors, or the employee filing a claim and the HR admin checking it, and they want different things. One layout cannot lead with both. | Never. A second viewer is served, never ignored. |
 | 2. Decide how often it is used and how much is at stake. Rare and high stakes gets one clear answer, big and first. Used fifty times a day gets speed: things stay in place, it is dense, the frequent action is always in reach. | The same screen design fails at the wrong frequency: a hero slows a tool, and a dense tool hides a rare answer. | Never. |
 | 3. Write the main question in the user's own words, then put its answer in the most prominent place. Prominence can come from position, weight or contrast, not only size. | The answer is what people came for. If they must hunt, the screen has failed before any detail matters. | A pure reference screen, like settings, can stay even (section 8). |
 | 4. List the jobs people repeat here, like writing a message, and keep them within reach. | Repeated jobs are not the main question but are done most often. | Never. |
@@ -95,10 +95,10 @@ These make a screen look like Vishal's. Following them gives a clean screen. Sec
 | Edges are 1px lines. A shadow means one thing: this floats. | Lines work in both themes. Shadows break in dark mode and lose meaning if cards have them. | Never on cards, rows, panels or buttons. |
 | Tokens only. The same component does the same job everywhere, with the same radius, icon and words. The same action sits in the same place. | Consistency is what makes a product feel trustworthy. | Never. Change a component everywhere, never on one screen. |
 | Hover changes colour, press scales to .97, nothing lifts or jumps. | Lift is the look of a template. Colour and press give feedback without movement. | Never. |
-| Conventions win: the composer at the bottom of a chat, unread counts on channels, five stars for a rating. The system dresses a convention; it does not replace it. | People already know how these work. Breaking that costs them time. | Never for the sake of looking different. |
+| Conventions win. The system dresses a convention; it does not replace it. For example: the composer at the bottom of a chat, five stars for a rating, card number then expiry then CVV at checkout, the total beside the pay button. | People already know how these work. Breaking that costs them time. | Never for the sake of looking different. |
 | Navigation marks only the active item: the current Nav link or tab is underlined, the others show no line until hovered. | A line under every tab marks nothing. | Never. |
 | A command bar is a field near the top of the screen with results below: no heading, no close button, focus in the field, Escape closes it. | It exists for speed; a dialog's chrome slows it and moves focus to the close button. | Never. |
-| Real content only: real names, times like "9:41" and "Mon", real book titles. No lorem ipsum, no invented numbers or results. | Fake content hides layout problems and breaks trust. | Never. |
+| Real content only: real names, times like "9:41" and "Mon", real titles, prices and places. No lorem ipsum, no invented numbers or results. | Fake content hides layout problems and breaks trust. | Never. |
 | Copy is short and concrete. No hyphens or em dashes in prose, no filler words, sentence case, "Send" is always "Send". | Vishal's voice is plain and specific. | Never. |
 | Counts agree across the whole screen: a headline, a sidebar badge and a list tag that count the same thing show the same number, and all of them drop the moment it is read. Work every count out from the data, never type one. | A count that disagrees with another tells people the screen cannot be trusted. | Never. |
 | Both themes are designed, not inverted, and pass every rule. | Vishal's site runs in both, and a colour that passes in light can fail in dark. | Never. |
@@ -115,7 +115,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | Below the display moment, at most four text sizes in total on one screen, headings included. Pick them from the roles: 13, 14, 15, 16, 18 and 20px (`label`, `meta`, `small`, `body` on phones, `body`, `title-sm`) and the heading tier 22 to 40px (`title`, `heading`, `heading-lg`). Nothing below 13px. | Too many sizes and nothing reads as a step. | Never more than four. Below 13px only for avatar initials: they are a mark, not reading text, so they may drop to 10px (`--avatar-initials-min`), at weight 600. |
 | At most three weights visible: 400 for reading, 500 to 650 for interface text, and the display weight. Buttons and labels never go above 650. Weight 800 only at 56px and up. | Heavy weight on anything read line by line is shouting. | Never. |
 | Code, and only code, is set in `--font-mono` at the `small` size, inline on `surface-2` with `radius-code` (4px), blocks on `surface-1` with a `line-strong` edge and `radius-sm`. | People expect code in monospace, and conventions win. It is the system font, so nothing new loads. | Never for anything that is not code. |
-| The `eyebrow` (13px, uppercase) may head a group inside a panel, like "Waiting on others". Never set a name in it: channel names, people and titles keep their own case. | A group label helps scanning; uppercase would turn "#launch" into "#LAUNCH", which is not its name. | Never on names. |
+| The `eyebrow` (13px, uppercase) may head a group inside a panel, like "Waiting on others". Never set a name in it: names of people, places, products, channels and titles keep their own case. | A group label helps scanning; uppercase would turn "#launch" into "#LAUNCH", which is not its name. | Never on names. |
 | Emphasis comes from weight or position, never colour alone, italics, or underlines that are not links. | Colour alone fails people who cannot see it; underline means link. | Never. |
 | Paragraphs run between `--measure-min` (46ch) and `--measure-max` (760px). Never full width text. | Long lines are hard to follow back. | Never. |
 | Line height: display .92 to .95, body 1.5, interface text 1.3 to 1.4 (`small`, `meta` and `label` all at 1.4). Tracking: display -.01 to -.025em, `eyebrow` .14em uppercase, body untouched. | Tight display reads as one shape; body needs air. | Never. |
@@ -130,7 +130,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | Rule | Why | Break only when |
 | --- | --- | --- |
 | Every gap comes from the scale: 4, 6, 8, 12, 16, 24, 32, 48, 72, 96, 120, 160 (`--space-1` to `--space-11`). | No random values: rhythm is what makes a screen look intentional. | Never. |
-| The gap grows with the level: inside a component, then between components, then between sections. Scrolling pages, like a reading profile: `--section-gap` 160 between sections, `--section-inner` 72 inside; 96 and 48 on phones. App layouts that fill the screen, like messaging, have no sections: their panels and groups use component gaps of 24 to 48 (`--space-5` to `--space-7`). | The size of a gap tells people what belongs together. | The signature moment may get extra space to land. Never less than the scale. |
+| The gap grows with the level: inside a component, then between components, then between sections. Scrolling pages, like a profile, a report or a landing page: `--section-gap` 160 between sections, `--section-inner` 72 inside; 96 and 48 on phones. App layouts that fill the screen, like a chat app, an inbox or a dashboard, have no sections: their panels and groups use component gaps of 24 to 48 (`--space-5` to `--space-7`). | The size of a gap tells people what belongs together. | The signature moment may get extra space to land. Never less than the scale. |
 | Group with space first, a wash second, a 1px hairline third. Never a box around everything; cards are for things you pick up as a whole. | Each step is louder than the last; use the quietest one that works. | Never. |
 | A label and its input are 8px apart; two fields are 24px apart. | One decision is one group. | Never. |
 | Rows repeat: 48px comfortable (`--row-h`), 32px dense (`--row-h-dense`). | Dense screens keep rhythm through repetition. | Two line rows grow to their content. |
@@ -195,7 +195,7 @@ A product's own brand colour is allowed. Add it as a new accent pair built exact
 
 Why: the parts that hold are what make it his; everything else is a means to serve the product. Break only by writing it down: if something truly cannot be built without breaking a fixed part, record it as a place where the system breaks.
 
-Screens that fill the window, like messaging, follow the app shell recipe: fixed panel widths, panels that scroll on their own, one panel at a time on phones. Worked examples, from a chat thread with no bubbles to a reading challenge and empty states, plus one fixed recipe each for tabs, menu, toast, tooltip, table, checkbox, switch and select, so every product builds them the same way: [reference/extending.md](reference/extending.md).
+Screens that fill the window, like a chat app, an inbox or an admin tool, follow the app shell recipe: fixed panel widths, panels that scroll on their own, one panel at a time on phones. Worked examples, from a chat thread with no bubbles to a reading challenge and empty states, plus one fixed recipe each for tabs, menu, toast, tooltip, table, checkbox, switch and select, so every product builds them the same way: [reference/extending.md](reference/extending.md).
 
 ## 7. Trade offs
 
@@ -213,7 +213,7 @@ When two rules fight, the higher one wins. The order does not bend; if a case se
 | Density against space | How often it is used decides | In a tool used all day, density wins inside lists, but groups keep their space and nothing drops below the scale or the touch target. On rare, high stakes screens, space wins. |
 | A striking moment against speed | Speed, in frequent tools | The moment shrinks to small and quick, or moves to after the action, and never blocks. A first visit or launch gets the big version. |
 | Product colour against legibility | Legibility | The colour moves to a wash or a large heading; small text uses `text-aa`. A colour is darkened, never pushed below contrast. |
-| Vishal's look against what people know | Conventions | The system dresses the convention: composer at the bottom, unread counts on channels. |
+| Vishal's look against what people know | Conventions | The system dresses the convention, for example a chat's composer at the bottom or a form's fields in the order people expect. |
 | Consistency against a better idea on one screen | Consistency | If the idea really is better, change the component everywhere. |
 | The brief against the idea | The brief | Everything the brief requires appears; the idea decides order and weight. |
 | Motion against Reduce motion | Reduce motion | Always. |
@@ -280,7 +280,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 - [ ] Loading uses placeholders in the real shape; nothing for under 300ms; a spinner only in a pressed button.
 - [ ] Errors say what happened and what to do, sit next to what failed, keep what was typed, offer a retry.
 - [ ] Partial failure shows what worked and marks only what failed.
-- [ ] Zero, one, a few, a hundred and ten thousand items all hold; plurals read right ("1 book"); big numbers shorten ("1.2k", "99+").
+- [ ] Zero, one, a few, a hundred and ten thousand items all hold; plurals read right ("1 item"); big numbers shorten ("1.2k", "99+").
 - [ ] Long names truncate, long messages wrap, nothing breaks the layout.
 - [ ] Offline shows the last saved content with its time ("Updated 9:41"); sent items show sending, sent or failed.
 - [ ] Every action confirms quietly; disabled things say why.
@@ -338,7 +338,7 @@ Honest limits, so a new product knows where to be careful. Every token that is n
 
 1. **One accent per screen** limits charts to three series: steps of the one accent plus ink and muted, labelled directly on the chart ([recipe](reference/extending.md#chart)). Beyond three series, or telling many people apart by colour, is outside the system: use labels, position and names.
 2. **Status colours** are only live green and error red. There is no warning or info colour.
-3. **One family**: there is no serif or italic voice. Code is the one exception: it uses the system monospace (`--font-mono`), for code only, because conventions win in a messaging app.
+3. **One family**: there is no serif or italic voice. Code is the one exception: it uses the system monospace (`--font-mono`), for code only, in any product, because people expect code in monospace and conventions win.
 4. **Heavy narrow type** is a display voice. On dense screens it shrinks to one `stat-sm`, so a dense product has little room for its signature.
 5. **The spacing scale, surfaces, inputs, modals, dense lists, covers, avatars in groups, the sidebar list and every state** are extensions: the portfolio never needed them. They follow its logic but were not tested by Vishal over time.
 6. **Dark washes** sit only 1.24 to 1.41 to 1 from the page and lean on `line-strong` edges to stay separate.

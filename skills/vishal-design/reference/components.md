@@ -66,7 +66,7 @@ Counts over 99 show as "99+". On a selected row an `accent` tag takes the page c
 </Nav>
 ```
 
-In an app, the bar holds the product's name on the left, its top level views as links in the centre (the current one underlined), and on the right a search or command trigger and the person's avatar. Channels, folders and filters never go in the bar: they belong in a rail or a list. On phones everything in `actions` moves into the menu; put what must stay in the bar, like a search button, in `persistent`.
+In an app, the bar holds the product's name on the left, its top level views as links in the centre (the current one underlined), and on the right a search or command trigger and the person's avatar. Places inside a view, like channels, folders, accounts and filters, never go in the bar: they belong in a rail or a list. On phones everything in `actions` moves into the menu; put what must stay in the bar, like a search button, in `persistent`.
 
 `NavList` is the vertical sidebar list (extension). `NavList.Heading` with an optional `action`, `NavList.Item` with `current`, `unread` (weight 650), `leading`, `trailing`. The current item is a neutral surface, never the accent, so the sidebar never competes with the content.
 
@@ -76,7 +76,7 @@ Rows divided by hairlines.
 
 | Prop | Values |
 | --- | --- |
-| `density` | `comfortable`: 48px single line rows, taller than a button. `dense`: 32px rows (extension) for chat and long lists |
+| `density` | `comfortable`: 48px single line rows, taller than a button. `dense`: 32px rows (extension) for long lists of any kind, like messages, transactions or books |
 | `List.Item` | `leading`, `title`, `meta`, `trailing`, `selected`, `as="button"` or `as="a"` for interactive rows |
 
 Titles truncate to one line and meta to two by default. In a dense row title and meta sit on one line, and the meta truncates before the title. The selected row takes the accent wash. Times, counts and ratings go in `trailing` and use tabular numerals.

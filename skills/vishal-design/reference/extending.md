@@ -72,7 +72,7 @@ Relative: the dense List row and Avatar. No bubbles.
 .thread time { font-variant-numeric: tabular-nums; color: var(--color-muted); }
 ```
 
-Code in a message uses the system monospace, the one font exception:
+Code anywhere, in a message, a settings page or a receipt, uses the system monospace, the one font exception:
 
 ```css
 /* EXTENSION: code in messages */
