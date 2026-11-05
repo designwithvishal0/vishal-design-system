@@ -17,6 +17,8 @@
 
 /* Small text in an accent always uses text-aa, never the exact accent colour. */
 .vd-tag--accent { background: var(--accent-wash); border-color: transparent; color: var(--accent-text-aa); }
+/* On a selected row the row is already the wash, so the tag takes the page colour to stay a pill. */
+.is-selected .vd-tag--accent { background: var(--color-bg); }
 
 .vd-tag--live { border-color: var(--color-edge); }
 .vd-tag__dot { position: relative; width: var(--space-2); height: var(--space-2); border-radius: var(--radius-round); background: var(--color-live); }
