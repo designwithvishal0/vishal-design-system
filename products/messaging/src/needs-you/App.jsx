@@ -30,6 +30,7 @@ export function App() {
   const toastTimer = useRef();
 
   const everything = channels.filter((c) => c.unread > 0);
+  const busiest = [...everything].sort((a, b) => b.unread - a.unread)[0];
   const allItems = [...needs, ...waitingOnOthers, ...everything.map((c) => ({ id: `c-${c.id}`, kind: 'channel', ...c }))];
   const open = allItems.find((i) => i.id === openId) ?? (needs[0] || null);
   const convo = open && conversationFor(open);
@@ -99,10 +100,7 @@ export function App() {
                 <p className="ny-muted">Oldest first. Reply, or mark it done, and it leaves this list.</p>
               </>
             ) : (
-              <div className="ny-clear">
-                <p className="vd-type-stat-sm">You’re all caught up.</p>
-                <p className="ny-muted">{waitingOnOthers.length} things are waiting on others, and {everything.length} channels have news below.</p>
-              </div>
+              <p className="ny-muted">Nothing needs your reply right now.</p>
             )}
           </header>
 
@@ -150,6 +148,15 @@ export function App() {
                 <Composer label={`Reply to ${convo.replyTo}`} placeholder={`Reply to ${convo.replyTo}`} onSend={send} />
               </footer>
             </>
+          ) : needs.length === 0 ? (
+            // The signature moment: the last thing needing you is cleared, and the big pane settles.
+            // Built from the system: one display line, the eyebrow, muted text and one next step.
+            <div className="ny-caught" aria-live="polite">
+              <p className="vd-type-eyebrow">Needs you</p>
+              <p className="vd-type-display">You’re all caught up.</p>
+              <p className="ny-caught__more">Nothing needs your reply. {waitingOnOthers.length} things wait on others, and {everything.length} channels have news on the left.</p>
+              {busiest && <Button onClick={() => openItem(`c-${busiest.id}`)}>Open #{busiest.name}, {busiest.unread} new</Button>}
+            </div>
           ) : (
             <div className="ny-convo__empty">
               <p className="vd-type-title">Nothing open</p>
