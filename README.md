@@ -87,6 +87,8 @@ A second test ran in Figma Make, with the repo cloned and the skill used as it i
 
 A third test gave Figma Make only `SKILL.md`, with no `design-system/` beside it, on the same brief. With only the skill file, the thinking held and the visual details drifted. The fix is telling an agent where the system lives. Details are in [`products/cold-test.md`](products/cold-test.md).
 
+A fourth test ran the same setup after the fixes. The clone fix worked: with only the skill file, it found the real system and looked like it. What slipped were rules it already had, so the checklist now counts instead of judging. Details are in [`products/cold-test.md`](products/cold-test.md).
+
 ## How it was made
 
 Built with Claude Code, stage by stage, with a stop at every checkpoint for my review. Every decision that is mine is recorded in my words in `skills/vishal-design/notes-from-vishal.md`; nothing there was filled in for me. The commit history shows the work as it happened.
