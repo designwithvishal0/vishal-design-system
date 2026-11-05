@@ -310,3 +310,24 @@ When it may bend: a signature moment can break the radius or image rules for eff
 5. "List row hover and selected backgrounds keep 12px. Add it as its own radius token for list rows, separate from the 28 used for big portfolio rows."
 
 Built as asked, with two calls to confirm: a full title does not fit a 48px medium cover without breaking words, so the medium cover shows the title's initials (answer 9 allows "title or initials"); and the large cover is 96px wide instead of 72px so a title fits in whole words.
+
+### Hygiene
+
+**10. States: what must every screen cover beyond the happy path (empty, loading, error, long content, one item versus a hundred, offline)?**
+
+The happy path is only one state. A screen is not done until every state looks designed, not left over.
+
+Every screen covers:
+1. Empty. First use, no results from a search or filter, and everything cleared are three different empties. Each says what is happening in plain words and offers one next step. Never a blank area, never a sad illustration with no action.
+2. Loading. Placeholders in the shape of the real layout, so nothing jumps when content arrives. Show nothing for quick loads under about 300ms. A spinner only inside a button that was pressed.
+3. Error. Say what happened and what to do next, keep whatever the user typed, and offer a retry. Errors sit right next to the thing that failed. Never blame the user, and red is used only for errors.
+4. Partial. Some things loaded and some failed. Show what worked and mark only what failed.
+5. Counts. Design for zero, one, a few, a hundred and ten thousand. Plurals read right: "1 book", "34 of 50". Big numbers shorten, like "1.2k" or "99+".
+6. Long content. Long names and titles truncate neatly, long messages wrap, and nothing breaks the layout.
+7. Offline and slow. Show the last saved content with its time, like "Updated 9:41". Things the user sends wait in a queue and show sending, sent or failed.
+8. Feedback. Every action confirms quietly that it worked, and disabled things say why they are disabled.
+9. Everywhere. Both themes, the full scroll on phones, and Reduce motion.
+
+For messaging, that means zero unread versus
+
+*(This answer arrived cut off. Waiting for Vishal to finish it.)*
