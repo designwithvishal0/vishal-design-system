@@ -1,14 +1,14 @@
 # The layouts Vishal would take forward
 
-In his words, recorded 6 November 2026.
+In his words, recorded 6 November 2026. The longer versions are in `skills/vishal-design/notes-from-vishal.md`.
 
 ## Messaging: Needs you
 
-"I picked Needs you. A messaging app gets opened fifty times a day, and every time the real question is "what needs me right now?" The other two make getting around faster. This one answers the question, so you don't have to dig for it. It gives up browsing channels as places, which still live under Everything else. Where the system bent: the caught up moment is the one heavy type moment in a tool that otherwise stays quiet and fast."
+"A messaging app is opened dozens of times a day, and every time the real question is "what needs me right now?" Needs you answers it directly instead of making you dig through channels for it."
 
 ## Reading profile: My taste
 
-"I picked My taste. A profile is a page other people visit, so it should answer their question, "is this person's taste worth following?" The owner's progress already has a home in My books. Comparing books turns that question into something you can see in one number."
+"A profile is a page other people visit, so it should answer their question: is this person's taste worth following? Compare books turns that into one number."
 
 ## The replaced direction
 
