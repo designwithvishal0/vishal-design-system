@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import { Nav, NavList, List, Avatar, Tag, Button, Input, IconHash, IconSearch } from '../shared/ds.js';
-import { needsYou as seedNeeds, waitingOnOthers, channels, directs, people, me, firstName, threadById, channelMessages } from '../shared/data.js';
+import { Nav, List, Avatar, Tag, Button, Input, IconSearch } from '../shared/ds.js';
+import { needsYou as seedNeeds, waitingOnOthers, channels, people, me, firstName, threadById, channelMessages } from '../shared/data.js';
 import { Thread } from '../shared/Thread.jsx';
 import { Composer } from '../shared/Composer.jsx';
 import './needs-you.css';
 
 // Direction 2, Needs you. One inbox of only what needs your reply or decision; everything else waits.
+// There is no channel sidebar: channels live under Everything else, below what needs you.
 // Question: "What needs me right now?" Organised by status. Signature moment: clearing the last item
 // settles the screen into "You're all caught up."
 
@@ -72,24 +73,6 @@ export function App() {
       </Nav>
 
       <div className="app__body ny" data-phone={phoneView}>
-        <aside className="panel panel--line ny-side">
-          <NavList label="Channels">
-            <NavList.Heading>Channels</NavList.Heading>
-            {channels.map((c) => (
-              <NavList.Item key={c.id} as="button" leading={<IconHash />} unread={c.unread > 0} current={open?.id === `c-${c.id}`}
-                onClick={() => openItem(`c-${c.id}`)} trailing={c.unread ? <span className="ny-count">{c.unread}</span> : null}>
-                {c.name}
-              </NavList.Item>
-            ))}
-            <NavList.Heading>Direct messages</NavList.Heading>
-            {directs.map((d) => (
-              <NavList.Item key={d.id} as="button" leading={<Avatar name={people[d.person].name} size="xs" status={people[d.person].live ? 'live' : undefined} />}
-                unread={d.unread > 0 && needs.some((n) => n.dm === d.id)} onClick={() => needs.some((n) => n.dm === d.id) && openItem(needs.find((n) => n.dm === d.id).id)}>
-                {people[d.person].name}
-              </NavList.Item>
-            ))}
-          </NavList>
-        </aside>
 
         <section className="panel panel--line ny-inbox" aria-labelledby="ny-q">
           <header className="ny-head">
