@@ -109,7 +109,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | Rule | Why | Break only when |
 | --- | --- | --- |
 | One display moment per screen: `display`, `display-xl` or `stat` (weight 760 to 800, width 75 to 85%, 56px and up). On a dense screen, one `stat-sm` (40px, 760) for a page title or one stat. | Hierarchy comes from the user's question. Two loud things fight. | A launch moment may push the display size further, still one per screen. |
-| Below the display moment, at most four text sizes in total on one screen, headings included. Pick them from the roles: 13, 14, 15, 16, 18 and 20px (`label`, `meta`, `small`, `body` on phones, `body`, `title-sm`) and the heading tier 22 to 40px (`title`, `heading`, `heading-lg`). Nothing below 13px. | Too many sizes and nothing reads as a step. | Never more than four. Never below 13px. |
+| Below the display moment, at most four text sizes in total on one screen, headings included. Pick them from the roles: 13, 14, 15, 16, 18 and 20px (`label`, `meta`, `small`, `body` on phones, `body`, `title-sm`) and the heading tier 22 to 40px (`title`, `heading`, `heading-lg`). Nothing below 13px. | Too many sizes and nothing reads as a step. | Never more than four. Below 13px only for avatar initials: they are a mark, not reading text, so they may drop to 10px (`--avatar-initials-min`), at weight 600. |
 | At most three weights visible: 400 for reading, 500 to 650 for interface text, and the display weight. Buttons and labels never go above 650. Weight 800 only at 56px and up. | Heavy weight on anything read line by line is shouting. | Never. |
 | Code, and only code, is set in `--font-mono` at the `small` size, inline on `surface-2` with `radius-code` (4px), blocks on `surface-1` with a `line-strong` edge and `radius-sm`. | People expect code in monospace, and conventions win. It is the system font, so nothing new loads. | Never for anything that is not code. |
 | Emphasis comes from weight or position, never colour alone, italics, or underlines that are not links. | Colour alone fails people who cannot see it; underline means link. | Never. |
@@ -250,7 +250,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 
 **3. Hierarchy**
 - [ ] One display moment at most; on a dense screen, one `stat-sm` at most.
-- [ ] At most four text sizes in total below the display moment, headings included, and at most three weights; nothing under 13px.
+- [ ] At most four text sizes in total below the display moment, headings included, and at most three weights; nothing under 13px except avatar initials (10px at least, weight 600).
 - [ ] Weight 800 only at 56px and up; no interface text above 650.
 - [ ] Paragraphs between 46ch and 760px wide.
 

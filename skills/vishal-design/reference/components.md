@@ -85,7 +85,7 @@ Built on the native `<dialog>`, so focus stays inside and Escape closes it. Clic
 
 ## Avatar
 
-Initials on a neutral surface, or a photo. Sizes `xs` 24, `sm` 32, `md` 36, `lg` 44, `xl` 56. `status="live"` adds the green dot. People never get their own colours: a screen has one accent. `tone="accent"` marks one person, once. Initials mean a person, so never use them on anything else.
+Initials on a neutral surface, or a photo. Sizes `xs` 24, `sm` 32, `md` 36, `lg` 44, `xl` 56. Sidebars use `xs` (24px). Initials are a mark, not reading text: weight 600, never below 10px. `status="live"` adds the green dot on the bottom right edge, ringed in the page colour, never over the initials. People never get their own colours: a screen has one accent. `tone="accent"` marks one person, once. Initials mean a person, so never use them on anything else.
 
 ## Cover
 

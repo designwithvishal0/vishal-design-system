@@ -246,6 +246,7 @@ export const fixed = {
     use: 'Dense list rows',
   },
 
+  'avatar-initials-min': { value: '10px', ...ext('Smallest size for avatar initials. Initials are a mark, not reading text, so they may go below the 13px floor, never below 10px (Vishal, 5 Nov 2026).'), use: 'Avatar initials floor' },
   'cover-sm': {
     value: '16px',
     ...ext('Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 16 by 24, which keeps dense rows at 32px (Vishal, 5 Nov 2026).'),
