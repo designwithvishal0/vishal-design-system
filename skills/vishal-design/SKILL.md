@@ -7,7 +7,13 @@ description: Design an interface in Vishal Yadav's design system for a product i
 
 This skill turns a product brief into screens that look like Vishal Yadav designed them. His system lives in `design-system/` in this repo: tokens in `design-system/tokens/`, React components in `design-system/src/`. Everything here comes from his portfolio and from his own answers in [`notes-from-vishal.md`](notes-from-vishal.md). When this file and his notes disagree, his notes win.
 
-If `design-system/` is not next to this skill, clone https://github.com/designwithvishal0/vishal-design-system first and work inside it. Never rebuild the tokens or components from this file. Values written here are a summary, not the system.
+If `design-system/` is not next to this skill, clone the repo beside your app with:
+
+```bash
+git clone --depth 1 https://github.com/designwithvishal0/vishal-design-system.git vishal-design-system
+```
+
+Then import components from `vishal-design-system/design-system/src/index.js` and load `vishal-design-system/design-system/src/styles/base.css` once. Never clone it into a folder named `design-system`, because the repo already has one inside it. Never rebuild the tokens or components from this file. Values written here are a summary, not the system.
 
 ## The standard
 
@@ -39,9 +45,10 @@ Reference files:
 Set up once per app:
 
 ```js
-// The ../ count depends on where your app sits: point it at the repo's design-system/ folder.
-import '../../design-system/src/styles/base.css';
-import { Button, List, Avatar } from '../../design-system/src/index.js';
+// With the repo cloned beside your app as vishal-design-system/ (the rule above).
+// The ../ count depends on where this file sits. Inside this repo itself, point at design-system/ directly.
+import '../vishal-design-system/design-system/src/styles/base.css';
+import { Button, List, Avatar } from '../vishal-design-system/design-system/src/index.js';
 
 // So every screen can be checked in both themes from a link: ?theme=light or ?theme=dark
 const theme = new URLSearchParams(location.search).get('theme');
