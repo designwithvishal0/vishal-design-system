@@ -14,7 +14,7 @@ Vishal's words: "When something does not exist yet, I keep the parts that make i
 | Radius from the set, pills fully round, no hover lift | Sizes, as long as they come from the scale |
 | Tokens only, the same motion timing and easing, contrast that passes, both themes | The size of the one heavy moment on a dense screen |
 
-Never invent a new colour, a new font, a new shadow style or a radius outside the set.
+Never invent a colour for decoration, a new font, a new shadow style or a radius outside the set. A product's own brand colour is allowed as a new accent pair: see [tokens.md](tokens.md#adding-a-brand-accent).
 
 ## The order to build in
 

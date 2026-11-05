@@ -89,7 +89,7 @@ These make a screen look like Vishal's. Following them gives a clean screen. Sec
 | Rule | Why | Break only when |
 | --- | --- | --- |
 | A few big words carry the screen: heavy and narrow Bricolage, set tight, usually the user's own question. Everything read line by line stays light. | It is the first thing that makes a screen his, and it puts the answer where the eye lands. | Never on body text. A dense screen gets the small version once (section 4). |
-| The page is neutral: `--color-bg` warm off white, `--color-ink` near black. Colour comes only from the product, through its one `data-accent`, never from Vishal. | A neutral page lets every product look like itself. Colour everywhere stops meaning anything. | A launch can use one full colour field, if text on it passes contrast and it is the one colour moment. |
+| The page is neutral: `--color-bg` warm off white, `--color-ink` near black. Colour comes only from the product, through its one `data-accent`, never from Vishal. Pick one of the five accents, or add the product's own brand colour as a new accent pair (section 6). | A neutral page lets every product look like itself, in its own colours (handoff 9.3). Colour everywhere stops meaning anything. | A launch can use one full colour field, if text on it passes contrast and it is the one colour moment. |
 | Space shows what belongs together. If a screen feels congested, add space; never shrink things to fit. | Even spacing and clear groups let people understand a screen before reading it. | A dense tool tightens rows, never the gaps between groups (section 7). |
 | Edges are 1px lines. A shadow means one thing: this floats. | Lines work in both themes. Shadows break in dark mode and lose meaning if cards have them. | Never on cards, rows, panels or buttons. |
 | Tokens only. The same component does the same job everywhere, with the same radius, icon and words. The same action sits in the same place. | Consistency is what makes a product feel trustworthy. | Never. Change a component everywhere, never on one screen. |
@@ -183,7 +183,9 @@ Every motion needs a job: **explain** (where something came from or went, what c
 
 ## 6. Extending the system
 
-When something does not exist yet, keep fixed what makes it look like Vishal's (one family, a neutral page with one product colour, hairline edges, radius from the set, tokens only, both themes, the standard) and let the structure bend (density, layout, how components combine, sizes from the scale). Build in this order: an existing component, then a combination, then something new that follows its closest relative's logic, built only from tokens and marked as an extension. Never invent a colour, font, shadow style or radius.
+When something does not exist yet, keep fixed what makes it look like Vishal's (one family, a neutral page with one product colour, hairline edges, radius from the set, tokens only, both themes, the standard) and let the structure bend (density, layout, how components combine, sizes from the scale). Build in this order: an existing component, then a combination, then something new that follows its closest relative's logic, built only from tokens and marked as an extension. Never invent a colour for decoration, and never a new font, shadow style or radius.
+
+A product's own brand colour is allowed. Add it as a new accent pair built exactly like the five (wash, muted, ink, text, `text-aa`, and dark values for each), passing contrast, marked as an extension. Recipe: [reference/tokens.md](reference/tokens.md#adding-a-brand-accent).
 
 Why: the parts that hold are what make it his; everything else is a means to serve the product. Break only by writing it down: if something truly cannot be built without breaking a fixed part, record it as a place where the system breaks.
 
@@ -317,7 +319,7 @@ These have no exceptions.
 | Hide content on desktop | Phones can trim long paragraphs; desktop shows everything. |
 | Reuse the same few motions on every design, or add cheap motion | Each product gets the motion that fits it. Cursor followers, rolling labels and parallax were removed from his own site. |
 | Use lorem ipsum, invented numbers or invented results | Concept work is called concept work. |
-| Invent a new colour, font, shadow style or radius | The system grows by extension, not by exception. |
+| Invent a colour for decoration, or a new font, shadow style or radius | The system grows by extension, not by exception. A product's brand colour is not decoration: it becomes a new accent pair. |
 | Use a placeholder as the label, or block zoom | People must always know what a field is and be able to read it. |
 
 ## 11. Where it breaks

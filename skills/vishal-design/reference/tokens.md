@@ -35,7 +35,7 @@ import '../../design-system/src/styles/base.css'; // fonts, tokens, base styles,
 
 ## Accents
 
-A palette of five. There is no brand accent and no default: the page is neutral until a product picks one. Set it once with `data-accent` on the product's root. One per screen, never mixed.
+A palette of five. There is no brand accent of Vishal's own and no default: the page is neutral until a product picks one. Set it once with `data-accent` on the product's root. One per screen, never mixed. A product with its own brand colour adds it as a sixth pair (below).
 
 | Accent | Wash light / dark | Exact text light / dark | `text-aa` light |
 | --- | --- | --- | --- |
@@ -56,6 +56,20 @@ Use the role tokens, never the named ones, so the product can change its accent 
 | `--accent-text-aa` | Any small text in the accent. Passes 4.6 to 1 on the wash, the page and surface-1 | ink |
 
 Orange's exact text is 2.8 to 1 on the light page: display size only.
+
+### Adding a brand accent
+
+A new product may show in its own brand colour (handoff 9.3: each product shows in its own colours). Add it as a new accent pair, built exactly like the five. It is never a second accent on a screen: the brand colour replaces the palette choice for that product.
+
+1. In `design-system/tokens/tokens.mjs`, add an entry to `accents` with an `ext` note naming the brand.
+2. Give it five colours, each as `[light, dark]`:
+   - `wash`: a soft tint of the brand hue, as light and bright as the other washes (never greyed). Dark: a deep shade of the same hue, about 1.3 to 1.4 to 1 from the dark page, like amber's dark brown.
+   - `muted`: body text on the wash, 6 to 1 or better on it.
+   - `ink`: heading colour on the wash, 4.5 to 1 or better on it.
+   - `text`: the brand's exact colour, for headings and large text only.
+   - `textAa`: the brand colour darkened (light) or lightened (dark) until it passes 4.6 to 1 on its wash, on the page and on `surface-1`.
+3. Run `npm run tokens` in `design-system/`. The build fails if `textAa` drops below 4.5 to 1 on any of the three, so a brand colour cannot slip below contrast.
+4. Set `data-accent="<brand>"` on the product's root, and list the new pair in the hand back as an extension.
 
 ## Type
 
