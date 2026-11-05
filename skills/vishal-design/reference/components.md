@@ -99,4 +99,4 @@ One family: outline, 1.5px stroke, rounded ends. Arrows are filled. They take th
 
 ## Helpers in base.css
 
-`.vd-type-<role>` applies a type role. `.vd-ul` is the site's link underline that draws in on hover. `.vd-inverse` switches everything inside to the dark panel colours. `.vd-sr` hides text visually but keeps it for screen readers. `<kbd>` shows a key beside a command: system mono, outlined, label size.
+`.vd-type-<role>` applies a type role. `.vd-ul` is the site's link underline for links in text: a faint resting line, a full line on hover. `.vd-ul-tab` is for navigation: no resting line, only the current item is underlined. `.vd-inverse` switches everything inside to the dark panel colours. `.vd-sr` hides text visually but keeps it for screen readers. `<kbd>` shows a key beside a command: system mono, outlined, label size.

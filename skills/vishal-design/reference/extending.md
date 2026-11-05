@@ -178,12 +178,12 @@ The system ships eight components. These eight more are not components yet, so e
 
 ### Tabs
 
-Relative: Nav links and the `.vd-ul` underline. Underlined links, never pills filled with the accent.
+Relative: Nav links and the `.vd-ul-tab` underline. Only the selected tab is underlined; the others show no line until hovered. Never pills filled with the accent.
 
 ```jsx
 <div role="tablist" aria-label="Shelves" className="tabs">
-  <button role="tab" aria-selected="true" className="tab vd-ul">Read <span className="count">34</span></button>
-  <button role="tab" aria-selected="false" className="tab vd-ul">Want to read <span className="count">12</span></button>
+  <button role="tab" aria-selected="true" className="tab vd-ul-tab">Read <span className="count">34</span></button>
+  <button role="tab" aria-selected="false" className="tab vd-ul-tab">Want to read <span className="count">12</span></button>
 </div>
 ```
 
@@ -191,7 +191,7 @@ Relative: Nav links and the `.vd-ul` underline. Underlined links, never pills fi
 /* EXTENSION: tabs */
 .tabs { display: flex; gap: var(--space-6); border-bottom: var(--border-w) solid var(--color-line); }
 .tab { padding: var(--space-3) 0; border: 0; background: none; color: var(--color-muted); font: inherit; font-size: var(--type-small-size); font-weight: var(--type-small-weight); cursor: pointer; }
-.tab[aria-selected='true'] { color: var(--color-ink); background-size: 100% var(--border-w), 100% var(--border-w); }
+.tab[aria-selected='true'] { color: var(--color-ink); }
 .count { color: var(--color-muted); font-variant-numeric: tabular-nums; }
 ```
 

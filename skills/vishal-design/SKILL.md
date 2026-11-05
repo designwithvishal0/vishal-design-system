@@ -96,6 +96,7 @@ These make a screen look like Vishal's. Following them gives a clean screen. Sec
 | Tokens only. The same component does the same job everywhere, with the same radius, icon and words. The same action sits in the same place. | Consistency is what makes a product feel trustworthy. | Never. Change a component everywhere, never on one screen. |
 | Hover changes colour, press scales to .97, nothing lifts or jumps. | Lift is the look of a template. Colour and press give feedback without movement. | Never. |
 | Conventions win: the composer at the bottom of a chat, unread counts on channels, five stars for a rating. The system dresses a convention; it does not replace it. | People already know how these work. Breaking that costs them time. | Never for the sake of looking different. |
+| Navigation marks only the active item: the current Nav link or tab is underlined, the others show no line until hovered. | A line under every tab marks nothing. | Never. |
 | A command bar is a field near the top of the screen with results below: no heading, no close button, focus in the field, Escape closes it. | It exists for speed; a dialog's chrome slows it and moves focus to the close button. | Never. |
 | Real content only: real names, times like "9:41" and "Mon", real book titles. No lorem ipsum, no invented numbers or results. | Fake content hides layout problems and breaks trust. | Never. |
 | Copy is short and concrete. No hyphens or em dashes in prose, no filler words, sentence case, "Send" is always "Send". | Vishal's voice is plain and specific. | Never. |
