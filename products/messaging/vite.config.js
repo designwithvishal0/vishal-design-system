@@ -14,7 +14,7 @@ export default defineConfig({
         index: page('index.html'),
         threads: page('threads/index.html'),
         'needs-you': page('needs-you/index.html'),
-        keyboard: page('keyboard/index.html'),
+        people: page('people/index.html'),
       },
     },
   },
