@@ -187,4 +187,5 @@ One example per rule from a product that is neither a chat app nor a reading pro
 | 6. Extend without breaking | A stepper for a form is built from the eyebrow and the progress bar, not a new component style. |
 | 6. A brand colour is a new accent pair | A bank's own blue added as a sixth pair, with its `text-aa` shade. |
 | 7. Trade offs: the brief wins over the idea | A minimal checkout idea still shows the legally required price breakdown. |
+| 0. The written brief wins | A brief says the claim form has two steps; on a call someone says three. Build two and say where the call differed. |
 | 8. Correct versus good: commit | A dashboard that was six equal cards becomes one big number with a chart under it. |

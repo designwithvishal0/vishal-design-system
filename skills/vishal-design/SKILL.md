@@ -15,6 +15,8 @@ Whoever uses this skill is making work to a standard, so the standard has to be 
 
 Work in this order, and do not skip ahead:
 
+0. **Read the written brief**, all of it. When the written brief and anything said in conversation disagree, the written brief wins. Say where they differ before building, never quietly pick one. Why: the written brief is what the work is judged against, and a remark on a call is easy to misremember. Break: never; if the person who wrote the brief changes it in writing, the new writing is the brief.
+
 1. **Start**: find the moment that matters and the user's question (section 1).
 2. **Directions**: write three one line ideas before any code (section 2).
 3. **Clean**: build with the rules every screen gets (sections 3 and 4).
@@ -216,6 +218,7 @@ When two rules fight, the higher one wins. The order does not bend; if a case se
 | Vishal's look against what people know | Conventions | The system dresses the convention, for example a chat's composer at the bottom or a form's fields in the order people expect. |
 | Consistency against a better idea on one screen | Consistency | If the idea really is better, change the component everywhere. |
 | The brief against the idea | The brief | Everything the brief requires appears; the idea decides order and weight. |
+| The written brief against something said in conversation | The written brief | Build what is written, and name the difference so the person can change the brief in writing if they meant it. |
 | Motion against Reduce motion | Reduce motion | Always. |
 
 When it is still unclear, ask: which choice would the main viewer thank me for a week later? Then write the trade off into that layout's one line description, so the reason is visible.
