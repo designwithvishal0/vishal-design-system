@@ -14,6 +14,7 @@ Live: **[vishal-design-system.vercel.app](https://vishal-design-system.vercel.ap
 | [`products/reading-profile/`](products/reading-profile) | Three layouts for a Goodreads style reading profile, in amber. |
 | [`products/conventions.md`](products/conventions.md) | What real users expect from Slack and Goodreads, and where the layouts follow or break it. |
 | [`products/picks.md`](products/picks.md) | The two layouts I would take forward, in my words. |
+| [`products/skill-gaps.md`](products/skill-gaps.md) | The gaps the skill showed while the messaging layouts were built, each marked fixed. |
 | [`products/cold-test.md`](products/cold-test.md) | A fresh agent with only the skill, on a product it had never seen: what it got stuck on and each fix. |
 | [`products/cold-test/claim-flow/`](products/cold-test/claim-flow) | What that agent built: a health insurance claim flow. Not one of the six. |
 
