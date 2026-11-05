@@ -30,6 +30,8 @@ npm run check              # tokens only: fails on any hard coded colour, size o
 
 Each starts from a different idea of what the screen is for, not a different look. Same type, same tokens, one product colour.
 
+Add ?accent=violet (or orange, amber, teal, sky) to any layout’s address to see it in another product colour.
+
 ### Team messaging (teal)
 
 | Layout | The idea |

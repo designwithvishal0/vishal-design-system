@@ -1,3 +1,4 @@
+import { accentOr } from '../../src/shared/boot.js';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Nav, NavList, List, Avatar, Button, Modal, Input, IconHash, IconSearch } from '../../src/shared/ds.js';
 import { channels as seedChannels, channelMessages, people, me, firstName } from '../../src/shared/data.js';
@@ -77,7 +78,7 @@ export function App() {
   const members = new Set(messages.map((m) => m.author)).size;
 
   return (
-    <div className="app" data-accent="teal">
+    <div className="app" data-accent={accentOr('teal')}>
       <Nav brand="Kite" sticky={false} bordered label="Views"
         actions={<Avatar name={people[me].name} size="sm" status="live" />}>
         <button type="button" className="kb-trigger" onClick={openBar}>

@@ -1,3 +1,4 @@
+import { accentOr } from '../shared/boot.js';
 import { useMemo, useRef, useState } from 'react';
 import { Nav, NavList, List, Avatar, Tag, Button, Input, IconHash, IconSearch } from '../shared/ds.js';
 import { threads as seed, channels, people, me, firstName } from '../shared/data.js';
@@ -59,7 +60,7 @@ export function App() {
   const retry = (id) => setThreads((ts) => ts.map((t) => ({ ...t, replies: t.replies.map((r) => (r.id === id ? { ...r, status: undefined } : r)) })));
 
   return (
-    <div className="app" data-accent="teal">
+    <div className="app" data-accent={accentOr('teal')}>
       <Nav
         brand="Kite"
         sticky={false}

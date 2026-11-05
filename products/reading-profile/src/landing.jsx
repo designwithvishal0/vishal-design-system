@@ -1,4 +1,4 @@
-import './shared/boot.js';
+import { accentOr } from './shared/boot.js';
 import { createRoot } from 'react-dom/client';
 import { Card, Button, Tag } from './shared/ds.js';
 import './landing.css';
@@ -12,7 +12,7 @@ const directions = [
 
 function Landing() {
   return (
-    <main className="vd-container landing" data-accent="amber">
+    <main className="vd-container landing" data-accent={accentOr('amber')}>
       <p className="vd-type-eyebrow">Margins reading profile</p>
       <h1 className="vd-type-display">Three ways to read one reader</h1>
       <ol className="landing__list">

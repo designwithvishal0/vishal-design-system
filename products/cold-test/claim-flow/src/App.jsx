@@ -6,6 +6,10 @@ import {
   coverLeft, estimate, addWorkingDays, needed,
 } from './data.js';
 
+// ?accent=orange, violet, amber, teal or sky shows the flow in another product colour; teal without it.
+const asked = new URLSearchParams(location.search).get('accent');
+const accent = ['orange', 'violet', 'amber', 'teal', 'sky'].includes(asked) ? asked : 'teal';
+
 const MAX_FILE = 10e6;
 const emptyForm = { member: '', hospital: '', treatment: '', kind: 'stay', from: '', to: '', amount: '', files: {} };
 // What comes back: the approved amount once there is one, until then the estimate.
@@ -45,7 +49,7 @@ export function App() {
   const goHome = () => { setClaims((cs) => cs.map((c) => ({ ...c, fresh: false }))); setView({ name: 'home' }); };
 
   return (
-    <div className="app" data-accent="teal">
+    <div className="app" data-accent={accent}>
       <Nav
         brand={`${policy.company} benefits`}
         bordered

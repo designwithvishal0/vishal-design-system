@@ -1,3 +1,4 @@
+import { accentOr } from '../shared/boot.js';
 import { useState } from 'react';
 import { Avatar, Button, Cover, List, Tag } from '../shared/ds.js';
 import { ProfileNav, Challenge, NowReading, ShelfRow, Reviews, Stars } from '../shared/parts.jsx';
@@ -33,7 +34,7 @@ export function App() {
   const yours = (title) => comparing && visitorRatings[title];
 
   return (
-    <div data-accent="amber">
+    <div data-accent={accentOr('amber')}>
       <ProfileNav />
       <main className="vd-container page">
         <section className="page__section ts-head" aria-labelledby="ts-name">

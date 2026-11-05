@@ -1,3 +1,4 @@
+import { accentOr } from '../shared/boot.js';
 import { useEffect, useRef, useState } from 'react';
 import { Cover } from '../shared/ds.js';
 import { ProfileNav, NowReading, ShelfRow, Stars, Identity } from '../shared/parts.jsx';
@@ -37,7 +38,7 @@ export function App() {
   const pages = sofar.reduce((n, b) => n + b.pages, 0);
 
   return (
-    <div data-accent="amber">
+    <div data-accent={accentOr('amber')}>
       <ProfileNav viewer={reader.name} />
       <main className="vd-container page">
         <section className="page__section" aria-labelledby="st-title">

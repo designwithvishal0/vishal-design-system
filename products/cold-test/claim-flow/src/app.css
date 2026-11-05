@@ -21,6 +21,8 @@
 .home__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-4); }
 .needs { gap: var(--space-3); --color-muted: var(--accent-muted); }
 .needs .vd-type-eyebrow { color: var(--accent-text-aa); }
+/* Body text on the wash uses the accent's muted colour, not its heading ink: amber's ink is 4.42 to 1 on its wash at 15px. */
+.needs .small { color: var(--accent-muted); }
 .empty { display: flex; flex-direction: column; gap: var(--space-2); }
 
 .claims { margin: 0; padding: 0; list-style: none; border-block-start: var(--border-w) solid var(--color-line); }

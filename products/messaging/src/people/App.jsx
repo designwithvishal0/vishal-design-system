@@ -1,3 +1,4 @@
+import { accentOr } from '../shared/boot.js';
 import { useMemo, useRef, useState } from 'react';
 import { Nav, NavList, Avatar, Tag, Button, Input, IconSearch, IconHash } from '../shared/ds.js';
 import { threads, channelMessages, directMessages, channels, people, me, firstName } from '../shared/data.js';
@@ -91,7 +92,7 @@ export function App() {
   );
 
   return (
-    <div className="app" data-accent="teal">
+    <div className="app" data-accent={accentOr('teal')}>
       <Nav brand="Kite" sticky={false} bordered label="Views"
         actions={<>
           <Input label="Search people and messages" hideLabel placeholder="Search" leading={<IconSearch />} className="pf-search" />
