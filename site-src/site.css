@@ -14,3 +14,5 @@
 .site__idea { max-inline-size: var(--measure-max); font-size: var(--type-small-size); line-height: var(--type-body-lh); }
 .site__open { display: flex; gap: var(--space-4); font-size: var(--type-small-size); }
 .site__open a { color: var(--color-ink); }
+.site__cold { display: flex; flex-direction: column; gap: var(--space-3); padding-block-start: var(--space-4); border-top: var(--border-w) solid var(--color-line-strong); }
+.site__cold > * { margin: 0; }

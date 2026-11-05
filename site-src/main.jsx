@@ -50,6 +50,16 @@ function Site() {
           </ol>
         </section>
       ))}
+      {/* Not one of the six: proof that the skill works without me. */}
+      <section className="site__cold" aria-labelledby="cold">
+        <h2 className="vd-type-title" id="cold">Cold test</h2>
+        <p className="site__idea">A fresh agent with only the skill built this health insurance claim flow, a product it had never seen.</p>
+        <p className="site__open">
+          <a className="vd-ul" href="./cold-test/claim-flow/?theme=light">Open in light</a>
+          <a className="vd-ul" href="./cold-test/claim-flow/?theme=dark">Open in dark</a>
+          <a className="vd-ul" href="https://github.com/designwithvishal0/vishal-design-system/blob/main/products/cold-test.md">Where it got stuck</a>
+        </p>
+      </section>
     </main>
   );
 }

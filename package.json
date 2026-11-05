@@ -9,7 +9,7 @@
   "scripts": {
     "dev:system": "npm run dev -w design-system",
     "dev:messaging": "npm run dev -w messaging",
-    "check": "npm run check -w design-system && node design-system/scripts/check-tokens-only.mjs ../products/messaging/src ../products/messaging/dropped ../products/reading-profile/src",
+    "check": "npm run check -w design-system && node design-system/scripts/check-tokens-only.mjs ../products/messaging/src ../products/messaging/dropped ../products/reading-profile/src ../products/cold-test/claim-flow/src",
     "dev:reading": "npm run dev -w reading-profile"
   }
 }

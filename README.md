@@ -14,7 +14,8 @@ Live: **[vishal-design-system.vercel.app](https://vishal-design-system.vercel.ap
 | [`products/reading-profile/`](products/reading-profile) | Three layouts for a Goodreads style reading profile, in amber. |
 | [`products/conventions.md`](products/conventions.md) | What real users expect from Slack and Goodreads, and where the layouts follow or break it. |
 | [`products/picks.md`](products/picks.md) | The two layouts I would take forward, in my words. |
-| [`products/cold-test.md`](products/cold-test.md) | A fresh agent with only the skill, on a product it had never seen. |
+| [`products/cold-test.md`](products/cold-test.md) | A fresh agent with only the skill, on a product it had never seen: what it got stuck on and each fix. |
+| [`products/cold-test/claim-flow/`](products/cold-test/claim-flow) | What that agent built: a health insurance claim flow. Not one of the six. |
 
 Run any of it locally:
 
@@ -78,6 +79,8 @@ Keyboard first is kept in [`products/messaging/dropped/keyboard-first`](products
 A fresh Claude Code agent got only the skill and the components, and a brief it had never seen: an employee's health insurance claim flow. It wrote three genuinely different directions (organised by money, by steps, and by documents), picked the one that answers "How much will I get back, and when?", and built it. The build passes, and so does the tokens check, in light, in dark and at 375px.
 
 It got stuck or guessed in 21 places. Most were missing recipes (a radio choice, a file upload, a status timeline, four icons) or missing tokens (Reduce motion had left some durations running). Two were rules that disagreed with each other (how many weights, and answer first against the total above the pay button on phones). Every one is recorded, with its fix in the skill, in [`products/cold-test.md`](products/cold-test.md).
+
+See what it built: **[the claim flow, live](https://vishal-design-system.vercel.app/cold-test/claim-flow/)** (source in [`products/cold-test/claim-flow`](products/cold-test/claim-flow)). It is kept apart from the six layouts.
 
 ## How it was made
 

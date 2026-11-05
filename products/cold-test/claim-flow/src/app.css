@@ -1,0 +1,169 @@
+/* Claim flow for a company benefits app. Tokens only: every value below is a var(--...). */
+
+.page { padding-block: var(--space-6) var(--space-9); }
+.page h1, .page h2 { margin: 0; text-wrap: balance; }
+.page p { margin: 0; }
+.page h1:focus { outline: none; }
+.small { font-size: var(--type-small-size); font-weight: var(--weight-regular); line-height: var(--type-small-lh); }
+.muted { color: var(--color-muted); }
+.num { font-variant-numeric: tabular-nums; }
+.err { color: var(--color-error); font-size: var(--type-label-size); font-weight: var(--type-label-weight); line-height: var(--type-label-lh); }
+.plain { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--space-1); }
+.wide { inline-size: 100%; }
+/* A ghost button at the start of a line keeps its text on the page's left edge. */
+.back { align-self: flex-start; margin-inline-start: calc(var(--control-pad-x) * -1); }
+.nav-count { margin-inline-start: var(--space-2); font-variant-numeric: tabular-nums; }
+.foot { padding-block: var(--space-7); color: var(--color-muted); font-size: var(--type-label-size); }
+.foot p { margin: 0; }
+
+/* ---------- Home ---------- */
+.home { display: flex; flex-direction: column; gap: var(--space-7); max-inline-size: var(--measure-max); }
+.home__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-4); }
+.needs { gap: var(--space-3); --color-muted: var(--accent-muted); }
+.needs .vd-type-eyebrow { color: var(--accent-text-aa); }
+.empty { display: flex; flex-direction: column; gap: var(--space-2); }
+
+.claims { margin: 0; padding: 0; list-style: none; border-block-start: var(--border-w) solid var(--color-line); }
+.claims > li { border-block-end: var(--border-w) solid var(--color-line); }
+/* EXTENSION: claim row. Follows the comfortable List row, with a status tag and a right aligned amount. */
+.claim-row {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--space-4);
+  inline-size: calc(100% + var(--space-3) * 2); margin-inline: calc(var(--space-3) * -1);
+  min-block-size: var(--row-h); padding: var(--space-3);
+  border: 0; border-radius: var(--radius-list-row); background: transparent; color: var(--color-ink);
+  font: inherit; text-align: left; cursor: pointer; transition: background-color var(--dur-fast) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) { .claim-row:hover { background: var(--state-hover-ghost); } }
+.claim-row:active { transform: scale(var(--state-press-scale)); transition: transform var(--dur-press) var(--ease-out); }
+.claim-row__main { display: flex; flex-direction: column; gap: var(--space-1); min-inline-size: 0; }
+.claim-row__title, .claim-row__meta { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.claim-row__title { font-size: var(--type-small-size); font-weight: var(--weight-semi); line-height: var(--type-small-lh); }
+.claim-row__meta { color: var(--color-muted); font-size: var(--type-label-size); font-weight: var(--weight-regular); line-height: var(--type-label-lh); }
+.claim-row__amount { font-size: var(--type-small-size); font-weight: var(--weight-semi); text-align: right; }
+
+.cover { display: flex; flex-direction: column; gap: var(--space-3); }
+/* Progress bar recipe (extending.md, example 3). */
+.bar { block-size: var(--space-2); border-radius: var(--radius-pill); background: var(--color-surface-2); overflow: hidden; }
+.bar > span { display: block; block-size: 100%; border-radius: inherit; background: var(--accent-ink); }
+
+/* ---------- New claim and review ---------- */
+.claim-layout { display: grid; grid-template-columns: minmax(0, var(--measure-max)) var(--panel-list); justify-content: space-between; column-gap: var(--space-9); align-items: start; }
+.claim-main { display: flex; flex-direction: column; gap: var(--space-snug); }
+.claim-main > .back { margin-block-end: var(--space-4); }
+.claim-main > h1 { margin-block-end: var(--space-7); }
+
+.claim-form { display: flex; flex-direction: column; gap: var(--space-7); }
+.group { margin: 0; padding: 0; border: 0; min-inline-size: 0; }
+.group > legend { padding: 0; margin-block-end: var(--space-4); }
+.group > * + * { margin-block-start: var(--space-5); }
+.group > legend + * { margin-block-start: 0; }
+.dates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+
+/* EXTENSION: single choice rows. Follows the List row; the chosen row takes the wash, weight 650 and a filled
+   radio, so colour never carries the choice alone. The radio follows the checkbox recipe, made round. */
+.choices { display: flex; flex-direction: column; inline-size: calc(100% + var(--space-4) * 2); margin-inline: calc(var(--space-4) * -1); }
+.choice {
+  display: flex; align-items: center; gap: var(--space-3); min-block-size: var(--row-h); padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-list-row); font-size: var(--type-small-size); line-height: var(--type-small-lh); cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) { .choice:hover { background: var(--state-hover-ghost); } }
+.radio { appearance: none; flex: none; inline-size: var(--check-size); block-size: var(--check-size); margin: 0; border: var(--border-w) solid var(--color-edge); border-radius: var(--radius-round); background: transparent; cursor: pointer; transition: background-color var(--dur-fast) var(--ease-out); }
+.radio:checked { border-color: var(--color-btn); background: var(--color-btn); box-shadow: inset 0 0 0 calc(var(--border-w) * 4) var(--accent-wash); }
+.radio:focus-visible { outline: none; }
+.choice:has(:focus-visible) { outline: var(--focus-width) solid var(--color-ink); outline-offset: var(--focus-offset); }
+.choice.is-on { background: var(--accent-wash); color: var(--accent-ink); --color-muted: var(--accent-muted); box-shadow: var(--elev-panel); }
+.choice.is-on .choice__name { font-weight: var(--weight-ui); }
+.choice__text { flex: 1; display: flex; flex-wrap: wrap; column-gap: var(--space-3); }
+.choice__name { font-weight: var(--weight-medium); }
+
+.docs { margin: 0; padding: 0; list-style: none; border-block-start: var(--border-w) solid var(--color-line); }
+.doc { display: flex; flex-direction: column; gap: var(--space-3); padding-block: var(--space-4); border-block-end: var(--border-w) solid var(--color-line); }
+.doc__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.doc__text { display: flex; flex-direction: column; gap: var(--space-1); font-size: var(--type-small-size); line-height: var(--type-small-lh); min-inline-size: 0; }
+.doc__name { font-weight: var(--weight-semi); }
+.file-btn { flex: none; align-self: flex-start; }
+.file-btn:has(:focus-visible) { outline: var(--focus-width) solid var(--color-ink); outline-offset: var(--focus-offset); }
+.files { margin: 0; padding: 0; list-style: none; }
+.file { display: flex; align-items: center; gap: var(--space-2); font-size: var(--type-small-size); }
+.file > .vd-icon { color: var(--color-muted); }
+.file__name { flex: 1; min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Select recipe (extending.md). */
+.select { appearance: none; inline-size: 100%; min-block-size: var(--control-h); padding: 0 calc(var(--space-4) + var(--icon-md)) 0 var(--space-4); border: var(--border-w) solid var(--color-edge); border-radius: var(--radius-sm); background: transparent; color: var(--color-ink); font: inherit; font-size: var(--type-small-size); }
+.select:focus-visible { outline: var(--focus-width) solid var(--color-ink); outline-offset: var(--focus-offset); }
+.select option { background: var(--color-bg); color: var(--color-ink); }
+.select-wrap { position: relative; }
+.select-wrap .vd-icon { position: absolute; inset-inline-end: var(--space-3); inset-block-start: 50%; translate: 0 -50%; pointer-events: none; color: var(--color-muted); }
+
+/* The summary: the one wash on the screen, the answer to "how much will I get back?" */
+.summary {
+  position: sticky; inset-block-start: calc(var(--layout-bar) + var(--space-5));
+  display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-6);
+  border-radius: var(--radius-row); background: var(--accent-wash); color: var(--accent-ink); --color-muted: var(--accent-muted);
+  box-shadow: var(--elev-panel);
+}
+.summary .amount { margin-block-start: calc(var(--space-3) * -1); color: var(--color-ink); overflow-wrap: anywhere; }
+.sums { margin: 0; display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--type-small-size); line-height: var(--type-small-lh); }
+.sums > div { display: flex; justify-content: space-between; gap: var(--space-4); }
+.sums dd { margin: 0; text-align: right; }
+.send { display: flex; flex-direction: column; gap: var(--space-3); margin-block-start: var(--space-2); }
+
+/* Checkbox recipe (extending.md). The whole label is the touch target. */
+.check-row { display: flex; align-items: flex-start; gap: var(--space-2); min-block-size: var(--control-h); cursor: pointer; }
+.check { appearance: none; flex: none; inline-size: var(--check-size); block-size: var(--check-size); margin: 0; border: var(--border-w) solid var(--color-edge); border-radius: var(--radius-check); background: transparent; display: inline-grid; place-content: center; cursor: pointer; transition: background-color var(--dur-fast) var(--ease-out); }
+.check:checked { background: var(--color-btn); border-color: var(--color-btn); }
+.check:checked::after { content: ''; inline-size: 40%; block-size: 70%; border: solid var(--color-on-btn); border-width: 0 calc(var(--border-w) * 2) calc(var(--border-w) * 2) 0; rotate: 45deg; translate: 0 -12%; }
+
+.review { margin: 0; border-block-start: var(--border-w) solid var(--color-line); }
+.review__row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--space-4); padding-block: var(--space-3); border-block-end: var(--border-w) solid var(--color-line); font-size: var(--type-small-size); line-height: var(--type-small-lh); }
+.review dd { margin: 0; overflow-wrap: anywhere; }
+
+/* ---------- One claim ---------- */
+.claim-page { display: flex; flex-direction: column; gap: var(--space-2); max-inline-size: var(--measure-max); }
+.claim-page > .back { margin-block-end: var(--space-4); }
+.claim-page > h1 { margin-block-start: var(--space-snug); }
+.claim-page > .vd-type-stat { margin-block: var(--space-2) 0; }
+
+/* EXTENSION: progress steps. A dot column on a line_strong rail, done steps filled with ink and a check,
+   the current step ringed in the accent ink. Built from the List row rhythm and the progress bar's colours. */
+.timeline { margin: var(--space-7) 0 0; padding: 0; list-style: none; }
+.step { position: relative; display: grid; grid-template-columns: var(--icon-lg) minmax(0, 1fr); gap: var(--space-4); padding-block-end: var(--space-5); font-size: var(--type-small-size); line-height: var(--type-small-lh); }
+.step:not(:last-child)::before { content: ''; position: absolute; inset-inline-start: calc(var(--icon-lg) / 2 - var(--border-w) / 2); inset-block: var(--icon-lg) 0; inline-size: var(--border-w); background: var(--color-line-strong); }
+.step__dot { display: inline-grid; place-content: center; inline-size: var(--icon-lg); block-size: var(--icon-lg); border: var(--border-w) solid var(--color-line-strong); border-radius: var(--radius-round); background: var(--color-bg); }
+.step.is-done .step__dot { border-color: var(--color-ink); background: var(--color-ink); color: var(--color-bg); font-size: var(--type-label-size); }
+.step.is-now .step__dot { border: calc(var(--border-w) * 2) solid var(--accent-ink); background: var(--accent-wash); }
+.step__text { display: flex; flex-direction: column; gap: var(--space-1); padding-block-start: calc((var(--icon-lg) - 1lh) / 2); }
+.step__name { font-weight: var(--weight-medium); }
+.step.is-now .step__name { font-weight: var(--weight-ui); }
+.ask { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-3); margin-block-start: var(--space-2); max-inline-size: var(--measure-max); }
+
+.sent { display: flex; flex-direction: column; gap: var(--space-4); margin-block-start: var(--space-7); }
+
+/* The signature moment: a sent claim's amount rises in once, then settles and never moves again. */
+@keyframes claim-rise { from { opacity: 0; translate: 0 var(--reveal-distance); } }
+.rise { animation: claim-rise var(--dur-reveal) var(--ease-out) both; }
+.rise--late { animation-delay: calc(var(--dur-stagger) * 4); }
+@media (prefers-reduced-motion: reduce) { .rise { animation: none; } }
+
+/* Toast recipe (extending.md). */
+.toast-slot { position: fixed; inset-inline: 0; inset-block-end: var(--space-5); z-index: var(--z-popover); pointer-events: none; }
+.toast { pointer-events: auto; inline-size: fit-content; max-inline-size: calc(100% - var(--layout-gutter) * 2); margin-inline: auto; display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4); border-radius: var(--radius-pill); background: var(--color-surface-2); box-shadow: var(--elev-3); font-size: var(--type-small-size); }
+
+@media print { .vd-nav, .back, .toast-slot, .sent .vd-btn { display: none; } }
+
+/* Tablet and phone: one column. The summary follows the form, so the amount sits right above the button. */
+@media (max-width: 1023px) {
+  .claim-layout { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-7); }
+  .summary { position: static; }
+}
+@media (max-width: 759px) {
+  .dates { grid-template-columns: minmax(0, 1fr); }
+  .claim-row { grid-template-columns: minmax(0, 1fr) auto; row-gap: var(--space-2); }
+  .claim-row > .vd-tag { grid-row: 2; justify-self: start; }
+  .review__row { grid-template-columns: minmax(0, 1fr); gap: var(--space-1); }
+  .summary { padding: var(--space-5); }
+}
+
+/* Before an amount: a quiet line in the place of the number, never a zero in display type. */
+.summary__waiting { margin: 0; color: var(--accent-muted); font-size: var(--type-lead-size); font-weight: var(--type-lead-weight); line-height: var(--type-lead-lh); text-wrap: balance; }
