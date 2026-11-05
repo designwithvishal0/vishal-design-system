@@ -73,7 +73,7 @@ A new product may show in its own brand colour (handoff 9.3: each product shows 
 
 ## Type
 
-One family: Bricolage Grotesque Variable. Use a role, never a loose size. Each role is five tokens: `--type-<role>-size`, `-weight`, `-stretch`, `-lh`, `-tracking` (plus `-numeric` and `-transform`). Helper classes: `.vd-type-<role>`.
+One family: Bricolage Grotesque Variable (`--font-sans`). The one exception is code, which uses the system monospace (`--font-mono`), for code only. Use a role, never a loose size. Each role is five tokens: `--type-<role>-size`, `-weight`, `-stretch`, `-lh`, `-tracking` (plus `-numeric` and `-transform`). Helper classes: `.vd-type-<role>`.
 
 | Role | Size (phone) | Weight | Width | Line height | Tracking | For |
 | --- | --- | --- | --- | --- | --- | --- |

@@ -204,6 +204,7 @@
 
 :root {
   --font-sans: "Bricolage Grotesque Variable", system-ui, sans-serif; /* site: --sans */
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace; /* EXTENSION: Code only. A functional exception: code in a messaging app needs monospace, and conventions win (Vishal, 5 Nov 2026). The system font, so nothing new is loaded. */
   --weight-regular: 400; /* site: body */
   --weight-medium: 500; /* site: --kfw-medium */
   --weight-semi: 600; /* site: --kfw-semi */

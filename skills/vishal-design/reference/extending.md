@@ -8,7 +8,7 @@ Vishal's words: "When something does not exist yet, I keep the parts that make i
 
 | Holds, always | Bends |
 | --- | --- |
-| One family, Bricolage. Heavy and narrow only at 40px and above | Density: row height, gaps inside a component, how much fits |
+| One family, Bricolage (code alone uses the system monospace). Heavy and narrow only at 40px and above | Density: row height, gaps inside a component, how much fits |
 | A neutral page, one product colour per screen | Layout: columns, panels, what sits where |
 | Edges from hairlines. A shadow only means something floats | How components combine |
 | Radius from the set, pills fully round, no hover lift | Sizes, as long as they come from the scale |
@@ -49,6 +49,14 @@ Relative: the dense List row and Avatar. No bubbles.
 .thread .vd-list__main { flex-direction: column; align-items: flex-start; gap: var(--space-1); }
 .thread .message { margin: 0; max-width: var(--measure-max); font-size: var(--type-small-size); line-height: var(--type-body-lh); white-space: normal; }
 .thread time { font-variant-numeric: tabular-nums; color: var(--color-muted); }
+```
+
+Code in a message uses the system monospace, the one font exception:
+
+```css
+/* EXTENSION: code in messages */
+.message code { padding: var(--tag-pad-y) var(--space-1); border-radius: var(--radius-xs); background: var(--color-surface-2); font-family: var(--font-mono); font-size: 0.9em; }
+.message pre { margin: var(--space-2) 0 0; padding: var(--space-3); overflow-x: auto; border: var(--border-w) solid var(--color-line-strong); border-radius: var(--radius-sm); background: var(--color-surface-1); font-family: var(--font-mono); font-size: var(--type-label-size); line-height: var(--type-body-lh); }
 ```
 
 Rules: consecutive messages from one person within five minutes drop the avatar and name and keep the 32px rhythm. Group days with an `eyebrow` divider like "TODAY". Long messages wrap; names truncate to one line. A message sending shows "Sending" in muted text; failed shows "Not sent. Retry" in `--color-error` with a Button `ghost` `sm`.

@@ -110,6 +110,7 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | One display moment per screen: `display`, `display-xl` or `stat` (weight 760 to 800, width 75 to 85%, 56px and up). On a dense screen, one `stat-sm` (40px, 760) for a page title or one stat. | Hierarchy comes from the user's question. Two loud things fight. | A launch moment may push the display size further, still one per screen. |
 | Below that, at most four sizes from the body and interface tier: 13, 14, 15, 16, 18, 20px (`label`, `meta`, `small`, `body` on phones, `body`, `title-sm`), plus the heading tier 22 to 40px where a page has sections. Nothing below 13px. | Too many sizes and nothing reads as a step. | Never below 13px. |
 | At most three weights visible: 400 for reading, 500 to 650 for interface text, and the display weight. Buttons and labels never go above 650. Weight 800 only at 56px and up. | Heavy weight on anything read line by line is shouting. | Never. |
+| Code, and only code, is set in `--font-mono` at the `small` size, inline on `surface-2` with `radius-xs` padding of 2px 4px, blocks on `surface-1` with a `line-strong` edge and `radius-sm`. | People expect code in monospace, and conventions win. It is the system font, so nothing new loads. | Never for anything that is not code. |
 | Emphasis comes from weight or position, never colour alone, italics, or underlines that are not links. | Colour alone fails people who cannot see it; underline means link. | Never. |
 | Paragraphs run between `--measure-min` (46ch) and `--measure-max` (760px). Never full width text. | Long lines are hard to follow back. | Never. |
 | Line height: display .92 to .95, body 1.5, interface text 1.3 to 1.4 (`small` sits at 1.45). Tracking: display -.01 to -.025em, `eyebrow` .14em uppercase, body untouched. | Tight display reads as one shape; body needs air. | Never. |
@@ -319,7 +320,7 @@ These have no exceptions.
 | Hide content on desktop | Phones can trim long paragraphs; desktop shows everything. |
 | Reuse the same few motions on every design, or add cheap motion | Each product gets the motion that fits it. Cursor followers, rolling labels and parallax were removed from his own site. |
 | Use lorem ipsum, invented numbers or invented results | Concept work is called concept work. |
-| Invent a colour for decoration, or a new font, shadow style or radius | The system grows by extension, not by exception. A product's brand colour is not decoration: it becomes a new accent pair. |
+| Invent a colour for decoration, or a new font, shadow style or radius | The system grows by extension, not by exception. A product's brand colour is not decoration: it becomes a new accent pair. The system monospace for code is the one font exception. |
 | Use a placeholder as the label, or block zoom | People must always know what a field is and be able to read it. |
 
 ## 11. Where it breaks
@@ -328,7 +329,7 @@ Honest limits, so a new product knows where to be careful. Every token that is n
 
 1. **One accent per screen** cannot show several data series in a chart, or tell many people apart by colour. Use labels, position and names. A product that truly needs a multi colour chart is outside the system.
 2. **Status colours** are only live green and error red. There is no warning or info colour.
-3. **One family**: no monospace for code in messages and no serif or italic voice. Code blocks would need a new font, which the system does not allow.
+3. **One family**: there is no serif or italic voice. Code is the one exception: it uses the system monospace (`--font-mono`), for code only, because conventions win in a messaging app.
 4. **Heavy narrow type** is a display voice. On dense screens it shrinks to one `stat-sm`, so a dense product has little room for its signature.
 5. **The spacing scale, surfaces, inputs, modals, dense lists, covers, avatars in groups, the sidebar list and every state** are extensions: the portfolio never needed them. They follow its logic but were not tested by Vishal over time.
 6. **Dark washes** sit only 1.24 to 1.41 to 1 from the page and lean on `line-strong` edges to stay separate.
