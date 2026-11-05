@@ -108,3 +108,38 @@ Vishal spotted one more: the empty claim form showed "₹0" in display type, whi
 | 5 | Figma Make's preview stayed on the old site until it was restarted. | Nothing in the skill: this is a tool issue. |
 
 Like the first test, the misses were details the skill had not spelled out, not wrong rules. The three skill misses, 1, 2 and 4, came from the skill being read too literally, and all three are now written down plainly.
+
+## Third test: Figma Make, skill file only
+
+**When:** 6 November 2026.
+
+**Setup:** Figma Make, with only `SKILL.md` installed as a skill. No `design-system/`, no `reference/` files, no notes.
+
+**Brief:** the same doctor video consultation brief as the second test.
+
+### What it got right
+
+1. **It followed the work order.** It wrote three directions (Availability first, Doctor first, Guided shortlist) with the full template, and picked Availability first for “How soon can I speak to someone I trust?”
+2. **What it copied from `SKILL.md` matched the real tokens exactly:** the spacing scale, the radii and the display size.
+3. **The basics held:**
+   - one accent;
+   - no dashes in prose;
+   - 44px targets;
+   - Reduce motion;
+   - a `?theme=` switch;
+   - a concept label on sample data.
+4. **The chosen doctor and slot carried through every screen.**
+5. **The toggle rule worked:** “Mute”, “Turn camera off”.
+
+### What went wrong, and what changed
+
+| # | What happened | What changed |
+| --- | --- | --- |
+| a | `design-system/` was missing, so it rebuilt the system from `SKILL.md` into one 1,390 line CSS file. | Skill: if `design-system/` is not next to the skill, clone the repo first and work inside it. Never rebuild the tokens or components from the skill file. |
+| b | Body text used seven hard coded sizes (13, 14, 15, 16, 18, 20 and 32px), breaking the four size rule, and the token check could not run. | The same fix as a: the real type roles live in `tokens.css`, and the clone rule brings them and the check. |
+| c | It added Inter beside Bricolage. | Skill: Bricolage Grotesque is the only family. Never add a second one, such as Inter. |
+| d | It showed “Today, 18 Jun” on 6 November. | Skill: any date shown as Today, Tomorrow or a weekday is worked out from the real current date. There is a checklist line. |
+| e | It used stock photos for invented doctors. | Skill: real images only of real things. Invented people get an Avatar with initials. There is a checklist line and an example. |
+| f | It could not see the preview, but marked the checklist Pass from a source audit. | Skill: if you cannot see the rendered screen, mark every line that depends on it Not checked, never Pass, and say why. |
+
+With only the skill file, the thinking held and the visual details drifted. The fix is telling an agent where the system lives.
