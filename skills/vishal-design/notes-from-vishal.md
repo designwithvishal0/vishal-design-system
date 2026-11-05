@@ -95,3 +95,36 @@ My steps:
 6. Check the main question in its different states: nothing new, a little, a lot.
 
 For messaging, the question might be "What needs me right now?" For a reading profile, the owner asks "What am I reading, and how am I doing?" and a visitor asks "Is this person's taste worth following?" Building for a different main viewer is one honest way to get a genuinely different direction.
+
+**4. How do you come up with three genuinely different directions instead of three versions of one?**
+
+Three directions are genuinely different when each one is built around a different idea of what the screen is for, not a different look. My system stays the same in all three: same type, same tokens, same product colour. So the difference has to come from the structure, never from styling.
+
+Where I find the difference. Each direction changes at least one of these:
+1. The main viewer. Build one for the owner and one for a visitor.
+2. The main question. Different moments give different questions, like "What needs me right now?" versus "What happened while I was away?"
+3. How it is organised. By time, by people, by topic, or by status.
+4. How it is used. A quick glance versus deep work, mouse versus keyboard.
+5. The signature moment. Each direction puts its one memorable moment somewhere different.
+
+My steps:
+1. Write a one line idea for each direction before building anything.
+2. Check each line: can I describe it without mentioning colour, type or style? If not, it is a style variant, not a direction.
+3. If two directions share the same main question and the same organisation, replace one.
+4. Each direction must be one I would be willing to ship. No safe one with two filler ones.
+5. Each direction must meet the standard and include everything the brief requires.
+6. For each one, write who it is best for and what it gives up. Every real direction makes a trade off.
+7. Pick the one that best answers the main question for the main viewer, and say what the others do better.
+
+What does not count as a direction: the same layout in three colours, the same layout with the sidebar moved, or a light, dark and dense version of one idea. And never copy one reference.
+
+Examples:
+Messaging
+1. Threads first: conversations are the unit, channels sit behind them.
+2. Needs you: one inbox of only what needs a reply or a decision, everything else waits.
+3. Keyboard first: a command bar drives everything, built for people who live in it all day.
+
+Reading profile
+1. My year: the reading challenge and progress lead, for the owner.
+2. My taste: shelves, ratings and reviews lead, for a visitor deciding whether to follow.
+3. My reading story: the year told as a timeline of what was read and when.
