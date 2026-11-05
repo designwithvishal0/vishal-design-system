@@ -161,7 +161,16 @@ Show nothing for loads under 300ms (`--dur-base`). A spinner only inside the but
 
 Relative: Modal, Input and the dense List.
 
-Rules: opens with Cmd K or Ctrl K into a `Modal` `center` with an `Input` (`IconSearch`, label "Jump to or do anything") and a dense `List` of results. Arrow keys move the selected row (the accent wash), Enter runs it, Escape closes it. Every result shows its shortcut in `label` text on the right. The bar is a convenience: everything it does is also reachable by mouse.
+A command bar is a field, not a dialog: no heading and no close button. Use `Modal` with `placement="top"`, no `title`, a `label` and `initialFocus` on the field, so it opens near the top with the cursor already in the field and results below.
+
+```jsx
+<Modal open={open} onClose={close} label="Jump to or do anything" placement="top" initialFocus="cmd-input">
+  <Input id="cmd-input" label="Jump to or do anything" hideLabel leading={<IconSearch />} />
+  <List density="dense" role="listbox">{/* results */}</List>
+</Modal>
+```
+
+Rules: opens with Cmd K or Ctrl K. It holds a few real actions (New message, Go to mentions, Mark all as read) as well as places, or it is named for what it does, like "Jump to a channel or person". Arrow keys move the selected row (the accent wash), Enter runs it, Escape closes it. Every result shows its shortcut in `label` text on the right. The bar is a convenience: everything it does is also reachable by mouse.
 
 ## Fixed recipes for missing components
 
