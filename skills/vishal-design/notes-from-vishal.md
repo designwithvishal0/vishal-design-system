@@ -421,3 +421,43 @@ For messaging, it could be the moment the last thing needing you is cleared, and
 
 Why: people do not remember every screen, they remember one moment. Choosing that moment on purpose is what separates a designed product from a tidy one.
 When it may bend: a launch can have one moment per section instead of one per screen, but each one still passes the remove test.
+
+**14. Motion with meaning: when does motion explain something to the user, and when is it decoration? What is allowed to move, and what never moves?**
+
+Every motion needs a job. The job decides how it moves.
+
+The jobs motion can do:
+1. Explain. Show where something came from or where it went, what changed, and what caused it. A sent message moves up from the composer into the thread.
+2. Give feedback. Confirm that a touch, click or action worked: a press scales to .97, a sent message shows sent.
+3. Guide attention. Point the eye to one new thing, once.
+4. Add character. Small crafted motion that makes the product feel alive, like the live dot or the "unsure." letters. This is welcome when it fits the product, stays small and never gets in the way.
+5. Land the signature moment.
+If a motion does none of these, it does not go in.
+
+What is allowed to move:
+1. Things that change: a state, a number, a position.
+2. Things that enter or leave the screen.
+3. What the user just touched.
+4. The signature moment.
+
+What never moves:
+1. Text while someone is reading it.
+2. The main answer once it has settled.
+3. The layout under the user's finger. Nothing jumps or shifts as content loads.
+4. Navigation and controls. They stay in the same place.
+5. Anything that makes the user wait to act.
+
+Timing, from my tokens:
+1. Press 120ms, hover 200ms, small changes 300ms, colour and theme 900ms.
+2. Reveals rise 20px over about 600ms, once, not every visit.
+3. Scroll motion follows the scroll itself, never a timed jump.
+4. Spring only for expressive moments.
+5. In tools used all day, nothing over about 200ms.
+6. Leaving is faster than arriving. One thing moves at a time, and lists stagger by about 45ms.
+7. Loops pause when off screen.
+
+Reduce motion: movement becomes a quick fade or an instant change, but the meaning stays. A sent message still shows sent.
+
+For messaging: switching channels swaps the thread quickly while the sidebar stays still, and a new message arrives from the bottom. For a reading profile: the challenge number
+
+*(This answer arrived cut off. Waiting for Vishal to finish it.)*
