@@ -1,0 +1,35 @@
+.vd-modal {
+  z-index: var(--z-overlay);
+  width: min(100% - var(--layout-gutter) * 2, calc(var(--space-10) * 4));
+  max-height: calc(100dvh - var(--layout-gutter) * 2);
+  margin: auto;
+  padding: 0;
+  border: var(--border-w) solid var(--color-line-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-2);
+  color: var(--color-ink);
+  box-shadow: var(--elev-4);
+  overflow: hidden;
+}
+.vd-modal::backdrop { background: var(--color-scrim); }
+.vd-modal[open] { animation: vd-modal-in var(--dur-base) var(--ease-out); }
+.vd-modal[open]::backdrop { animation: vd-modal-fade var(--dur-base) var(--ease-out); }
+
+/* Sheet from the bottom: full width, rounded top. */
+.vd-modal--bottom { width: 100%; max-width: 100%; margin: auto 0 0; border-radius: var(--radius-lg) var(--radius-lg) 0 0; border-bottom: 0; }
+.vd-modal--bottom[open] { animation-name: vd-sheet-up; }
+
+/* Side sheet from the right: full height, rounded left. */
+.vd-modal--right { width: min(100%, calc(var(--space-10) * 3.5)); height: 100dvh; max-height: 100dvh; margin: 0 0 0 auto; border-radius: var(--radius-lg) 0 0 var(--radius-lg); border-right: 0; }
+.vd-modal--right[open] { animation-name: vd-sheet-left; }
+
+.vd-modal__panel { display: flex; flex-direction: column; max-height: inherit; height: 100%; }
+.vd-modal__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-4) var(--space-5); border-bottom: var(--border-w) solid var(--color-line); }
+.vd-modal__title { margin: 0; font-size: var(--type-title-size); font-weight: var(--type-title-weight); font-stretch: var(--type-title-stretch); line-height: var(--type-title-lh); letter-spacing: var(--type-title-tracking); }
+.vd-modal__body { flex: 1; overflow: auto; padding: var(--space-5); }
+.vd-modal__foot { display: flex; justify-content: flex-end; gap: var(--space-2); padding: var(--space-4) var(--space-5); border-top: var(--border-w) solid var(--color-line); }
+
+@keyframes vd-modal-in { from { opacity: 0; translate: 0 var(--space-3); } to { opacity: 1; translate: 0 0; } }
+@keyframes vd-sheet-up { from { translate: 0 var(--space-7); opacity: 0; } to { translate: 0 0; opacity: 1; } }
+@keyframes vd-sheet-left { from { translate: var(--space-7) 0; opacity: 0; } to { translate: 0 0; opacity: 1; } }
+@keyframes vd-modal-fade { from { opacity: 0; } to { opacity: 1; } }
