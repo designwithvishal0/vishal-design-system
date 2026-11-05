@@ -31,7 +31,9 @@
     .acc { padding: var(--space-4); border-radius: var(--radius-md); background: var(--accent-wash); display: flex; flex-direction: column; gap: var(--space-1); }
     .acc b { color: var(--accent-ink); font-size: var(--type-title-size); font-weight: var(--type-title-weight); font-stretch: var(--type-title-stretch); line-height: var(--type-title-lh); }
     .acc span { color: var(--accent-muted); font-size: var(--type-small-size); }
-    .acc u { color: var(--accent-text); font-size: var(--type-small-size); font-weight: var(--weight-ui); }
+    .acc u { color: var(--accent-text-aa); font-size: var(--type-small-size); font-weight: var(--weight-ui); }
+    .acc .exact { color: var(--accent-text); font-size: var(--type-heading-lg-size); font-weight: var(--type-heading-lg-weight); font-stretch: var(--type-heading-lg-stretch); line-height: var(--type-heading-lg-lh); font-style: normal; }
+    .acc .why { color: var(--accent-muted); font-size: var(--type-label-size); }
     .role { display: grid; gap: var(--space-1); padding-block: var(--space-3); border-bottom: 1px solid var(--color-line); }
     .role .sample { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .bar { height: var(--space-3); background: var(--color-ink); border-radius: var(--radius-pill); }
@@ -100,9 +102,11 @@
       for (const [name, v] of Object.entries(accents)) {
         a.append(el('div', { class: 'acc', 'data-accent': name },
           `<b>${name}${v.ext ? '<span class="tag-ext">ink and text ext</span>' : ''}</b>
-           <span>muted ${v.muted[i]}</span><u>text ${v.text[i]}</u><span>wash ${v.wash[i]}, ink ${v.ink[i]}</span>`));
+           <i class="exact">Exact ${v.text[i]}</i><span class="why">large text only</span>
+           <u>Small text ${v.textAa[i]}${v.textAa[0] !== v.text[0] && i === 0 ? ' (darker, ext)' : ''}</u>
+           <span>muted ${v.muted[i]}</span><span>wash ${v.wash[i]}, ink ${v.ink[i]}</span>`));
       }
-      p.append(section('Accents (one per screen)', a));
+      p.append(section('Accents (one per screen, orange is the default)', a));
 
       // Type
       const ty = el('div');
