@@ -39,3 +39,37 @@ He confirmed the written description of his visual language is right, and answer
 3. "Cover corner: keep 4px but give it its own token, radius-cover, so it does not borrow the focus ring radius. cover-md and cover-lg use 6px."
 
 The list of settled differences (header follows the theme, the dark orange values, the derived spacing scale, the new surface, line, shadow and text-aa values) is confirmed.
+
+## Interview answers
+
+Recorded word for word, 5 November 2026. Nothing here is filled in by an agent or taken from the handoff.
+
+### Identity
+
+**1. When a screen feels like mine, what are the two or three things making it feel that way?**
+
+Three things.
+
+1. A few big words that carry the screen. Heavy and narrow Bricolage, set tight, against calm light body text. The big words are usually the user's own question, like "Will I travel tonight?" Everything people read line by line stays light.
+
+2. A quiet page where only the product brings colour. The page is warm off white and near black ink, edges are 1px hairlines, not shadows, and the colour comes from the product being shown, never from me.
+
+3. Space. Generous gaps between sections so every part can breathe. If it feels congested, it is wrong, and I fix it by adding space, not by shrinking things.
+
+**2. What would you never do in your system, visually or in the experience?**
+
+Visually:
+1. Lift a button or card on hover. Hover changes colour, press scales down slightly, nothing jumps up.
+2. Put dark on dark. A dark card on a dark page has to be clearly separated, or it is wrong.
+3. Make it look like a template, a UI kit or an agency site. No service grids, no logo walls.
+4. Grey down colour. Pastels stay bright, never muddy.
+5. Crop or shrink screens and thumbnails until you cannot read them.
+6. Make numbers glow or colour them for effect. I said "Eww" to that once and I meant it.
+7. Use heavy weight on anything people read line by line.
+
+In the experience:
+1. Show fake prototypes made of images. If it says prototype, it is real and clickable.
+2. Let controls cover the content.
+3. Hide content on desktop. Phones can trim long paragraphs, desktop shows everything.
+4. Add motion for decoration: cursor followers, rolling button labels, parallax.
+5. Put lorem ipsum, invented numbers or invented results anywhere. Concept work is called concept work.
