@@ -97,7 +97,7 @@ export function App() {
 
           <div className="tf-tabs" role="tablist" aria-label="Show threads from">
             {['all', ...channels.map((c) => c.id)].map((id) => (
-              <button key={id} role="tab" aria-selected={filter === id} className="tf-tab vd-ul" onClick={() => setFilter(id)}>{id === 'all' ? 'All' : `#${id}`}</button>
+              <button key={id} role="tab" aria-selected={filter === id} className="tf-tab vd-ul-tab" onClick={() => setFilter(id)}>{id === 'all' ? 'All' : `#${id}`}</button>
             ))}
           </div>
 

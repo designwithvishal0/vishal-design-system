@@ -39,7 +39,8 @@ export function Nav({ brand, brandHref = '#', children, actions, tone, bordered 
 }
 
 Nav.Link = function NavLink({ current, className, ...rest }) {
-  return <a className={cx('vd-nav__link', 'vd-ul', className)} aria-current={current ? 'page' : undefined} {...rest} />;
+  // Only the current link is underlined. The others show no line until hovered.
+  return <a className={cx('vd-nav__link', 'vd-ul-tab', className)} aria-current={current ? 'page' : undefined} {...rest} />;
 };
 
 /**

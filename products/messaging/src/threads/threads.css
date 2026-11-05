@@ -20,7 +20,7 @@
 /* Tabs only on phones, where the filter panel is hidden (skill recipe: Tabs). */
 .tf-tabs { display: none; gap: var(--space-5); padding: 0 var(--space-5); overflow-x: auto; border-bottom: var(--border-w) solid var(--color-line); }
 .tf-tab { flex: none; padding: var(--space-3) 0; border: 0; background: none; color: var(--color-muted); font: inherit; font-size: var(--type-small-size); cursor: pointer; }
-.tf-tab[aria-selected='true'] { color: var(--color-ink); background-size: 100% var(--border-w), 100% var(--border-w); }
+.tf-tab[aria-selected='true'] { color: var(--color-ink); }
 
 .tf-open { display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; }
 .tf-open__head { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5) var(--space-6) var(--space-4) calc(var(--space-5) + var(--thread-text-edge)); border-bottom: var(--border-w) solid var(--color-line); }
