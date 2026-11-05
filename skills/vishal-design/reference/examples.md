@@ -141,6 +141,7 @@ One example per rule from a product that is neither a chat app nor a reading pro
 | 3. Real content only | A dashboard sample shows "Asha's Kitchen, Pune, ₹1,240", never "Customer 1, $0.00". |
 | 3. Short, concrete copy | A payment button says "Pay ₹1,840", never "Proceed to payment". |
 | 3. Counts agree | An inbox badge, a tab count and a "4 unpaid invoices" heading all say 4, and all drop when one is paid. |
+| 3. Opening clears its count | Opening a notification marks it read and the bell's badge drops at once. |
 | 3. Both themes designed | A trading chart's grid lines use `--color-line` in both themes, never a fixed grey. |
 | 4. One display moment per screen | An onboarding screen's question in `display`; nothing else that size. |
 | 4. Four text sizes at most | A settings page: `label` for eyebrows, `small` for explanations, `body` for labels, `title` for the page. |
@@ -174,6 +175,7 @@ One example per rule from a product that is neither a chat app nor a reading pro
 | 4. One icon family | A settings page uses the same outline icons as the rest of the app. |
 | 4. Icons mean something | A dashboard's export button has a download icon and the word "Export". |
 | 4. Images shown whole | Product photos in a cart keep their shape; nothing is cropped to a square circle. |
+| 4. Real images over placeholders | A cart shows the real product photo from the catalogue; the neutral surface only if it fails to load. |
 | 4. Radius from the set | Inputs at 12, cards at 24, the pay button a full pill. |
 | 4. Finished means every state | A form's Continue has hover, focus, pressed and a disabled state that says why ("Add your salary to continue"). |
 | 5. One signature moment, at the change or the end | A checkout's "Paid" screen; a claim's "Approved: ₹18,400". |

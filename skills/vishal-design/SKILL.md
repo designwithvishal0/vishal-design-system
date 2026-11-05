@@ -102,6 +102,7 @@ These make a screen look like Vishal's. Following them gives a clean screen. Sec
 | A command bar is a field near the top of the screen with results below: no heading, no close button, focus in the field, Escape closes it. | It exists for speed; a dialog's chrome slows it and moves focus to the close button. | Never. |
 | Real content only: real names, times like "9:41" and "Mon", real titles, prices and places. No lorem ipsum, no invented numbers or results. | Fake content hides layout problems and breaks trust. | Never. |
 | Copy is short and concrete. No hyphens or em dashes in prose, no filler words, sentence case, "Send" is always "Send". | Vishal's voice is plain and specific. | Never. |
+| Opening something clears its unread count at once: the badge, the bold and the list tag drop the moment it is opened, not when the person leaves. A "New" line may stay inside it so they can still find where the unread part began. | People open things to read them; a count that stays after opening says the product did not notice. | Never. |
 | Counts agree across the whole screen: a headline, a sidebar badge and a list tag that count the same thing show the same number, and all of them drop the moment it is read. Work every count out from the data, never type one. | A count that disagrees with another tells people the screen cannot be trusted. | Never. |
 | Both themes are designed, not inverted, and pass every rule. | Vishal's site runs in both, and a colour that passes in light can fail in dark. | Never. |
 
@@ -159,7 +160,8 @@ Concrete values. Every value is a token in [reference/tokens.md](reference/token
 | One icon family: outline, 1.5px stroke, rounded ends. Filled only for active states and arrows. Sizes snap to 16, 20 or 24px with the text. Icons take the text colour beside them. | It matches the soft shapes of Bricolage, and mixed families look assembled. | Never. |
 | An icon must stand for something; never decoration. An icon only button has an `aria-label` and a 44px target. | Decorative icons add noise and nothing for screen readers. | Never. |
 | Images and covers are shown whole, uncropped, at a size you can read. Covers keep the real 2 by 3 shape. Photos crop around the subject, eyes in the upper third. | A cropped screen or cut title is the opposite of showing the work. | A signature moment may show a cover huge and tilted, once. |
-| A missing image is never an empty grey box: a neutral surface with the title (large covers) or initials (people). | An empty box looks broken. | Small and medium covers stay plain, because the title sits beside them in a list. |
+| Real images over placeholders, whenever a real source exists: book covers from Open Library by ISBN, product photos from the catalogue, logos from the company, people's photos when the product has them. The placeholder is only for an image that fails to load. | A wall of grey boxes makes a real screen look like a wireframe, and hides how real images change the layout. | Never when a source exists. Concept work with no source says so. |
+| An image that fails to load is never an empty grey box: a neutral surface with the title (large covers) or initials (people). | An empty box looks broken. | Small and medium covers stay plain, because the title sits beside them in a list. |
 | Radius only from the set: 999 pills, 50% round, 32 big panels, 28 big rows, 24 cards, 20 hero media, 16 media and menus, 12 small media, inputs and list rows, 6 and 4 covers, 4 focus ring. Same component, same radius. Nested corners stay parallel (inner = outer minus padding). | Mixed radii look assembled. | A signature moment may break it, once. |
 | Finished means: every interactive thing has hover, focus and pressed states; every button goes somewhere; the same words and capitalisation everywhere; edges line up; small honest details like a live dot or a "Copied" confirmation; empty space looks chosen. | These are noticed only when wrong, and they separate built from finished. | Never. |
 
@@ -275,6 +277,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 
 **6. Content**
 - [ ] Real names, times and titles; no lorem ipsum; no invented numbers.
+- [ ] Real images wherever a source exists; a placeholder only where an image failed to load.
 - [ ] Curly quotes and apostrophes everywhere, sample data included.
 - [ ] No hyphens or em dashes in prose; sentence case; the same words for the same thing.
 
@@ -287,7 +290,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 - [ ] Long names truncate, long text wraps, nothing breaks the layout.
 - [ ] Offline shows the last saved content with its time ("Updated 9:41"); sent items show sending, sent or failed.
 - [ ] Every action confirms quietly; disabled things say why.
-- [ ] Every count agrees with every other count of the same thing, before and after reading.
+- [ ] Every count agrees with every other count of the same thing, before and after reading, and opening something clears its count at once.
 
 **8. Everywhere**
 - [ ] Light and dark both pass, with no dark on dark.
