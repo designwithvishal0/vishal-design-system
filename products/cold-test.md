@@ -71,3 +71,40 @@ Upload now has a recipe; the empty and offline states were already in the checkl
 ## After review
 
 Vishal spotted one more: the empty claim form showed "₹0" in display type, which looks broken. The claim flow now shows a quiet line in its place until an amount is typed, and the skill has a new rule: a display number never shows a meaningless zero.
+
+# Second test: Figma Make
+
+**When:** 6 November 2026.
+
+**Setup:** Figma Make, with the repo cloned and the skill used exactly as it is in the repo.
+
+**Brief:** an employee books a doctor's video consultation through their company's health benefits. Three screens: choose a doctor and time, booking confirmation, and the screen before the call starts.
+
+## What it got right
+
+1. **It followed the work order.** It worked out whose screen it is and the main question, wrote three directions before any code, picked "Soonest doctor first", and labelled the direction in the build.
+2. **One product colour and one display moment per screen.** The colour was sky. The display moments:
+   - "Today, 4:30 pm" in the booking summary.
+   - "Booked for today, 4:30 pm" on confirmation.
+   - "Starts in 2 min" before the call.
+3. **It used the newest rules.** No meaningless zero ("Your consultation time appears here once you pick a slot"), and the display style only at 40px and up.
+4. **Real content throughout.** Names, times, amounts in rupees, and a ₹0 copay explained by the benefit.
+5. **States were designed:**
+   - first use;
+   - no results;
+   - a slot just taken, shown next to the book button;
+   - a partial upload failure;
+   - offline.
+6. **Its code passed the token check.**
+
+## What went wrong, and what changed
+
+| # | What happened | What changed |
+| --- | --- | --- |
+| 1 | " " showed as visible text on every screen ("15 min", and a phone number full of them). Its own checklist marked this a pass, because it checked the code, not the screen. | Skill: never write a character escape as text. In JSX, use the real character or `{" "}` inside braces. New checklist line: "Look at the rendered screen, not just the code. Any visible \u, &nbsp; or broken character fails the check." The checklist now says every line is judged on the rendered screen. |
+| 2 | It removed the hyphen from the booking reference "PZ-4829". | Skill: the hyphen rule covers prose only. Booking references, IDs, phone numbers, file names, dates in data and code keep their real characters, hyphens included. |
+| 3 | It looked inside `products/cold-test` although the prompt said not to. | Nothing in the skill. A test setup issue: a cold test should run on a copy without `products/`. |
+| 4 | The theme button said "Switch to dark" while the page was already dark. | Recorded only; no rule added yet. |
+| 5 | Figma Make's preview stayed on the old site until it was restarted. | Nothing in the skill: this is a tool issue. |
+
+Like the first test, the misses were details the skill had not spelled out, not wrong rules. Both skill misses, 1 and 2, came from the skill being read too literally, and both are now written down plainly.
