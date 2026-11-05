@@ -98,7 +98,7 @@ export const visitorRatings = {
 
 export const favourites = readThisYear.filter((b) => b.tags.includes('favourites'));
 
-// Real covers from Open Library, by ISBN (English editions where one has a cover).
+// Real covers from Open Library, by ISBN (English editions where one has a cover), saved into the repo.
 // A cover that fails to load falls back to the neutral placeholder in Cover.
 const isbn = {
   "Tomorrow, and Tomorrow, and Tomorrow": '9781784744649',
@@ -138,4 +138,6 @@ const isbn = {
   "Foster": '9780571255658',
   "The Remains of the Day": '9780394251349',
 };
-export const coverOf = (title) => (isbn[title] ? `https://covers.openlibrary.org/b/isbn/${isbn[title]}-M.jpg?default=false` : undefined);
+// Saved in public/covers/ and served with the site, so nothing depends on Open Library at review time.
+// Every layout page sits one folder down (year/, taste/, story/), so the covers are one level up.
+export const coverOf = (title) => (isbn[title] ? `../covers/${isbn[title]}.jpg` : undefined);
