@@ -1,0 +1,35 @@
+/* My reading story. A sticky running count on the left, the months as a timeline on the right. */
+.st-title { margin: 0; max-inline-size: 18ch; text-wrap: balance; }
+
+.st-year { display: grid; grid-template-columns: calc(var(--space-6) * 8) 1fr; gap: var(--section-inner); align-items: start; }
+.st-count { position: sticky; top: calc(var(--layout-bar) + var(--space-6)); display: flex; flex-direction: column; gap: var(--space-3); }
+.st-count p { margin: 0; }
+.st-of { color: var(--color-muted); }
+/* The signature moment: the fill follows the count. --dur-base, so it never lags the scroll;
+   under Reduce motion it is 0 and the bar simply shows the new count. */
+.st-fill { transition: inline-size var(--dur-base) var(--ease-out); }
+
+/* The timeline: a line-strong rule down the left, each month a heading on it. */
+.st-months { display: flex; flex-direction: column; gap: var(--section-inner); margin: 0; padding: 0 0 0 var(--space-6); list-style: none; border-inline-start: var(--border-w) solid var(--color-line-strong); }
+.st-month { display: flex; flex-direction: column; gap: var(--space-5); scroll-margin-top: var(--layout-bar); }
+.st-month__name { display: flex; align-items: baseline; gap: var(--space-3); margin: 0; }
+.st-books { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, calc(var(--space-6) * 10)), 1fr)); gap: var(--space-5); margin: 0; padding: 0; list-style: none; }
+/* A book with a review takes the whole row, so the review reads at full measure. */
+.st-book:has(.st-review) { grid-column: 1 / -1; }
+.st-book { display: flex; gap: var(--space-4); align-items: flex-start; }
+.st-book__text { display: flex; flex-direction: column; gap: var(--space-snug); min-width: 0; }
+.st-book__text > p { margin: 0; }
+
+/* A review sits under its book, as a quote at reading measure. */
+.st-review { margin: var(--space-2) 0 0; padding-inline-start: var(--space-4); border-inline-start: var(--border-w) solid var(--accent-ink); max-inline-size: var(--measure-max); }
+.st-review p { margin: 0 0 var(--space-2); font-size: var(--type-body-size); line-height: var(--type-body-lh); }
+.st-month--next { gap: var(--space-2); }
+.st-month--next p { margin: 0; }
+
+/* Phone: the count becomes a sticky strip above the months. */
+@media (max-width: 759px) {
+  .st-year { grid-template-columns: 1fr; gap: var(--space-5); }
+  .st-count { top: var(--layout-bar); flex-direction: row; flex-wrap: wrap; align-items: baseline; column-gap: var(--space-3); padding-block: var(--space-3); background: var(--color-bg); border-bottom: var(--border-w) solid var(--color-line); }
+  .st-count .rp-bar { flex-basis: 100%; }
+  .st-months { padding-inline-start: var(--space-4); }
+}
