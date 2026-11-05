@@ -363,3 +363,23 @@ Accessibility:
 
 Why: consistency is what makes a product feel trustworthy, and accessibility means the product works for everyone, not most people.
 When it may bend: never.
+
+**12. What do you check, in order, before you call a screen done?**
+
+I check from the biggest question to the smallest detail. Fixing details on a screen with the wrong idea is wasted work, so the order matters.
+
+1. The question. Is the main viewer's question answered first, in the most prominent place? Squint at the screen: the first thing you see should be that answer.
+2. The idea. Can I say the screen's idea in one line? Swap the logo for another product's: if it still works, the screen has no idea of its own yet.
+3. Hierarchy. One display moment at most, no more than four text sizes and three weights below it, heavy type only at 40px and above, paragraphs within their line length.
+4. Space and alignment. Every gap from the scale, groups clear from space alone, edges lined up, icons and text optically centred, nothing a pixel off.
+5. Colour and depth. Neutral page, one product colour, nothing greyed down, shadows only on things that float, no hover lift.
+6. Content. Real names, times and titles. No lorem ipsum, no invented numbers. Copy is short and concrete, with no hyphens or em dashes in prose.
+7. States. Empty, loading, error, partial, zero to ten thousand items, long content, offline.
+8. Everywhere. Both themes with no dark on dark, the full scroll on a phone, and Reduce motion on.
+9. Access. Contrast, keyboard and focus, touch targets, visible labels, text at 200%.
+10. Motion. Does each motion fit this product and help the user? Nothing cheap, nothing in the way, and it all turns off cleanly.
+11. The signature moment. One moment people remember, where it fits, or a deliberate decision to have none.
+12. The standard. Look at it fresh, as if seeing it for the first time. Would a senior designer who loves the craft ship this? If not, it is not done.
+
+Why: a screen fails people in this order. A missing answer loses them in seconds, a weak hierarchy in a minute, broken states over days. Checking in the same order fixes the biggest problems first.
+When it may bend: never skip a step. On a small screen some steps take seconds, but every step is checked.
