@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Cover } from '../shared/ds.js';
 import { ProfileNav, NowReading, ShelfRow, Stars, Identity } from '../shared/parts.jsx';
-import { currentlyReading, readThisYear, reviews, months, challenge } from '../shared/data.js';
+import { currentlyReading, readThisYear, reviews, months, challenge, coverOf } from '../shared/data.js';
 import './story.css';
 
 // Direction 3, My reading story. The year told as a timeline of what was read and when.
@@ -62,7 +62,7 @@ export function App() {
                     const r = reviewOf(b.title);
                     return (
                       <li key={b.title} className="st-book">
-                        <Cover size="md" title={b.title} author={b.author} />
+                        <Cover size="md" src={coverOf(b.title)} title={b.title} author={b.author} />
                         <div className="st-book__text">
                           <p className="rp-book">{b.title}</p>
                           <p className="rp-muted">by {b.author} · {b.pages} pages</p>

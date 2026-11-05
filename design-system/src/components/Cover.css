@@ -13,6 +13,10 @@
 }
 .vd-cover--md { --w: var(--space-7); border-radius: var(--radius-cover-lg); }
 .vd-cover--lg { --w: var(--space-9); border-radius: var(--radius-cover-lg); }
+/* A real cover gets the image ring (elev-2), like media on the site. */
+/* elev-2 is an inset ring, so it sits on a layer above the image. */
+.vd-cover--img { position: relative; }
+.vd-cover--img::after { content: ''; position: absolute; inset: 0; border-radius: inherit; box-shadow: var(--elev-2); pointer-events: none; }
 .vd-cover__img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 /* No image: only the large cover shows the title, set like a printed cover: 12px in, title at 650

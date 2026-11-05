@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Nav, Avatar, Cover, Button, Input, IconSearch, IconStar } from './ds.js';
-import { reader, shelves, challenge, stats, months } from './data.js';
+import { reader, shelves, challenge, stats, months, coverOf } from './data.js';
 import './parts.css';
 
 const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -98,7 +98,7 @@ export function NowReading({ books, size = 'md', id = 'now', heading = 'Currentl
       <ul className={`rp-now__list rp-now__list--${size}`}>
         {books.map((b) => (
           <li key={b.title} className="rp-now__book">
-            <Cover size={size} title={b.title} author={b.author} />
+            <Cover size={size} src={coverOf(b.title)} title={b.title} author={b.author} />
             <div className="rp-now__text">
               <p className="rp-book">{b.title}</p>
               <p className="rp-muted">by {b.author}</p>
@@ -123,7 +123,7 @@ export function Reviews({ items, id = 'reviews', heading = 'Recent reviews', lar
       <ol className={large ? 'rp-reviews__list rp-reviews__list--large' : 'rp-reviews__list'}>
         {items.map((r) => (
           <li key={r.title} className="rp-review">
-            <Cover size="md" title={r.title} />
+            <Cover size="md" src={coverOf(r.title)} title={r.title} />
             <article>
               <h3 className="rp-book">{r.title} <span className="rp-muted">by {r.author}</span></h3>
               <p className="rp-review__rating"><Stars value={r.rating} /> <time className="rp-meta">{r.date}</time></p>

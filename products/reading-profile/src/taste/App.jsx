@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Avatar, Button, Cover, List, Tag } from '../shared/ds.js';
 import { ProfileNav, Challenge, NowReading, ShelfRow, Reviews, Stars } from '../shared/parts.jsx';
-import { reader, shelves, currentlyReading, reviews, readThisYear, favourites, visitorRatings, stats } from '../shared/data.js';
+import { reader, shelves, currentlyReading, reviews, readThisYear, favourites, visitorRatings, stats, coverOf } from '../shared/data.js';
 import './taste.css';
 
 // Direction 2, My taste. For a visitor deciding whether to follow.
@@ -46,7 +46,7 @@ export function App() {
           <ul className="ts-favs">
             {favourites.slice(0, 6).map((b) => (
               <li key={b.title} className={yours(b.title) ? 'is-shared' : undefined}>
-                <Cover size="lg" title={b.title} author={b.author} />
+                <Cover size="lg" src={coverOf(b.title)} title={b.title} author={b.author} />
                 <Stars value={b.rating} label={`${reader.first} rated it ${b.rating} out of 5`} />
                 {yours(b.title) && <Tag variant="accent">You gave it {visitorRatings[b.title]}</Tag>}
               </li>
@@ -64,7 +64,7 @@ export function App() {
             <p className="rp-muted">{picked.name}, {picked.count} books{books.length < picked.count ? `. The ${books.length} from this year:` : ':'}</p>
             <List density="dense" className="ts-books">
               {books.slice(0, 10).map((b) => (
-                <List.Item key={b.title} as="a" href="#book" leading={<Cover size="sm" />} title={b.title} meta={b.author}
+                <List.Item key={b.title} as="a" href="#book" leading={<Cover size="sm" src={coverOf(b.title)} />} title={b.title} meta={b.author}
                   trailing={<span className="ts-trail">
                     {yours(b.title) && <span className="ts-yours">You {visitorRatings[b.title]}</span>}
                     {b.rating ? <Stars value={b.rating} /> : <span className="rp-meta">Reading now</span>}

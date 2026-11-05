@@ -97,3 +97,45 @@ export const visitorRatings = {
 };
 
 export const favourites = readThisYear.filter((b) => b.tags.includes('favourites'));
+
+// Real covers from Open Library, by ISBN (English editions where one has a cover).
+// A cover that fails to load falls back to the neutral placeholder in Cover.
+const isbn = {
+  "Tomorrow, and Tomorrow, and Tomorrow": '9781784744649',
+  "Small Things Like These": '9780571368709',
+  "The Hungry Tide": '9780618329977',
+  "Piranesi": '9781526622426',
+  "Klara and the Sun": '9780571364916',
+  "A Burning": '9780525658696',
+  "Trust": '9780593420317',
+  "Interpreter of Maladies": '9781559353465',
+  "Demon Copperhead": '9780571376490',
+  "Lessons in Chemistry": '9780385547345',
+  "The Covenant of Water": '9780802162731',
+  "Ghachar Ghochar": '9781538400302',
+  "Yellowface": '9780063330306',
+  "The God of Small Things": '9780613621410',
+  "Educated": '9780525510673',
+  "Days at the Morisaki Bookshop": '9780063278677',
+  "Normal People": '9780593168202',
+  "Tomb of Sand": '9781911284611',
+  "A Fine Balance": '9780679776451',
+  "Pachinko": '9781455569496',
+  "The Overstory": '9780393635522',
+  "Stoner": '9780099595168',
+  "Convenience Store Woman": '9780802129628',
+  "Intermezzo": '9780571365470',
+  "The Night Watchman": '9781472155368',
+  "Orbital": '9781529922936',
+  "James": '9781035031245',
+  "North Woods": '9780593597033',
+  "Bluets": '9781933517407',
+  "Heart Lamp": '9780143464471',
+  "Hamnet": '9780593212158',
+  "The Ministry of Utmost Happiness": '9780525434818',
+  "Braiding Sweetgrass": '9781571313560',
+  "Sea of Tranquility": '9780593552070',
+  "Foster": '9780571255658',
+  "The Remains of the Day": '9780394251349',
+};
+export const coverOf = (title) => (isbn[title] ? `https://covers.openlibrary.org/b/isbn/${isbn[title]}-M.jpg?default=false` : undefined);
