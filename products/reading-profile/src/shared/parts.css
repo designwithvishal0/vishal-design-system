@@ -15,9 +15,9 @@
 /* Shelves: a wrapping row of names with counts. Exclusive shelves first, the reader's own after a gap. */
 .rp-shelves { display: flex; flex-direction: column; gap: var(--space-3); }
 .rp-shelves ul { display: flex; flex-wrap: wrap; column-gap: var(--space-5); row-gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
-.rp-shelves li:nth-child(5) { margin-inline-start: var(--space-5); }
 .rp-shelf { padding-block: var(--space-1); border: 0; background: none; color: var(--color-ink); font: inherit; font-size: var(--type-small-size); text-decoration: none; cursor: pointer; }
 .rp-shelf[aria-current='true'] { background-size: 100% var(--border-w); }
+/* The exclusive shelves on the first line, the reader's own under them in muted text. */
 .rp-shelves__own .rp-shelf { color: var(--color-muted); }
 
 /* Challenge: skill recipe 3. The bar fill is accent ink: a meaningful graphic needs 3 to 1. */

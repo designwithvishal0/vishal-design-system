@@ -36,16 +36,18 @@ export function ShelfRow({ current, onPick, heading = 'Shelves', id = 'shelves' 
   return (
     <nav className="rp-shelves" aria-labelledby={id}>
       <h2 className="vd-type-eyebrow" id={id}>{heading}</h2>
-      <ul>
-        {shelves.map((s) => (
-          <li key={s.id} className={s.exclusive ? undefined : 'rp-shelves__own'}>
-            <Tag className="rp-shelf vd-ul-tab" aria-current={current === s.id ? 'true' : undefined}
-              {...(onPick ? { type: 'button', onClick: () => onPick(s.id) } : { href: `#shelf-${s.id}` })}>
-              {s.name} <span className="rp-count">{s.count}</span>
-            </Tag>
-          </li>
-        ))}
-      </ul>
+      {[shelves.filter((s) => s.exclusive), shelves.filter((s) => !s.exclusive)].map((group, g) => (
+        <ul key={g} className={g ? 'rp-shelves__own' : undefined}>
+          {group.map((s) => (
+            <li key={s.id}>
+              <Tag className="rp-shelf vd-ul-tab" aria-current={current === s.id ? 'true' : undefined}
+                {...(onPick ? { type: 'button', onClick: () => onPick(s.id) } : { href: `#shelf-${s.id}` })}>
+                {s.name} <span className="rp-count">{s.count}</span>
+              </Tag>
+            </li>
+          ))}
+        </ul>
+      ))}
     </nav>
   );
 }
