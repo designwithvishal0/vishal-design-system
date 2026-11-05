@@ -72,7 +72,7 @@ Upload now has a recipe; the empty and offline states were already in the checkl
 
 Vishal spotted one more: the empty claim form showed "₹0" in display type, which looks broken. The claim flow now shows a quiet line in its place until an amount is typed, and the skill has a new rule: a display number never shows a meaningless zero.
 
-# Second test: Figma Make
+## Second test: Figma Make
 
 **When:** 6 November 2026.
 
@@ -80,7 +80,7 @@ Vishal spotted one more: the empty claim form showed "₹0" in display type, whi
 
 **Brief:** an employee books a doctor's video consultation through their company's health benefits. Three screens: choose a doctor and time, booking confirmation, and the screen before the call starts.
 
-## What it got right
+### What it got right
 
 1. **It followed the work order.** It worked out whose screen it is and the main question, wrote three directions before any code, picked "Soonest doctor first", and labelled the direction in the build.
 2. **One product colour and one display moment per screen.** The colour was sky. The display moments:
@@ -97,7 +97,7 @@ Vishal spotted one more: the empty claim form showed "₹0" in display type, whi
    - offline.
 6. **Its code passed the token check.**
 
-## What went wrong, and what changed
+### What went wrong, and what changed
 
 | # | What happened | What changed |
 | --- | --- | --- |
@@ -107,4 +107,4 @@ Vishal spotted one more: the empty claim form showed "₹0" in display type, whi
 | 4 | The theme button said "Switch to dark" while the page was already dark. | Fixed in the skill: a toggle's label names the action it takes, not the state it's in, so on a dark page it reads "Switch to light". There is a checklist line for it. |
 | 5 | Figma Make's preview stayed on the old site until it was restarted. | Nothing in the skill: this is a tool issue. |
 
-Like the first test, the misses were details the skill had not spelled out, not wrong rules. Both skill misses, 1 and 2, came from the skill being read too literally, and both are now written down plainly.
+Like the first test, the misses were details the skill had not spelled out, not wrong rules. The three skill misses, 1, 2 and 4, came from the skill being read too literally, and both are now written down plainly.
