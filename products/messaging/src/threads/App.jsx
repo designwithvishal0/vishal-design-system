@@ -137,7 +137,7 @@ export function App() {
                 <h1 className="vd-type-title" id="tf-title">{open.root.text.split('. ')[0]}</h1>
                 <div className="tf-open__actions">
                   {newCount > 0 ? (
-                    <Button variant="primary" size="sm" onClick={jump}>Jump to {newCount} new {newCount === 1 ? 'reply' : 'replies'}</Button>
+                    <Button size="sm" onClick={jump}>Jump to {newCount} new {newCount === 1 ? 'reply' : 'replies'}</Button>
                   ) : (
                     <p className="tf-muted">You are up to date in this thread.</p>
                   )}
