@@ -55,6 +55,16 @@ a { color: inherit; }
   .vd-ul:hover, .vd-ul:focus-visible { background-size: 100% var(--border-w), 100% var(--border-w); background-position: 0 100%, 0 100%; }
 }
 
+/* Icons scale with their text but snap to 16, 20 or 24px so their lines stay crisp:
+   about 16px beside small text, 20px beside body text, 24px at most. */
+.vd-icon { flex: none; width: 1.1em; height: 1.1em; }
+@supports (width: round(nearest, 1em, 1em)) {
+  .vd-icon {
+    width: clamp(var(--icon-sm), round(nearest, 1.1em, calc(var(--icon-md) - var(--icon-sm))), var(--icon-lg));
+    height: clamp(var(--icon-sm), round(nearest, 1.1em, calc(var(--icon-md) - var(--icon-sm))), var(--icon-lg));
+  }
+}
+
 /* Visually hidden, still read by screen readers. */
 .vd-sr { position: absolute; width: var(--border-w); height: var(--border-w); margin: calc(var(--border-w) * -1); overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 

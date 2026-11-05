@@ -1,5 +1,6 @@
-// A few inline icons. They use currentColor and scale with the text (1.25em).
-const base = { width: '1.25em', height: '1.25em', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true };
+// A few inline icons. They use currentColor, scale with the text and snap to 16, 20 or 24px
+// (the .vd-icon rule in base.css).
+const base = { className: 'vd-icon', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true };
 
 export const IconClose = (p) => (<svg {...base} {...p}><path d="M6 6l12 12M18 6L6 18" /></svg>);
 export const IconSearch = (p) => (<svg {...base} {...p}><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4 4" /></svg>);

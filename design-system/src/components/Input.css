@@ -15,7 +15,7 @@
   transition: border-color var(--dur-fast) var(--ease-out);
 }
 .vd-input--multiline { align-items: flex-start; padding-block: var(--space-3); border-radius: var(--radius-md); }
-.vd-input__leading { display: inline-flex; color: var(--color-muted); }
+.vd-input__leading { display: inline-flex; color: var(--color-muted); font-size: var(--type-small-size); }
 
 .vd-input__control {
   flex: 1;

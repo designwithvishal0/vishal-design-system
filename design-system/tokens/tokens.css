@@ -242,6 +242,12 @@
   --tag-pad-y: 2px; /* site: .pill padding: 2px 10px */
   --glass-filter: blur(18px) saturate(1.8); /* site: .bar backdrop-filter */
   --glass-mix: 96%; /* site: .bar background: color-mix(bg 96%, transparent) */
+  --row-h: 48px; /* EXTENSION: Comfortable single line list row. Taller than the 44px button so a row never reads as a button. Two line rows size to their content (Vishal, 5 Nov 2026). */
+  --section-gap: 160px; /* site: 160px between sections on the home page (handoff 2.6). 96px on phones, by Vishal 5 Nov 2026, as his case studies shrink sections on small screens */
+  --section-inner: 72px; /* site: 72px inside a section on the home page (handoff 2.6). 48px on phones, by Vishal 5 Nov 2026 */
+  --icon-sm: 16px; /* EXTENSION: Icons scale with their text but snap to 16, 20 or 24px so their lines stay crisp (Vishal, 5 Nov 2026). 16px sits with small text. */
+  --icon-md: 20px; /* EXTENSION: Icon snap size for body text (Vishal, 5 Nov 2026). */
+  --icon-lg: 24px; /* EXTENSION: Largest icon snap size (Vishal, 5 Nov 2026). */
   --row-h-dense: 32px; /* EXTENSION: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between. */
   --cover-sm: 20px; /* EXTENSION: Width of the small book cover used in dense lists. The height follows the 5 to 7 cover ratio, so 20 by 28. */
   --radius-xs: 4px; /* site: border-radius: 4px, focus outline */
@@ -383,6 +389,8 @@
     --layout-gutter: 16px; /* site: --gut */
     --layout-bar: 52px; /* site: --bar */
     --layout-inset: 8px; /* site: --inset */
+    --section-gap: 96px; /* site: 160px between sections on the home page (handoff 2.6). 96px on phones, by Vishal 5 Nov 2026, as his case studies shrink sections on small screens */
+    --section-inner: 48px; /* site: 72px inside a section on the home page (handoff 2.6). 48px on phones, by Vishal 5 Nov 2026 */
     --type-display-xl-size: 52px; /* site: .ct h2 */
     --type-display-size: 40px; /* site: .sh, .phead h2, hero */
     --type-stat-size: 56px; /* site: .stats dd */

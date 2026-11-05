@@ -221,6 +221,16 @@ export const fixed = {
   'tag-pad-y': { value: '2px', ...site('.pill padding: 2px 10px'), use: 'Top and bottom padding of a tag' },
   'glass-filter': { value: 'blur(18px) saturate(1.8)', ...site('.bar backdrop-filter'), use: 'Frosted top bar' },
   'glass-mix': { value: '96%', ...site('.bar background: color-mix(bg 96%, transparent)'), use: 'How much page colour the frosted bar keeps' },
+  'row-h': {
+    value: '48px',
+    ...ext('Comfortable single line list row. Taller than the 44px button so a row never reads as a button. Two line rows size to their content (Vishal, 5 Nov 2026).'),
+    use: 'Comfortable list rows',
+  },
+  'section-gap': { value: '160px', mobile: '96px', ...site('160px between sections on the home page (handoff 2.6). 96px on phones, by Vishal 5 Nov 2026, as his case studies shrink sections on small screens'), use: 'Between sections of a page' },
+  'section-inner': { value: '72px', mobile: '48px', ...site('72px inside a section on the home page (handoff 2.6). 48px on phones, by Vishal 5 Nov 2026'), use: 'Inside a section' },
+  'icon-sm': { value: '16px', ...ext('Icons scale with their text but snap to 16, 20 or 24px so their lines stay crisp (Vishal, 5 Nov 2026). 16px sits with small text.'), use: 'Icon next to small text' },
+  'icon-md': { value: '20px', ...ext('Icon snap size for body text (Vishal, 5 Nov 2026).'), use: 'Icon next to body text' },
+  'icon-lg': { value: '24px', ...ext('Largest icon snap size (Vishal, 5 Nov 2026).'), use: 'Icon next to headings' },
   'row-h-dense': {
     value: '32px',
     ...ext('Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between.'),

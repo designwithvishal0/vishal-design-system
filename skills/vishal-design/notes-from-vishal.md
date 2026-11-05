@@ -225,3 +225,10 @@ Optical alignment, because what looks right beats what measures right:
 
 Why: when spacing is even and grouping is clear, people understand a screen before they read it. Uneven spacing is the fastest way to make a screen look amateur.
 When it may bend: a single moment can get extra space to make it land, like the one signature moment on the screen. Never less space than the scale allows.
+
+**Decisions on the answer 7 differences (5 November 2026)**
+
+1. "Keep space-snug (6px) and space-9 (96px) in the scale."
+2. "Comfortable single line List rows become 48px, so rows do not read as buttons. Two line rows size to their content."
+3. "Icons scale with the text but snap to 16, 20 or 24px, so their lines stay crisp."
+4. "On phones, section gaps shrink: 96px between sections and 48px inside, instead of 160 and 72. My case studies already shrink their sections on small screens."

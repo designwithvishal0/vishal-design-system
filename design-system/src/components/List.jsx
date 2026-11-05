@@ -3,7 +3,7 @@ import { cx } from './cx.js';
 
 /**
  * List of rows with hairline dividers.
- *   density  comfortable (default) | dense. EXTENSION: dense uses --row-h-dense with a snug gap,
+ *   density  comfortable (default, 48px single line rows, taller than a button) | dense. EXTENSION: dense uses --row-h-dense with a snug gap,
  *            for chat messages and long book lists.
  * A row has leading content, a title, a meta line and trailing content. Pass as="a" or as="button"
  * on a row to make it interactive. The selected row takes the accent wash.
