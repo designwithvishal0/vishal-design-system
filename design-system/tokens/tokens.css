@@ -33,6 +33,7 @@
   --color-line-strong: #CFCFC8; /* EXTENSION: Visible border for cards and panels. Vishal rule: in dark mode, no dark on dark. The site hairline (--line) is only 1.25 to 1 against the page, which is too faint to separate a card. */
   --color-error: #B3261E; /* EXTENSION: The site has no error state. Chosen to keep 4.5 to 1 or better on the page and on surface-1 in both themes. */
   --color-scrim: #0B0B0C66; /* EXTENSION: Overlay behind a modal or sheet. Not on the site. */
+  --state-flash-mix: 0%; /* EXTENSION: How much accent ink is mixed into the accent wash for a flash. In dark, the plain wash sits too close to the page to see (Vishal, 5 Nov 2026). */
   --ring-strength: 8%; /* site: --ring (8% default, 22% in dark) */
   --elev-0: none; /* site: box-shadow: none */
   --elev-1: 0 0 0 1px var(--color-line); /* site: box-shadow: 0 0 0 1px var(--line) */
@@ -97,6 +98,7 @@
     --color-line-strong: #3A3A42; /* EXTENSION: Visible border for cards and panels. Vishal rule: in dark mode, no dark on dark. The site hairline (--line) is only 1.25 to 1 against the page, which is too faint to separate a card. */
     --color-error: #FF9A90; /* EXTENSION: The site has no error state. Chosen to keep 4.5 to 1 or better on the page and on surface-1 in both themes. */
     --color-scrim: #000000A6; /* EXTENSION: Overlay behind a modal or sheet. Not on the site. */
+    --state-flash-mix: 35%; /* EXTENSION: How much accent ink is mixed into the accent wash for a flash. In dark, the plain wash sits too close to the page to see (Vishal, 5 Nov 2026). */
     --ring-strength: 22%; /* site: --ring (8% default, 22% in dark) */
     --elev-0: none; /* site: box-shadow: none */
     --elev-1: 0 0 0 1px var(--color-line); /* site: box-shadow: 0 0 0 1px var(--line) */
@@ -161,6 +163,7 @@
   --color-line-strong: #3A3A42; /* EXTENSION: Visible border for cards and panels. Vishal rule: in dark mode, no dark on dark. The site hairline (--line) is only 1.25 to 1 against the page, which is too faint to separate a card. */
   --color-error: #FF9A90; /* EXTENSION: The site has no error state. Chosen to keep 4.5 to 1 or better on the page and on surface-1 in both themes. */
   --color-scrim: #000000A6; /* EXTENSION: Overlay behind a modal or sheet. Not on the site. */
+  --state-flash-mix: 35%; /* EXTENSION: How much accent ink is mixed into the accent wash for a flash. In dark, the plain wash sits too close to the page to see (Vishal, 5 Nov 2026). */
   --ring-strength: 22%; /* site: --ring (8% default, 22% in dark) */
   --elev-0: none; /* site: box-shadow: none */
   --elev-1: 0 0 0 1px var(--color-line); /* site: box-shadow: 0 0 0 1px var(--line) */

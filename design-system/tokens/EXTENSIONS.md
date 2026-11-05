@@ -7,6 +7,7 @@ Every token that is not read from the live portfolio. Each one fills a gap the p
 - `color-line-strong`: Visible border for cards and panels. Vishal rule: in dark mode, no dark on dark. The site hairline (--line) is only 1.25 to 1 against the page, which is too faint to separate a card.
 - `color-error`: The site has no error state. Chosen to keep 4.5 to 1 or better on the page and on surface-1 in both themes.
 - `color-scrim`: Overlay behind a modal or sheet. Not on the site.
+- `state-flash-mix`: How much accent ink is mixed into the accent wash for a flash. In dark, the plain wash sits too close to the page to see (Vishal, 5 Nov 2026).
 - `elev-3`: Dark value only. Light is on the site: the Accessibility menu shadow (0 16px 40px) with the hairline ring from the dock. The dark value is proposed: a stronger border and a deeper shadow, since a soft shadow cannot show on near black.
 - `elev-4`: Light shadow is on the site (0 24px 60px). The ring and the whole dark value are proposed.
 - `elev-panel`: The site closing panel has only a faint ring (#26262b) in dark. Vishal rule: no dark on dark, so the panel gets the strong border.

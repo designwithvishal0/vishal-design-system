@@ -66,6 +66,14 @@ export const themed = {
     use: 'Backdrop behind modals and sheets',
   },
 
+  // A brief wash that points the eye at one thing, like the first unread message after a jump.
+  // Light uses the accent wash as it is; dark mixes in the accent ink, since a dark wash barely shows.
+  'state-flash-mix': {
+    light: '0%', dark: '35%',
+    ...ext('How much accent ink is mixed into the accent wash for a flash. In dark, the plain wash sits too close to the page to see (Vishal, 5 Nov 2026).'),
+    use: 'color-mix(in srgb, var(--accent-ink) var(--state-flash-mix), var(--accent-wash))',
+  },
+
   // Ring strength used by the hairline ring in elevation
   'ring-strength': { light: '8%', dark: '22%', ...site('--ring (8% default, 22% in dark)'), use: 'How strong the ink ring is' },
 };

@@ -23,4 +23,4 @@
 
 /* The jump lands here: a short wash that fades, so the eye finds the first unread reply. */
 .thread .vd-list__row.is-flash { animation: thread-flash var(--dur-colour) var(--ease) both; }
-@keyframes thread-flash { from { background: var(--accent-wash); } to { background: transparent; } }
+@keyframes thread-flash { from { background: color-mix(in srgb, var(--accent-ink) var(--state-flash-mix), var(--accent-wash)); } to { background: transparent; } }
