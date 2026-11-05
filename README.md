@@ -82,6 +82,8 @@ It got stuck or guessed in 21 places. Most were missing recipes (a radio choice,
 
 See what it built: **[the claim flow, live](https://vishal-design-system.vercel.app/cold-test/claim-flow/)** (source in [`products/cold-test/claim-flow`](products/cold-test/claim-flow)). It is kept apart from the six layouts.
 
+A second test ran in Figma Make, with the repo cloned and the skill used as it is: an employee books a doctor's video consultation through company health benefits. It followed the work order, wrote three directions before any code, kept one product colour and one display moment per screen, designed its states, and its code passed the token check. It found three skill misses: a character escape showing on screen, a hyphen removed from a booking reference, and a theme button labelled with its state instead of its action. All three are now fixed in the skill. Details are in [`products/cold-test.md`](products/cold-test.md).
+
 ## How it was made
 
 Built with Claude Code, stage by stage, with a stop at every checkpoint for my review. Every decision that is mine is recorded in my words in `skills/vishal-design/notes-from-vishal.md`; nothing there was filled in for me. The commit history shows the work as it happened.
