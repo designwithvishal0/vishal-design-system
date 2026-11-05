@@ -1,0 +1,5 @@
+/* A scrolling page, not an app: sections separated by --section-gap (160, 96 on phones),
+   --section-inner (72, 48 on phones) inside a section (skill: section 4, Space). */
+.page { display: flex; flex-direction: column; gap: var(--section-gap); padding-block: var(--section-inner) var(--section-gap); }
+.page__section { display: flex; flex-direction: column; gap: var(--section-inner); }
+.rp-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(var(--space-6) * 12)), 1fr)); gap: var(--section-inner); align-items: start; }

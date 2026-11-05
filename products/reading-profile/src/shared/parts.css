@@ -1,0 +1,58 @@
+/* Reading profile parts. Shared by the three layouts. */
+.rp-search { inline-size: calc(var(--space-6) * 7); }
+@media (max-width: 759px) { .rp-search { display: none; } }
+.rp-muted { margin: 0; color: var(--color-muted); font-size: var(--type-small-size); line-height: var(--type-small-lh); }
+.rp-meta { margin: 0; color: var(--color-muted); font-size: var(--type-meta-size); font-weight: var(--type-meta-weight); line-height: var(--type-meta-lh); font-variant-numeric: tabular-nums; }
+.rp-book { margin: 0; font-size: var(--type-small-size); font-weight: var(--weight-ui); line-height: var(--type-small-lh); text-wrap: balance; }
+.rp-count { color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.rp-challenge h2, .rp-now h2, .rp-reviews h2, .rp-shelves h2 { margin: 0; }
+
+/* Stars in text-aa (skill: small accent text uses text-aa). Empty stars are outline in muted. */
+.rp-stars { display: inline-flex; gap: var(--space-1); color: var(--accent-text-aa); vertical-align: middle; }
+.rp-stars .vd-icon { inline-size: var(--icon-sm); block-size: var(--icon-sm); }
+.rp-stars__empty { color: var(--color-edge); }
+
+/* Shelves: a wrapping row of names with counts. Exclusive shelves first, the reader's own after a gap. */
+.rp-shelves { display: flex; flex-direction: column; gap: var(--space-3); }
+.rp-shelves ul { display: flex; flex-wrap: wrap; column-gap: var(--space-5); row-gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+.rp-shelves li:nth-child(5) { margin-inline-start: var(--space-5); }
+.rp-shelf { padding-block: var(--space-1); border: 0; background: none; color: var(--color-ink); font: inherit; font-size: var(--type-small-size); text-decoration: none; cursor: pointer; }
+.rp-shelf[aria-current='true'] { background-size: 100% var(--border-w); }
+.rp-shelves__own .rp-shelf { color: var(--color-muted); }
+
+/* Challenge: skill recipe 3. The bar fill is accent ink: a meaningful graphic needs 3 to 1. */
+.rp-challenge { display: flex; flex-direction: column; gap: var(--space-3); }
+.rp-challenge > p { margin: 0; }
+.rp-bar { block-size: var(--space-2); border-radius: var(--radius-pill); background: var(--color-surface-2); overflow: hidden; max-inline-size: var(--measure-max); }
+.rp-bar > span { display: block; block-size: 100%; border-radius: inherit; background: var(--accent-ink); }
+.rp-bar > span.is-filling { animation: rp-fill var(--dur-reveal) var(--ease-out) both; }
+@keyframes rp-fill { from { inline-size: 0; } }
+.rp-bar--thin { block-size: var(--space-1); }
+
+/* Currently reading. */
+.rp-now { display: flex; flex-direction: column; gap: var(--space-4); }
+.rp-now__list { display: flex; flex-direction: column; gap: var(--space-5); margin: 0; padding: 0; list-style: none; }
+.rp-now__book { display: flex; gap: var(--space-4); align-items: flex-start; }
+.rp-now__text { display: flex; flex-direction: column; gap: var(--space-snug); flex: 1; min-width: 0; }
+.rp-now__text .rp-bar { margin-block: var(--space-2) var(--space-1); }
+
+/* Reviews: cover, then the book, stars and date, then the excerpt at reading measure. */
+.rp-reviews { display: flex; flex-direction: column; gap: var(--space-5); align-items: flex-start; }
+.rp-reviews__list { display: flex; flex-direction: column; gap: var(--space-6); margin: 0; padding: 0; list-style: none; }
+.rp-reviews__list--large { gap: var(--space-7); }
+.rp-review { display: flex; gap: var(--space-4); align-items: flex-start; }
+.rp-review article { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.rp-review h3 { font-weight: var(--weight-ui); }
+.rp-review h3 .rp-muted { display: inline; font-weight: var(--weight-regular); }
+.rp-review__rating { display: flex; align-items: center; gap: var(--space-2); margin: 0; }
+.rp-review__text { margin: 0; max-inline-size: var(--measure-max); font-size: var(--type-body-size); line-height: var(--type-body-lh); }
+
+/* Chart recipe: one series, the accent wash with a line-strong edge, labels in muted. */
+.rp-chart { display: flex; flex-direction: column; gap: var(--space-3); margin: 0; }
+.rp-chart__bars { display: grid; grid-template-columns: repeat(11, 1fr); gap: var(--space-2); block-size: calc(var(--space-6) * 5); margin: 0; padding: 0; list-style: none; }
+.rp-chart__bars li { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: var(--space-1); min-width: 0; }
+.rp-chart__bar { inline-size: 100%; border: var(--border-w) solid var(--color-line-strong); border-radius: var(--radius-cover) var(--radius-cover) 0 0; background: var(--accent-wash); }
+.rp-chart__n, .rp-chart__m { color: var(--color-muted); font-size: var(--type-label-size); font-variant-numeric: tabular-nums; }
+
+.rp-identity { display: flex; align-items: center; gap: var(--space-3); }
+.rp-identity p { margin: 0; }
