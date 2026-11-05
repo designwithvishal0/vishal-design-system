@@ -1,0 +1,16 @@
+.vd-card { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-snug); color: var(--color-ink); text-decoration: none; border-radius: var(--radius-lg); }
+
+.vd-card--surface { align-items: stretch; gap: var(--space-2); padding: var(--space-5); background: var(--color-surface-1); border: var(--border-w) solid var(--color-line-strong); }
+.vd-card--wash { align-items: stretch; gap: var(--space-2); padding: var(--space-5); background: var(--accent-wash); color: var(--accent-ink); border-radius: var(--radius-row); --color-muted: var(--accent-muted); }
+.vd-card--inverse { align-items: stretch; gap: var(--space-3); padding: var(--space-6); border-radius: var(--radius-xl); box-shadow: var(--elev-panel); }
+
+.vd-card__title { margin: 0; font-size: var(--type-title-sm-size); font-weight: var(--type-title-sm-weight); font-stretch: var(--type-title-sm-stretch); line-height: var(--type-title-sm-lh); letter-spacing: var(--type-title-sm-tracking); }
+.vd-card__meta { margin: 0; color: var(--color-muted); font-size: var(--type-meta-size); font-weight: var(--type-meta-weight); line-height: var(--type-meta-lh); }
+.vd-card__body { margin: 0; color: var(--color-muted); font-size: var(--type-body-size); line-height: var(--type-body-lh); }
+.vd-card--inverse .vd-card__body { color: var(--color-ink); }
+
+/* Interactive: a quiet overlay on hover, never a lift. */
+.vd-card--interactive { cursor: pointer; transition: background-color var(--dur-fast) var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .vd-card--interactive:hover { background-image: linear-gradient(var(--state-hover-ghost), var(--state-hover-ghost)); }
+}

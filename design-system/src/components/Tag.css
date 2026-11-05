@@ -1,0 +1,24 @@
+.vd-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--tag-pad-y) var(--tag-pad-x);
+  border: var(--border-w) solid var(--color-edge);
+  border-radius: var(--radius-pill);
+  color: var(--color-ink);
+  font-size: var(--type-label-size);
+  font-weight: var(--type-label-weight);
+  font-stretch: var(--type-label-stretch);
+  line-height: var(--type-label-lh);
+  white-space: nowrap;
+}
+
+.vd-tag--solid { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-bg); }
+
+/* Small text in an accent always uses text-aa, never the exact accent colour. */
+.vd-tag--accent { background: var(--accent-wash); border-color: transparent; color: var(--accent-text-aa); }
+
+.vd-tag--live { border-color: var(--color-edge); }
+.vd-tag__dot { position: relative; width: var(--space-2); height: var(--space-2); border-radius: var(--radius-round); background: var(--color-live); }
+.vd-tag__dot::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: var(--color-live); animation: vd-ping var(--dur-ping) var(--ease-out) infinite; }
+@keyframes vd-ping { 0% { transform: scale(1); opacity: 1; } 80%, 100% { transform: scale(3); opacity: 0; } }
