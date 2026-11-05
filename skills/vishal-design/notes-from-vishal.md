@@ -262,3 +262,41 @@ How dark mode is designed, not inverted:
 
 Why: a neutral page lets the product be the only thing with colour, so every product looks like itself. Lines work in both themes, while shadows break in dark mode.
 When it may bend: a launch or marketing moment can use a full colour field for impact, as long as the text on it still passes contrast and it stays the one big colour moment on the page.
+
+**9. Icons, imagery and small details: what icon style and size do you use, how are images and covers cropped, how do you keep radius consistent, and what small things make a screen feel finished?**
+
+*(Given in two parts, recorded together as one answer.)*
+
+Icons:
+1. One icon family only, never mixed libraries. Outline style with a 1.5px stroke and rounded ends, so it matches the soft shapes of Bricolage.
+2. Filled icons only for active or selected states, and for arrows, which are always filled.
+3. Sizes snap to 16, 20 or 24px, following the text they sit with.
+4. An icon takes the colour of the text next to it. It never gets its own colour.
+5. An icon must stand for something. Never add icons as decoration.
+6. An icon only button still has a label for screen readers and a 44px touch area.
+
+Imagery:
+1. Screens and covers are shown full and uncropped, at a size you can actually read.
+2. Book covers keep their real 2 by 3 shape. A crop never cuts the title.
+3. Images fill their space without stretching. Photos crop around the subject, with faces and eyes in the upper third.
+4. Every image gets a 1px ring at 8% ink, 22% in dark, so its edge stays clean on any background.
+5. A missing image never shows as an empty grey box. Use a neutral surface with the title or initials.
+6. The phone frame only when a screen needs it, never everything in a frame.
+
+Radius:
+1. Only values from the set: full round for pills, 50% for round buttons and avatars, 32 for big panels, 28 for rows, 24 for cards, 20 for hero media, 16 for media and menus, 12 for small media and inputs, 6 and 4 for covers, 4 for the focus ring.
+2. The same component always has the same radius.
+3. Nested corners stay parallel: the inner radius equals the outer radius minus the padding between them.
+
+Small things that make a screen feel finished:
+1. Real content everywhere: real names, real times like "9:41" and "Mon", real book titles. No placeholder text left behind.
+2. Every interactive thing has its hover, focus and pressed states.
+3. Every button goes somewhere.
+4. Long names and titles cut off neatly with an ellipsis, never overflowing or breaking the layout.
+5. The same capitalisation and the same words for the same thing everywhere.
+6. Edges line up across the whole screen, with nothing a pixel off.
+7. Small honest details: a live dot, a copied confirmation, a meta line like "Product · Type · Concept · 2026".
+8. Empty space looks chosen, not left over.
+
+Why: these are the details nobody notices when they are right, and everybody notices when they are wrong. They are the difference between a screen that is built and a screen that is finished.
+When it may bend: a signature moment can break the radius or image rules for effect, like a cover shown huge and tilted, as long as it is the one moment on the screen.
