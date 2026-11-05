@@ -261,6 +261,4 @@ How dark mode is designed, not inverted:
 6. The one dark moment, like my closing panel, becomes a lifted surface with an edge in dark mode, so it still stands apart.
 
 Why: a neutral page lets the product be the only thing with colour, so every product looks like itself. Lines work in both themes, while shadows break in dark mode.
-When it may bend: a launch or marketing moment can use a full colour
-
-*(This last sentence arrived cut off. Waiting for Vishal to finish it.)*
+When it may bend: a launch or marketing moment can use a full colour field for impact, as long as the text on it still passes contrast and it stays the one big colour moment on the page.
