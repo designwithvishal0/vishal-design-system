@@ -47,7 +47,7 @@ Each starts from a different idea of what the screen is for, not a different loo
 
 ## My picks
 
-**Messaging: Needs you.** "A messaging app is opened dozens of times a day, and every time the real question is "what needs me right now?" Needs you answers it directly instead of making you dig through channels for it."
+**Messaging: Needs you.** "A messaging app is opened dozens of times a day, and every time the real question is 'what needs me right now?' Needs you answers it directly instead of making you dig through channels for it."
 
 **Reading profile: My taste.** "A profile is a page other people visit, so it should answer their question: is this person's taste worth following? Compare books turns that into one number."
 

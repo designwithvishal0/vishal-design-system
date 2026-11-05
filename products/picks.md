@@ -4,7 +4,7 @@ In his words, recorded 6 November 2026. The longer versions are in `skills/visha
 
 ## Messaging: Needs you
 
-"A messaging app is opened dozens of times a day, and every time the real question is "what needs me right now?" Needs you answers it directly instead of making you dig through channels for it."
+"A messaging app is opened dozens of times a day, and every time the real question is 'what needs me right now?' Needs you answers it directly instead of making you dig through channels for it."
 
 ## Reading profile: My taste
 
