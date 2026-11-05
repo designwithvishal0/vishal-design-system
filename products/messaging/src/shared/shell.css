@@ -1,0 +1,11 @@
+/* App shell shared by the three layouts. A screen filling app: no section gaps, component gaps of
+   24 to 48 (skill: section 4, Space). Panels scroll on their own; the page itself never scrolls. */
+html, body, #root { height: 100%; }
+body { overflow: hidden; }
+.app { height: 100dvh; display: grid; grid-template-rows: auto 1fr; }
+.app__body { min-height: 0; display: grid; }
+.panel { min-height: 0; min-width: 0; overflow: auto; }
+.panel--line { border-right: var(--border-w) solid var(--color-line-strong); }
+.panel__pad { padding: var(--space-5); }
+.sr-only { position: absolute; width: var(--border-w); height: var(--border-w); overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 759px) { body { overflow: auto; } .app { height: auto; min-height: 100dvh; } }

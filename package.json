@@ -1,0 +1,13 @@
+{
+  "name": "vishal-design-system-repo",
+  "private": true,
+  "workspaces": [
+    "design-system",
+    "products/messaging"
+  ],
+  "scripts": {
+    "dev:system": "npm run dev -w design-system",
+    "dev:messaging": "npm run dev -w messaging",
+    "check": "npm run check -w design-system"
+  }
+}

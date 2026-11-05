@@ -1,0 +1,23 @@
+/* EXTENSION: chat thread (skill: extending.md, example 1). Dense List rows, no bubbles. */
+.thread { display: flex; flex-direction: column; gap: var(--space-2); }
+.thread .vd-list__row { align-items: flex-start; padding-block: var(--space-1); }
+.thread .vd-list__main { display: grid; grid-template-columns: auto 1fr; align-items: baseline; column-gap: var(--space-2); }
+.thread .vd-list__title { font-weight: var(--weight-ui); }
+.thread time { color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.thread__gutter { display: block; inline-size: var(--space-6); }
+.thread__body { grid-column: 1 / -1; max-inline-size: var(--measure-max); }
+.thread__body p { margin: 0; font-size: var(--type-small-size); line-height: var(--type-body-lh); font-weight: var(--weight-regular); white-space: normal; overflow-wrap: anywhere; }
+.thread__body code { padding: var(--tag-pad-y) var(--space-1); border-radius: var(--radius-code); background: var(--color-surface-2); font-family: var(--font-mono); font-size: var(--type-label-size); }
+.thread__body pre { margin: var(--space-2) 0 0; padding: var(--space-3); overflow-x: auto; border: var(--border-w) solid var(--color-line-strong); border-radius: var(--radius-sm); background: var(--color-surface-1); }
+.thread__body pre code { padding: 0; background: none; font-size: var(--type-label-size); line-height: var(--type-body-lh); }
+.mention { font-weight: var(--weight-ui); color: var(--accent-text-aa); }
+.thread__status { color: var(--color-muted); font-size: var(--type-label-size); }
+.thread__status--failed { display: flex; align-items: center; gap: var(--space-2); color: var(--color-error); }
+
+/* The "New" divider: an eyebrow on a hairline. */
+.thread__divider { display: flex; align-items: center; gap: var(--space-3); margin-block: var(--space-2); color: var(--accent-text-aa); }
+.thread__divider::after { content: ''; flex: 1; border-top: var(--border-w) solid var(--color-line-strong); }
+
+/* The jump lands here: a short wash that fades, so the eye finds the first unread reply. */
+.thread .vd-list__row.is-flash { animation: thread-flash var(--dur-colour) var(--ease) both; }
+@keyframes thread-flash { from { background: var(--accent-wash); } to { background: transparent; } }
