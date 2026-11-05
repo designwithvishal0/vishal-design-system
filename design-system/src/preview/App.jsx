@@ -2,24 +2,30 @@ import { useState } from 'react';
 import { Gallery } from './Gallery.jsx';
 
 const ACCENTS = ['orange', 'violet', 'amber', 'teal', 'sky'];
+const NEUTRAL = 'none';
 
-/** Shows every component twice, light on the left and dark on the right. One accent for the whole screen. */
+/**
+ * Shows every component twice, light on the left and dark on the right.
+ * Neutral by default. Pick an accent to see the screen as a product that owns that colour.
+ */
 export function App() {
-  const [accent, setAccent] = useState('orange');
+  const [accent, setAccent] = useState(NEUTRAL);
+  const screenAccent = accent === NEUTRAL ? undefined : accent;
   return (
     <>
       <div className="pv-toolbar" data-theme="light">
         <strong className="vd-type-title">Components</strong>
         <label className="pv-toolbar__pick">
-          Accent for this screen
+          Product accent
           <select value={accent} onChange={(e) => setAccent(e.target.value)}>
+            <option value={NEUTRAL}>none, neutral</option>
             {ACCENTS.map((a) => <option key={a}>{a}</option>)}
           </select>
         </label>
       </div>
       <div className="pv-panes">
-        <Gallery theme="light" accent={accent} />
-        <Gallery theme="dark" accent={accent} />
+        <Gallery theme="light" accent={screenAccent} />
+        <Gallery theme="dark" accent={screenAccent} />
       </div>
     </>
   );

@@ -71,9 +71,10 @@ export const themed = {
 };
 
 // ---------------------------------------------------------------------------
-// Accents. Five named pairs. One accent per screen or product, never mixed.
-// Set an accent on any element with data-accent="violet" (and so on).
-// Orange is the default when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026).
+// Accents. A palette of five, not a brand colour. Vishal has no accent of his own (handoff 9.3):
+// the page is neutral and colour comes only from the product being shown. Each new product picks
+// one accent as its own colour and sets it with data-accent="violet" (and so on) on the screen.
+// One accent per screen or product, never mixed. With no accent set, every accent role is neutral.
 //
 // Each accent has four colours, each as [light, dark]:
 //   wash   soft fill behind a panel
@@ -85,6 +86,7 @@ export const themed = {
 //          Use it for any small text. Light is an extension. Dark equals `text`, which already passes.
 // ---------------------------------------------------------------------------
 export const accents = {
+  // Orange is ixigo's product colour on the home page. It is one of the five, not a signature colour.
   orange: {
     from: '.kf .work and .kf .hero, the ixigo colours on the home page (--w-ixigo, --m-ixigo, --h-ixigo, --t-ixigo)',
     // The site's dark ixigo wash is #1B1E2C, a navy, and its muted text #B8BCCB, a blue grey. Beside orange
@@ -118,7 +120,16 @@ export const accents = {
     textAa: ['#1B5E9E', '#8CC0F2'],
   },
 };
-export const defaultAccent = 'orange';
+// No default accent. Without data-accent, the accent roles fall back to these neutrals (Vishal, 5 Nov 2026).
+export const neutralAccent = {
+  wash: 'var(--color-surface-1)',
+  muted: 'var(--color-muted)',
+  ink: 'var(--color-ink)',
+  text: 'var(--color-ink)',
+  'text-aa': 'var(--color-ink)',
+};
+export const neutralNote =
+  'Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it.';
 
 // Why textAa exists. The site's exact accent text colours do not all pass for small text.
 // On the wash: orange 2.4 to 1, amber 4.3 to 1. Orange is 2.8 to 1 on the page, below even the 3 to 1

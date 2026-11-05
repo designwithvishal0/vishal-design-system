@@ -6,7 +6,8 @@
  *
  * Themes: light is the default. Dark follows the system, and data-theme="light" or
  * data-theme="dark" on any element forces a theme for everything inside it.
- * Accent: put data-accent="orange" (violet, amber, teal, sky) on an element. One per screen. Orange is the default.
+ * Accent: neutral by default. A product picks one of orange, violet, amber, teal or sky and sets
+ * data-accent on its screen. One per screen, never mixed. There is no brand accent.
  */
 
 :root,
@@ -64,11 +65,11 @@
   --accent-sky-ink: #174F8A; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
   --accent-sky-text: #1B5E9E; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
   --accent-sky-text-aa: #1B5E9E; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
-  --accent-wash: var(--accent-orange-wash); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-  --accent-muted: var(--accent-orange-muted); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-  --accent-ink: var(--accent-orange-ink); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-  --accent-text: var(--accent-orange-text); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-  --accent-text-aa: var(--accent-orange-text-aa); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+  --accent-wash: var(--color-surface-1); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+  --accent-muted: var(--color-muted); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+  --accent-ink: var(--color-ink); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+  --accent-text: var(--color-ink); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+  --accent-text-aa: var(--color-ink); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
   --state-hover-ghost: color-mix(in oklab, var(--color-ink) 7%, transparent); /* site: .pill-btn:hover */
   --state-hover-primary: color-mix(in oklab, var(--color-btn) 84%, var(--color-bg)); /* site: .pill-btn.primary:hover */
 }
@@ -128,11 +129,11 @@
     --accent-sky-ink: #A8D2FB; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
     --accent-sky-text: #8CC0F2; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
     --accent-sky-text-aa: #8CC0F2; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
-    --accent-wash: var(--accent-orange-wash); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-    --accent-muted: var(--accent-orange-muted); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-    --accent-ink: var(--accent-orange-ink); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-    --accent-text: var(--accent-orange-text); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-    --accent-text-aa: var(--accent-orange-text-aa); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+    --accent-wash: var(--color-surface-1); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+    --accent-muted: var(--color-muted); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+    --accent-ink: var(--color-ink); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+    --accent-text: var(--color-ink); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+    --accent-text-aa: var(--color-ink); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
     --state-hover-ghost: color-mix(in oklab, var(--color-ink) 7%, transparent); /* site: .pill-btn:hover */
     --state-hover-primary: color-mix(in oklab, var(--color-btn) 84%, var(--color-bg)); /* site: .pill-btn.primary:hover */
   }
@@ -192,11 +193,11 @@
   --accent-sky-ink: #A8D2FB; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
   --accent-sky-text: #8CC0F2; /* EXTENSION: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash. */
   --accent-sky-text-aa: #8CC0F2; /* EXTENSION: Darker accent text for small text. The site exact accent colour (text) fails 4.5 to 1 on its wash or on the page for orange and amber. The shade is the site colour darkened until it passes 4.6 to 1 on the wash, the page and surface-1. Violet, teal and sky already pass and keep their value. Dark equals the site value, which already passes. */
-  --accent-wash: var(--accent-orange-wash); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-  --accent-muted: var(--accent-orange-muted); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-  --accent-ink: var(--accent-orange-ink); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-  --accent-text: var(--accent-orange-text); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
-  --accent-text-aa: var(--accent-orange-text-aa); /* EXTENSION: Default accent is orange when a screen needs an accent and none is chosen (Vishal, 5 Nov 2026). */
+  --accent-wash: var(--color-surface-1); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+  --accent-muted: var(--color-muted); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+  --accent-ink: var(--color-ink); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+  --accent-text: var(--color-ink); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
+  --accent-text-aa: var(--color-ink); /* EXTENSION: Neutral by default. The page has no brand accent (handoff 9.3, Vishal 5 Nov 2026). Colour appears only when a product sets data-accent. The neutral wash is surface-1, so a selected row still shows and a surface-2 book cover still stands out on it. */
   --state-hover-ghost: color-mix(in oklab, var(--color-ink) 7%, transparent); /* site: .pill-btn:hover */
   --state-hover-primary: color-mix(in oklab, var(--color-btn) 84%, var(--color-bg)); /* site: .pill-btn.primary:hover */
 }

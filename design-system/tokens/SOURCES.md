@@ -6,11 +6,11 @@ Next to every value in `tokens.css` is a comment saying which variable or rule i
 
 ## Accents (decided by Vishal, 5 Nov 2026)
 
-Five accents, one per screen, never mixed. Orange is the default when a screen needs an accent and none is chosen.
+Five accents, kept as a palette. There is no brand accent and no default accent. Vishal's rule (handoff 9.3): the page is neutral and colour comes only from the product being shown. Each new product picks one of the five as its own colour and sets `data-accent` on its screen. One per screen, never mixed. With no accent set, every accent role falls back to neutral: the wash is `color-surface-1` and the text colours are `color-ink` and `color-muted`.
 
 | Accent | Wash, light | Exact text, light | Small text (text-aa), light | Source |
 | --- | --- | --- | --- | --- |
-| orange | `#FFE2CC` | `#F07322` | `#A34E17` | Home page ixigo colours (`.kf .work`, `.kf .hero`), confirmed by handoff 2.1 |
+| orange | `#FFE2CC` | `#F07322` | `#A34E17` | ixigo's product colour on the home page (`.kf .work`, `.kf .hero`), confirmed by handoff 2.1. Not a signature colour |
 | violet | `#DCD3FF` | `#4A2FD0` | `#4A2FD0` | `:root` ixigo set |
 | amber | `#FFE7A8` | `#A35A00` | `#9C5600` | `:root` split set |
 | teal | `#BDEBDF` | `#006A80` | `#006A80` | `:root` twelve set |
@@ -47,7 +47,7 @@ Everything else matched the handoff: the core and dark colours, the closing pane
 
 - **Header colour.** Handoff 2.2 says the header is always light in both themes. The live home page in dark theme shows a dark header, and the `bar-light` rule is not applied there. The Nav component follows the theme by default and has a `tone="light"` option that forces the light set.
 - **Weight 800 only at 56px and above.** Handoff 9.1 describes it that way. The site's own `.proof strong` is 40px at weight 800, and Vishal's Stage 1 answer allows the heavy narrow style at a smaller size once per screen. The `stat-sm` role keeps 40px at 800. Never heavier than 650 for paragraphs, buttons and labels, which the components follow.
-- **No brand accent.** Handoff 9.3 says the site has no accent of its own and a screen about no product stays neutral. Vishal's decision makes orange the default accent. Orange is the default value of the accent tokens only. Components stay neutral unless a screen asks for the accent.
+- **No brand accent.** Settled 5 Nov 2026. An earlier pass made orange the default accent. Vishal corrected it: orange is ixigo's product colour, not his, and handoff 9.3 stands. The accent tokens are now neutral by default and components stay neutral until a product sets an accent.
 
 ## Left out on purpose
 

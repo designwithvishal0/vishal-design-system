@@ -66,7 +66,7 @@ export function Gallery({ theme, accent }) {
             <Card.Body>Small text here uses the accent's muted colour.</Card.Body>
           </Card>
         </div>
-        <p className="pv-cap">The accent set for this screen colours the wash card. The palette, all five, for reference only:</p>
+        <p className="pv-cap">With no product accent the wash card is neutral. A product picks one of these five as its own colour:</p>
         <div className="pv-row">
           {PALETTE.map((a) => <span key={a} className="pv-chip" data-accent={a} style={{ background: 'var(--accent-wash)', color: 'var(--accent-ink)' }}>{a}</span>)}
         </div>
