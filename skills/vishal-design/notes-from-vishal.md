@@ -517,3 +517,11 @@ Why: people trust a screen that knows what matters. A screen that treats everyth
 When it may bend: a pure reference screen, like settings or a list of everything, can stay even and calm, because its job is to be scanned, not to say one thing.
 
 *The interview is complete: sixteen of sixteen answered, 5 November 2026.*
+
+## Stage 5: directions approved (5 November 2026)
+
+The six directions are approved, with teal for messaging and amber for the reading profile, and two changes in Vishal's words:
+
+1. "Threads first: a thread rising up the list breaks my rule that the layout under the user's finger never moves. New replies show a "new" marker in place, and the order only updates when the user comes back. The signature moment becomes the jump to the first unread reply."
+
+2. "My reading story: shelves must stay visible, because the brief requires them. Show them as a row of shelf names with counts, while the timeline leads."
