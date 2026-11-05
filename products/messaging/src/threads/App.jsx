@@ -114,7 +114,7 @@ export function App() {
                     leading={<Avatar name={people[t.root.author].name} size="sm" />}
                     title={t.root.text}
                     meta={`#${t.channel} · ${who(t)}`}
-                    trailing={n ? <Tag variant="accent">{n} new</Tag> : <time className="tf-time">{t.replies.at(-1).time}</time>}
+                    trailing={n ? <Tag variant="accent">{n} new</Tag> : <time className="tf-time">{t.replies.at(-1).day ?? t.replies.at(-1).time}</time>}
                   />
                 );
               })}
@@ -133,7 +133,7 @@ export function App() {
             <>
               <header className="tf-open__head">
                 <Button className="tf-back" variant="ghost" size="sm" onClick={() => setPhoneView('list')}>Back to threads</Button>
-                <p className="vd-type-eyebrow">#{open.channel}</p>
+                <p className="tf-channel">#{open.channel}</p>
                 <h1 className="vd-type-title" id="tf-title">{open.root.text.split('. ')[0]}</h1>
                 <div className="tf-open__actions">
                   {newCount > 0 ? (

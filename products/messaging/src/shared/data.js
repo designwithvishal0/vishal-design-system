@@ -33,7 +33,8 @@ export const directs = [
   { id: 'dm-asha', person: 'asha', unread: 0 },
 ];
 
-// Times are today unless a day is given. Text uses `backticks` for inline code.
+// Times are today unless a day is given. A thread shows a day divider where the day changes,
+// instead of repeating the day on every message. Text uses `backticks` for inline code.
 export const threads = [
   {
     id: 't-goals',
@@ -75,9 +76,9 @@ export const threads = [
   {
     id: 't-onboarding',
     channel: 'design',
-    root: { id: 'd1', author: 'maya', time: 'Yesterday', text: 'Critique on Friday at 4: the new onboarding. Three screens, one question each. Bring opinions.' },
+    root: { id: 'd1', author: 'maya', day: 'Yesterday', time: '4:05', text: 'Critique on Friday at 4: the new onboarding. Three screens, one question each. Bring opinions.' },
     replies: [
-      { id: 'd2', author: 'rohan', time: 'Yesterday', text: 'I will bring two versions of the income question. One asks for a range, one asks for nothing until day 3.' },
+      { id: 'd2', author: 'rohan', day: 'Yesterday', time: '4:20', text: 'I will bring two versions of the income question. One asks for a range, one asks for nothing until day 3.' },
       { id: 'd3', author: 'asha', time: '9:45', text: 'Can we keep it under 30 minutes? I have the release review at 4:30.' },
       { id: 'd4', author: 'rohan', time: '9:52', text: 'Yes, 25 minutes. I will share both versions before lunch.', status: 'failed' },
     ],
@@ -87,10 +88,10 @@ export const threads = [
   {
     id: 't-review',
     channel: 'launch',
-    root: { id: 'r1', author: 'ira', time: 'Yesterday', text: 'App Store screenshots are in the shared folder. Five frames, light and dark.' },
+    root: { id: 'r1', author: 'ira', day: 'Yesterday', time: '5:12', text: 'App Store screenshots are in the shared folder. Five frames, light and dark.' },
     replies: [
-      { id: 'r2', author: 'maya', time: 'Yesterday', text: 'Frame 3 still shows the old tab bar. Everything else looks right.' },
-      { id: 'r3', author: 'ira', time: 'Yesterday', text: 'Fixed and replaced. Thanks for catching it.' },
+      { id: 'r2', author: 'maya', day: 'Yesterday', time: '5:30', text: 'Frame 3 still shows the old tab bar. Everything else looks right.' },
+      { id: 'r3', author: 'ira', day: 'Yesterday', time: '5:41', text: 'Fixed and replaced. Thanks for catching it.' },
     ],
     lastRead: 'r3',
     people: ['ira', 'maya'],
@@ -100,8 +101,8 @@ export const threads = [
 // The channel view: recent messages in #launch, oldest first.
 export const channelMessages = {
   launch: [
-    { id: 'l1', author: 'asha', time: 'Yesterday', text: 'Release review moved to Friday 4:30. Same link.' },
-    { id: 'l2', author: 'ira', time: 'Yesterday', text: 'App Store screenshots are in the shared folder. Five frames, light and dark.', thread: 't-review' },
+    { id: 'l1', author: 'asha', day: 'Yesterday', time: '3:48', text: 'Release review moved to Friday 4:30. Same link.' },
+    { id: 'l2', author: 'ira', day: 'Yesterday', time: '5:12', text: 'App Store screenshots are in the shared folder. Five frames, light and dark.', thread: 't-review' },
     { id: 'l3', author: 'asha', time: '9:12', text: 'Savings goals copy is locked for 2.4. Last call on the empty state before I hand it to Ira for the App Store notes.', thread: 't-goals' },
     { id: 'l4', author: 'tom', time: '9:40', text: 'Build 2.4 (412) is on TestFlight. Release notes are in the build.' },
     { id: 'l5', author: 'tom', time: '9:41', text: 'Known issue: the widget can show last month’s balance after a restart. Fix is in review.' },
@@ -110,7 +111,7 @@ export const channelMessages = {
     { id: 'l8', author: 'ira', time: '10:05', text: 'I need the final line by 3 today to make the store submission.' },
   ],
   design: [
-    { id: 'g1', author: 'maya', time: 'Yesterday', text: 'Critique on Friday at 4: the new onboarding. Three screens, one question each.', thread: 't-onboarding' },
+    { id: 'g1', author: 'maya', day: 'Yesterday', time: '4:05', text: 'Critique on Friday at 4: the new onboarding. Three screens, one question each.', thread: 't-onboarding' },
     { id: 'g2', author: 'maya', time: '9:02', text: 'Icon set is updated in the library. Outline, 1.5 stroke, please swap any old ones you see.' },
     { id: 'g3', author: 'rohan', time: '9:30', text: 'Swapped in the goals flow. Two left in settings.' },
   ],
@@ -123,7 +124,7 @@ export const channelMessages = {
     { id: 'p2', author: 'kabir', time: '9:31', text: '@Rohan what should the message to these customers say? They are asking if they lost money.' },
   ],
   general: [
-    { id: 'n1', author: 'asha', time: 'Monday', text: 'Welcome Leila, who joins us to lead data. Say hello.' },
+    { id: 'n1', author: 'asha', day: 'Monday', time: '11:20', text: 'Welcome Leila, who joins us to lead data. Say hello.' },
   ],
   random: [],
 };

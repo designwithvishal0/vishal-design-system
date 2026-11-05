@@ -96,7 +96,7 @@ export function App() {
               {needs.map((n) => (
                 <List.Item key={n.id} as="button" selected={open?.id === n.id} onClick={() => openItem(n.id)}
                   leading={<Avatar name={people[n.from].name} size="sm" />}
-                  title={`${firstName(n.from)} · ${n.kind}${n.channel ? ` in #${n.channel}` : ''}`}
+                  title={n.channel ? `${firstName(n.from)} in #${n.channel}` : `${firstName(n.from)}, direct message`}
                   meta={n.text}
                   trailing={<span className="ny-when"><time className="ny-time">{n.time}</time>{n.due && <Tag variant="accent">{n.due}</Tag>}</span>}
                 />
@@ -126,7 +126,7 @@ export function App() {
             <>
               <header className="ny-convo__head">
                 <Button className="ny-back" variant="ghost" size="sm" onClick={() => setPhoneView('inbox')}>Back to inbox</Button>
-                <p className="vd-type-eyebrow">{convo.eyebrow}</p>
+                <p className="ny-where">{convo.eyebrow}</p>
                 <h1 className="vd-type-title" id="ny-title">{convo.title}</h1>
                 {isNeed && <div className="ny-convo__actions"><Button size="sm" onClick={() => done(open)}>Mark as done</Button></div>}
               </header>
