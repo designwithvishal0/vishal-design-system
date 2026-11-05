@@ -525,3 +525,9 @@ The six directions are approved, with teal for messaging and amber for the readi
 1. "Threads first: a thread rising up the list breaks my rule that the layout under the user's finger never moves. New replies show a "new" marker in place, and the order only updates when the user comes back. The signature moment becomes the jump to the first unread reply."
 
 2. "My reading story: shelves must stay visible, because the brief requires them. Show them as a row of shelf names with counts, while the timeline leads."
+
+## Messaging: replacing Keyboard first (5 Nov)
+
+Vishal's words, for the README: "The brief suggested three starting points. I kept two because they held up when I pushed them. I replaced the keyboard driven one, because it changed how you get around the screen, not what the screen is for."
+
+People first replaces it: the people you work with are the unit; channels and threads sit inside each person. Messaging pick stays Needs you.
