@@ -263,6 +263,7 @@ Run it in this order on every finished screen and mark each line pass or fail. B
 - [ ] The page is neutral; one product colour at most, set with `data-accent`.
 - [ ] Small accent text uses `text-aa`.
 - [ ] Shadows only on things that float; no hover lift.
+- [ ] One primary button per view. A composer's Send counts.
 
 **6. Content**
 - [ ] Real names, times and titles; no lorem ipsum; no invented numbers.
