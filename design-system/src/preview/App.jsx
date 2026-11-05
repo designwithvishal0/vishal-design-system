@@ -15,6 +15,7 @@ export function App() {
     <>
       <div className="pv-toolbar" data-theme="light">
         <strong className="vd-type-title">Components</strong>
+        <div className="pv-toolbar__accent">
         <label className="pv-toolbar__pick">
           Product accent
           <select value={accent} onChange={(e) => setAccent(e.target.value)}>
@@ -23,6 +24,7 @@ export function App() {
           </select>
         </label>
         <p className="pv-toolbar__note">Only parts that carry the product colour change: the wash card, accent tags, the accent avatar and selected rows. Everything else stays neutral by design.</p>
+        </div>
       </div>
       <div className="pv-panes">
         <Gallery theme="light" accent={screenAccent} />

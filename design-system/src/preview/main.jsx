@@ -5,4 +5,4 @@ import { App } from './App.jsx';
 import { mountSiteStrip } from '../site/SiteStrip.jsx';
 
 createRoot(document.getElementById('root')).render(<App />);
-mountSiteStrip(); // site chrome: the strip above the page
+mountSiteStrip({ theme: 'light', variant: 'toolbar' }); // site chrome: the strip, in the same theme and frame as the toolbar

@@ -6,3 +6,5 @@
 .site-strip__back .vd-icon { inline-size: var(--icon-sm); block-size: var(--icon-sm); }
 @media (hover: hover) and (pointer: fine) { .site-strip__back:hover { text-decoration: underline; text-underline-offset: var(--focus-offset); } }
 .site-strip__name { overflow: hidden; color: var(--color-muted); text-overflow: ellipsis; white-space: nowrap; }
+/* The components page's toolbar keeps 32px at every width, so its strip does too. */
+.site-strip--toolbar { padding-inline: var(--space-6); }
