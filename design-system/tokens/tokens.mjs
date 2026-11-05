@@ -35,6 +35,7 @@ export const themed = {
   'color-panel-ink': { light: '#F2F1EC', dark: '#F2F1EC', ...site('.end --ink'), use: 'Text on the panel' },
   'color-panel-muted': { light: '#A7A7AE', dark: '#A7A7AE', ...site('.end --muted'), use: 'Secondary text on the panel' },
   'color-panel-line': { light: '#2A2A30', dark: '#2A2A30', ...site('.end --line'), use: 'Dividers on the panel' },
+  'color-panel-edge': { light: '#6B6B72', dark: '#6B6B72', ...site('.end --edge'), use: 'Control borders on the panel' },
   'color-panel-btn': { light: '#F2F1EC', dark: '#F2F1EC', ...site('.end --btn'), use: 'Primary button fill on the panel' },
   'color-panel-on-btn': { light: '#0C0C0E', dark: '#0C0C0E', ...site('.end --on-btn'), use: 'Text on that button' },
 
@@ -185,6 +186,12 @@ export const fixed = {
   'space-10': { value: '120px', ...spacing('padding: 120px 0, case study sections'), use: 'Largest block spacing' },
   'space-11': { value: '160px', ...spacing('160px between sections on the home page, handoff 2.6'), use: 'Between sections of a page' },
 
+  // Line width and stacking
+  'border-w': { value: '1px', ...site('1px borders, rings and hairlines everywhere'), use: 'Every border and ring' },
+  'z-bar': { value: 30, ...site('.bar z-index'), use: 'Sticky top bar' },
+  'z-popover': { value: 60, ...ext('The site has one popover and no scale. Menus and popovers sit above the bar.'), use: 'Menus and popovers' },
+  'z-overlay': { value: 100, ...ext('Modals and sheets sit above everything.'), use: 'Modals, sheets and their scrim' },
+
   // Layout
   'layout-max': { value: '1376px', ...site('--max'), use: 'Maximum content width' },
   'layout-gutter': { value: '32px', mobile: '16px', ...site('--gut'), use: 'Side gutter' },
@@ -196,6 +203,7 @@ export const fixed = {
   'tag-pad-x': { value: '10px', ...site('.pill padding: 2px 10px'), use: 'Side padding of a tag' },
   'tag-pad-y': { value: '2px', ...site('.pill padding: 2px 10px'), use: 'Top and bottom padding of a tag' },
   'glass-filter': { value: 'blur(18px) saturate(1.8)', ...site('.bar backdrop-filter'), use: 'Frosted top bar' },
+  'glass-mix': { value: '96%', ...site('.bar background: color-mix(bg 96%, transparent)'), use: 'How much page colour the frosted bar keeps' },
   'row-h-dense': {
     value: '32px',
     ...ext('Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between.'),

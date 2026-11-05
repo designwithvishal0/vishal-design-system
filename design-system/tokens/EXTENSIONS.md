@@ -11,6 +11,8 @@ Every token that is not read from the live portfolio. Each one fills a gap the p
 - `elev-4`: Light shadow is on the site (0 24px 60px). The ring and the whole dark value are proposed.
 - `elev-panel`: The site closing panel has only a faint ring (#26262b) in dark. Vishal rule: no dark on dark, so the panel gets the strong border.
 - `space-1, space-snug, space-2, space-3, space-4, space-5, space-6, space-7, space-8, space-9, space-10, space-11`: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats.
+- `z-popover`: The site has one popover and no scale. Menus and popovers sit above the bar.
+- `z-overlay`: Modals and sheets sit above everything.
 - `row-h-dense`: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between.
 - `state-disabled-opacity`: The site has no disabled state.
 - `accent-sky-ink, accent-sky-text`: The site defines only the wash and muted colours for sky. The heading ink and accent text are proposed here, deeper blues that keep 5 to 1 or better on the wash.

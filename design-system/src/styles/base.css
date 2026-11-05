@@ -1,0 +1,77 @@
+/* Base styles. Import this once at the top of an app.
+ * Tokens come from ../../tokens/tokens.css. Everything here uses tokens only. */
+@import '@fontsource-variable/bricolage-grotesque/standard.css';
+@import '../../tokens/tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: var(--type-body-weight);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-lh);
+  font-stretch: var(--type-body-stretch);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+/* The site's one focus style, on every focusable thing. The site also sets a 4px corner on the
+   outline, which would square off a pill button, so the corner follows each element's own radius. */
+:focus-visible {
+  outline: var(--focus-width) solid var(--color-ink);
+  outline-offset: var(--focus-offset);
+}
+
+/* Inverse surface. Everything inside swaps to the panel colours by itself, like the site's closing panel. */
+.vd-inverse {
+  --color-bg: var(--color-panel-bg);
+  --color-ink: var(--color-panel-ink);
+  --color-muted: var(--color-panel-muted);
+  --color-line: var(--color-panel-line);
+  --color-edge: var(--color-panel-edge);
+  --color-btn: var(--color-panel-btn);
+  --color-on-btn: var(--color-panel-on-btn);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  color-scheme: dark;
+}
+
+/* The site's link underline: a faint base line, and a full line draws in on hover. */
+.vd-ul {
+  text-decoration: none;
+  background:
+    linear-gradient(color-mix(in srgb, currentColor 32%, transparent), color-mix(in srgb, currentColor 32%, transparent)) no-repeat 0 100% / 100% var(--border-w),
+    linear-gradient(currentColor, currentColor) no-repeat 100% 100% / 0 var(--border-w);
+  transition: background-size var(--dur-fast) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .vd-ul:hover, .vd-ul:focus-visible { background-size: 100% var(--border-w), 100% var(--border-w); background-position: 0 100%, 0 100%; }
+}
+
+/* Visually hidden, still read by screen readers. */
+.vd-sr { position: absolute; width: var(--border-w); height: var(--border-w); margin: calc(var(--border-w) * -1); overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+/* Type role helpers: .vd-type-display, .vd-type-title and so on. */
+.vd-type-display-xl { font-size: var(--type-display-xl-size); font-weight: var(--type-display-xl-weight); font-stretch: var(--type-display-xl-stretch); line-height: var(--type-display-xl-lh); letter-spacing: var(--type-display-xl-tracking); }
+.vd-type-display { font-size: var(--type-display-size); font-weight: var(--type-display-weight); font-stretch: var(--type-display-stretch); line-height: var(--type-display-lh); letter-spacing: var(--type-display-tracking); }
+.vd-type-stat { font-size: var(--type-stat-size); font-weight: var(--type-stat-weight); font-stretch: var(--type-stat-stretch); line-height: var(--type-stat-lh); letter-spacing: var(--type-stat-tracking); }
+.vd-type-stat-sm { font-size: var(--type-stat-sm-size); font-weight: var(--type-stat-sm-weight); font-stretch: var(--type-stat-sm-stretch); line-height: var(--type-stat-sm-lh); letter-spacing: var(--type-stat-sm-tracking); }
+.vd-type-heading-lg { font-size: var(--type-heading-lg-size); font-weight: var(--type-heading-lg-weight); font-stretch: var(--type-heading-lg-stretch); line-height: var(--type-heading-lg-lh); letter-spacing: var(--type-heading-lg-tracking); }
+.vd-type-heading { font-size: var(--type-heading-size); font-weight: var(--type-heading-weight); font-stretch: var(--type-heading-stretch); line-height: var(--type-heading-lh); letter-spacing: var(--type-heading-tracking); }
+.vd-type-title { font-size: var(--type-title-size); font-weight: var(--type-title-weight); font-stretch: var(--type-title-stretch); line-height: var(--type-title-lh); letter-spacing: var(--type-title-tracking); }
+.vd-type-title-sm { font-size: var(--type-title-sm-size); font-weight: var(--type-title-sm-weight); font-stretch: var(--type-title-sm-stretch); line-height: var(--type-title-sm-lh); letter-spacing: var(--type-title-sm-tracking); }
+.vd-type-story { font-size: var(--type-story-size); font-weight: var(--type-story-weight); font-stretch: var(--type-story-stretch); line-height: var(--type-story-lh); letter-spacing: var(--type-story-tracking); }
+.vd-type-lead { font-size: var(--type-lead-size); font-weight: var(--type-lead-weight); font-stretch: var(--type-lead-stretch); line-height: var(--type-lead-lh); letter-spacing: var(--type-lead-tracking); }
+.vd-type-body { font-size: var(--type-body-size); font-weight: var(--type-body-weight); font-stretch: var(--type-body-stretch); line-height: var(--type-body-lh); letter-spacing: var(--type-body-tracking); }
+.vd-type-small { font-size: var(--type-small-size); font-weight: var(--type-small-weight); font-stretch: var(--type-small-stretch); line-height: var(--type-small-lh); letter-spacing: var(--type-small-tracking); }
+.vd-type-meta { font-size: var(--type-meta-size); font-weight: var(--type-meta-weight); font-stretch: var(--type-meta-stretch); line-height: var(--type-meta-lh); letter-spacing: var(--type-meta-tracking); }
+.vd-type-label { font-size: var(--type-label-size); font-weight: var(--type-label-weight); font-stretch: var(--type-label-stretch); line-height: var(--type-label-lh); letter-spacing: var(--type-label-tracking); }

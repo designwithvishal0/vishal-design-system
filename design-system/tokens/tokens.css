@@ -24,6 +24,7 @@
   --color-panel-ink: #F2F1EC; /* site: .end --ink */
   --color-panel-muted: #A7A7AE; /* site: .end --muted */
   --color-panel-line: #2A2A30; /* site: .end --line */
+  --color-panel-edge: #6B6B72; /* site: .end --edge */
   --color-panel-btn: #F2F1EC; /* site: .end --btn */
   --color-panel-on-btn: #0C0C0E; /* site: .end --on-btn */
   --color-surface-1: #F2F2EE; /* EXTENSION: The site draws no cards on the page background. Product screens need a surface for cards and panels. In dark it is clearly lighter than the page (1.15 to 1). */
@@ -87,6 +88,7 @@
     --color-panel-ink: #F2F1EC; /* site: .end --ink */
     --color-panel-muted: #A7A7AE; /* site: .end --muted */
     --color-panel-line: #2A2A30; /* site: .end --line */
+    --color-panel-edge: #6B6B72; /* site: .end --edge */
     --color-panel-btn: #F2F1EC; /* site: .end --btn */
     --color-panel-on-btn: #0C0C0E; /* site: .end --on-btn */
     --color-surface-1: #1C1C20; /* EXTENSION: The site draws no cards on the page background. Product screens need a surface for cards and panels. In dark it is clearly lighter than the page (1.15 to 1). */
@@ -150,6 +152,7 @@
   --color-panel-ink: #F2F1EC; /* site: .end --ink */
   --color-panel-muted: #A7A7AE; /* site: .end --muted */
   --color-panel-line: #2A2A30; /* site: .end --line */
+  --color-panel-edge: #6B6B72; /* site: .end --edge */
   --color-panel-btn: #F2F1EC; /* site: .end --btn */
   --color-panel-on-btn: #0C0C0E; /* site: .end --on-btn */
   --color-surface-1: #1C1C20; /* EXTENSION: The site draws no cards on the page background. Product screens need a surface for cards and panels. In dark it is clearly lighter than the page (1.15 to 1). */
@@ -223,6 +226,10 @@
   --space-9: 96px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
   --space-10: 120px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
   --space-11: 160px; /* EXTENSION: Spacing scale. The live site has no spacing tokens (handoff 2.6), so the scale is derived from the gaps and paddings the site repeats. */
+  --border-w: 1px; /* site: 1px borders, rings and hairlines everywhere */
+  --z-bar: 30; /* site: .bar z-index */
+  --z-popover: 60; /* EXTENSION: The site has one popover and no scale. Menus and popovers sit above the bar. */
+  --z-overlay: 100; /* EXTENSION: Modals and sheets sit above everything. */
   --layout-max: 1376px; /* site: --max */
   --layout-gutter: 32px; /* site: --gut */
   --layout-bar: 56px; /* site: --bar */
@@ -233,6 +240,7 @@
   --tag-pad-x: 10px; /* site: .pill padding: 2px 10px */
   --tag-pad-y: 2px; /* site: .pill padding: 2px 10px */
   --glass-filter: blur(18px) saturate(1.8); /* site: .bar backdrop-filter */
+  --glass-mix: 96%; /* site: .bar background: color-mix(bg 96%, transparent) */
   --row-h-dense: 32px; /* EXTENSION: Chat messages and long book lists need a row tighter than the 44px control. 32px with space-snug between. */
   --radius-xs: 4px; /* site: border-radius: 4px, focus outline */
   --radius-sm: 12px; /* site: border-radius: 12px */
