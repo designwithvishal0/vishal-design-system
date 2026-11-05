@@ -1,5 +1,6 @@
 .vd-avatar {
   --size: var(--control-h-sm);
+  --dot: var(--space-2);
   position: relative;
   display: inline-grid;
   place-items: center;
@@ -15,7 +16,7 @@
   line-height: 1;
   user-select: none;
 }
-.vd-avatar--xs { --size: var(--space-5); }
+.vd-avatar--xs { --size: var(--space-5); --dot: var(--space-snug); }
 .vd-avatar--sm { --size: var(--space-6); }
 .vd-avatar--lg { --size: var(--control-h); }
 .vd-avatar--xl { --size: var(--layout-bar); }
@@ -25,14 +26,16 @@
 
 .vd-avatar__img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
 
+/* The dot sits on the circle's edge at the bottom right (45 degrees), so it never covers the initials,
+   with a 2px ring in the page colour to cut it out of the avatar. 0.1464 is 1 minus cos 45, halved.
+   It does not pulse: a ripple would cross the initials. The 24px avatar gets a 6px dot so it clears them. */
 .vd-avatar__status {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: var(--space-2);
-  height: var(--space-2);
+  right: calc(var(--size) * 0.1464 - var(--dot) / 2);
+  bottom: calc(var(--size) * 0.1464 - var(--dot) / 2);
+  width: var(--dot);
+  height: var(--dot);
   border-radius: var(--radius-round);
   background: var(--color-live);
-  outline: calc(var(--border-w) * 2) solid var(--color-bg);
+  box-shadow: 0 0 0 calc(var(--border-w) * 2) var(--color-bg);
 }
-.vd-avatar__status::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: var(--color-live); animation: vd-ping var(--dur-ping) var(--ease-out) infinite; }
