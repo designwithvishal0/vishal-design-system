@@ -383,3 +383,41 @@ I check from the biggest question to the smallest detail. Fixing details on a sc
 
 Why: a screen fails people in this order. A missing answer loses them in seconds, a weak hierarchy in a minute, broken states over days. Checking in the same order fixes the biggest problems first.
 When it may bend: never skip a step. On a small screen some steps take seconds, but every step is checked.
+
+### Wow
+
+**13. Signature moment: what is the one moment on a screen that people remember, and how do you decide where it goes, how big it is, and when a screen should have none?**
+
+A signature moment is the point where the screen's main idea stops being read and starts being felt. It is not decoration added on top. On my site, "unsure." jitters and comes in many pencil colours because the word itself is about uncertainty. The form carries the meaning.
+
+Examples from my portfolio:
+1. The rising headline: my idea arrives word by word, the way a thought forms.
+2. The "unsure." letters: the one emotional word gets the one expressive treatment.
+3. The counting numbers: results like 60% count up, so they feel earned instead of stated.
+4. The dark closing panel: the page ends on one strong moment, because people remember how something ends.
+
+Where it goes:
+1. On the answer to the main question, or on the moment of change or achievement.
+2. Often at the end of a flow, because the end is what people remember.
+3. Never on something secondary. If it does not connect to the screen's main idea, it is in the wrong place.
+
+How big it is, from the stakes and how often people see it:
+1. Rare and high stakes, like a first visit or a launch: it can be big, a whole hero.
+2. Used now and then: a component, like one stat or one headline.
+3. Used fifty times a day, like messaging: small and fast, under a second, and it never slows the user down.
+
+How it is built:
+1. Only from the system's own materials: the heavy narrow type, numbers, the product's colour and motion. No new styles.
+2. It must still work as a still image. Motion makes it stronger, but under Reduce motion it is still the most memorable thing on the screen.
+
+When a screen gets none:
+1. Errors, settings, forms people want to finish, and anything where the job is speed.
+2. When nothing on the screen is worth remembering, the honest answer is no moment.
+3. When two moments compete, keep one and cut the other.
+
+The test: remove it. If the screen loses meaning, it was a real signature moment. If it only loses decoration, it was not.
+
+For messaging, it could be the moment the last thing needing you is cleared, and the screen settles into "You're all caught up." For a reading profile, it could be the yearly challenge, "34 of 50", where the number counts up to where you are.
+
+Why: people do not remember every screen, they remember one moment. Choosing that moment on purpose is what separates a designed product from a tidy one.
+When it may bend: a launch can have one moment per section instead of one per screen, but each one still passes the remove test.
