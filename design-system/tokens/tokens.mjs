@@ -287,6 +287,7 @@ export const roles = {
   'small': { size: '15px', mobile: '15px', weight: 500, stretch: '100%', lh: 1.45, tracking: 'normal', ...site('.nav, --kfs-small'), use: 'Nav, secondary text' },
   'meta': { size: '14px', mobile: '14px', weight: 600, stretch: '100%', lh: 1.4, tracking: 'normal', ...site('meta lines, handoff 2.5'), use: 'Card meta line: Product · Type · Concept or Shipped · Year' },
   'label': { size: '13px', mobile: '13px', weight: 600, stretch: '100%', lh: 1.4, tracking: 'normal', ...site('.pill, --kfs-label'), use: 'Tags and labels' },
+  'eyebrow': { size: '13px', mobile: '13px', weight: 600, stretch: '100%', lh: 1.4, tracking: '0.14em', transform: 'uppercase', ...site('case study eyebrow, 13px weight 600 .14em (handoff 2.5). Added to the system by Vishal, 5 Nov 2026'), use: 'Small uppercase eyebrow above a heading. The only uppercase text' },
 };
 
 // Breakpoints cannot be CSS variables inside media queries, so they live here only.

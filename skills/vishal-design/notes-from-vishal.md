@@ -191,3 +191,7 @@ Details I always fix:
 
 Why: type is most of what people see on a screen. When the hierarchy is right, a screen reads in two seconds, and when the details are fixed, it looks finished even before colour or images arrive.
 When it may bend: marketing or launch moments can push the display size beyond the usual, but still one moment per screen.
+
+**Decision on the type differences (5 November 2026)**
+
+"My size list in answer 6 was the body and interface tier, not the whole scale. Keep the 14px meta role and the 22px title role, keep the heading tier from 24px to 40px, and add an eyebrow token: 13px, weight 600, uppercase, .14em tracking."
