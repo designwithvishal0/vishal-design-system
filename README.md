@@ -85,6 +85,8 @@ See what it built: **[the claim flow, live](https://vishal-design-system.vercel.
 
 A second test ran in Figma Make, with the repo cloned and the skill used as it is: an employee books a doctor's video consultation through company health benefits. It followed the work order, wrote three directions before any code, kept one product colour and one display moment per screen, designed its states, and its code passed the token check. It found three skill misses: a character escape showing on screen, a hyphen removed from a booking reference, and a theme button labelled with its state instead of its action. All three are now fixed in the skill. Details are in [`products/cold-test.md`](products/cold-test.md).
 
+A third test gave Figma Make only `SKILL.md`, with no `design-system/` beside it, on the same brief. With only the skill file, the thinking held and the visual details drifted. The fix is telling an agent where the system lives. Details are in [`products/cold-test.md`](products/cold-test.md).
+
 ## How it was made
 
 Built with Claude Code, stage by stage, with a stop at every checkpoint for my review. Every decision that is mine is recorded in my words in `skills/vishal-design/notes-from-vishal.md`; nothing there was filled in for me. The commit history shows the work as it happened.
