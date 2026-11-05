@@ -3,6 +3,10 @@ import './site.css';
 import { createRoot } from 'react-dom/client';
 import { Button, Tag } from '../design-system/src/index.js';
 
+// The same theme switch as the layouts: ?theme=light or ?theme=dark, otherwise the system setting.
+const theme = new URLSearchParams(location.search).get('theme');
+if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+
 // The hand in page: every layout with its one line idea, in light and dark, and the two picks.
 const products = [
   { name: 'Team messaging', accent: 'teal', base: './messaging/', layouts: [
