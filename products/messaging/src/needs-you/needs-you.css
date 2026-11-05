@@ -1,0 +1,54 @@
+/* Needs you. Channels on the left, the inbox of what needs you in the middle, the conversation on the right. */
+.ny { grid-template-columns: calc(var(--space-6) * 7) calc(var(--space-6) * 13) 1fr; }
+.ny-search { inline-size: calc(var(--space-6) * 7); }
+.ny-side { padding: var(--space-5) var(--space-3); }
+.ny-count { color: var(--color-ink); font-size: var(--type-label-size); font-weight: var(--weight-ui); font-variant-numeric: tabular-nums; }
+.ny-muted { margin: 0; color: var(--color-muted); font-size: var(--type-small-size); line-height: var(--type-small-lh); }
+.ny-time { color: var(--color-muted); font-size: var(--type-label-size); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.ny-inbox { display: flex; flex-direction: column; padding-bottom: var(--space-6); }
+.ny-head { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5) var(--space-5) var(--space-4); }
+.ny-head p { margin: 0; }
+.ny-clear { display: flex; flex-direction: column; gap: var(--space-2); animation: ny-settle var(--dur-reveal) var(--ease-out) both; }
+@keyframes ny-settle { from { opacity: 0; translate: 0 var(--reveal-distance); } to { opacity: 1; translate: 0 0; } }
+
+.ny-group { margin: var(--space-6) var(--space-5) var(--space-2); color: var(--color-muted); }
+.ny-rows { padding: 0 var(--space-3); }
+.ny-rows .vd-list__row { align-items: flex-start; }
+.ny-rows .vd-list__title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--type-small-size); font-weight: var(--weight-ui); line-height: var(--type-small-lh); }
+.ny-rows .vd-list__meta { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.ny-rows .vd-list__trail { padding-top: var(--space-1); }
+/* What waits on others, and the rest of the channels, stay quieter than what needs you. */
+.ny-rows--quiet .vd-list__title { font-weight: var(--weight-medium); }
+.ny-rows--quiet .vd-list__meta { -webkit-line-clamp: 1; font-size: var(--type-label-size); }
+
+.ny-convo { display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; }
+.ny-convo__head { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-5) var(--space-6) var(--space-4); border-bottom: var(--border-w) solid var(--color-line); }
+.ny-convo__head h1, .ny-convo__head p { margin: 0; }
+.ny-convo__head .vd-type-title { max-inline-size: var(--measure-max); text-wrap: balance; }
+.ny-convo__actions { display: flex; gap: var(--space-2); }
+.ny-convo__scroll { min-height: 0; overflow: auto; padding: var(--space-4) var(--space-5); }
+.ny-convo__composer { padding: var(--space-4) var(--space-5) var(--space-5); border-top: var(--border-w) solid var(--color-line); }
+.ny-convo__empty { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-6); }
+.ny-convo__empty p { margin: 0; }
+.ny-back { display: none; align-self: flex-start; margin-inline-start: calc(var(--space-3) * -1); }
+
+/* Toast (skill recipe: Toast). */
+.ny-toast { position: fixed; inset-inline: 0; inset-block-end: var(--space-5); z-index: var(--z-popover); inline-size: fit-content; max-inline-size: calc(100% - var(--layout-gutter) * 2); margin-inline: auto; display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4); border-radius: var(--radius-pill); background: var(--color-surface-2); box-shadow: var(--elev-3); font-size: var(--type-small-size); animation: ny-settle var(--dur-base) var(--ease-out) both; }
+
+@media (max-width: 1023px) {
+  .ny { grid-template-columns: calc(var(--space-6) * 12) 1fr; }
+  .ny-side { display: none; }
+}
+@media (max-width: 759px) {
+  .ny { grid-template-columns: 1fr; }
+  .ny-search { display: none; }
+  .ny[data-phone='inbox'] .ny-convo { display: none; }
+  .ny[data-phone='convo'] .ny-inbox { display: none; }
+  .ny-back { display: inline-flex; }
+  .panel--line { border-right: 0; }
+  .ny-convo { min-height: calc(100dvh - var(--layout-bar)); }
+  .ny-convo__head { padding-inline: var(--layout-gutter); }
+  .ny-convo__scroll { padding-inline: var(--space-2); }
+  .ny-convo__composer { position: sticky; bottom: 0; background: var(--color-bg); padding-inline: var(--layout-gutter); }
+}

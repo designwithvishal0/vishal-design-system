@@ -1,0 +1,170 @@
+import { useEffect, useRef, useState } from 'react';
+import { Nav, NavList, List, Avatar, Tag, Button, Input, IconHash, IconSearch } from '../shared/ds.js';
+import { needsYou as seedNeeds, waitingOnOthers, channels, directs, people, me, firstName, threadById, channelMessages } from '../shared/data.js';
+import { Thread } from '../shared/Thread.jsx';
+import { Composer } from '../shared/Composer.jsx';
+import './needs-you.css';
+
+// Direction 2, Needs you. One inbox of only what needs your reply or decision; everything else waits.
+// Question: "What needs me right now?" Organised by status. Signature moment: clearing the last item
+// settles the screen into "You're all caught up."
+
+const dmMessages = { 'dm-maya': [{ id: 'dm1', author: 'maya', time: '10:11', text: 'Free for 10 minutes before lunch? I want your eyes on the goals chart.' }] };
+const now = () => new Date().toTimeString().slice(0, 5).replace(/^0/, '');
+const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// What the right pane shows for an item: its thread, a DM, or a channel.
+function conversationFor(open) {
+  if (open.kind === 'channel') return { eyebrow: `#${open.id}`, title: channels.find((c) => c.id === open.id).topic, messages: channelMessages[open.id], replyTo: `#${open.id}` };
+  if (open.dm) return { eyebrow: 'Direct message', title: people[open.from].name, messages: dmMessages[open.dm], replyTo: firstName(open.from) };
+  const t = threadById(open.thread);
+  return { eyebrow: `#${t.channel}`, title: open.text, messages: [t.root, ...t.replies], replyTo: firstName(open.from ?? open.who) };
+}
+
+export function App() {
+  const [needs, setNeeds] = useState(seedNeeds);
+  const [openId, setOpenId] = useState(seedNeeds[0].id);
+  const [sent, setSent] = useState({});
+  const [toast, setToast] = useState(null);
+  const [phoneView, setPhoneView] = useState('inbox');
+  const toastTimer = useRef();
+
+  const everything = channels.filter((c) => c.unread > 0);
+  const allItems = [...needs, ...waitingOnOthers, ...everything.map((c) => ({ id: `c-${c.id}`, kind: 'channel', ...c }))];
+  const open = allItems.find((i) => i.id === openId) ?? (needs[0] || null);
+  const convo = open && conversationFor(open);
+  const messages = convo ? [...convo.messages, ...(sent[open.id] ?? [])] : [];
+
+  const showToast = (t) => { setToast(t); clearTimeout(toastTimer.current); toastTimer.current = setTimeout(() => setToast(null), 5000); };
+  useEffect(() => () => clearTimeout(toastTimer.current), []);
+
+  const done = (item) => {
+    const rest = needs.filter((n) => n.id !== item.id);
+    setNeeds(rest);
+    setOpenId(rest[0]?.id ?? null);
+    showToast({ text: `Moved out of Needs you: ${item.kind === 'Direct message' ? 'message from' : 'question from'} ${firstName(item.from)}.`, undo: () => { setNeeds((n) => seedNeeds.filter((s) => s.id === item.id || n.some((x) => x.id === s.id))); setOpenId(item.id); setToast(null); } });
+    if (!rest.length) setPhoneView('inbox');
+  };
+
+  const send = (text) => {
+    const id = `s-${Date.now()}`;
+    setSent((s) => ({ ...s, [open.id]: [...(s[open.id] ?? []), { id, author: me, time: now(), text, status: 'sending' }] }));
+    setTimeout(() => setSent((s) => ({ ...s, [open.id]: s[open.id].map((m) => (m.id === id ? { ...m, status: undefined } : m)) })), 700);
+    // Replying to something that needs you is the most common way it gets done.
+    if (needs.some((n) => n.id === open.id)) setTimeout(() => done(open), 900);
+  };
+
+  const openItem = (id) => { setOpenId(id); setPhoneView('convo'); };
+  const isNeed = open && needs.some((n) => n.id === open.id);
+
+  return (
+    <div className="app" data-accent="teal">
+      <Nav brand="Kite" sticky={false} bordered label="Views"
+        actions={<>
+          <Input label="Search Kite" hideLabel placeholder="Search" leading={<IconSearch />} className="ny-search" />
+          <Avatar name={people[me].name} size="sm" status="live" />
+        </>}
+      >
+        <Nav.Link href="#needs" current>Needs you</Nav.Link>
+        <Nav.Link href="#channels">Channels</Nav.Link>
+        <Nav.Link href="#direct">Direct messages</Nav.Link>
+      </Nav>
+
+      <div className="app__body ny" data-phone={phoneView}>
+        <aside className="panel panel--line ny-side">
+          <NavList label="Channels">
+            <NavList.Heading>Channels</NavList.Heading>
+            {channels.map((c) => (
+              <NavList.Item key={c.id} as="button" leading={<IconHash />} unread={c.unread > 0} current={open?.id === `c-${c.id}`}
+                onClick={() => openItem(`c-${c.id}`)} trailing={c.unread ? <span className="ny-count">{c.unread}</span> : null}>
+                {c.name}
+              </NavList.Item>
+            ))}
+            <NavList.Heading>Direct messages</NavList.Heading>
+            {directs.map((d) => (
+              <NavList.Item key={d.id} as="button" leading={<Avatar name={people[d.person].name} size="xs" status={people[d.person].live ? 'live' : undefined} />}
+                unread={d.unread > 0 && needs.some((n) => n.dm === d.id)} onClick={() => needs.some((n) => n.dm === d.id) && openItem(needs.find((n) => n.dm === d.id).id)}>
+                {people[d.person].name}
+              </NavList.Item>
+            ))}
+          </NavList>
+        </aside>
+
+        <section className="panel panel--line ny-inbox" aria-labelledby="ny-q">
+          <header className="ny-head">
+            <p className="vd-type-eyebrow" id="ny-q">What needs you right now</p>
+            {needs.length ? (
+              <>
+                <p className="vd-type-stat-sm">{needs.length} {needs.length === 1 ? 'needs' : 'need'} you</p>
+                <p className="ny-muted">Oldest first. Reply, or mark it done, and it leaves this list.</p>
+              </>
+            ) : (
+              <div className="ny-clear">
+                <p className="vd-type-stat-sm">You’re all caught up.</p>
+                <p className="ny-muted">{waitingOnOthers.length} things are waiting on others, and {everything.length} channels have news below.</p>
+              </div>
+            )}
+          </header>
+
+          {needs.length > 0 && (
+            <List className="ny-rows ny-rows--needs">
+              {needs.map((n) => (
+                <List.Item key={n.id} as="button" selected={open?.id === n.id} onClick={() => openItem(n.id)}
+                  leading={<Avatar name={people[n.from].name} size="sm" />}
+                  title={`${firstName(n.from)} · ${n.kind}${n.channel ? ` in #${n.channel}` : ''}`}
+                  meta={n.text}
+                  trailing={n.due ? <Tag variant="accent">{n.due}</Tag> : <time className="ny-time">{n.time}</time>}
+                />
+              ))}
+            </List>
+          )}
+
+          <h2 className="ny-group vd-type-eyebrow">Waiting on others</h2>
+          <List className="ny-rows ny-rows--quiet">
+            {waitingOnOthers.map((o) => (
+              <List.Item key={o.id} as="button" selected={open?.id === o.id} onClick={() => openItem(o.id)}
+                leading={<Avatar name={people[o.who].name} size="sm" />} title={o.text} meta={`#${o.channel}`} trailing={<time className="ny-time">{o.time}</time>} />
+            ))}
+          </List>
+
+          <h2 className="ny-group vd-type-eyebrow">Everything else</h2>
+          <List className="ny-rows ny-rows--quiet">
+            {everything.map((c) => (
+              <List.Item key={c.id} as="button" selected={open?.id === `c-${c.id}`} onClick={() => openItem(`c-${c.id}`)}
+                title={`#${c.name}`} meta={c.topic} trailing={<span className="ny-time">{c.unread} new</span>} />
+            ))}
+          </List>
+        </section>
+
+        <section className="panel ny-convo" aria-labelledby="ny-title">
+          {convo ? (
+            <>
+              <header className="ny-convo__head">
+                <Button className="ny-back" variant="ghost" size="sm" onClick={() => setPhoneView('inbox')}>Back to inbox</Button>
+                <p className="vd-type-eyebrow">{convo.eyebrow}</p>
+                <h1 className="vd-type-title" id="ny-title">{convo.title}</h1>
+                {isNeed && <div className="ny-convo__actions"><Button size="sm" onClick={() => done(open)}>Mark as done</Button></div>}
+              </header>
+              <div className="ny-convo__scroll"><Thread label="Messages" messages={messages} /></div>
+              <footer className="ny-convo__composer">
+                <Composer label={`Reply to ${convo.replyTo}`} placeholder={`Reply to ${convo.replyTo}`} onSend={send} />
+              </footer>
+            </>
+          ) : (
+            <div className="ny-convo__empty">
+              <p className="vd-type-title">Nothing open</p>
+              <p className="ny-muted">Pick a channel or a message on the left.</p>
+            </div>
+          )}
+        </section>
+      </div>
+
+      {toast && (
+        <div className="ny-toast" role="status" aria-live="polite">
+          <span>{toast.text}</span>
+          <Button variant="ghost" size="sm" onClick={toast.undo}>Undo</Button>
+        </div>
+      )}
+    </div>
+  );
+}
