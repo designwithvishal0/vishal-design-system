@@ -3,5 +3,5 @@ dist
 .DS_Store
 PAZCARE_BRIEF.md
 scratch/
-site/
+/site/
 .vercel

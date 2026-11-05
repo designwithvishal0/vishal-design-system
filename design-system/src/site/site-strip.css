@@ -1,0 +1,8 @@
+/* Site chrome, not the product: the page background, a hairline under it, label type, no accent and no shadow.
+   --site-strip is its height, so app shells that fill the screen can use the height left below it. */
+:root { --site-strip: calc(var(--control-h-sm) + var(--border-w)); }
+.site-strip { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); block-size: var(--site-strip); padding-inline: var(--layout-gutter); background: var(--color-bg); border-bottom: var(--border-w) solid var(--color-line); color: var(--color-ink); font-size: var(--type-label-size); font-weight: var(--type-label-weight); line-height: var(--type-label-lh); }
+.site-strip__back { display: inline-flex; align-items: center; gap: var(--space-2); min-block-size: var(--control-h-sm); color: inherit; text-decoration: none; }
+.site-strip__back .vd-icon { inline-size: var(--icon-sm); block-size: var(--icon-sm); }
+@media (hover: hover) and (pointer: fine) { .site-strip__back:hover { text-decoration: underline; text-underline-offset: var(--focus-offset); } }
+.site-strip__name { overflow: hidden; color: var(--color-muted); text-overflow: ellipsis; white-space: nowrap; }

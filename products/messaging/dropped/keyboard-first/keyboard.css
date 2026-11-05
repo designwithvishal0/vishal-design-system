@@ -38,6 +38,6 @@
   .kb { grid-template-columns: 1fr; }
   .kb-rail { display: none; }
   .kb-trigger--phone { display: inline-flex; inline-size: 100%; min-block-size: var(--control-h); margin-bottom: var(--space-4); }
-  .kb-main { min-height: calc(100dvh - var(--layout-bar)); }
+  .kb-main { min-height: calc(100dvh - var(--layout-bar) - var(--site-strip)); }
   .kb-composer { position: sticky; bottom: 0; background: var(--color-bg); }
 }

@@ -9,7 +9,7 @@ import { join, extname, relative, isAbsolute, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-const dirs = process.argv.slice(2).length ? process.argv.slice(2) : ['src/components', 'src/preview', 'src/styles/base.css'];
+const dirs = process.argv.slice(2).length ? process.argv.slice(2) : ['src/components', 'src/preview', 'src/site', 'src/styles/base.css'];
 
 const statExists = (p) => { try { statSync(p); return true; } catch { return false; } };
 const walk = (p) => (statSync(p).isDirectory() ? readdirSync(p).flatMap((f) => walk(join(p, f))) : [p]);

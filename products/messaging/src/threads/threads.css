@@ -48,7 +48,7 @@
   .tf[data-phone='thread'] .tf-list { display: none; }
   .tf-back { display: inline-flex; }
   .panel--line { border-right: 0; }
-  .tf-open { min-height: calc(100dvh - var(--layout-bar)); }
+  .tf-open { min-height: calc(100dvh - var(--layout-bar) - var(--site-strip)); }
   .tf-open__head { padding-inline: var(--layout-gutter); }
   .tf-open__scroll { padding-inline: var(--space-2); }
   .tf-open__composer { position: sticky; bottom: 0; background: var(--color-bg); padding-inline: var(--layout-gutter); }

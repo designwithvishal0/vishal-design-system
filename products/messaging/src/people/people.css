@@ -50,7 +50,7 @@
   .pf[data-phone='person'] .pf-side { display: none; }
   .pf-back { display: inline-flex; }
   .panel--line { border-right: 0; }
-  .pf-open { min-height: calc(100dvh - var(--layout-bar)); }
+  .pf-open { min-height: calc(100dvh - var(--layout-bar) - var(--site-strip)); }
   .pf-open__head { padding-inline: var(--layout-gutter); }
   .pf-open__scroll { padding-inline: var(--space-2); }
   .pf-open__composer { position: sticky; bottom: 0; background: var(--color-bg); padding-inline: var(--layout-gutter); }

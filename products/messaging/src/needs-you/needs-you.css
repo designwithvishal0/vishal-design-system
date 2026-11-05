@@ -54,7 +54,7 @@
   .ny[data-phone='convo'] .ny-inbox { display: none; }
   .ny-back { display: inline-flex; }
   .panel--line { border-right: 0; }
-  .ny-convo { min-height: calc(100dvh - var(--layout-bar)); }
+  .ny-convo { min-height: calc(100dvh - var(--layout-bar) - var(--site-strip)); }
   .ny-convo__head { padding-inline: var(--layout-gutter); }
   .ny-convo__scroll { padding-inline: var(--space-2); }
   .ny-convo__composer { position: sticky; bottom: 0; background: var(--color-bg); padding-inline: var(--layout-gutter); }
