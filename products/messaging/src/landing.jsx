@@ -7,14 +7,14 @@ import './landing.css';
 const directions = [
   { href: './threads/', name: 'Threads first', idea: 'The conversation is the unit, and channels become filters behind it. New replies are marked in place; nothing moves under your finger.' },
   { href: './needs-you/', name: 'Needs you', idea: 'One inbox of only what needs your reply or decision, with everything else waiting below.' },
-  { href: './keyboard/', name: 'Keyboard first', idea: 'A command bar drives everything, and the screen is one wide conversation.' },
+  { href: './people/', name: 'People first', idea: 'The people you work with are the unit; open one and every channel, thread and DM between you joins into one timeline.' },
 ];
 
 function Landing() {
   return (
     <main className="vd-container landing" data-accent="teal">
       <p className="vd-type-eyebrow">Kite messaging</p>
-      <h1 className="vd-type-display">Three ways to answer “What needs me?”</h1>
+      <h1 className="vd-type-display">Three ways into the same workspace</h1>
       <ol className="landing__list">
         {directions.map((d, i) => (
           <li key={d.href}>

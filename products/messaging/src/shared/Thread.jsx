@@ -25,7 +25,7 @@ export function Thread({ messages, firstUnread, flashId, onRetry, label, renderA
         const prev = messages[i - 1];
         const day = m.day ?? 'Today';
         const newDay = i === 0 ? m.day && day : day !== (prev.day ?? 'Today') && day;
-        const grouped = prev && !newDay && prev.author === m.author && m.id !== firstUnread && minutes(m.time) - minutes(prev.time) <= 5;
+        const grouped = prev && !newDay && prev.author === m.author && prev.where === m.where && m.id !== firstUnread && minutes(m.time) - minutes(prev.time) <= 5;
         const person = people[m.author];
         return (
           <Fragment key={m.id}>
@@ -38,9 +38,10 @@ export function Thread({ messages, firstUnread, flashId, onRetry, label, renderA
             <List.Item
               id={`msg-${m.id}`}
               className={flashId === m.id ? 'is-flash' : undefined}
+              style={m.lane !== undefined ? { '--lane': m.lane } : undefined}
               leading={grouped ? <span className="thread__gutter" aria-hidden="true" /> : <Avatar name={person.name} size="sm" />}
               title={grouped ? undefined : person.name}
-              meta={grouped ? undefined : <time>{m.time}</time>}
+              meta={grouped ? undefined : <><time>{m.time}</time>{m.where && <span className="thread__where">{m.where}</span>}</>}
             >
               <div className="thread__body">
                 <p><Text text={m.text} /></p>

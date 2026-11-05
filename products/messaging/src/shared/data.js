@@ -156,3 +156,19 @@ export const channels = baseChannels.map((c) => {
 });
 export const channelById = (id) => channels.find((c) => c.id === id);
 export const totalUnread = channels.reduce((n, c) => n + c.unread, 0);
+
+// Direct messages, by person. Used by People first, where a person's DMs and channel messages meet.
+export const directMessages = {
+  maya: [
+    { id: 'dm-m1', author: 'rohan', day: 'Yesterday', time: '6:02', text: 'Sent you the two onboarding versions. No rush.' },
+    { id: 'dm-m2', author: 'maya', time: '10:11', text: 'Free for 10 minutes before lunch? I want your eyes on the goals chart.' },
+  ],
+  dev: [
+    { id: 'dm-d1', author: 'dev', day: 'Yesterday', time: '6:20', text: 'Thanks for the widget specs. Building it tomorrow.' },
+    { id: 'dm-d2', author: 'rohan', day: 'Yesterday', time: '6:24', text: 'Shout if the small size looks cramped.' },
+  ],
+  asha: [
+    { id: 'dm-a1', author: 'asha', day: 'Monday', time: '2:15', text: 'Can you own the goals empty state for 2.4?' },
+    { id: 'dm-a2', author: 'rohan', day: 'Monday', time: '2:30', text: 'Yes, I will have a frame by Wednesday.' },
+  ],
+};
