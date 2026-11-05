@@ -77,7 +77,9 @@ for (const [name, r] of Object.entries(roles)) {
   fixedLines.push(`  --${p}-stretch: ${r.stretch};`);
   fixedLines.push(`  --${p}-lh: ${r.lh};`);
   fixedLines.push(`  --${p}-tracking: ${r.tracking};`);
+  fixedLines.push(`  --${p}-numeric: ${r.numeric ?? 'normal'};`);
   if (r.mobile && r.mobile !== r.size) mobileLines.push(line(`${p}-size`, r.mobile, r));
+  if (r.mobileWeight) mobileLines.push(`  --${p}-weight: ${r.mobileWeight};`);
 }
 
 const accentSelectors = Object.keys(accents)

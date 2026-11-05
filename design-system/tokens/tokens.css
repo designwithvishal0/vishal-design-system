@@ -246,6 +246,8 @@
   --cover-sm: 20px; /* EXTENSION: Width of the small book cover used in dense lists. The height follows the 5 to 7 cover ratio, so 20 by 28. */
   --radius-xs: 4px; /* site: border-radius: 4px, focus outline */
   --radius-sm: 12px; /* site: border-radius: 12px */
+  --radius-cover: 4px; /* EXTENSION: Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026). */
+  --radius-cover-lg: 6px; /* EXTENSION: Corner of the medium and large book covers (Vishal, 5 Nov 2026). */
   --radius-md: 16px; /* site: border-radius: 16px */
   --radius-media: 20px; /* site: hero media slot, handoff 2.7 */
   --radius-lg: 24px; /* site: border-radius: 24px */
@@ -274,71 +276,85 @@
   --type-display-xl-stretch: 75%;
   --type-display-xl-lh: 0.92;
   --type-display-xl-tracking: -0.025em;
+  --type-display-xl-numeric: normal;
   --type-display-size: clamp(56px, 6vw, 88px); /* site: .sh, .phead h2, hero */
   --type-display-weight: 760;
   --type-display-stretch: 82%;
   --type-display-lh: 0.92;
   --type-display-tracking: -0.01em;
+  --type-display-numeric: normal;
   --type-stat-size: clamp(56px, 7vw, 104px); /* site: .stats dd */
   --type-stat-weight: 800;
   --type-stat-stretch: 75%;
   --type-stat-lh: 0.95;
   --type-stat-tracking: -0.02em;
-  --type-stat-sm-size: 40px; /* site: .proof strong */
-  --type-stat-sm-weight: 800;
+  --type-stat-numeric: normal;
+  --type-stat-sm-size: 40px; /* site: .proof strong for size and width. Weight 760, and 720 on phones like the work titles .tt, by Vishal 5 Nov 2026, so 800 stays at 56px and above (handoff 9.1). Tabular numerals */
+  --type-stat-sm-weight: 760;
   --type-stat-sm-stretch: 75%;
   --type-stat-sm-lh: 1;
   --type-stat-sm-tracking: normal;
+  --type-stat-sm-numeric: tabular-nums;
   --type-heading-lg-size: 40px; /* site: .ltext h3 */
   --type-heading-lg-weight: 700;
   --type-heading-lg-stretch: 85%;
   --type-heading-lg-lh: 1.05;
   --type-heading-lg-tracking: -0.01em;
+  --type-heading-lg-numeric: normal;
   --type-heading-size: clamp(26px, 3vw, 36px); /* site: #res-h */
   --type-heading-weight: 700;
   --type-heading-stretch: 85%;
   --type-heading-lh: 1.1;
   --type-heading-tracking: -0.01em;
+  --type-heading-numeric: normal;
   --type-title-size: 22px; /* site: .aud strong, .jobs dt */
   --type-title-weight: 700;
   --type-title-stretch: 85%;
   --type-title-lh: 1.2;
   --type-title-tracking: -0.01em;
+  --type-title-numeric: normal;
   --type-title-sm-size: 20px; /* site: .whead h2, .card strong */
   --type-title-sm-weight: 700;
   --type-title-sm-stretch: 85%;
   --type-title-sm-lh: 1.2;
   --type-title-sm-tracking: normal;
+  --type-title-sm-numeric: normal;
   --type-story-size: 24px; /* site: .about2 .story */
   --type-story-weight: 400;
   --type-story-stretch: 100%;
   --type-story-lh: 1.45;
   --type-story-tracking: -0.005em;
+  --type-story-numeric: normal;
   --type-lead-size: 18px; /* site: .phead p, .pb */
   --type-lead-weight: 500;
   --type-lead-stretch: 100%;
   --type-lead-lh: 1.5;
   --type-lead-tracking: normal;
+  --type-lead-numeric: normal;
   --type-body-size: 18px; /* site: body */
   --type-body-weight: 400;
   --type-body-stretch: 100%;
   --type-body-lh: 1.5;
   --type-body-tracking: normal;
+  --type-body-numeric: normal;
   --type-small-size: 15px; /* site: .nav, --kfs-small */
   --type-small-weight: 500;
   --type-small-stretch: 100%;
   --type-small-lh: 1.45;
   --type-small-tracking: normal;
+  --type-small-numeric: normal;
   --type-meta-size: 14px; /* site: meta lines, handoff 2.5 */
   --type-meta-weight: 600;
   --type-meta-stretch: 100%;
   --type-meta-lh: 1.4;
   --type-meta-tracking: normal;
+  --type-meta-numeric: normal;
   --type-label-size: 13px; /* site: .pill, --kfs-label */
   --type-label-weight: 600;
   --type-label-stretch: 100%;
   --type-label-lh: 1.4;
   --type-label-tracking: normal;
+  --type-label-numeric: normal;
 }
 
 @media (max-width: 759px) {
@@ -349,7 +365,8 @@
     --type-display-xl-size: 52px; /* site: .ct h2 */
     --type-display-size: 40px; /* site: .sh, .phead h2, hero */
     --type-stat-size: 56px; /* site: .stats dd */
-    --type-stat-sm-size: 32px; /* site: .proof strong */
+    --type-stat-sm-size: 32px; /* site: .proof strong for size and width. Weight 760, and 720 on phones like the work titles .tt, by Vishal 5 Nov 2026, so 800 stays at 56px and above (handoff 9.1). Tabular numerals */
+    --type-stat-sm-weight: 720;
     --type-heading-lg-size: 28px; /* site: .ltext h3 */
     --type-heading-size: 24px; /* site: #res-h */
     --type-title-size: 19px; /* site: .aud strong, .jobs dt */

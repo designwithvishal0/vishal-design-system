@@ -236,6 +236,8 @@ export const fixed = {
   // Radius
   'radius-xs': { value: '4px', ...site('border-radius: 4px, focus outline'), use: 'Focus outline corners' },
   'radius-sm': { value: '12px', ...site('border-radius: 12px'), use: 'Thumbnails, small cards' },
+  'radius-cover': { value: '4px', ...ext('Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026).'), use: 'Small book cover' },
+  'radius-cover-lg': { value: '6px', ...ext('Corner of the medium and large book covers (Vishal, 5 Nov 2026).'), use: 'Medium and large book covers' },
   'radius-md': { value: '16px', ...site('border-radius: 16px'), use: 'Thumbnails, video boxes, menus' },
   'radius-media': { value: '20px', ...site('hero media slot, handoff 2.7'), use: 'Large media slots' },
   'radius-lg': { value: '24px', ...site('border-radius: 24px'), use: 'Cards' },
@@ -274,7 +276,7 @@ export const roles = {
   'display-xl': { size: 'clamp(56px, 9vw, 136px)', mobile: '52px', weight: 800, stretch: '75%', lh: 0.92, tracking: '-0.025em', ...site('.ct h2'), use: 'Closing statements and one off hero moments' },
   'display': { size: 'clamp(56px, 6vw, 88px)', mobile: '40px', weight: 760, stretch: '82%', lh: 0.92, tracking: '-0.01em', ...site('.sh, .phead h2, hero'), use: 'Page titles and section titles' },
   'stat': { size: 'clamp(56px, 7vw, 104px)', mobile: '56px', weight: 800, stretch: '75%', lh: 0.95, tracking: '-0.02em', ...site('.stats dd'), use: 'Big numbers on a marketing page' },
-  'stat-sm': { size: '40px', mobile: '32px', weight: 800, stretch: '75%', lh: 1, tracking: 'normal', ...site('.proof strong'), use: 'The one heavy number or name on a dense screen, once per screen' },
+  'stat-sm': { size: '40px', mobile: '32px', weight: 760, mobileWeight: 720, numeric: 'tabular-nums', stretch: '75%', lh: 1, tracking: 'normal', ...site('.proof strong for size and width. Weight 760, and 720 on phones like the work titles .tt, by Vishal 5 Nov 2026, so 800 stays at 56px and above (handoff 9.1). Tabular numerals'), use: 'The one heavy number or name on a dense screen, once per screen' },
   'heading-lg': { size: '40px', mobile: '28px', weight: 700, stretch: '85%', lh: 1.05, tracking: '-0.01em', ...site('.ltext h3'), use: 'Large headings' },
   'heading': { size: 'clamp(26px, 3vw, 36px)', mobile: '24px', weight: 700, stretch: '85%', lh: 1.1, tracking: '-0.01em', ...site('#res-h'), use: 'Section headings' },
   'title': { size: '22px', mobile: '19px', weight: 700, stretch: '85%', lh: 1.2, tracking: '-0.01em', ...site('.aud strong, .jobs dt'), use: 'Titles of blocks and cards' },
