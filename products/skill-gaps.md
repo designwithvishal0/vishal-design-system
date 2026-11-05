@@ -18,3 +18,7 @@ A running list kept while building the six layouts with SKILL.md as written, the
 12. **Keyboard shortcut labels.** Nothing defines how a key looks. Built as `kbd`: the system mono at `label` size, a `line-strong` edge and `radius-code`.
 13. **One primary button per view.** Easy to break in a pane that already has a primary Send button. Threads first first shipped its Jump button as a second primary; it is now an outline button. The checklist could name it.
 14. **Group headings inside a panel.** Needs you groups its list under "Waiting on others" and "Everything else". The skill does not say whether the `eyebrow` role may serve as a group heading inside a panel; it was used that way.
+
+## Fixed
+
+All fourteen are fixed in the skill or the components, one commit each, after Vishal's review of the messaging layouts. Three lessons from the same review were added too: counts agree across a screen, a command bar is a field and not a dialog, and navigation marks only the active tab.
