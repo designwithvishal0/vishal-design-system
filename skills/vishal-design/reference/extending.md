@@ -92,7 +92,7 @@ Relative: the `stat` and `stat-sm` roles, and the wash.
 .bar > span { display: block; block-size: 100%; border-radius: inherit; background: var(--accent-ink); }
 ```
 
-Rules: the number is the one heavy moment on the screen. Use `stat-sm` on a dense screen, `stat` when the challenge leads the page. It may count up once with `--dur-reveal`; under Reduce motion it shows the final number. A progress fill uses `--accent-ink` because a bar is a meaningful graphic and needs 3 to 1 against its track. Bars in a chart are filled with the accent wash (Vishal's answer 5), each with a `line-strong` edge so they hold 3 to 1 in both themes, and labelled in muted text. One big number per screen.
+Rules: the number is the one heavy moment on the screen. Use `stat-sm` on a dense screen, `stat` when the challenge leads the page. It may count up once with `--dur-reveal`; under Reduce motion it shows the final number. A progress fill uses `--accent-ink` because a bar is a meaningful graphic and needs 3 to 1 against its track. A chart follows the chart recipe below. One big number per screen.
 
 ### 4. A star rating
 
@@ -241,6 +241,30 @@ Relative: the site's Dark mode and Reduce motion switches: 62 by 34, a 26px knob
 ```
 
 Rules: `<input type="checkbox" role="switch">` with a visible label on the left, the switch on the right of the row. A switch acts at once; if the change needs a Save button, use a checkbox. Under Reduce motion the knob jumps.
+
+### Chart
+
+Relative: the progress bar and the accent roles. Up to three series, from steps of the one accent plus ink and muted.
+
+| Series | Fill or line | Use |
+| --- | --- | --- |
+| One series | `--accent-wash` with a `line-strong` edge (Vishal's answer 5) | A single measure, like books per month |
+| First of two or three | `--accent-ink` | The series that answers the main question |
+| Second | `--color-ink` at a lighter step: `--accent-wash` with a `line-strong` edge for bars, a solid ink line for lines | The comparison |
+| Third | `--color-muted`, dashed for lines | Context, like last year |
+
+```css
+/* EXTENSION: chart */
+.chart { font-size: var(--type-label-size); color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.chart .bar-1 { fill: var(--accent-ink); }
+.chart .bar-2 { fill: var(--accent-wash); stroke: var(--color-line-strong); stroke-width: var(--border-w); }
+.chart .line-1 { stroke: var(--accent-ink); stroke-width: calc(var(--border-w) * 2); fill: none; }
+.chart .line-2 { stroke: var(--color-ink); stroke-width: var(--border-w); fill: none; }
+.chart .line-3 { stroke: var(--color-muted); stroke-width: var(--border-w); stroke-dasharray: var(--space-1) var(--space-1); fill: none; }
+.chart .grid { stroke: var(--color-line); }
+```
+
+Rules: labels sit directly on the chart, at the end of each line or on each bar, never in a legend. Colour never carries the meaning alone: series also differ by weight, dash or position. Axis labels in muted `label` text, numbers in tabular numerals. Hairline gridlines only where they help reading values; no chart borders, no shadows, no gradients. More than three series is outside the system: split it into small charts, one per series, or a table.
 
 ### Select
 

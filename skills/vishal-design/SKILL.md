@@ -327,7 +327,7 @@ These have no exceptions.
 
 Honest limits, so a new product knows where to be careful. Every token that is not from the site is listed in `design-system/tokens/EXTENSIONS.md`.
 
-1. **One accent per screen** cannot show several data series in a chart, or tell many people apart by colour. Use labels, position and names. A product that truly needs a multi colour chart is outside the system.
+1. **One accent per screen** limits charts to three series: steps of the one accent plus ink and muted, labelled directly on the chart ([recipe](reference/extending.md#chart)). Beyond three series, or telling many people apart by colour, is outside the system: use labels, position and names.
 2. **Status colours** are only live green and error red. There is no warning or info colour.
 3. **One family**: there is no serif or italic voice. Code is the one exception: it uses the system monospace (`--font-mono`), for code only, because conventions win in a messaging app.
 4. **Heavy narrow type** is a display voice. On dense screens it shrinks to one `stat-sm`, so a dense product has little room for its signature.
