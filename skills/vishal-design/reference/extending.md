@@ -55,7 +55,7 @@ Code in a message uses the system monospace, the one font exception:
 
 ```css
 /* EXTENSION: code in messages */
-.message code { padding: var(--tag-pad-y) var(--space-1); border-radius: var(--radius-xs); background: var(--color-surface-2); font-family: var(--font-mono); font-size: 0.9em; }
+.message code { padding: var(--tag-pad-y) var(--space-1); border-radius: var(--radius-code); background: var(--color-surface-2); font-family: var(--font-mono); font-size: var(--type-label-size); }
 .message pre { margin: var(--space-2) 0 0; padding: var(--space-3); overflow-x: auto; border: var(--border-w) solid var(--color-line-strong); border-radius: var(--radius-sm); background: var(--color-surface-1); font-family: var(--font-mono); font-size: var(--type-label-size); line-height: var(--type-body-lh); }
 ```
 

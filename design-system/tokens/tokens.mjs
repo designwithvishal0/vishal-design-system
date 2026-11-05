@@ -257,6 +257,7 @@ export const fixed = {
   'radius-sm': { value: '12px', ...site('border-radius: 12px'), use: 'Thumbnails, small cards' },
   'radius-cover': { value: '4px', ...ext('Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026).'), use: 'Small book cover' },
   'radius-cover-lg': { value: '6px', ...ext('Corner of the medium and large book covers (Vishal, 5 Nov 2026).'), use: 'Medium and large book covers' },
+  'radius-code': { value: '4px', ...ext('Corner of inline code. The 4px step from the set, as its own token so it never borrows the focus ring radius.'), use: 'Inline code' },
   'radius-check': { value: '4px', ...ext('Corner of a checkbox. The 4px step from the set, as its own token so it never borrows the focus ring radius.'), use: 'Checkboxes' },
   'radius-md': { value: '16px', ...site('border-radius: 16px'), use: 'Thumbnails, video boxes, menus' },
   'radius-list-row': { value: '12px', ...ext('Hover and selected background of a list row. Its own token, separate from the 28px used for the big portfolio rows (Vishal, 5 Nov 2026).'), use: 'List rows and sidebar items' },

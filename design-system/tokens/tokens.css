@@ -263,6 +263,7 @@
   --radius-sm: 12px; /* site: border-radius: 12px */
   --radius-cover: 4px; /* EXTENSION: Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026). */
   --radius-cover-lg: 6px; /* EXTENSION: Corner of the medium and large book covers (Vishal, 5 Nov 2026). */
+  --radius-code: 4px; /* EXTENSION: Corner of inline code. The 4px step from the set, as its own token so it never borrows the focus ring radius. */
   --radius-check: 4px; /* EXTENSION: Corner of a checkbox. The 4px step from the set, as its own token so it never borrows the focus ring radius. */
   --radius-md: 16px; /* site: border-radius: 16px */
   --radius-list-row: 12px; /* EXTENSION: Hover and selected background of a list row. Its own token, separate from the 28px used for the big portfolio rows (Vishal, 5 Nov 2026). */

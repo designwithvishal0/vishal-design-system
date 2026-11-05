@@ -24,6 +24,7 @@ Every token that is not read from the live portfolio. Each one fills a gap the p
 - `cover-sm`: Width of the small book cover used in dense lists. Covers keep the real 2 by 3 book shape, so 16 by 24, which keeps dense rows at 32px (Vishal, 5 Nov 2026).
 - `radius-cover`: Corner of the small book cover. Same 4px as the focus ring, but its own token so covers never borrow the focus radius (Vishal, 5 Nov 2026).
 - `radius-cover-lg`: Corner of the medium and large book covers (Vishal, 5 Nov 2026).
+- `radius-code`: Corner of inline code. The 4px step from the set, as its own token so it never borrows the focus ring radius.
 - `radius-check`: Corner of a checkbox. The 4px step from the set, as its own token so it never borrows the focus ring radius.
 - `radius-list-row`: Hover and selected background of a list row. Its own token, separate from the 28px used for the big portfolio rows (Vishal, 5 Nov 2026).
 - `state-disabled-opacity`: The site has no disabled state.

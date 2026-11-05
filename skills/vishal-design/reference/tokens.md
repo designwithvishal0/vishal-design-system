@@ -135,6 +135,8 @@ Sizes: `--control-h` 44 (buttons and touch targets), `--control-h-sm` 36, `--con
 | `--radius-list-row` | 12 | List row and sidebar item backgrounds |
 | `--radius-cover-lg` | 6 | Medium and large covers |
 | `--radius-cover` | 4 | Small covers |
+| `--radius-check` | 4 | Checkboxes |
+| `--radius-code` | 4 | Inline code |
 | `--radius-xs` | 4 | The focus ring only |
 
 Nested corners: inner radius equals outer radius minus the padding between them.
